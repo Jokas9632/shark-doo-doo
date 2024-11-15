@@ -3,36 +3,49 @@ import pandas as pd
 
 
 def read_activity_data():
-    with open(r"C:\Users\User\PycharmProjects\AustralianSharkIncidentDatabase\data\activityDat.csv") as file:
+    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\activityDat.csv") as file:
         data = list(csv.reader(file))
         df = pd.DataFrame(data[1:], columns=data[0])
-        df.columns = ['Year', 'Status', 'Provoked', 'Activity']
+        df.columns = ['Year', 'Status', 'Provocation', 'Activity']
         print(df.head())
         return df
 
 
 def read_injury_data():
-    with open(r'C:\Users\User\PycharmProjects\shark-doo-doo\data\injurydat.csv') as file:
+    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\injurydat.csv") as file:
         data = list(csv.reader(file))
         df = pd.DataFrame(data[1:], columns=data[0])
+        df.columns = ['Day', 'Month', 'Year', 'Injury', 'State', 'Location', 'Latitude', 'Longitude', 'SharkName',
+                      'SharkLength', 'Provocation', 'SharksCount', 'Activity', 'InjuryLocation', 'Severity', 'Gender',
+                      'Age', 'IncidentTime']
+        print(df.head())
         return df
 
 
-def convert_to_csv():
-    txt_file = r'C:\Users\User\PycharmProjects\shark-doo-doo\data\timedb2.txt'
-    csv_file = r'C:\Users\User\PycharmProjects\shark-doo-doo\data\timedb2.csv'
-
-    with open(txt_file, "r") as txt_file, open(csv_file, "w", newline="") as csv_file:
-        csv_writer = csv.writer(csv_file)
-        lines = txt_file.readlines()
-        header = lines[0].strip().split("\t")
-        csv_writer.writerow(header)
-
-        for line in lines[1:]:
-            row = [value.strip() if value.strip() else "" for value in line.split("\t")]
-            csv_writer.writerow(row)
+def read_locdat2_data():
+    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\locdat2.csv") as file:
+        data = list(csv.reader(file))
+        df = pd.DataFrame(data[1:], columns=data[0])
+        df.columns = ['Day', 'Month', 'Year', 'Injury', 'State', 'Location', 'Latitude', 'Longitude', 'SharkName',
+                      'SharkLength', 'Provocation', 'SharksCount', 'Activity', 'InjuryLocation', 'Severity', 'Gender',
+                      'Age', 'IncidentTime']
+        print(df.head())
+        return df
 
 
-read_activity_data()
-# read_injury_data()
-convert_to_csv()
+def read_timedb2_data():
+    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\timedb2.csv") as file:
+        data = list(csv.reader(file))
+        df = pd.DataFrame(data[1:], columns=data[0])
+        df.columns = ['Day', 'Month', 'Year', 'Latitude', 'Longitude', 'SharkName', 'SharkScientific',
+                      'Provocation', 'Activity', 'InjuryLocation', 'InjuryDescription', 'Severity',
+                      'Gender', 'Age', 'IncidentTime']
+        print(df.head())
+        return df
+
+
+df_act = read_activity_data()
+df_inj = read_injury_data()
+df_loc = read_locdat2_data()
+df_time = read_timedb2_data()
+
