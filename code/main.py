@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def read_activity_data():
-    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\activityDat.csv") as file:
+    with open(r"data\activityDat.csv") as file:
         data = list(csv.reader(file))
         df = pd.DataFrame(data[1:], columns=data[0])
         df.columns = ['Year', 'Status', 'Provocation', 'Activity']
@@ -12,18 +12,7 @@ def read_activity_data():
 
 
 def read_injury_data():
-    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\injurydat.csv") as file:
-        data = list(csv.reader(file))
-        df = pd.DataFrame(data[1:], columns=data[0])
-        df.columns = ['Day', 'Month', 'Year', 'Injury', 'State', 'Location', 'Latitude', 'Longitude', 'SharkName',
-                      'SharkLength', 'Provocation', 'SharksCount', 'Activity', 'InjuryLocation', 'Severity', 'Gender',
-                      'Age', 'IncidentTime']
-        print(df.head())
-        return df
-
-
-def read_locdat2_data():
-    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\locdat2.csv") as file:
+    with open(r"data\injurydat.csv") as file:
         data = list(csv.reader(file))
         df = pd.DataFrame(data[1:], columns=data[0])
         df.columns = ['Day', 'Month', 'Year', 'Injury', 'State', 'Location', 'Latitude', 'Longitude', 'SharkName',
@@ -34,7 +23,7 @@ def read_locdat2_data():
 
 
 def read_timedb2_data():
-    with open(r"C:\Users\User\PycharmProjects\shark-doo-doo\data\timedb2.csv") as file:
+    with open(r"data\timedb2.csv") as file:
         data = list(csv.reader(file))
         df = pd.DataFrame(data[1:], columns=data[0])
         df.columns = ['Day', 'Month', 'Year', 'Latitude', 'Longitude', 'SharkName', 'SharkScientific',
@@ -48,4 +37,3 @@ df_act = read_activity_data()
 df_inj = read_injury_data()
 df_loc = read_locdat2_data()
 df_time = read_timedb2_data()
-
