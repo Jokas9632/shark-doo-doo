@@ -972,7 +972,7 @@ Incident.day,Incident.month,Incident.year,Victim.injury,State,Location,Latitude,
 9,6,2014,injured,SA,"""parsons beach, fleurieu peninsula""",-35.63087083,138.4666667,white shark,1.5,unprovoked,1,boarding,torso,minor lacerations,male,39,0945
 1,6,2014,injured,NSW,"""seven mile beach, nowra""",-34.83333333,150.75,wobbegong,,provoked,1,boarding,foot,minor lacerations,male,,0700
 19,6,2014,injured,SA,middleton beach,-35.5,138.7166667,white shark,2.8,unprovoked,1,boarding,leg,minor lacerations,male,15,1700
-19,6,2014,Injured,SA,middleton beach,-35.5,138.7166667,white shark,2.8,unprovoked,1,boarding,,minor lacerations,male,,1700
+19,6,2014,injured,SA,middleton beach,-35.5,138.7166667,white shark,2.8,unprovoked,1,boarding,,minor lacerations,male,,1700
 16,8,2014,injured,WA,gnaraloo station,-23.78333333,113.5,whaler shark,,provoked,1,spearfishing,head,major lacerations,male,31,
 9,9,2014,fatal,NSW,"""byron bay, clarkes beach""",-28.63333333,153.6,white shark,3.7,unprovoked,1,snorkelling,thigh,major lacerations,male,50,1030
 26,9,2014,injured,NSW,""" port macquarie, town beach""",-31.41666667,152.9166667,wobbegong,,unprovoked,1,swimming,"""arm, hand""",minor lacerations,female,13,
@@ -1102,7 +1102,7 @@ Incident.day,Incident.month,Incident.year,Victim.injury,State,Location,Latitude,
 9,12,2018,injured,NSW,"""the bar, nambucca river entrance""",-30.643181,153.008839,,,unprovoked,,,,,,,
 15,12,2018,injured,NSW,"""the entrance, gosford""",-33.425018,151.342224,wobbeogong,1.0,provoked,1.00,swimming,left foot,minor lacerations,male,68,1100
 14,1,2019,injured,WA,north cottesloe,-31.989,115.7526,wobbegong,,unprovoked,1,swimming,foot,minor lacerations,female,15,1130
-,2,2019,uninjured,WA,,-33.6702 Ê,114.9951,white shark,,provoked,1,spearfishing,,,male,27,
+,2,2019,uninjured,WA,,-33.6702 ï¿½,114.9951,white shark,,provoked,1,spearfishing,,,male,27,
 4,2,2019,uninjured,NSW,,-30.452,152.8979,,,unprovoked,1,boarding,,,male,50,615
 11,2,2019,injured,NT,umbakumba - 12 km out to sea,-13.8611,136.8116,whitetip reef shark,,provoked,1,,,,,,
 17,2,2019,injured,NSW,"""belongil beach, byron bay""",-28.6337,153.6003,white shark,,unprovoked,1,boarding,leg,major lacerations,male,41,0640
@@ -1114,7 +1114,7 @@ Incident.day,Incident.month,Incident.year,Victim.injury,State,Location,Latitude,
 28,7,2019,injured,QLD,"""cape grenville, far north queensland""",-11.9667,143.2333,tiger shark,,provoked,2,snorkelling,leg,major lacerations,female,21,1830
 2,7,2019,injured,NSW,"""shelly beach, manly""",-33.8005,151.2979,grey nurse shark,,unprovoked,1,swimming,"""leg, torso""",major lacerations,male,54,0530
 9,7,2019,injured,QLD,"""bells creek, sunshine coast""",-26.7994,153.0611,bull shark,1.0,unprovoked,1,boarding,arm,minor lacerations,male,43,0700
-18,7,2019,injured,NSW,"""wooyung beach, far north coast""",Ê-28.45602Ê,153.54457,bull shark,3.0,unprovoked,1,surfing,"""leg, thigh""",major lacerations,male,,
+18,7,2019,injured,NSW,"""wooyung beach, far north coast""",ï¿½-28.45602ï¿½,153.54457,bull shark,3.0,unprovoked,1,surfing,"""leg, thigh""",major lacerations,male,,
 2,9,2019,injured,NSW,surf beach kiama,-34.6817,150.8511,,,unprovoked,,,,,,,
 7,9,2019,uninjured,WA,"""burns beach, perth""",-31.7247,115.7249,white shark,4.5,provoked,1,spearfishing,,,male,,
 29,10,2019,injured,QLD,"""hook passage, whitsundays""",-21.957,148.1893,,,,,snorkelling,,,male,,
@@ -1146,13 +1146,13 @@ Incident.day,Incident.month,Incident.year,Victim.injury,State,Location,Latitude,
 14,7,2020,injured,QLD,"""fitzroy island, cairns""",-16.9337,145.9943,whaler shark,,unprovoked,1,swimming,"""leg, foot""",major lacerations,female,29,1100
 4,7,2020,fatal,QLD,"""fraser island, sunshine coast""",-25.2398,153.1325,whaler shark,,provoked,1,snorkelling,"""leg, foot""",,male,36,1400
 17,7,2020,injured,TAS,"""stanley, north west coast""",-40.7667,145.3,white shark,,provoked,1,fishing,"""arm, torso, head""",major lacerations,male,10,
-8,7,2020,uninjured,NSW,"""terrigal, central coast""",-33.44815Ê,151.44666,dusky shark,,unprovoked,1,swimming,,,female,55,1915
+8,7,2020,uninjured,NSW,"""terrigal, central coast""",-33.44815ï¿½,151.44666,dusky shark,,unprovoked,1,swimming,,,female,55,1915
 11,7,2020,fatal,NSW,"""wooli beach, wilsons headland, mid north coast""",-29.853,153.2715,white shark,,unprovoked,1,boarding,,major lacerations,male,15,1430
 15,8,2020,injured,NSW,"""shelly beach, port macquarie""",-31.4333,152.9,white shark,,unprovoked,1,boarding,leg,major lacerations,female,35,930
 8,9,2020,fatal,QLD,"""greenmount beach, gold coast""",-28.164,153.5476,white shark,,unprovoked,,,,,,,
 17,9,2020,uninjured,NSW,cabarita beach,-28.33362,153.569698,white shark,3.5,provoked,1,boarding,,,male,43,1630
-21,9,2020,uninjured,NSW,"""birubi, port stephens""",-32.7876Ê,152.08002,whaler shark,2,unprovoked,1,standing,leg,minor lacerations,male,46,550
-21,9,2020,injured,NSW,"""birubi, port stephens""",-32.7876Ê,153.08002,wobbegong,2,unprovoked,1,boarding,leg,minor lacerations,male,,1730
+21,9,2020,uninjured,NSW,"""birubi, port stephens""",-32.7876ï¿½,152.08002,whaler shark,2,unprovoked,1,standing,leg,minor lacerations,male,46,550
+21,9,2020,injured,NSW,"""birubi, port stephens""",-32.7876ï¿½,153.08002,wobbegong,2,unprovoked,1,boarding,leg,minor lacerations,male,,1730
 20,10,2020,injured,NSW,"""magic point, maroubra""",-33.950,151.267,white shark,4,unprovoked,1,scuba diving,leg,minor lacerations,male,45,1430
 21,10,2020,uninjured,NSW,"""queenscliff, north steyne""",-38.26789,144.66193,whaler shark,1,unprovoked,1,boarding,,,male,28,1920
 25,10,2020,injured,QLD,"""britomart reef, hinchinbrook island""",-18.25,146.666944,bull shark,,provoked,1,spearfishing,leg,major lacerations,male,59,1200
@@ -1191,15 +1191,7 @@ Incident.day,Incident.month,Incident.year,Victim.injury,State,Location,Latitude,
 22,1,2022,injured,WA,"""whalers beach, albany""",-35.0031,117.8660,wobbegong,,unprovoked,,snorkelling,"""leg, other: multiple bites""",minor lacerations,male,,
 16,2,2022,fatal,NSW,"""little bay, sydney""",-30.8830,153.0830,white shark,4.5,unprovoked,1,swimming,,,male,35,1700
 17,2,2022,injured,QLD,"""Redcliffe, Brisbane""",-27.2333,153.2667,tiger shark,3.5,unprovoked,1,other:floating,leg,major lacerations,,,
-6,2,2022,injured,WA,"""wylie bay, esperance""",-33.84848Ê,121.9184,white shark,3.3,unprovoked,1,other:floating,torso,major lacerations,female,20,1200
+6,2,2022,injured,WA,"""wylie bay, esperance""",-33.84848ï¿½,121.9184,white shark,3.3,unprovoked,1,other:floating,torso,major lacerations,female,20,1200
 20,2,2022,injured,NSW,"""shelley beach, manly""",-33.8006,151.2982,wobbegong,,unprovoked,1,scuba diving,,,,,
 22,3,2022,injured,NSW,crowdy head beach,-32,152.7512,wobbegong,,unprovoked,1,wading,minor lacerations,male,32,swimwear,
 8,3,2022,uninjured,NSW,"""maroubra beach, sydney""",-33.9516,151.2603,unknown,,unprovoked,,surfing,,male,47,swimwear,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,
