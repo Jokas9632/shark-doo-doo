@@ -35,5 +35,4 @@ def read_timedb2_data():
 
 df_act = read_activity_data()
 df_inj = read_injury_data()
-df_loc = read_locdat2_data()
 df_time = read_timedb2_data()
