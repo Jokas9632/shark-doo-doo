@@ -981,7 +981,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2014,unprovoked,boarding,2.0,10,injured,WA,-33.83333333,121.9166667,white shark,3.5,"['arm,', 'leg']",male,23.0,1900-01-01 11:00:00,Carcharodon carcharias
 2014,provoked,swimming,10.0,11,injured,NSW,-30.2,159.15,wobbegong,1.3408602150537634,['foot'],male,,1900-01-01 06:30:00,Orectolobidae
 2014,provoked,snorkelling,10.0,11,injured,NSW,-35.73333333,150.2,wobbegong,1.0,['thigh'],male,,,Orectolobidae
-2014,unprovoked,swimming,29.0,11,injured,NSW,-33.75,151.3,wobbegong,1.0,"['thigh,', 'right']",female,,1900-01-01 05:30:00,Orectolobidae
+2014,unprovoked,swimming,29.0,11,injured,NSW,-33.75,151.3,wobbegong,1.0,"['thigh']",female,,1900-01-01 05:30:00,Orectolobidae
 2014,unprovoked,boarding,29.0,11,injured,WA,-32.6,115.6166667,bronze whaler shark,2.3,['leg'],male,13.0,1900-01-01 06:25:00,Carcharhinus brachyurus
 2014,unprovoked,boarding,29.0,12,injured,NSW,-35.1338,150.686,unknown,,"['leg,', 'ankle']",male,,1900-01-01 07:15:00,unknown
 2014,provoked,spearfishing,29.0,12,fatal,WA,-34.88003124,118.404958,white shark,5.0,['leg'],male,17.0,1900-01-01 12:20:00,Carcharodon carcharias
@@ -1059,7 +1059,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2017,unprovoked,snorkelling,25.0,2,injured,WA,-23.2411667,113.1294,bull shark,2.4013698630136986,['hand'],female,,,Carcharhinus leucas
 2017,unprovoked,boarding,19.0,3,injured,NSW,-34.60465,150.8677833,unknown species,1.9428571428571428,"['torso,', 'pelvic region']",male,30.0,1900-01-01 18:30:00,Unknown species
 2017,unprovoked,unmotorised boating,2.0,4,uninjured,QLD,-27.05206667,153.05745,unknown species,1.9428571428571428,['uninjured'],male,,1900-01-01 15:00:00,Unknown species
-2017,provoked,boarding,2.0,4,injured,NSW,-32.7667,152.1127,grey nurse shark,1.8666666666666665,"['left', 'foot']",male,46.0,1900-01-01 17:00:00,Carcharius taurus
+2017,provoked,boarding,2.0,4,injured,NSW,-32.7667,152.1127,grey nurse shark,1.8666666666666665,"['foot']",male,46.0,1900-01-01 17:00:00,Carcharius taurus
 2017,unprovoked,boarding,17.0,4,fatal,WA,-33.83250092,121.9968696,white shark,3.375,['leg'],female,17.0,1900-01-01 16:00:00,Carcharodon carcharias
 2017,unprovoked,boarding,4.0,6,uninjured,NSW,-33.0775,151.0725,white shark,2.5,['uninjured'],male,,1900-01-01 17:00:00,Carcharodon carcharias
 2017,unprovoked,boarding,11.0,6,uninjured,WA,-33.3146,115.635,white shark,4.0,['Unknown'],unknown,,,Carcharodon carcharias
@@ -1100,7 +1100,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2018,provoked,spearfishing,18.0,11,injured,NT,-12.1825,136.7819,whaler shark,2.2,"['arm,', 'leg']",male,17.0,1900-01-01 10:00:00,Carcharhinidae
 2018,unprovoked,boarding,11.0,11,injured,WA,-32.6036,115.6304,grey nurse shark,1.8666666666666665,['foot'],male,20.0,1900-01-01 09:00:00,Carcharius taurus
 2018,unprovoked,unknown,9.0,12,injured,NSW,-30.643181,153.008839,unknown species,1.9428571428571428,['Unknown'],unknown,,,Unknown species
-2018,provoked,swimming,15.0,12,injured,NSW,-33.425018,151.342224,wobbeogong,1.0,"['left', 'foot']",male,64.5,1900-01-01 11:00:00,Orectolobidae
+2018,provoked,swimming,15.0,12,injured,NSW,-33.425018,151.342224,wobbeogong,1.0,"['foot']",male,64.5,1900-01-01 11:00:00,Orectolobidae
 2019,unprovoked,swimming,14.0,1,injured,WA,-31.989,115.7526,wobbegong,1.3408602150537634,['foot'],female,15.0,1900-01-01 11:30:00,Orectolobidae
 2019,provoked,spearfishing,14.0,2,uninjured,WA,-33.6702 ï¿½,114.9951,white shark,3.375,['Unknown'],male,27.0,,Carcharodon carcharias
 2019,unprovoked,boarding,4.0,2,uninjured,NSW,-30.452,152.8979,unknown species,1.9428571428571428,['Unknown'],male,50.0,1900-01-01 06:15:00,Unknown species
