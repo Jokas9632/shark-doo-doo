@@ -8,8 +8,8 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1832,provoked,swimming,20.0,1,injured,NSW,-33.86666667,151.1833333,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1832,provoked,fishing,4.0,6,injured,NSW,-33.83333333,151.2666667,white shark,3.375,['leg'],female,,,Carcharodon carcharias
 1836,unprovoked,swimming,1.0,1,injured,SA,-34.95,138.5,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
-1836,unprovoked,swimming,1.0,8,fatal,QLD,-25.48333333,152.9833333,whaler shark,2.2,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinidae
-1836,unprovoked,swimming,1.0,8,fatal,QLD,-25.48333333,152.9833333,whaler shark,2.2,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinidae
+1836,unprovoked,swimming,1.0,8,fatal,QLD,-25.48333333,152.9833333,whaler shark,2.2,['body not found'],male,,,Carcharhinidae
+1836,unprovoked,swimming,1.0,8,fatal,QLD,-25.48333333,152.9833333,whaler shark,2.2,['body not found'],male,,,Carcharhinidae
 1837,unprovoked,swimming,17.0,1,fatal,NSW,-30.93333333,153.0166667,bull shark,2.4013698630136986,['leg'],male,12.0,,Carcharhinus leucas
 1839,provoked,swimming,7.0,8,fatal,VIC,-38.98333333,146.45,white shark,3.375,['leg'],male,,,Carcharodon carcharias
 1840,unprovoked,swimming,1.0,12,fatal,NSW,-33.85,151.2166667,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
@@ -19,11 +19,11 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1849,provoked,swimming,1.0,1,fatal,WA,-33.36666667,115.2833333,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 1849,unprovoked,swimming,9.0,12,injured,VIC,-38.33333333,141.6,white shark,3.375,['leg'],male,,,Carcharodon carcharias
 1849,unprovoked,swimming,2.0,12,fatal,NSW,-33.81666667,151.2,bull shark,2.4013698630136986,['thigh'],male,,,Carcharhinus leucas
-1850,unprovoked,swimming,1.0,1,fatal,QLD,-27.28333333,153.2166667,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1850,unprovoked,swimming,1.0,1,fatal,QLD,-27.28333333,153.2166667,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1850,unprovoked,swimming,10.0,3,injured,NSW,-29.41666667,153.3333333,whaler shark,2.2,['Unknown'],male,,,Carcharhinidae
 1853,provoked,swimming,9.0,11,injured,NSW,-33.85,151.2166667,wobbegong,1.0,['leg'],male,,,Orectolobidae
 1855,unprovoked,swimming,1.0,1,injured,QLD,-25.5,152.7166667,bull shark,2.4013698630136986,['leg'],female,,,Carcharhinus leucas
-1855,unprovoked,swimming,6.0,1,uninjured,NSW,-33.85,151.2166667,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1855,unprovoked,swimming,6.0,1,uninjured,NSW,-33.85,151.2166667,bull shark,2.4013698630136986,['uninjured'],male,,,Carcharhinus leucas
 1855,unprovoked,swimming,28.0,7,fatal,QLD,-10.56666667,142.2,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
 1855,unprovoked,swimming,11.0,11,fatal,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1856,unprovoked,swimming,5.0,2,injured,VIC,-38.13333333,144.4166667,white shark,3.375,"['thigh,', 'foot']",male,18.0,1900-01-01 21:00:00,Carcharodon carcharias
@@ -32,11 +32,11 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1860,unprovoked,swimming,1.0,1,injured,SA,-35.56666667,138.6,white shark,3.375,['arm'],male,,,Carcharodon carcharias
 1861,unprovoked,swimming,13.0,1,injured,QLD,-27.51666667,153.2666667,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
 1862,unprovoked,swimming,10.0,2,injured,VIC,-37.85,144.9,white shark,3.375,['leg'],male,,,Carcharodon carcharias
-1862,unprovoked,swimming,1.0,12,fatal,QLD,-27.36666667,153.15,bull shark,2.4013698630136986,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinus leucas
+1862,unprovoked,swimming,1.0,12,fatal,QLD,-27.36666667,153.15,bull shark,2.4013698630136986,['body not found'],male,,,Carcharhinus leucas
 1863,unprovoked,swimming,10.0,1,fatal,NSW,-31.88333333,151.4666667,bull shark,2.4013698630136986,['thigh'],male,17.0,,Carcharhinus leucas
-1863,provoked,swimming,1.0,1,fatal,QLD,-27.58333333,153.3166667,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1863,provoked,swimming,1.0,1,fatal,QLD,-27.58333333,153.3166667,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1863,unprovoked,swimming,5.0,3,injured,VIC,-37.9,144.9833333,white shark,3.375,"['torso,', 'leg']",male,,1900-01-01 20:00:00,Carcharodon carcharias
-1863,unprovoked,unknown,12.0,4,fatal,QLD,-26.8,153.1333333,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1863,unprovoked,unknown,12.0,4,fatal,QLD,-26.8,153.1333333,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1865,unprovoked,swimming,23.0,11,fatal,VIC,-37.86666667,144.8666667,white shark,3.375,['thigh'],male,33.0,,Carcharodon carcharias
 1868,unprovoked,swimming,1.0,1,injured,QLD,-23.08333333,150.7333333,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1869,unprovoked,swimming,17.0,1,injured,QLD,-27.46666667,153,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
@@ -44,7 +44,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1870,unprovoked,swimming,9.0,1,injured,QLD,-27.46666667,153.0166667,bull shark,2.4013698630136986,['thigh'],male,17.0,,Carcharhinus leucas
 1870,provoked,spearfishing,19.0,5,injured,QLD,-27.08333333,153.4,whaler shark,2.2,['leg'],male,13.0,,Carcharhinidae
 1872,unprovoked,swimming,1.0,1,injured,QLD,-25.8,153.0166667,unknown species,1.9428571428571428,['Unknown'],male,,,Unknown species
-1873,unprovoked,unmotorised boating,12.0,2,uninjured,SA,-34.83333333,138.4666667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1873,unprovoked,unmotorised boating,12.0,2,uninjured,SA,-34.83333333,138.4666667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 1874,unprovoked,swimming,9.0,1,injured,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,"['calf,', 'foot']",male,,,Carcharhinus leucas
 1874,unprovoked,swimming,21.0,11,injured,QLD,-25.5,152.7166667,bull shark,3.0,['thigh'],male,,,Carcharhinus leucas
 1874,provoked,swimming,19.0,11,injured,NSW,-33,151.7166667,wobbegong,2.0,['foot'],male,,1900-01-01 19:00:00,Orectolobidae
@@ -55,8 +55,8 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1876,provoked,snorkelling,1.0,1,injured,WA,-20.7,117.25,bull shark,2.4013698630136986,['thigh'],male,36.0,,Carcharhinus leucas
 1876,unprovoked,swimming,30.0,1,injured,VIC,-37.86666667,144.9666667,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 1876,provoked,snorkelling,1.0,2,fatal,QLD,-10.25,142.1166667,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
-1876,unprovoked,swimming,6.0,2,fatal,VIC,-37.85,144.95,white shark,4.0,"['leg,', 'pelvic', 'region']",male,18.0,1900-01-01 06:00:00,Carcharodon carcharias
-1876,provoked,diving,6.0,7,uninjured,NSW,-33.85,151.2,whaler shark,4.3,"['other:', 'uninjured']",male,,,Carcharhinidae
+1876,unprovoked,swimming,6.0,2,fatal,VIC,-37.85,144.95,white shark,4.0,"['leg,', 'pelvic region']",male,18.0,1900-01-01 06:00:00,Carcharodon carcharias
+1876,provoked,diving,6.0,7,uninjured,NSW,-33.85,151.2,whaler shark,4.3,['uninjured'],male,,,Carcharhinidae
 1876,unprovoked,swimming,1.0,12,injured,NSW,-32.76666667,151.7,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1877,unprovoked,swimming,28.0,1,fatal,VIC,-37.83333333,144.9333333,white shark,3.375,['Unknown'],male,30.0,,Carcharodon carcharias
 1877,unprovoked,swimming,20.0,1,injured,VIC,-38.38333333,142.4833333,white shark,3.375,['foot'],female,,,Carcharodon carcharias
@@ -69,14 +69,14 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1878,unprovoked,swimming,14.0,11,injured,NSW,-33.85,151.15,wobbegong,1.3408602150537634,['Unknown'],male,,,Orectolobidae
 1879,unprovoked,swimming,19.0,6,fatal,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1879,unprovoked,swimming,10.0,11,injured,NSW,-29.4,153.3333333,white shark,3.375,['thigh'],male,15.0,,Carcharodon carcharias
-1880,unprovoked,swimming,1.0,1,fatal,QLD,-16.9,145.9833333,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1880,unprovoked,swimming,1.0,1,fatal,QLD,-16.9,145.9833333,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1880,unprovoked,swimming,4.0,1,injured,NSW,-33.08333333,151.5,bull shark,2.4013698630136986,['foot'],female,13.0,1900-01-01 17:00:00,Carcharhinus leucas
 1880,unprovoked,swimming,7.0,1,injured,QLD,-27.51666667,152.9,bull shark,2.4013698630136986,['leg'],male,22.0,,Carcharhinus leucas
 1880,unprovoked,swimming,25.0,11,fatal,QLD,-27.46666667,153.0333333,bull shark,2.4013698630136986,['leg'],male,15.0,1900-01-01 17:00:00,Carcharhinus leucas
-1881,unprovoked,swimming,19.0,1,uninjured,NSW,-31.06666667,152.6333333,bull shark,3.5,"['other:', 'uninjured']",female,,,Carcharhinus leucas
+1881,unprovoked,swimming,19.0,1,uninjured,NSW,-31.06666667,152.6333333,bull shark,3.5,['uninjured'],female,,,Carcharhinus leucas
 1881,unprovoked,unknown,1.0,1,injured,QLD,-25.25,152.85,tiger shark,3.166265060240964,['foot'],female,16.0,,Galeocerdo cuvier
 1881,provoked,spearfishing,10.0,8,injured,QLD,-20,148.8,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
-1881,unprovoked,swimming,13.0,11,fatal,NSW,-33.86666667,151.2333333,bull shark,2.4013698630136986,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinus leucas
+1881,unprovoked,swimming,13.0,11,fatal,NSW,-33.86666667,151.2333333,bull shark,2.4013698630136986,['body not found'],male,,,Carcharhinus leucas
 1881,unprovoked,swimming,4.0,12,injured,QLD,-24.83333333,152.1166667,bull shark,2.4013698630136986,['arm'],male,,,Carcharhinus leucas
 1882,provoked,snorkelling,1.0,1,injured,WA,-17.98333333,122.2333333,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1882,unprovoked,unknown,15.0,4,fatal,NSW,-33.08333333,151.65,white shark,3.375,['torso'],male,,,Carcharodon carcharias
@@ -85,34 +85,34 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1882,provoked,snorkelling,1.0,12,fatal,WA,-17.98333333,122.2333333,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1883,unprovoked,swimming,23.0,1,fatal,NSW,-33.85,151.15,bull shark,2.4013698630136986,['torso'],male,37.0,,Carcharhinus leucas
 1883,unprovoked,swimming,19.0,12,fatal,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,['torso'],male,21.0,,Carcharhinus leucas
-1883,provoked,swimming,22.0,12,uninjured,NSW,-33.8,151.2833333,bull shark,2.8,"['other:', 'uninjured']",male,,,Carcharhinus leucas
-1884,unprovoked,swimming,14.0,1,fatal,SA,-33.18333333,137.9833333,white shark,3.375,"['other:', 'body', 'not', 'recovered']",female,16.0,,Carcharodon carcharias
-1885,unprovoked,swimming,2.0,10,uninjured,NSW,-33.81666667,151.05,bull shark,2.4013698630136986,"['other:', 'uninjured']",female,,,Carcharhinus leucas
+1883,provoked,swimming,22.0,12,uninjured,NSW,-33.8,151.2833333,bull shark,2.8,['uninjured'],male,,,Carcharhinus leucas
+1884,unprovoked,swimming,14.0,1,fatal,SA,-33.18333333,137.9833333,white shark,3.375,['body not found'],female,16.0,,Carcharodon carcharias
+1885,unprovoked,swimming,2.0,10,uninjured,NSW,-33.81666667,151.05,bull shark,2.4013698630136986,['uninjured'],female,,,Carcharhinus leucas
 1885,unprovoked,swimming,26.0,11,injured,WA,-33.31666667,115.6333333,white shark,3.375,['calf'],male,,,Carcharodon carcharias
-1886,unprovoked,swimming,25.0,1,uninjured,QLD,-25.53333333,152.7,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1886,unprovoked,swimming,25.0,1,uninjured,QLD,-25.53333333,152.7,bull shark,2.4013698630136986,['uninjured'],male,,,Carcharhinus leucas
 1886,unprovoked,swimming,26.0,4,injured,QLD,-23.38333333,150.6333333,bull shark,2.4013698630136986,"['arm,', 'hand']",male,,,Carcharhinus leucas
-1887,unprovoked,unmotorised boating,23.0,2,uninjured,NSW,-33.8,151.2833333,whaler shark,2.2,"['other:', 'uninjured']",male,,1900-01-01 17:00:00,Carcharhinidae
-1887,unprovoked,swimming,4.0,12,fatal,NSW,-33.81666667,151.0833333,bull shark,4.0,"['torso,', 'leg,', 'pelvic', 'region']",male,25.0,1900-01-01 11:30:00,Carcharhinus leucas
+1887,unprovoked,unmotorised boating,23.0,2,uninjured,NSW,-33.8,151.2833333,whaler shark,2.2,['uninjured'],male,,1900-01-01 17:00:00,Carcharhinidae
+1887,unprovoked,swimming,4.0,12,fatal,NSW,-33.81666667,151.0833333,bull shark,4.0,"['torso,', 'leg,', 'pelvic region']",male,25.0,1900-01-01 11:30:00,Carcharhinus leucas
 1888,provoked,snorkelling,11.0,9,injured,QLD,-19.85,145.4,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1888,unprovoked,swimming,9.0,12,fatal,NSW,-33.85,151.15,bull shark,2.4013698630136986,['torso'],male,11.0,,Carcharhinus leucas
-1889,unprovoked,swimming,1.0,7,fatal,VIC,-38.33333333,144.6166667,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,,,Carcharodon carcharias
+1889,unprovoked,swimming,1.0,7,fatal,VIC,-38.33333333,144.6166667,white shark,3.375,['body not found'],male,,,Carcharodon carcharias
 1890,unprovoked,swimming,1.0,1,injured,TAS,-42.73333333,147.2333333,broadnose sevengill shark,3.0,['thigh'],male,,,Notorynchus cepedianus
-1891,provoked,diving,8.0,4,uninjured,NSW,-36.71666667,149.9833333,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
+1891,provoked,diving,8.0,4,uninjured,NSW,-36.71666667,149.9833333,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
 1891,provoked,snorkelling,17.0,6,injured,VIC,-38.33333333,144.3166667,wobbegong,2.1,['arm'],male,,,Orectolobidae
 1892,provoked,diving,1.0,1,fatal,QLD,-10.11666667,142.1333333,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
 1892,unprovoked,swimming,22.0,3,injured,QLD,-23.36666667,150.5,bull shark,2.4013698630136986,['calf'],male,,,Carcharhinus leucas
 1892,unprovoked,swimming,6.0,11,injured,QLD,-27.45,153.2166667,whaler shark,2.2,['leg'],female,,,Carcharhinidae
 1892,unprovoked,swimming,1.0,12,injured,QLD,-27.43333333,153.0833333,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
-1893,provoked,fishing,7.0,1,uninjured,WA,-28.76666667,114.6,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
-1893,unprovoked,swimming,25.0,1,fatal,QLD,-13.93333333,143.7333333,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1893,provoked,fishing,7.0,1,uninjured,WA,-28.76666667,114.6,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
+1893,unprovoked,swimming,25.0,1,fatal,QLD,-13.93333333,143.7333333,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1893,unprovoked,swimming,14.0,4,injured,QLD,-9.816666667,142.7,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1894,unprovoked,swimming,28.0,11,injured,NSW,-32.91666667,151.7833333,white shark,2.0,['arm'],male,,1900-01-01 07:40:00,Carcharodon carcharias
-1895,unprovoked,unmotorised boating,1.0,1,uninjured,QLD,-27.46666667,153,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,25.0,,Carcharhinus leucas
+1895,unprovoked,unmotorised boating,1.0,1,uninjured,QLD,-27.46666667,153,bull shark,2.4013698630136986,['uninjured'],male,25.0,,Carcharhinus leucas
 1895,unprovoked,swimming,27.0,2,fatal,NSW,-33.93333333,151.25,bull shark,3.5,['leg'],male,16.0,1900-01-01 16:00:00,Carcharhinus leucas
 1895,unprovoked,swimming,15.0,3,injured,QLD,-24.9,152.2333333,bull shark,2.4013698630136986,['foot'],male,13.0,,Carcharhinus leucas
-1895,provoked,diving,1.0,6,fatal,WA,-20.78333333,115.5333333,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
-1895,provoked,swimming,16.0,11,fatal,NSW,-35.13333333,150.75,whaler shark,2.2,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinidae
-1895,provoked,diving,15.0,12,uninjured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1895,provoked,diving,1.0,6,fatal,WA,-20.78333333,115.5333333,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
+1895,provoked,swimming,16.0,11,fatal,NSW,-35.13333333,150.75,whaler shark,2.2,['body not found'],male,,,Carcharhinidae
+1895,provoked,diving,15.0,12,uninjured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1895,unprovoked,swimming,8.0,12,fatal,NSW,-33.85,151.15,bull shark,4.0,['torso'],male,14.0,,Carcharhinus leucas
 1896,unprovoked,swimming,11.0,1,fatal,NSW,-33.86666667,151.1833333,bull shark,2.4013698630136986,['torso'],male,11.0,,Carcharhinus leucas
 1896,unprovoked,swimming,1.0,11,fatal,WA,-33.85,121.8833333,white shark,3.375,['leg'],male,,,Carcharodon carcharias
@@ -132,20 +132,20 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1901,provoked,swimming,1.0,2,injured,QLD,-16.85,145.75,wobbegong,1.3408602150537634,['head'],male,,,Orectolobidae
 1901,provoked,snorkelling,23.0,4,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['torso,', 'shoulder']",male,,,Galeocerdo cuvier
 1901,provoked,snorkelling,25.0,4,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
-1901,unprovoked,swimming,1.0,12,injured,QLD,-27.46666667,153,bull shark,2.0,"['torso,', 'leg,', 'pelvic', 'region']",male,,1900-01-01 13:35:00,Carcharhinus leucas
+1901,unprovoked,swimming,1.0,12,injured,QLD,-27.46666667,153,bull shark,2.0,"['torso,', 'leg,', 'pelvic region']",male,,1900-01-01 13:35:00,Carcharhinus leucas
 1902,unprovoked,swimming,19.0,1,injured,QLD,-27.48333333,153,bull shark,2.4013698630136986,['leg'],male,16.0,1900-01-01 12:00:00,Carcharhinus leucas
 1902,provoked,swimming,4.0,1,injured,QLD,-27.43333333,153.1666667,whaler shark,2.2,['torso'],male,,,Carcharhinidae
 1903,unprovoked,swimming,10.0,1,fatal,NSW,-33.81666667,151.15,bull shark,3.0,['leg'],male,20.0,1900-01-01 17:00:00,Carcharhinus leucas
-1903,provoked,fishing,1.0,2,uninjured,NSW,-36.63333333,150,bull shark,1.8,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1903,provoked,fishing,1.0,2,uninjured,NSW,-36.63333333,150,bull shark,1.8,['uninjured'],male,,,Carcharhinus leucas
 1903,unprovoked,swimming,15.0,3,fatal,QLD,-27.7,153.2833333,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
-1903,provoked,diving,6.0,5,uninjured,NSW,-34.66666667,150.85,whaler shark,3.0,"['other:', 'uninjured']",male,,,Carcharhinidae
+1903,provoked,diving,6.0,5,uninjured,NSW,-34.66666667,150.85,whaler shark,3.0,['uninjured'],male,,,Carcharhinidae
 1904,unprovoked,swimming,27.0,3,injured,QLD,-27.41666667,153.1166667,bull shark,2.4013698630136986,['torso'],male,,,Carcharhinus leucas
 1905,unprovoked,swimming,30.0,3,injured,NSW,-28.8,153.2666667,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1905,provoked,snorkelling,2.0,12,fatal,QLD,-10.2,142.15,tiger shark,3.166265060240964,['thigh'],male,,,Galeocerdo cuvier
 1906,unprovoked,swimming,28.0,1,fatal,NSW,-33.98333333,151.0666667,bull shark,2.0,['leg'],male,33.0,1900-01-01 14:10:00,Carcharhinus leucas
 1906,unprovoked,swimming,14.0,4,fatal,QLD,-14.66666667,145.45,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
 1906,provoked,snorkelling,24.0,8,fatal,QLD,-9.95,142.1666667,tiger shark,3.166265060240964,"['arm,', 'shoulder,', 'torso']",male,,,Galeocerdo cuvier
-1906,unprovoked,motorised boating,17.0,12,uninjured,NSW,-35.7,150.1833333,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
+1906,unprovoked,motorised boating,17.0,12,uninjured,NSW,-35.7,150.1833333,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
 1907,unprovoked,swimming,3.0,2,fatal,QLD,-19.25,146.8166667,bull shark,3.2,['Unknown'],male,,,Carcharhinus leucas
 1907,provoked,snorkelling,4.0,8,injured,WA,-28.85,113.9,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1907,unprovoked,swimming,13.0,10,injured,NSW,-32.93333333,151.75,white shark,1.8,"['torso,', 'shoulder']",male,26.0,1900-01-01 10:00:00,Carcharodon carcharias
@@ -153,15 +153,15 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1909,unprovoked,swimming,1.0,1,injured,NSW,-33.48333333,151.3,bull shark,2.4013698630136986,['Unknown'],male,,,Carcharhinus leucas
 1910,unprovoked,swimming,26.0,1,fatal,NSW,-32.9,151.7666667,bull shark,2.4013698630136986,['leg'],male,16.0,,Carcharhinus leucas
 1910,unprovoked,swimming,17.0,2,injured,WA,-33.31666667,115.6166667,white shark,1.8,"['shoulder,', 'torso,', 'leg']",male,,,Carcharodon carcharias
-1910,unprovoked,swimming,31.0,3,uninjured,WA,-34.36666667,115.1166667,unknown species,1.9428571428571428,"['other:', 'uninjured']",male,,,Unknown species
+1910,unprovoked,swimming,31.0,3,uninjured,WA,-34.36666667,115.1166667,unknown species,1.9428571428571428,['uninjured'],male,,,Unknown species
 1910,unprovoked,swimming,24.0,11,injured,QLD,-21.16666667,149.2333333,unknown species,3.0,['foot'],male,,,Unknown species
-1911,unprovoked,swimming,6.0,2,uninjured,WA,-20.38333333,116.8666667,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1911,unprovoked,swimming,6.0,2,uninjured,WA,-20.38333333,116.8666667,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1911,unprovoked,swimming,27.0,3,fatal,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['torso,', 'thigh']",male,16.0,,Galeocerdo cuvier
 1911,provoked,snorkelling,25.0,10,injured,QLD,-15.48333333,145.4,tiger shark,3.166265060240964,['leg'],male,23.0,,Galeocerdo cuvier
-1912,unprovoked,swimming,6.0,1,injured,NSW,-33.83333333,151.1666667,dusky shark,1.9500000000000002,"['leg,', 'pelvic', 'region']",male,,,Carcharhinus obscurus
+1912,unprovoked,swimming,6.0,1,injured,NSW,-33.83333333,151.1666667,dusky shark,1.9500000000000002,"['leg,', 'pelvic region']",male,,,Carcharhinus obscurus
 1912,unprovoked,swimming,26.0,1,fatal,NSW,-33.81666667,151.15,bull shark,3.0,['thigh'],male,,,Carcharhinus leucas
 1912,unprovoked,swimming,1.0,1,fatal,QLD,-19.45,146.6,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
-1912,provoked,diving,16.0,2,uninjured,WA,-33.31666667,115.6333333,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
+1912,provoked,diving,16.0,2,uninjured,WA,-33.31666667,115.6333333,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
 1912,provoked,fishing,9.0,2,injured,SA,-37.58333333,140.3333333,white shark,2.4,"['arm,', 'hand']",male,,,Carcharodon carcharias
 1912,unprovoked,swimming,19.0,2,injured,NSW,-33.91666667,151.25,white shark,3.375,"['calf,', 'foot']",male,,1900-01-01 16:00:00,Carcharodon carcharias
 1912,unprovoked,swimming,5.0,11,injured,QLD,-27.31666667,153.05,tiger shark,2.7,['leg'],male,35.0,1900-01-01 17:50:00,Galeocerdo cuvier
@@ -170,19 +170,19 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1913,provoked,swimming,1.0,6,injured,QLD,-10.2,142.15,unknown species,1.9428571428571428,['head'],male,,,Unknown species
 1913,unprovoked,swimming,21.0,11,injured,QLD,-27.31666667,153.05,tiger shark,2.5,['leg'],male,13.0,,Galeocerdo cuvier
 1913,unprovoked,swimming,29.0,12,injured,SA,-35.05,138.45,white shark,3.375,['leg'],male,,1900-01-01 20:30:00,Carcharodon carcharias
-1914,unprovoked,unmotorised boating,20.0,1,uninjured,NSW,-33.85,151.15,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,,1900-01-01 18:00:00,Carcharhinus leucas
+1914,unprovoked,unmotorised boating,20.0,1,uninjured,NSW,-33.85,151.15,bull shark,2.4013698630136986,['uninjured'],male,,1900-01-01 18:00:00,Carcharhinus leucas
 1914,unprovoked,swimming,11.0,1,injured,QLD,-27.31666667,153.05,wobbegong,1.7,['leg'],female,,1900-01-01 10:00:00,Orectolobidae
 1914,unprovoked,unmotorised boating,1.0,2,injured,NSW,-33.83333333,151.0666667,bull shark,2.4013698630136986,['torso'],male,23.0,,Carcharhinus leucas
 1914,provoked,spearfishing,4.0,2,injured,SA,-35.23333333,136.9666667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1914,provoked,fishing,15.0,4,injured,NSW,-29.43333333,153.1833333,bull shark,2.4013698630136986,['foot'],male,,,Carcharhinus leucas
-1914,unprovoked,swimming,10.0,6,fatal,VIC,-37.95,145,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,,,Carcharodon carcharias
+1914,unprovoked,swimming,10.0,6,fatal,VIC,-37.95,145,white shark,3.375,['body not found'],male,,,Carcharodon carcharias
 1914,unprovoked,swimming,2.0,12,injured,QLD,-19.16666667,146.8333333,unknown species,1.9428571428571428,['thigh'],male,,,Unknown species
 1914,provoked,unknown,6.0,12,injured,WA,-31.98333333,115.7333333,wobbegong,0.8,['calf'],male,,,Orectolobidae
 1915,unprovoked,swimming,1.0,1,fatal,NSW,-33.83333333,151.2333333,bull shark,2.4013698630136986,['thigh'],male,,,Carcharhinus leucas
 1915,unprovoked,unmotorised boating,6.0,2,injured,QLD,-27.26666667,153.2166667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1915,unprovoked,swimming,8.0,11,injured,NSW,-33.78333333,151.2833333,whaler shark,2.2,"['leg,', 'foot']",male,,,Carcharhinidae
 1915,unprovoked,swimming,10.0,11,injured,QLD,-27.31666667,153.0666667,bull shark,2.4013698630136986,"['arm,', 'torso']",male,8.0,,Carcharhinus leucas
-1916,provoked,diving,24.0,2,uninjured,TAS,-41.05,145.75,wobbegong,1.5,"['other:', 'uninjured']",male,,,Orectolobidae
+1916,provoked,diving,24.0,2,uninjured,TAS,-41.05,145.75,wobbegong,1.5,['uninjured'],male,,,Orectolobidae
 1916,unprovoked,swimming,19.0,3,injured,NSW,-33.76666667,151.2833333,white shark,3.375,['leg'],male,,,Carcharodon carcharias
 1916,unprovoked,swimming,10.0,11,fatal,QLD,-19.23333333,146.8,tiger shark,3.166265060240964,['Unknown'],male,27.0,,Galeocerdo cuvier
 1916,unprovoked,swimming,9.0,11,fatal,QLD,-19.23333333,146.8166667,tiger shark,3.166265060240964,['leg'],male,,1900-01-01 18:00:00,Galeocerdo cuvier
@@ -196,8 +196,8 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1918,unprovoked,swimming,22.0,3,injured,NSW,-32.91666667,151.7833333,white shark,3.375,"['arm,', 'hand']",male,,1900-01-01 17:15:00,Carcharodon carcharias
 1918,provoked,swimming,17.0,3,injured,QLD,-28.15,153.5166667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1918,unprovoked,swimming,17.0,3,injured,NSW,-28.15,153.1,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
-1918,provoked,diving,5.0,4,uninjured,NSW,-26.41666667,150.0666667,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
-1918,unprovoked,swimming,9.0,4,uninjured,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,28.0,1900-01-01 09:00:00,Carcharhinus leucas
+1918,provoked,diving,5.0,4,uninjured,NSW,-26.41666667,150.0666667,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
+1918,unprovoked,swimming,9.0,4,uninjured,NSW,-33.86666667,151.2,bull shark,2.4013698630136986,['uninjured'],male,28.0,1900-01-01 09:00:00,Carcharhinus leucas
 1918,unprovoked,swimming,19.0,9,fatal,QLD,-19.25,146.8166667,tiger shark,2.2,['leg'],male,,,Galeocerdo cuvier
 1918,provoked,snorkelling,21.0,11,fatal,QLD,-16.7,146.05,tiger shark,3.166265060240964,['torso'],male,,1900-01-01 15:00:00,Galeocerdo cuvier
 1919,unprovoked,swimming,17.0,1,injured,NSW,-32.91666667,151.7833333,white shark,3.7,"['hand,', 'torso,', 'calf']",male,19.0,,Carcharodon carcharias
@@ -206,7 +206,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1919,provoked,swimming,29.0,12,injured,QLD,-27.08333333,153.45,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
 1919,unprovoked,swimming,8.0,12,fatal,NSW,-30.91666667,153.0166667,bull shark,2.4013698630136986,"['calf,', 'foot']",male,,,Carcharhinus leucas
 1920,unprovoked,swimming,15.0,1,fatal,NSW,-32.9,151.75,bull shark,2.4013698630136986,['leg'],male,12.0,,Carcharhinus leucas
-1920,provoked,spearfishing,24.0,2,uninjured,NSW,-33.33333333,151.5,wobbegong,1.3408602150537634,"['other:', 'uninjured']",male,,,Orectolobidae
+1920,provoked,spearfishing,24.0,2,uninjured,NSW,-33.33333333,151.5,wobbegong,1.3408602150537634,['uninjured'],male,,,Orectolobidae
 1920,unprovoked,swimming,8.0,3,injured,QLD,-19.25,146.8166667,tiger shark,3.166265060240964,['torso'],male,20.0,1900-01-01 19:00:00,Galeocerdo cuvier
 1920,provoked,snorkelling,1.0,7,injured,QLD,-20.9,151.7166667,tiger shark,3.166265060240964,"['arm,', 'shoulder,', 'torso']",male,,,Galeocerdo cuvier
 1920,provoked,snorkelling,1.0,11,injured,NSW,-32.2,152.55,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
@@ -216,8 +216,8 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1920,unprovoked,swimming,1.0,12,injured,NSW,-28.8,153.2666667,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1921,provoked,snorkelling,12.0,10,injured,QLD,-18.23333333,146.65,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
 1921,unprovoked,swimming,9.0,10,fatal,QLD,-16.9,146.2333333,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
-1921,unprovoked,swimming,27.0,11,fatal,QLD,-27.43333333,153.15,bull shark,2.4013698630136986,"['other:', 'body', 'not', 'recovered']",male,8.0,,Carcharhinus leucas
-1921,unprovoked,swimming,27.0,11,injured,QLD,-27.43333333,153.15,bull shark,2.4013698630136986,"['leg,', 'pelvic', 'region']",male,,,Carcharhinus leucas
+1921,unprovoked,swimming,27.0,11,fatal,QLD,-27.43333333,153.15,bull shark,2.4013698630136986,['body not found'],male,8.0,,Carcharhinus leucas
+1921,unprovoked,swimming,27.0,11,injured,QLD,-27.43333333,153.15,bull shark,2.4013698630136986,"['leg,', 'pelvic region']",male,,,Carcharhinus leucas
 1921,unprovoked,swimming,11.0,12,injured,QLD,-23.38333333,150.55,bull shark,2.4013698630136986,['torso'],male,,,Carcharhinus leucas
 1922,unprovoked,swimming,12.0,1,injured,NSW,-32.85,151.8333333,white shark,3.375,['thigh'],male,,,Carcharodon carcharias
 1922,unprovoked,swimming,15.0,1,fatal,QLD,-19.45,146.6,bull shark,2.4013698630136986,['Unknown'],male,54.0,,Carcharhinus leucas
@@ -225,14 +225,14 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1922,unprovoked,swimming,2.0,3,fatal,NSW,-33.91666667,151.25,white shark,2.5,"['hand,', 'torso']",male,21.0,1900-01-01 11:00:00,Carcharodon carcharias
 1922,unprovoked,swimming,5.0,12,fatal,QLD,-25.53333333,152.7,tiger shark,3.0,['torso'],male,,,Galeocerdo cuvier
 1923,unprovoked,swimming,27.0,1,fatal,WA,-31.96666667,115.7666667,bull shark,2.4013698630136986,['thigh'],male,13.0,,Carcharhinus leucas
-1923,provoked,swimming,7.0,1,uninjured,NSW,-32.93333333,151.75,white shark,3.2,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1923,provoked,swimming,7.0,1,uninjured,NSW,-32.93333333,151.75,white shark,3.2,['uninjured'],male,,,Carcharodon carcharias
 1923,unprovoked,swimming,18.0,3,injured,QLD,-19.23333333,146.8166667,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1923,provoked,snorkelling,22.0,5,fatal,QLD,-16.85,146.15,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
 1923,provoked,fishing,22.0,5,injured,WA,-28.81666667,114.6166667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1923,provoked,snorkelling,29.0,6,injured,QLD,-18.7,147.7666667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
-1923,unprovoked,swimming,16.0,6,fatal,NSW,-34.35,150.9166667,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,50.0,,Carcharodon carcharias
+1923,unprovoked,swimming,16.0,6,fatal,NSW,-34.35,150.9166667,white shark,3.375,['body not found'],male,50.0,,Carcharodon carcharias
 1923,provoked,snorkelling,16.0,10,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
-1923,provoked,unknown,24.0,11,fatal,WA,-20,119.35,tiger shark,3.166265060240964,"['other:', 'body', 'not', 'recovered']",male,,,Galeocerdo cuvier
+1923,provoked,unknown,24.0,11,fatal,WA,-20,119.35,tiger shark,3.166265060240964,['body not found'],male,,,Galeocerdo cuvier
 1923,provoked,unknown,24.0,11,fatal,WA,-20,119.35,tiger shark,3.166265060240964,"['other:', 'half', 'of', 'body', 'recovered']",male,,,Galeocerdo cuvier
 1923,unprovoked,swimming,11.0,12,injured,NSW,-28.31666667,153.4,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
 1924,unprovoked,swimming,19.0,1,fatal,NSW,-33.8,151.0166667,bull shark,3.2,"['arm,', 'torso,', 'foot']",male,,1900-01-01 16:00:00,Carcharhinus leucas
@@ -249,12 +249,12 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1926,provoked,snorkelling,2.0,12,fatal,QLD,-18.71666667,146.5666667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1927,provoked,snorkelling,1.0,1,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['torso,', 'shoulder']",male,,,Galeocerdo cuvier
 1927,unprovoked,swimming,3.0,1,fatal,NSW,-34.05,151.0833333,tiger shark,4.0,['thigh'],male,15.0,1900-01-01 11:30:00,Galeocerdo cuvier
-1927,unprovoked,swimming,9.0,2,uninjured,QLD,-27.46666667,153.0333333,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,,,Carcharhinus leucas
-1927,unprovoked,swimming,1.0,3,injured,NSW,-32.93333333,151.75,white shark,3.0,"['hand,', 'pelvic', 'region']",male,17.0,1900-01-01 15:00:00,Carcharodon carcharias
+1927,unprovoked,swimming,9.0,2,uninjured,QLD,-27.46666667,153.0333333,bull shark,2.4013698630136986,['uninjured'],male,,,Carcharhinus leucas
+1927,unprovoked,swimming,1.0,3,injured,NSW,-32.93333333,151.75,white shark,3.0,"['hand,', 'pelvic region']",male,17.0,1900-01-01 15:00:00,Carcharodon carcharias
 1927,provoked,unknown,8.0,4,injured,QLD,-10.56666667,142.2166667,tiger shark,1.8,['leg'],male,,,Galeocerdo cuvier
 1927,provoked,snorkelling,10.0,4,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1927,unprovoked,swimming,1.0,5,fatal,QLD,-17.21666667,145.9666667,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
-1927,provoked,diving,26.0,7,uninjured,WA,-17.98333333,122.2333333,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1927,provoked,diving,26.0,7,uninjured,WA,-17.98333333,122.2333333,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1928,provoked,unknown,27.0,1,fatal,QLD,-9.516666667,141.5666667,tiger shark,3.166265060240964,"['arm,', 'leg']",male,,,Galeocerdo cuvier
 1928,provoked,snorkelling,20.0,2,fatal,QLD,-14.15,144.5,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1928,provoked,snorkelling,20.0,3,injured,QLD,-19.8,149.05,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
@@ -269,7 +269,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1929,provoked,snorkelling,24.0,2,injured,NSW,-35.03333333,150.7166667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1929,unprovoked,swimming,18.0,2,fatal,NSW,-33.93333333,151.25,white shark,3.375,"['leg,', 'hand']",male,19.0,1900-01-01 16:00:00,Carcharodon carcharias
 1929,unprovoked,swimming,8.0,2,fatal,NSW,-33.88333333,151.2666667,white shark,3.375,['thigh'],male,39.0,1900-01-01 16:00:00,Carcharodon carcharias
-1929,unprovoked,unmotorised boating,10.0,2,uninjured,SA,-34.96666667,138.5,white shark,3.6,"['other:', 'uninjured']",female,,,Carcharodon carcharias
+1929,unprovoked,unmotorised boating,10.0,2,uninjured,SA,-34.96666667,138.5,white shark,3.6,['uninjured'],female,,,Carcharodon carcharias
 1929,provoked,snorkelling,26.0,3,injured,QLD,-19.51666667,148.8333333,unknown species,1.9428571428571428,['Unknown'],male,,,Unknown species
 1929,unprovoked,unmotorised boating,3.0,3,injured,SA,-34.41666667,137.9166667,wobbegong,1.3408602150537634,['leg'],male,12.0,,Orectolobidae
 1929,unprovoked,unmotorised boating,3.0,3,injured,SA,-34.41666667,137.9166667,wobbegong,1.3408602150537634,['foot'],male,12.0,,Orectolobidae
@@ -277,17 +277,17 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1929,provoked,snorkelling,16.0,4,injured,QLD,-21,149.8833333,tiger shark,3.166265060240964,"['arm,', 'hand']",male,,,Galeocerdo cuvier
 1929,provoked,fishing,11.0,4,injured,QLD,-26.98333333,153.0666667,bull shark,1.5,['leg'],male,21.0,,Carcharhinus leucas
 1929,unprovoked,swimming,9.0,4,fatal,QLD,-10.11666667,142.1333333,tiger shark,3.166265060240964,['thigh'],male,,1900-01-01 12:00:00,Galeocerdo cuvier
-1929,provoked,snorkelling,31.0,5,injured,QLD,-10.05,143.0666667,tiger shark,3.166265060240964,"['leg,', 'pelvic', 'region']",male,,,Galeocerdo cuvier
+1929,provoked,snorkelling,31.0,5,injured,QLD,-10.05,143.0666667,tiger shark,3.166265060240964,"['leg,', 'pelvic region']",male,,,Galeocerdo cuvier
 1929,provoked,spearfishing,21.0,9,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1929,unprovoked,swimming,1.0,9,fatal,QLD,-19.45,146.6,bull shark,2.4013698630136986,['leg'],male,42.0,,Carcharhinus leucas
 1929,unprovoked,swimming,20.0,10,injured,QLD,-10.11666667,142.1333333,tiger shark,3.166265060240964,['foot'],male,,,Galeocerdo cuvier
 1929,unprovoked,swimming,3.0,12,fatal,QLD,-19.45,146.6,bull shark,2.4013698630136986,"['torso,', 'leg']",male,50.0,,Carcharhinus leucas
 1929,unprovoked,swimming,16.0,12,injured,NSW,-33.71666667,151.3,wobbegong,1.3408602150537634,['leg'],female,17.0,,Orectolobidae
-1929,unprovoked,swimming,26.0,12,fatal,NSW,-33.85,151.1833333,bull shark,2.4013698630136986,"['arm,', 'leg,', 'pelvic', 'region']",male,16.0,,Carcharhinus leucas
+1929,unprovoked,swimming,26.0,12,fatal,NSW,-33.85,151.1833333,bull shark,2.4013698630136986,"['arm,', 'leg,', 'pelvic region']",male,16.0,,Carcharhinus leucas
 1929,unprovoked,swimming,13.0,12,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['arm,', 'torso']",male,,,Galeocerdo cuvier
-1929,unprovoked,swimming,23.0,12,uninjured,QLD,-28.16666667,153.5333333,unknown species,1.9428571428571428,"['other:', 'uninjured']",male,,,Unknown species
+1929,unprovoked,swimming,23.0,12,uninjured,QLD,-28.16666667,153.5333333,unknown species,1.9428571428571428,['uninjured'],male,,,Unknown species
 1930,provoked,spearfishing,1.0,1,injured,QLD,-10.15,142.1833333,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
-1930,unprovoked,swimming,15.0,2,fatal,VIC,-37.9,144.9833333,white shark,5.0,"['other:', 'body', 'not', 'recovered']",male,19.0,1900-01-01 16:30:00,Carcharodon carcharias
+1930,unprovoked,swimming,15.0,2,fatal,VIC,-37.9,144.9833333,white shark,5.0,['body not found'],male,19.0,1900-01-01 16:30:00,Carcharodon carcharias
 1930,unprovoked,swimming,20.0,2,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['arm,', 'torso']",male,,,Galeocerdo cuvier
 1930,unprovoked,swimming,4.0,6,fatal,QLD,-9.95,142.1833333,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1930,provoked,snorkelling,1.0,7,fatal,QLD,-10.25,142.1,tiger shark,3.166265060240964,['Unknown'],male,16.0,,Galeocerdo cuvier
@@ -295,7 +295,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1930,unprovoked,swimming,25.0,12,injured,NSW,-33.83333333,151.0666667,bull shark,2.4013698630136986,['torso'],male,49.0,,Carcharhinus leucas
 1931,provoked,fishing,10.0,1,injured,NSW,-33.8,151.2333333,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1931,unprovoked,swimming,7.0,1,injured,QLD,-23.11666667,150.7333333,tiger shark,1.5,['torso'],male,18.0,1900-01-01 16:00:00,Galeocerdo cuvier
-1931,provoked,snorkelling,14.0,1,injured,QLD,-10.58333333,142.2166667,tiger shark,3.166265060240964,"['leg,', 'pelvic', 'region']",male,,,Galeocerdo cuvier
+1931,provoked,snorkelling,14.0,1,injured,QLD,-10.58333333,142.2166667,tiger shark,3.166265060240964,"['leg,', 'pelvic region']",male,,,Galeocerdo cuvier
 1931,provoked,snorkelling,24.0,1,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1931,provoked,swimming,22.0,3,fatal,QLD,-19.45,146.6,bull shark,2.4013698630136986,['thigh'],male,19.0,,Carcharhinus leucas
 1931,provoked,snorkelling,26.0,11,injured,QLD,-17.53333333,146.0166667,tiger shark,4.0,['leg'],male,,,Galeocerdo cuvier
@@ -304,24 +304,24 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1932,provoked,fishing,24.0,2,injured,NSW,-34.36666667,150.9166667,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1932,provoked,snorkelling,1.0,5,injured,QLD,-16.91666667,145.7666667,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
 1932,unprovoked,swimming,12.0,5,fatal,QLD,-9.4,142.6666667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
-1932,unprovoked,swimming,9.0,8,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['leg,', 'pelvic', 'region']",male,,,Galeocerdo cuvier
+1932,unprovoked,swimming,9.0,8,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['leg,', 'pelvic region']",male,,,Galeocerdo cuvier
 1932,unprovoked,swimming,31.0,10,injured,NSW,-33,151.7166667,white shark,4.0,['torso'],male,24.0,1900-01-01 11:00:00,Carcharodon carcharias
 1932,unprovoked,swimming,9.0,12,injured,NT,-11.93333333,132.6166667,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1933,unprovoked,swimming,4.0,1,fatal,QLD,-19.25,146.8166667,tiger shark,3.166265060240964,['torso'],male,38.0,,Galeocerdo cuvier
-1933,provoked,fishing,7.0,2,uninjured,WA,-31.96666667,115.85,bull shark,2.1,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1933,provoked,fishing,7.0,2,uninjured,WA,-31.96666667,115.85,bull shark,2.1,['uninjured'],male,,,Carcharhinus leucas
 1933,provoked,snorkelling,15.0,2,injured,QLD,-14.15,144.5,tiger shark,4.2,"['arm,', 'shoulder']",male,,,Galeocerdo cuvier
 1933,provoked,snorkelling,31.0,3,injured,QLD,-20.96666667,149.75,tiger shark,2.1,['leg'],male,,,Galeocerdo cuvier
-1933,provoked,fishing,27.0,6,uninjured,NT,-12.45,130.8333333,unknown species,1.9428571428571428,"['other:', 'uninjured']",male,,,Unknown species
+1933,provoked,fishing,27.0,6,uninjured,NT,-12.45,130.8333333,unknown species,1.9428571428571428,['uninjured'],male,,,Unknown species
 1933,unprovoked,swimming,12.0,6,injured,QLD,-28.13333333,153.4666667,bull shark,2.4013698630136986,['leg'],male,,,Carcharhinus leucas
-1933,provoked,diving,3.0,7,uninjured,WA,-17.96666667,122.1666667,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1933,provoked,diving,3.0,7,uninjured,WA,-17.96666667,122.1666667,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1933,provoked,snorkelling,5.0,9,fatal,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['thigh'],male,,,Galeocerdo cuvier
 1933,provoked,snorkelling,18.0,10,injured,QLD,-14.15,144.5,tiger shark,3.166265060240964,"['arm,', 'hand']",male,17.0,,Galeocerdo cuvier
 1933,provoked,swimming,1.0,10,injured,NSW,-29.1,153.4333333,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1934,unprovoked,swimming,27.0,1,injured,NSW,-33.98333333,151.0666667,bull shark,3.0,"['arm,', 'torso']",male,15.0,,Carcharhinus leucas
 1934,unprovoked,swimming,7.0,1,injured,NSW,-33.78333333,151.2833333,white shark,4.0,['leg'],male,22.0,1900-01-01 15:00:00,Carcharodon carcharias
-1934,provoked,snorkelling,1.0,1,uninjured,QLD,-20,148.45,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1934,provoked,snorkelling,1.0,1,uninjured,QLD,-20,148.45,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1934,provoked,spearfishing,24.0,2,injured,QLD,-10.6,142.6166667,tiger shark,2.8,['thigh'],male,,,Galeocerdo cuvier
-1934,unprovoked,swimming,12.0,3,fatal,NSW,-33.75,151.3,white shark,4.0,"['leg,', 'pelvic', 'region']",male,17.0,1900-01-01 15:00:00,Carcharodon carcharias
+1934,unprovoked,swimming,12.0,3,fatal,NSW,-33.75,151.3,white shark,4.0,"['leg,', 'pelvic region']",male,17.0,1900-01-01 15:00:00,Carcharodon carcharias
 1934,unprovoked,swimming,15.0,4,injured,QLD,-28.15,153.4833333,tiger shark,2.0,['calf'],male,34.0,1900-01-01 09:20:00,Galeocerdo cuvier
 1934,unprovoked,swimming,1.0,4,fatal,NSW,-33.78333333,151.2833333,white shark,3.5,"['leg,', 'torso']",male,16.0,1900-01-01 12:30:00,Carcharodon carcharias
 1934,unprovoked,swimming,26.0,8,fatal,QLD,-18.23333333,146.3166667,tiger shark,3.166265060240964,['torso'],male,,,Galeocerdo cuvier
@@ -333,18 +333,18 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1934,unprovoked,swimming,23.0,12,injured,NSW,-33.48333333,151.3,bull shark,2.4013698630136986,['leg'],female,12.0,1900-01-01 13:00:00,Carcharhinus leucas
 1935,unprovoked,swimming,1.0,1,fatal,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1935,unprovoked,boarding,14.0,2,injured,NSW,-34.3,150.9333333,white shark,3.375,['thigh'],male,20.0,1900-01-01 17:30:00,Carcharodon carcharias
-1935,unprovoked,swimming,9.0,3,fatal,NSW,-33.93333333,151.25,white shark,4.2,"['arm,', 'torso,', 'pelvic', 'region']",male,,1900-01-01 12:30:00,Carcharodon carcharias
-1935,unprovoked,snorkelling,30.0,3,injured,QLD,-21.16666667,149.2333333,whaler shark,2.2,"['leg,', 'pelvic', 'region']",male,,,Carcharhinidae
+1935,unprovoked,swimming,9.0,3,fatal,NSW,-33.93333333,151.25,white shark,4.2,"['arm,', 'torso,', 'pelvic region']",male,,1900-01-01 12:30:00,Carcharodon carcharias
+1935,unprovoked,snorkelling,30.0,3,injured,QLD,-21.16666667,149.2333333,whaler shark,2.2,"['leg,', 'pelvic region']",male,,,Carcharhinidae
 1935,provoked,snorkelling,18.0,3,injured,QLD,-14.66666667,145.45,tiger shark,3.2,"['hand,', 'thigh']",male,,,Galeocerdo cuvier
 1935,unprovoked,swimming,2.0,3,fatal,NSW,-33.7,151.3,white shark,4.2,['thigh'],male,22.0,1900-01-01 17:30:00,Carcharodon carcharias
 1935,provoked,snorkelling,12.0,5,injured,QLD,-9.4,142.6666667,whaler shark,2.2,"['arm,', 'hand']",male,,,Carcharhinidae
 1935,provoked,snorkelling,13.0,8,fatal,QLD,-9.4,142.6666667,tiger shark,3.166265060240964,['thigh'],male,,,Galeocerdo cuvier
 1935,provoked,snorkelling,13.0,11,injured,QLD,-17.53333333,146.0166667,tiger shark,3.166265060240964,"['arm,', 'shoulder']",male,,,Galeocerdo cuvier
-1936,provoked,boarding,1.0,1,uninjured,NSW,-33.88333333,151.2666667,white shark,3.5,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1936,provoked,boarding,1.0,1,uninjured,NSW,-33.88333333,151.2666667,white shark,3.5,['uninjured'],male,,,Carcharodon carcharias
 1936,provoked,snorkelling,1.0,1,injured,WA,-20.66666667,117.1833333,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1936,unprovoked,swimming,22.0,1,fatal,SA,-34.9,137,white shark,3.375,['torso'],male,16.0,1900-01-01 18:00:00,Carcharodon carcharias
-1936,unprovoked,swimming,4.0,2,fatal,NSW,-33.78333333,151.2833333,white shark,6.0,"['other:', 'body', 'not', 'recovered']",male,14.0,1900-01-01 15:00:00,Carcharodon carcharias
-1936,unprovoked,unmotorised boating,19.0,2,uninjured,QLD,-27.43333333,153.0833333,bull shark,3.1,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1936,unprovoked,swimming,4.0,2,fatal,NSW,-33.78333333,151.2833333,white shark,6.0,['body not found'],male,14.0,1900-01-01 15:00:00,Carcharodon carcharias
+1936,unprovoked,unmotorised boating,19.0,2,uninjured,QLD,-27.43333333,153.0833333,bull shark,3.1,['uninjured'],male,,,Carcharhinus leucas
 1936,provoked,snorkelling,29.0,3,injured,QLD,-12.78333333,143.6,tiger shark,3.166265060240964,['arm'],male,,,Galeocerdo cuvier
 1936,unprovoked,swimming,19.0,3,injured,QLD,-12.16666667,143.3833333,whaler shark,2.2,"['arm,', 'hand']",male,,,Carcharhinidae
 1936,provoked,snorkelling,21.0,4,injured,QLD,-16.7,146.05,tiger shark,4.0,"['arm,', 'torso,', 'foot']",male,16.0,,Galeocerdo cuvier
@@ -367,13 +367,13 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1937,provoked,snorkelling,11.0,11,injured,QLD,-18.53333333,146.2333333,tiger shark,3.166265060240964,"['calf,', 'foot']",male,17.0,,Galeocerdo cuvier
 1938,provoked,fishing,1.0,1,injured,QLD,-18.13333333,146.25,tiger shark,2.7,['thigh'],male,,,Galeocerdo cuvier
 1938,provoked,swimming,14.0,1,injured,NSW,-33.85,151.25,bull shark,1.7,"['leg,', 'foot']",male,24.0,,Carcharhinus leucas
-1938,unprovoked,boarding,2.0,1,uninjured,NSW,-34.03333333,151.15,white shark,3.6,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1938,unprovoked,boarding,2.0,1,uninjured,NSW,-34.03333333,151.15,white shark,3.6,['uninjured'],male,,,Carcharodon carcharias
 1938,unprovoked,unmotorised boating,8.0,3,injured,NT,-12.03333333,134.2,whaler shark,2.2,['leg'],male,,,Carcharhinidae
-1938,provoked,diving,11.0,6,fatal,QLD,-10.56666667,142.1666667,unknown species,1.9428571428571428,"['other:', 'body', 'not', 'recovered']",male,,,Unknown species
-1938,provoked,diving,10.0,7,fatal,NT,-11.4,130.4,whaler shark,2.2,"['other:', 'body', 'not', 'recovered']",male,,,Carcharhinidae
+1938,provoked,diving,11.0,6,fatal,QLD,-10.56666667,142.1666667,unknown species,1.9428571428571428,['body not found'],male,,,Unknown species
+1938,provoked,diving,10.0,7,fatal,NT,-11.4,130.4,whaler shark,2.2,['body not found'],male,,,Carcharhinidae
 1938,provoked,fishing,11.0,10,injured,QLD,-27.43333333,153.1666667,tiger shark,1.8,['foot'],male,,,Galeocerdo cuvier
 1938,provoked,swimming,14.0,11,injured,QLD,-27.35,153.1166667,wobbegong,1.2,['foot'],male,,,Orectolobidae
-1939,provoked,fishing,12.0,1,uninjured,NSW,-29.41666667,152.3333333,bull shark,2.1,"['other:', 'uninjured']",male,11.0,,Carcharhinus leucas
+1939,provoked,fishing,12.0,1,uninjured,NSW,-29.41666667,152.3333333,bull shark,2.1,['uninjured'],male,11.0,,Carcharhinus leucas
 1939,provoked,snorkelling,25.0,9,injured,QLD,-9.95,142.1666667,tiger shark,3.166265060240964,['leg'],male,17.0,,Galeocerdo cuvier
 1939,unprovoked,swimming,1.0,10,injured,QLD,-16.71666667,154.6833333,unknown species,1.9428571428571428,['foot'],male,,,Unknown species
 1939,provoked,snorkelling,24.0,10,injured,QLD,-12.61666667,143.45,tiger shark,4.3,['thigh'],male,27.0,,Galeocerdo cuvier
@@ -392,7 +392,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1941,unprovoked,swimming,19.0,11,injured,WA,-26.46666667,110.2666667,unknown species,1.9428571428571428,['leg'],male,,,Unknown species
 1941,unprovoked,swimming,5.0,12,injured,WA,-24.88333333,113.65,bull shark,2.4013698630136986,['foot'],male,,,Carcharhinus leucas
 1942,unprovoked,swimming,4.0,1,fatal,NSW,-33.76666667,151.2166667,bull shark,4.0,['torso'],female,28.0,1900-01-01 15:00:00,Carcharhinus leucas
-1942,provoked,boarding,18.0,1,uninjured,NSW,-33.78333333,151.2833333,white shark,3.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1942,provoked,boarding,18.0,1,uninjured,NSW,-33.78333333,151.2833333,white shark,3.0,['uninjured'],male,,,Carcharodon carcharias
 1942,provoked,snorkelling,9.0,5,injured,QLD,-17.7,146.5166667,tiger shark,2.1,['arm'],male,,,Galeocerdo cuvier
 1942,provoked,snorkelling,4.0,8,injured,QLD,-20.08333333,148.8833333,unknown species,1.9428571428571428,['leg'],male,,,Unknown species
 1942,unprovoked,swimming,12.0,9,injured,QLD,-16.78333333,145.7,tiger shark,3.0,['leg'],male,24.0,1900-01-01 16:30:00,Galeocerdo cuvier
@@ -409,7 +409,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1946,unprovoked,swimming,14.0,10,injured,NSW,-33.05,151.6333333,bull shark,2.4013698630136986,['leg'],male,15.0,1900-01-01 13:00:00,Carcharhinus leucas
 1946,provoked,snorkelling,20.0,11,fatal,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,['arm'],male,30.0,,Galeocerdo cuvier
 1946,unprovoked,swimming,27.0,12,injured,SA,-34.96666667,138.5,white shark,3.375,"['arm,', 'hand']",male,23.0,,Carcharodon carcharias
-1947,provoked,diving,23.0,7,uninjured,NT,-12.45,130.7833333,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1947,provoked,diving,23.0,7,uninjured,NT,-12.45,130.7833333,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1947,unprovoked,other: standing in water,27.0,10,injured,QLD,-16.55,139.4,tiger shark,3.166265060240964,['leg'],male,,,Galeocerdo cuvier
 1947,unprovoked,swimming,8.0,11,fatal,NSW,-31.33333333,152.8333333,bull shark,2.4013698630136986,['leg'],male,12.0,1900-01-01 16:00:00,Carcharhinus leucas
 1947,unprovoked,swimming,8.0,11,injured,NSW,-31.33333333,152.8333333,bull shark,2.4013698630136986,['foot'],male,13.0,1900-01-01 16:00:00,Carcharhinus leucas
@@ -417,13 +417,13 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1948,provoked,swimming,5.0,1,injured,WA,-31.98333333,115.5333333,wobbegong,0.8,['leg'],male,,,Orectolobidae
 1948,unprovoked,swimming,12.0,2,fatal,NSW,-32.85,151.8333333,tiger shark,4.0,"['torso,', 'leg']",male,16.0,,Galeocerdo cuvier
 1948,provoked,snorkelling,18.0,11,injured,QLD,-9.633333333,142.6833333,tiger shark,3.166265060240964,['leg'],male,41.0,,Galeocerdo cuvier
-1948,unprovoked,swimming,26.0,12,fatal,QLD,-26.8,153.1333333,tiger shark,3.166265060240964,"['arm,', 'leg,', 'pelvic', 'region']",male,28.0,1900-01-01 11:30:00,Galeocerdo cuvier
-1948,provoked,spearfishing,4.0,12,uninjured,NSW,-33.85,151.25,tiger shark,2.0,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
-1949,provoked,boarding,14.0,1,uninjured,NSW,-33.88333333,151.2666667,whaler shark,2.2,"['other:', 'uninjured']",male,32.0,,Carcharhinidae
+1948,unprovoked,swimming,26.0,12,fatal,QLD,-26.8,153.1333333,tiger shark,3.166265060240964,"['arm,', 'leg,', 'pelvic region']",male,28.0,1900-01-01 11:30:00,Galeocerdo cuvier
+1948,provoked,spearfishing,4.0,12,uninjured,NSW,-33.85,151.25,tiger shark,2.0,['uninjured'],male,,,Galeocerdo cuvier
+1949,provoked,boarding,14.0,1,uninjured,NSW,-33.88333333,151.2666667,whaler shark,2.2,['uninjured'],male,32.0,,Carcharhinidae
 1949,provoked,unknown,17.0,1,injured,NSW,-29.1,153.4333333,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
-1949,unprovoked,boarding,13.0,1,uninjured,NSW,-33.66666667,151.3,white shark,3.0,"['other:', 'uninjured']",male,0.0,,Carcharodon carcharias
+1949,unprovoked,boarding,13.0,1,uninjured,NSW,-33.66666667,151.3,white shark,3.0,['uninjured'],male,0.0,,Carcharodon carcharias
 1949,unprovoked,swimming,23.0,1,fatal,NSW,-32.93333333,151.75,white shark,4.0,"['leg,', 'hand']",male,20.0,1900-01-01 15:00:00,Carcharodon carcharias
-1949,unprovoked,boarding,26.0,2,uninjured,NSW,-33.65,151.3166667,white shark,3.6,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1949,unprovoked,boarding,26.0,2,uninjured,NSW,-33.65,151.3166667,white shark,3.6,['uninjured'],male,,,Carcharodon carcharias
 1949,unprovoked,swimming,17.0,4,fatal,QLD,-16.71666667,145.6333333,tiger shark,3.6,['leg'],male,13.0,1900-01-01 13:30:00,Galeocerdo cuvier
 1949,unprovoked,swimming,16.0,5,injured,WA,-17.96666667,122.1666667,bull shark,2.7,['arm'],female,22.0,,Carcharhinus leucas
 1949,unprovoked,swimming,16.0,8,injured,TAS,-40.11666667,148.9333333,white shark,3.375,['thigh'],male,18.0,,Carcharodon carcharias
@@ -432,8 +432,8 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1949,provoked,swimming,20.0,11,injured,NSW,-34,151.2,wobbegong,2.0,['arm'],male,36.0,,Orectolobidae
 1950,provoked,swimming,8.0,1,injured,VIC,-37.96666667,144.7,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1950,unprovoked,swimming,11.0,4,fatal,QLD,-16.9,145.85,tiger shark,3.166265060240964,['Unknown'],male,50.0,,Galeocerdo cuvier
-1950,unprovoked,swimming,25.0,11,injured,QLD,-28.1,153.1,bull shark,3.6,"['hand,', 'pelvic', 'region']",male,21.0,1900-01-01 17:00:00,Carcharhinus leucas
-1950,unprovoked,unmotorised boating,12.0,11,uninjured,QLD,-23.11666667,150.7333333,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,18.0,,Galeocerdo cuvier
+1950,unprovoked,swimming,25.0,11,injured,QLD,-28.1,153.1,bull shark,3.6,"['hand,', 'pelvic region']",male,21.0,1900-01-01 17:00:00,Carcharhinus leucas
+1950,unprovoked,unmotorised boating,12.0,11,uninjured,QLD,-23.11666667,150.7333333,tiger shark,3.166265060240964,['uninjured'],male,18.0,,Galeocerdo cuvier
 1950,unprovoked,swimming,16.0,12,fatal,QLD,-28.1,153.4666667,tiger shark,3.166265060240964,"['leg,', 'torso']",male,20.0,1900-01-01 16:15:00,Galeocerdo cuvier
 1951,provoked,spearfishing,3.0,2,injured,NSW,-34.53333333,150.8666667,bull shark,2.4013698630136986,"['thigh,', 'torso']",male,20.0,,Carcharhinus leucas
 1951,unprovoked,swimming,1.0,2,injured,NSW,-33.88333333,151.2666667,wobbegong,1.2,['leg'],male,14.0,,Orectolobidae
@@ -441,9 +441,9 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1951,unprovoked,swimming,2.0,9,fatal,QLD,-23.38333333,150.55,bull shark,2.4013698630136986,"['leg,', 'torso']",male,56.0,,Carcharhinus leucas
 1951,unprovoked,swimming,22.0,10,fatal,QLD,-19.23333333,146.8,tiger shark,3.166265060240964,"['hand,', 'torso,', 'thigh']",male,42.0,1900-01-01 19:00:00,Galeocerdo cuvier
 1951,unprovoked,swimming,6.0,12,fatal,NSW,-32.93333333,151.75,white shark,2.4,"['arm,', 'leg,', 'torso']",male,21.0,1900-01-01 16:00:00,Carcharodon carcharias
-1951,unprovoked,boarding,30.0,12,uninjured,NSW,-33.36666667,151.4333333,white shark,3.7,"['other:', 'uninjured']",male,32.0,,Carcharodon carcharias
+1951,unprovoked,boarding,30.0,12,uninjured,NSW,-33.36666667,151.4333333,white shark,3.7,['uninjured'],male,32.0,,Carcharodon carcharias
 1952,unprovoked,boarding,7.0,1,injured,NSW,-29.1,153.4333333,wobbegong,2.4,"['calf,', 'foot']",male,,,Orectolobidae
-1952,provoked,unknown,10.0,2,uninjured,QLD,-19.25,146.8166667,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1952,provoked,unknown,10.0,2,uninjured,QLD,-19.25,146.8166667,bull shark,2.4013698630136986,['uninjured'],male,,,Carcharhinus leucas
 1952,provoked,fishing,6.0,5,injured,WA,-35.06666667,117.05,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
 1952,unprovoked,swimming,24.0,11,injured,VIC,-38.38333333,145.15,white shark,1.8,['torso'],male,23.0,,Carcharodon carcharias
 1952,provoked,fishing,21.0,12,injured,SA,-38.01666667,140.5666667,white shark,2.5,['thigh'],male,25.0,,Carcharodon carcharias
@@ -451,7 +451,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1953,provoked,spearfishing,15.0,2,injured,NSW,-34.56666667,150.8666667,wobbegong,1.8,['head'],male,25.0,,Orectolobidae
 1953,provoked,spearfishing,1.0,2,injured,NSW,-33.71666667,151.3,wobbegong,1.3408602150537634,['foot'],male,,,Orectolobidae
 1953,provoked,spearfishing,22.0,3,injured,NSW,-33.73333333,151.3,tiger shark,4.0,['arm'],male,23.0,,Galeocerdo cuvier
-1953,unprovoked,swimming,29.0,12,uninjured,NSW,-33.93333333,151.25,white shark,3.7,"['other:', 'uninjured']",male,26.0,,Carcharodon carcharias
+1953,unprovoked,swimming,29.0,12,uninjured,NSW,-33.93333333,151.25,white shark,3.7,['uninjured'],male,26.0,,Carcharodon carcharias
 1953,unprovoked,swimming,22.0,12,injured,NSW,-33.93333333,151.25,white shark,3.7,"['arm,', 'leg']",male,26.0,,Carcharodon carcharias
 1953,unprovoked,swimming,13.0,12,injured,QLD,-28.11666667,153.4666667,white shark,3.375,['torso'],male,16.0,1900-01-01 12:00:00,Carcharodon carcharias
 1954,provoked,unknown,20.0,1,injured,SA,-38.05,140.7,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
@@ -462,17 +462,17 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1954,provoked,spearfishing,4.0,9,fatal,QLD,-9.583333333,143.7666667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1955,provoked,spearfishing,17.0,1,fatal,NSW,-33.81666667,151.25,bull shark,4.0,"['leg,', 'hand']",male,13.0,1900-01-01 15:00:00,Carcharhinus leucas
 1955,unprovoked,swimming,5.0,2,fatal,NSW,-33.78333333,151.2166667,bull shark,3.6,['leg'],male,25.0,1900-01-01 14:00:00,Carcharhinus leucas
-1955,unprovoked,swimming,9.0,3,fatal,NSW,-33.41666667,151.45,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,22.0,1900-01-01 18:00:00,Carcharodon carcharias
+1955,unprovoked,swimming,9.0,3,fatal,NSW,-33.41666667,151.45,white shark,3.375,['body not found'],male,22.0,1900-01-01 18:00:00,Carcharodon carcharias
 1955,provoked,spearfishing,15.0,10,injured,QLD,-17.93333333,145.9333333,wobbegong,1.8,"['arm,', 'hand']",male,28.0,1900-01-01 15:00:00,Orectolobidae
 1956,provoked,snorkelling,14.0,1,injured,QLD,-17.71666667,146.4,tiger shark,5.0,['leg'],male,18.0,,Galeocerdo cuvier
 1956,unprovoked,swimming,26.0,2,fatal,QLD,-21.11666667,149.15,bull shark,2.4013698630136986,['leg'],male,14.0,1900-01-01 11:00:00,Carcharhinus leucas
 1956,unprovoked,swimming,4.0,2,injured,VIC,-38.43333333,145.2333333,wobbegong,0.9,['leg'],male,,,Orectolobidae
-1956,provoked,spearfishing,19.0,2,uninjured,VIC,-37.96666667,145,bronze whaler shark,3.6,"['other:', 'uninjured']",male,19.0,,Carcharhinus brachyurus
-1956,unprovoked,diving,17.0,3,uninjured,WA,-32.13333333,115.7333333,whaler shark,2.2,"['other:', 'uninjured']",male,25.0,1900-01-01 21:55:00,Carcharhinidae
+1956,provoked,spearfishing,19.0,2,uninjured,VIC,-37.96666667,145,bronze whaler shark,3.6,['uninjured'],male,19.0,,Carcharhinus brachyurus
+1956,unprovoked,diving,17.0,3,uninjured,WA,-32.13333333,115.7333333,whaler shark,2.2,['uninjured'],male,25.0,1900-01-01 21:55:00,Carcharhinidae
 1956,unprovoked,swimming,4.0,3,fatal,VIC,-38.33333333,144.7,white shark,4.0,['torso'],male,26.0,1900-01-01 17:00:00,Carcharodon carcharias
 1956,provoked,snorkelling,1.0,5,injured,QLD,-10.58333333,142.2166667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1956,provoked,diving,15.0,8,injured,QLD,-28,153.4166667,wobbegong,1.2,['arm'],male,,,Orectolobidae
-1957,unprovoked,boarding,1.0,1,uninjured,NSW,-28.63333333,153.6166667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1957,unprovoked,boarding,1.0,1,uninjured,NSW,-28.63333333,153.6166667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 1957,unprovoked,swimming,2.0,2,fatal,WA,-16.38333333,122.9166667,tiger shark,3.166265060240964,['Unknown'],male,,,Galeocerdo cuvier
 1957,unprovoked,swimming,23.0,4,injured,NSW,-32.93333333,151.75,wobbegong,1.3408602150537634,['foot'],male,15.0,,Orectolobidae
 1957,provoked,swimming,13.0,4,injured,QLD,-10.56666667,142.2166667,tiger shark,3.166265060240964,"['arm,', 'shoulder']",male,22.0,1900-01-01 14:00:00,Galeocerdo cuvier
@@ -480,51 +480,51 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1957,provoked,snorkelling,9.0,7,injured,QLD,-10.58333333,142.2166667,tiger shark,3.0,['arm'],male,36.0,,Galeocerdo cuvier
 1958,unprovoked,swimming,19.0,1,injured,NSW,-28.53333333,153.55,wobbegong,1.3408602150537634,['foot'],male,14.0,,Orectolobidae
 1958,provoked,spearfishing,27.0,1,injured,NSW,-35.2,150.55,white shark,3.0,['leg'],male,17.0,,Carcharodon carcharias
-1958,provoked,fishing,9.0,2,uninjured,NSW,-33.05,151.6333333,bull shark,3.1,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+1958,provoked,fishing,9.0,2,uninjured,NSW,-33.05,151.6333333,bull shark,3.1,['uninjured'],male,,,Carcharhinus leucas
 1958,provoked,spearfishing,10.0,3,fatal,QLD,-9.75,143.4,tiger shark,3.166265060240964,['leg'],male,24.0,,Galeocerdo cuvier
-1958,provoked,spearfishing,23.0,3,uninjured,VIC,-38.21666667,145.0166667,bronze whaler shark,2.2,"['other:', 'uninjured']",male,,,Carcharhinus brachyurus
+1958,provoked,spearfishing,23.0,3,uninjured,VIC,-38.21666667,145.0166667,bronze whaler shark,2.2,['uninjured'],male,,,Carcharhinus brachyurus
 1958,provoked,spearfishing,1.0,9,injured,NSW,-32.71666667,152.1666667,wobbegong,1.8,"['arm,', 'hand']",male,,,Orectolobidae
 1958,unprovoked,swimming,23.0,11,fatal,QLD,-28,153.4166667,tiger shark,3.166265060240964,['torso'],male,22.0,,Galeocerdo cuvier
 1959,provoked,fishing,31.0,1,injured,WA,-31.95,115.85,bull shark,1.5,['calf'],male,20.0,,Carcharhinus leucas
 1959,unprovoked,swimming,17.0,1,injured,QLD,-26.66666667,153.1166667,wobbegong,1.8,['foot'],male,18.0,1900-01-01 09:20:00,Orectolobidae
-1959,provoked,swimming,17.0,1,fatal,TAS,-43.15,147.85,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,22.0,1900-01-01 16:30:00,Carcharodon carcharias
+1959,provoked,swimming,17.0,1,fatal,TAS,-43.15,147.85,white shark,3.375,['body not found'],male,22.0,1900-01-01 16:30:00,Carcharodon carcharias
 1959,unprovoked,unmotorised boating,25.0,1,injured,TAS,-39.85,143.8333333,white shark,3.375,['leg'],male,16.0,,Carcharodon carcharias
-1959,provoked,spearfishing,5.0,4,uninjured,NSW,-34.3,150.9166667,whaler shark,2.2,"['other:', 'uninjured']",male,,,Carcharhinidae
+1959,provoked,spearfishing,5.0,4,uninjured,NSW,-34.3,150.9166667,whaler shark,2.2,['uninjured'],male,,,Carcharhinidae
 1959,provoked,unknown,11.0,4,injured,QLD,-10.58333333,142.2166667,tiger shark,1.8,"['arm,', 'hand']",male,43.0,,Galeocerdo cuvier
 1959,provoked,swimming,22.0,11,injured,QLD,-28.01666667,153.4333333,tiger shark,4.5,['leg'],male,19.0,1900-01-01 11:00:00,Galeocerdo cuvier
 1959,unprovoked,swimming,29.0,11,injured,VIC,-38.45,144.0833333,white shark,4.0,['leg'],male,19.0,1900-01-01 14:30:00,Carcharodon carcharias
 1959,unprovoked,swimming,19.0,12,fatal,QLD,-27.43333333,153.1666667,tiger shark,3.166265060240964,['Unknown'],male,29.0,,Galeocerdo cuvier
-1959,provoked,boarding,29.0,12,uninjured,QLD,-27.23333333,153.1,tiger shark,3.6,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1959,provoked,boarding,29.0,12,uninjured,QLD,-27.23333333,153.1,tiger shark,3.6,['uninjured'],male,,,Galeocerdo cuvier
 1960,provoked,spearfishing,15.0,1,injured,VIC,-37.98333333,145.0166667,bronze whaler shark,2.5,['head'],male,,,Carcharhinus brachyurus
 1960,unprovoked,snorkelling,16.0,1,fatal,NSW,-33.76666667,151.2,bull shark,3.3,['leg'],male,13.0,1900-01-01 15:30:00,Carcharhinus leucas
 1960,provoked,spearfishing,3.0,4,injured,VIC,-38.16666667,145.0666667,bronze whaler shark,1.5,['head'],male,,,Carcharhinus brachyurus
 1960,unprovoked,swimming,13.0,4,injured,NSW,-30.86666667,153.0333333,white shark,3.7,"['arm,', 'torso']",male,17.0,,Carcharodon carcharias
-1960,provoked,spearfishing,3.0,4,uninjured,NSW,-32.6,152.3166667,bronze whaler shark,3.6,"['other:', 'uninjured']",male,,,Carcharhinus brachyurus
+1960,provoked,spearfishing,3.0,4,uninjured,NSW,-32.6,152.3166667,bronze whaler shark,3.6,['uninjured'],male,,,Carcharhinus brachyurus
 1960,unprovoked,swimming,27.0,11,injured,QLD,-21.13333333,149.2,whaler shark,0.9,"['arm,', 'shoulder']",male,44.0,1900-01-01 14:45:00,Carcharhinidae
 1960,provoked,spearfishing,3.0,11,injured,WA,-34.21666667,115.0166667,wobbegong,1.3408602150537634,['arm'],male,24.0,,Orectolobidae
 1960,unprovoked,swimming,27.0,12,injured,NSW,-33.78333333,151.2833333,whaler shark,3.0,['torso'],female,27.0,,Carcharhinidae
 1960,unprovoked,swimming,20.0,12,injured,QLD,-27.36666667,153.15,bull shark,1.0,['thigh'],male,33.0,1900-01-01 09:00:00,Carcharhinus leucas
 1961,provoked,swimming,14.0,1,injured,NSW,-30.63333333,153.1833333,dogfish,1.3,['head'],male,40.0,,Squalidae
 1961,unprovoked,swimming,17.0,2,injured,VIC,-38.26666667,145.0166667,wobbegong,1.3408602150537634,['Unknown'],female,,,Orectolobidae
-1961,provoked,spearfishing,1.0,2,uninjured,WA,-32.11666667,115.65,wobbegong,2.7,"['other:', 'uninjured']",male,,,Orectolobidae
+1961,provoked,spearfishing,1.0,2,uninjured,WA,-32.11666667,115.65,wobbegong,2.7,['uninjured'],male,,,Orectolobidae
 1961,provoked,spearfishing,30.0,3,injured,SA,-34.96666667,138.5,bronze whaler shark,2.5208333333333335,['leg'],male,24.0,,Carcharhinus brachyurus
 1961,unprovoked,swimming,18.0,3,injured,VIC,-38.38333333,142.4833333,white shark,3.1,['torso'],male,21.0,1900-01-01 17:00:00,Carcharodon carcharias
 1961,provoked,spearfishing,12.0,3,injured,SA,-35.28333333,138.4333333,white shark,3.6,"['arm,', 'leg']",male,21.0,1900-01-01 14:30:00,Carcharodon carcharias
-1961,provoked,spearfishing,3.0,4,uninjured,VIC,-38.46666667,145.0166667,dusky shark,2.7,"['other:', 'uninjured']",male,24.0,1900-01-01 08:30:00,Carcharhinus obscurus
+1961,provoked,spearfishing,3.0,4,uninjured,VIC,-38.46666667,145.0166667,dusky shark,2.7,['uninjured'],male,24.0,1900-01-01 08:30:00,Carcharhinus obscurus
 1961,unprovoked,boarding,18.0,12,fatal,QLD,-26.36666667,153.0833333,bull shark,3.0,"['arm,', 'leg']",male,22.0,1900-01-01 06:00:00,Carcharhinus leucas
 1961,unprovoked,swimming,28.0,12,injured,QLD,-21.06666667,149.2166667,tiger shark,3.0,"['arm,', 'hand']",male,24.0,1900-01-01 16:15:00,Galeocerdo cuvier
 1961,unprovoked,swimming,28.0,12,fatal,QLD,-21.06666667,149.2166667,tiger shark,3.0,"['arm,', 'thigh']",female,18.0,1900-01-01 16:15:00,Galeocerdo cuvier
 1961,unprovoked,swimming,13.0,12,injured,QLD,-10.38333333,142.2833333,tiger shark,2.0,['leg'],male,17.0,1900-01-01 14:00:00,Galeocerdo cuvier
 1962,unprovoked,boarding,14.0,1,injured,NSW,-28.78333333,153.5833333,white shark,3.375,['foot'],male,19.0,,Carcharodon carcharias
-1962,unprovoked,boarding,7.0,1,uninjured,NSW,-33.73333333,151.3,white shark,2.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1962,unprovoked,boarding,7.0,1,uninjured,NSW,-33.73333333,151.3,white shark,2.0,['uninjured'],male,,,Carcharodon carcharias
 1962,provoked,swimming,4.0,2,injured,QLD,-28.15,153.5333333,wobbegong,0.6,['leg'],male,35.0,1900-01-01 14:30:00,Orectolobidae
-1962,provoked,spearfishing,29.0,11,uninjured,NSW,-33.73333333,151.3166667,whaler shark,3.0,"['other:', 'uninjured']",male,26.0,,Carcharhinidae
+1962,provoked,spearfishing,29.0,11,uninjured,NSW,-33.73333333,151.3166667,whaler shark,3.0,['uninjured'],male,26.0,,Carcharhinidae
 1962,provoked,spearfishing,10.0,12,fatal,SA,-35.4,138.3166667,white shark,3.6,['leg'],male,16.0,1900-01-01 13:00:00,Carcharodon carcharias
 1963,unprovoked,other: standing in water,28.0,1,fatal,NSW,-33.78333333,151.2333333,bull shark,3.0,['leg'],female,32.0,,Carcharhinus leucas
 1963,provoked,spearfishing,24.0,2,injured,NSW,-34.3,150.9333333,bronze whaler shark,3.0,['calf'],male,18.0,,Carcharhinus brachyurus
 1963,unprovoked,boarding,13.0,4,injured,WA,-33.63333333,115,white shark,2.3,['arm'],male,25.0,,Carcharodon carcharias
 1963,provoked,spearfishing,8.0,12,injured,SA,-35.28333333,138.4333333,white shark,5.0,"['arm,', 'torso']",male,23.0,,Carcharodon carcharias
-1964,provoked,spearfishing,1.0,1,uninjured,WA,-31.95,115.85,whaler shark,2.5,"['other:', 'uninjured']",male,,,Carcharhinidae
+1964,provoked,spearfishing,1.0,1,uninjured,WA,-31.95,115.85,whaler shark,2.5,['uninjured'],male,,,Carcharhinidae
 1964,provoked,spearfishing,18.0,1,injured,WA,-34.21666667,115.0166667,wobbegong,1.3408602150537634,['arm'],male,,,Orectolobidae
 1964,unprovoked,boarding,28.0,3,injured,SA,-35.53333333,138.6166667,white shark,3.375,['thigh'],male,19.0,,Carcharodon carcharias
 1964,provoked,swimming,4.0,10,injured,WA,-32.51666667,115.6833333,unknown species,1.9428571428571428,['leg'],male,19.0,,Unknown species
@@ -534,7 +534,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1965,provoked,spearfishing,27.0,12,injured,WA,-31.98333333,115.5333333,wobbegong,2.0,['leg'],male,40.0,,Orectolobidae
 1966,unprovoked,swimming,27.0,2,injured,NSW,-34.28333333,150.9333333,white shark,2.5,"['arm,', 'leg']",male,13.0,1900-01-01 14:00:00,Carcharodon carcharias
 1966,unprovoked,swimming,20.0,5,fatal,NSW,-35.03333333,150.7166667,white shark,3.375,"['arm,', 'shoulder']",male,40.0,,Carcharodon carcharias
-1966,provoked,spearfishing,8.0,9,uninjured,WA,-31.98333333,115.5333333,shortfin mako shark,2.0,"['other:', 'uninjured']",male,,,Isurus oxyrinchus
+1966,provoked,spearfishing,8.0,9,uninjured,WA,-31.98333333,115.5333333,shortfin mako shark,2.0,['uninjured'],male,,,Isurus oxyrinchus
 1966,provoked,spearfishing,26.0,12,injured,NSW,-33.91666667,151.25,wobbegong,1.8,['leg'],male,,,Orectolobidae
 1966,provoked,spearfishing,26.0,12,injured,QLD,-23.43333333,151.9,bronze whaler shark,2.1,"['torso,', 'shoulder']",male,,,Carcharhinus brachyurus
 1966,provoked,swimming,31.0,12,injured,TAS,-41.86666667,148.3,white shark,1.8,['arm'],male,30.0,1900-01-01 13:20:00,Carcharodon carcharias
@@ -542,20 +542,20 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1967,provoked,spearfishing,15.0,4,injured,NSW,-34.41666667,150.8833333,bronze whaler shark,2.0,"['arm,', 'hand']",male,21.0,,Carcharhinus brachyurus
 1967,provoked,spearfishing,19.0,8,fatal,WA,-30.25,115.0166667,white shark,4.0,['torso'],male,23.0,,Carcharodon carcharias
 1968,unprovoked,swimming,20.0,2,injured,WA,-31.95,115.85,bull shark,2.4013698630136986,['thigh'],female,12.0,,Carcharhinus leucas
-1968,provoked,spearfishing,4.0,2,uninjured,SA,-35.6,138.0833333,bronze whaler shark,3.0,"['other:', 'uninjured']",male,26.0,1900-01-01 18:30:00,Carcharhinus brachyurus
-1968,provoked,diving,12.0,9,uninjured,SA,-35,136.1666667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1968,provoked,spearfishing,4.0,2,uninjured,SA,-35.6,138.0833333,bronze whaler shark,3.0,['uninjured'],male,26.0,1900-01-01 18:30:00,Carcharhinus brachyurus
+1968,provoked,diving,12.0,9,uninjured,SA,-35,136.1666667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 1969,provoked,snorkelling,27.0,1,injured,NSW,-35,150.8166667,bronze whaler shark,2.4,['leg'],male,21.0,1900-01-01 07:30:00,Carcharhinus brachyurus
 1969,provoked,spearfishing,24.0,6,injured,NSW,-34.66666667,150.85,wobbegong,3.5,"['leg,', 'hand']",male,37.0,1900-01-01 15:00:00,Orectolobidae
 1969,unprovoked,swimming,29.0,11,injured,WA,-31.95,115.85,bull shark,1.8,['leg'],male,15.0,,Carcharhinus leucas
 1971,unprovoked,swimming,2.0,1,injured,TAS,-41.15,148.35,school shark,,['torso'],male,,1900-01-01 16:40:00,Galeorhinus galeus
 1971,provoked,spearfishing,8.0,2,injured,WA,-33.85,121.8833333,whaler shark,2.2,"['arm,', 'hand']",male,21.0,,Carcharhinidae
-1971,unprovoked,swimming,10.0,12,fatal,QLD,-23.48333333,151.2,tiger shark,3.6,"['other:', 'body', 'not', 'recovered']",male,19.0,1900-01-01 15:00:00,Galeocerdo cuvier
+1971,unprovoked,swimming,10.0,12,fatal,QLD,-23.48333333,151.2,tiger shark,3.6,['body not found'],male,19.0,1900-01-01 15:00:00,Galeocerdo cuvier
 1972,unprovoked,boarding,20.0,2,injured,VIC,-38.81666667,148.0833333,white shark,3.375,['leg'],male,18.0,,Carcharodon carcharias
 1972,unprovoked,swimming,1.0,4,injured,QLD,-27.46666667,153.2333333,unknown species,1.9428571428571428,['leg'],female,,,Unknown species
 1972,provoked,diving,8.0,8,injured,TAS,-43.23333333,148,white shark,3.6,['foot'],male,45.0,1900-01-01 11:15:00,Carcharodon carcharias
 1972,unprovoked,boarding,21.0,10,injured,NSW,-35.35,150.4666667,white shark,3.0,['thigh'],male,18.0,1900-01-01 08:30:00,Carcharodon carcharias
 1972,provoked,spearfishing,21.0,10,injured,QLD,-17.1,146.4,whaler shark,2.2,['arm'],male,24.0,,Carcharhinidae
-1972,provoked,diving,1.0,11,uninjured,SA,-35,136.1666667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1972,provoked,diving,1.0,11,uninjured,SA,-35,136.1666667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 1973,unprovoked,boarding,10.0,1,injured,NSW,-33.51666667,151.3166667,white shark,3.375,['foot'],male,19.0,,Carcharodon carcharias
 1973,unprovoked,swimming,25.0,3,injured,QLD,-18.51666667,146.35,tiger shark,2.0,"['arm,', 'hand']",male,43.0,,Galeocerdo cuvier
 1973,unprovoked,boarding,25.0,8,injured,QLD,-27.41666667,153.5333333,white shark,4.1,['foot'],male,16.0,1900-01-01 07:30:00,Carcharodon carcharias
@@ -568,37 +568,37 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1975,provoked,snorkelling,7.0,2,fatal,SA,-32.08333333,132.9666667,white shark,3.0,['leg'],male,12.0,,Carcharodon carcharias
 1975,provoked,snorkelling,9.0,2,injured,VIC,-38.4,144.1833333,wobbegong,2.4,"['torso,', 'shoulder']",male,45.0,,Orectolobidae
 1975,unprovoked,swimming,18.0,3,injured,QLD,-16.55,139.4,tiger shark,3.166265060240964,"['arm,', 'hand']",female,,,Galeocerdo cuvier
-1975,unprovoked,boarding,26.0,7,injured,QLD,-26.65,153.0833333,white shark,3.0,"['leg,', 'pelvic', 'region']",male,21.0,1900-01-01 17:00:00,Carcharodon carcharias
-1975,provoked,diving,30.0,7,fatal,TAS,-43.35,147.35,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,37.0,1900-01-01 13:00:00,Carcharodon carcharias
+1975,unprovoked,boarding,26.0,7,injured,QLD,-26.65,153.0833333,white shark,3.0,"['leg,', 'pelvic region']",male,21.0,1900-01-01 17:00:00,Carcharodon carcharias
+1975,provoked,diving,30.0,7,fatal,TAS,-43.35,147.35,white shark,3.375,['body not found'],male,37.0,1900-01-01 13:00:00,Carcharodon carcharias
 1975,provoked,spearfishing,20.0,11,injured,NSW,-33.78333333,151.2833333,wobbegong,2.0,['leg'],male,20.0,1900-01-01 12:15:00,Orectolobidae
 1976,provoked,spearfishing,19.0,9,injured,SA,-32.98333333,137.7833333,white shark,2.7,['leg'],male,17.0,,Carcharodon carcharias
 1977,unprovoked,boarding,26.0,2,injured,NSW,-28.23333333,153.5666667,tiger shark,4.0,['Unknown'],male,24.0,,Galeocerdo cuvier
-1977,unprovoked,swimming,13.0,3,fatal,QLD,-27.25,153.25,tiger shark,4.0,"['other:', 'body', 'not', 'recovered']",male,43.0,,Galeocerdo cuvier
+1977,unprovoked,swimming,13.0,3,fatal,QLD,-27.25,153.25,tiger shark,4.0,['body not found'],male,43.0,,Galeocerdo cuvier
 1977,unprovoked,swimming,13.0,3,fatal,QLD,-27.25,153.25,tiger shark,4.0,['torso'],male,64.5,,Galeocerdo cuvier
 1977,unprovoked,swimming,25.0,4,injured,QLD,-28.08333333,153.45,bull shark,2.4013698630136986,['leg'],male,19.0,,Carcharhinus leucas
 1977,unprovoked,snorkelling,23.0,8,fatal,QLD,-26.68333333,153.1333333,tiger shark,3.166265060240964,"['arm,', 'torso,', 'foot']",male,26.0,,Galeocerdo cuvier
 1977,unprovoked,boarding,31.0,8,injured,SA,-32.08333333,132.9666667,white shark,3.375,['thigh'],male,17.0,,Carcharodon carcharias
-1978,unprovoked,boarding,28.0,8,uninjured,WA,-31.76666667,115.7166667,white shark,2.0,"['other:', 'uninjured']",male,15.0,1900-01-01 07:30:00,Carcharodon carcharias
-1978,provoked,diving,1.0,9,uninjured,TAS,-43.16666667,147.9833333,white shark,3.375,"['other:', 'uninjured']",male,34.0,1900-01-01 12:00:00,Carcharodon carcharias
+1978,unprovoked,boarding,28.0,8,uninjured,WA,-31.76666667,115.7166667,white shark,2.0,['uninjured'],male,15.0,1900-01-01 07:30:00,Carcharodon carcharias
+1978,provoked,diving,1.0,9,uninjured,TAS,-43.16666667,147.9833333,white shark,3.375,['uninjured'],male,34.0,1900-01-01 12:00:00,Carcharodon carcharias
 1978,unprovoked,swimming,29.0,12,injured,QLD,-26.8,153.1166667,bull shark,2.4013698630136986,['leg'],male,15.0,,Carcharhinus leucas
-1979,provoked,swimming,2.0,1,uninjured,QLD,-26.66666667,153.1166667,bronze whaler shark,2.4,"['other:', 'uninjured']",male,,,Carcharhinus brachyurus
+1979,provoked,swimming,2.0,1,uninjured,QLD,-26.66666667,153.1166667,bronze whaler shark,2.4,['uninjured'],male,,,Carcharhinus brachyurus
 1979,unprovoked,swimming,16.0,9,injured,NSW,-28.63333333,153.6166667,whaler shark,2.0,['thigh'],male,18.0,,Carcharhinidae
 1980,provoked,diving,5.0,1,injured,NSW,-32.43333333,152.5166667,wobbegong,1.8,['arm'],male,,,Orectolobidae
 1980,provoked,spearfishing,2.0,3,injured,VIC,-38.41666667,145.05,bronze whaler shark,3.0,"['arm,', 'hand']",male,42.0,1900-01-01 11:30:00,Carcharhinus brachyurus
 1980,unprovoked,boarding,28.0,3,injured,QLD,-27.41666667,153.5333333,whaler shark,2.2,['calf'],male,21.0,,Carcharhinidae
-1980,unprovoked,boarding,1.0,9,uninjured,SA,-32.08333333,132.9666667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+1980,unprovoked,boarding,1.0,9,uninjured,SA,-32.08333333,132.9666667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 1980,provoked,diving,22.0,10,injured,QLD,-16.91666667,145.7666667,grey reef shark,2.0,['head'],female,,,Carcharhinus amblyrhynchos
 1980,unprovoked,swimming,18.0,11,injured,WA,-31,115.3,white shark,3.375,['torso'],male,,,Carcharodon carcharias
-1981,unprovoked,boarding,1.0,1,uninjured,NSW,-28.63333333,153.6166667,tiger shark,2.5,"['other:', 'uninjured']",male,27.0,1900-01-01 07:00:00,Galeocerdo cuvier
+1981,unprovoked,boarding,1.0,1,uninjured,NSW,-28.63333333,153.6166667,tiger shark,2.5,['uninjured'],male,27.0,1900-01-01 07:00:00,Galeocerdo cuvier
 1981,unprovoked,swimming,7.0,2,injured,WA,-32,115.5166667,wobbegong,1.5,['leg'],male,37.0,,Orectolobidae
 1981,unprovoked,other: standing in water,16.0,2,injured,WA,-32.01666667,115.7333333,wobbegong,1.0,['foot'],male,,,Orectolobidae
 1981,unprovoked,swimming,13.0,12,injured,QLD,-16.75,145.9666667,tiger shark,3.166265060240964,['torso'],female,,,Galeocerdo cuvier
-1982,provoked,diving,1.0,2,uninjured,TAS,-43.51666667,146.9,white shark,5.5,"['other:', 'uninjured']",male,,,Carcharodon carcharias
-1982,provoked,spearfishing,28.0,2,fatal,TAS,-43.56666667,146.8833333,white shark,6.0,"['other:', 'body', 'not', 'recovered']",male,32.0,,Carcharodon carcharias
+1982,provoked,diving,1.0,2,uninjured,TAS,-43.51666667,146.9,white shark,5.5,['uninjured'],male,,,Carcharodon carcharias
+1982,provoked,spearfishing,28.0,2,fatal,TAS,-43.56666667,146.8833333,white shark,6.0,['body not found'],male,32.0,,Carcharodon carcharias
 1982,unprovoked,boarding,7.0,3,fatal,NSW,-28.63333333,153.6166667,white shark,3.375,['leg'],male,20.0,,Carcharodon carcharias
 1983,unprovoked,swimming,25.0,7,uninjured,QLD,-18.9,147.7333333,tiger shark,4.0,['Unknown'],male,33.0,,Galeocerdo cuvier
-1983,unprovoked,swimming,25.0,7,fatal,QLD,-18.68333333,147.1,tiger shark,4.0,"['other:', 'body', 'not', 'recovered']",female,21.0,1900-01-01 04:00:00,Galeocerdo cuvier
-1983,unprovoked,swimming,25.0,7,fatal,QLD,-18.68333333,147.1,tiger shark,4.0,"['other:', 'body', 'not', 'recovered']",male,24.0,,Galeocerdo cuvier
+1983,unprovoked,swimming,25.0,7,fatal,QLD,-18.68333333,147.1,tiger shark,4.0,['body not found'],female,21.0,1900-01-01 04:00:00,Galeocerdo cuvier
+1983,unprovoked,swimming,25.0,7,fatal,QLD,-18.68333333,147.1,tiger shark,4.0,['body not found'],male,24.0,,Galeocerdo cuvier
 1983,unprovoked,swimming,12.0,11,injured,QLD,-28.16666667,153.5333333,tiger shark,3.166265060240964,['thigh'],male,10.0,,Galeocerdo cuvier
 1983,provoked,diving,1.0,12,injured,SA,-35.31666667,136.1,white shark,4.0,"['arm,', 'hand']",male,,,Carcharodon carcharias
 1984,unprovoked,swimming,11.0,2,injured,QLD,-21.13333333,149.1833333,tiger shark,3.166265060240964,"['arm,', 'hand']",male,27.0,,Galeocerdo cuvier
@@ -606,7 +606,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1984,unprovoked,other: standing in water,16.0,3,injured,WA,-31.83333333,115.75,wobbegong,0.3,['leg'],male,,,Orectolobidae
 1984,provoked,diving,15.0,6,uninjured,TAS,-43.23333333,147.7833333,white shark,6.0,['Unknown'],male,,,Carcharodon carcharias
 1984,unprovoked,other: standing in water,1.0,9,injured,NT,-14.11666667,129.5333333,tiger shark,3.166265060240964,"['arm,', 'head,', 'torso']",female,27.0,,Galeocerdo cuvier
-1984,unprovoked,boarding,1.0,10,uninjured,NSW,-28.68333333,153.6166667,white shark,2.5,"['other:', 'uninjured']",male,25.0,1900-01-01 07:00:00,Carcharodon carcharias
+1984,unprovoked,boarding,1.0,10,uninjured,NSW,-28.68333333,153.6166667,white shark,2.5,['uninjured'],male,25.0,1900-01-01 07:00:00,Carcharodon carcharias
 1984,provoked,diving,14.0,10,uninjured,TAS,-43.13333333,148,white shark,6.0,['Unknown'],male,,,Carcharodon carcharias
 1984,unprovoked,swimming,30.0,11,fatal,QLD,-21.05,149.1833333,tiger shark,4.0,"['arm,', 'head,', 'torso']",male,15.0,1900-01-01 12:00:00,Galeocerdo cuvier
 1985,unprovoked,boarding,1.0,2,uninjured,VIC,-38.33333333,144.3,white shark,2.0,['Unknown'],male,36.0,1900-01-01 06:00:00,Carcharodon carcharias
@@ -620,63 +620,63 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1986,unprovoked,diving,3.0,8,injured,NSW,-33.81666667,151.3,wobbegong,1.8,['thigh'],female,,1900-01-01 11:30:00,Orectolobidae
 1986,unprovoked,boarding,1.0,10,uninjured,WA,-12.15,96.81666667,tiger shark,3.0,['Unknown'],male,39.0,1900-01-01 11:00:00,Galeocerdo cuvier
 1987,unprovoked,swimming,6.0,1,injured,QLD,-14.66666667,145.45,tiger shark,2.0,['calf'],male,38.0,1900-01-01 07:30:00,Galeocerdo cuvier
-1987,provoked,diving,28.0,1,injured,QLD,-13.91666667,146.6166667,whitetip reef shark,1.7,"['torso,', 'pelvic', 'region']",female,,,Triaenodon obesus
+1987,provoked,diving,28.0,1,injured,QLD,-13.91666667,146.6166667,whitetip reef shark,1.7,"['torso,', 'pelvic region']",female,,,Triaenodon obesus
 1987,provoked,diving,2.0,2,injured,NSW,-32.16666667,152.5166667,wobbegong,1.0,['thigh'],female,17.0,1900-01-01 09:45:00,Orectolobidae
 1987,unprovoked,boarding,4.0,2,fatal,VIC,-38.46666667,144.8833333,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 1987,unprovoked,boarding,30.0,3,injured,WA,-33.88333333,121.8166667,white shark,3.375,['leg'],male,19.0,1900-01-01 17:30:00,Carcharodon carcharias
 1987,unprovoked,swimming,1.0,4,injured,WA,-32.16666667,115.65,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
 1987,unprovoked,diving,18.0,9,fatal,SA,-34.91666667,138.5833333,white shark,4.5,['Unknown'],male,47.0,,Carcharodon carcharias
 1987,unprovoked,swimming,1.0,10,injured,NT,-14.16666667,132.1833333,bull shark,2.4013698630136986,['arm'],female,,,Carcharhinus leucas
-1987,provoked,diving,10.0,12,uninjured,QLD,-14.66666667,145.45,hammerhead shark,4.0,"['other:', 'uninjured']",male,,1900-01-01 12:00:00,Sphyrnidae
+1987,provoked,diving,10.0,12,uninjured,QLD,-14.66666667,145.45,hammerhead shark,4.0,['uninjured'],male,,1900-01-01 12:00:00,Sphyrnidae
 1988,unprovoked,swimming,4.0,7,injured,NSW,-33.26666667,151.5666667,white shark,3.375,['calf'],female,10.0,,Carcharodon carcharias
 1988,unprovoked,boarding,6.0,10,injured,SA,-34.91666667,138.5833333,white shark,3.375,"['leg,', 'hand']",male,15.0,1900-01-01 12:15:00,Carcharodon carcharias
-1988,provoked,spearfishing,1.0,10,uninjured,QLD,-23.9,152.3833333,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+1988,provoked,spearfishing,1.0,10,uninjured,QLD,-23.9,152.3833333,tiger shark,3.166265060240964,['uninjured'],male,,,Galeocerdo cuvier
 1988,unprovoked,boarding,22.0,10,injured,VIC,-38.5,145.2666667,white shark,1.2,['calf'],male,35.0,1900-01-01 15:00:00,Carcharodon carcharias
 1988,unprovoked,swimming,8.0,11,fatal,QLD,-23.11666667,150.7333333,tiger shark,4.5,['torso'],male,17.0,,Galeocerdo cuvier
 1988,unprovoked,swimming,7.0,11,fatal,QLD,-23.11666667,150.7333333,tiger shark,4.5,['Unknown'],male,62.0,,Galeocerdo cuvier
 1989,provoked,diving,1.0,1,injured,NSW,-33.86666667,151.2,wobbegong,2.0,['arm'],male,19.0,,Orectolobidae
-1989,unprovoked,boarding,1.0,1,uninjured,VIC,-38.5,145.2666667,white shark,4.0,"['other:', 'uninjured']",male,30.0,1900-01-01 17:00:00,Carcharodon carcharias
+1989,unprovoked,boarding,1.0,1,uninjured,VIC,-38.5,145.2666667,white shark,4.0,['uninjured'],male,30.0,1900-01-01 17:00:00,Carcharodon carcharias
 1989,unprovoked,snorkelling,1.0,1,injured,WA,-32,115.5166667,wobbegong,1.2,['leg'],male,,1900-01-01 14:00:00,Orectolobidae
 1989,unprovoked,boarding,3.0,1,injured,NSW,-28.88333333,153.55,white shark,3.0,['torso'],male,17.0,1900-01-01 16:00:00,Carcharodon carcharias
 1989,provoked,snorkelling,4.0,3,uninjured,WA,-17.96666667,122.2333333,tiger shark,3.0,['Unknown'],male,,1900-01-01 11:00:00,Galeocerdo cuvier
 1989,provoked,spearfishing,15.0,3,injured,QLD,-10.11666667,142.1333333,whaler shark,2.0,['thigh'],male,32.0,1900-01-01 16:30:00,Carcharhinidae
 1989,unprovoked,boarding,9.0,3,fatal,SA,-35.63333333,138.4833333,white shark,2.0,['thigh'],male,27.0,1900-01-01 20:15:00,Carcharodon carcharias
-1989,unprovoked,boarding,13.0,8,uninjured,NSW,-28.78333333,153.5833333,white shark,3.0,"['other:', 'uninjured']",male,17.0,1900-01-01 06:30:00,Carcharodon carcharias
+1989,unprovoked,boarding,13.0,8,uninjured,NSW,-28.78333333,153.5833333,white shark,3.0,['uninjured'],male,17.0,1900-01-01 06:30:00,Carcharodon carcharias
 1989,unprovoked,boarding,22.0,10,uninjured,TAS,-41.43333333,148.2666667,white shark,2.1,['Unknown'],male,17.0,1900-01-01 14:50:00,Carcharodon carcharias
 1989,unprovoked,swimming,22.0,10,injured,NT,-14.16666667,132.1833333,bull shark,2.0,['thigh'],female,31.0,,Carcharhinus leucas
 1989,unprovoked,boarding,22.0,11,injured,VIC,-38.53333333,145.4666667,white shark,4.5,['thigh'],male,32.0,1900-01-01 19:30:00,Carcharodon carcharias
 1989,unprovoked,swimming,2.0,11,injured,QLD,-28.03333333,153.4,bull shark,2.0,['calf'],male,10.0,1900-01-01 18:00:00,Carcharhinus leucas
 1989,unprovoked,diving,1.0,12,injured,WA,-16.38333333,122.9166667,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
 1989,provoked,swimming,3.0,12,injured,NT,-12.28333333,136.8166667,tiger shark,2.0,['leg'],male,17.0,,Galeocerdo cuvier
-1990,unprovoked,boarding,10.0,4,uninjured,QLD,-28.15,153.5333333,tiger shark,4.0,"['other:', 'uninjured']",male,31.0,1900-01-01 06:00:00,Galeocerdo cuvier
-1990,unprovoked,boarding,6.0,4,uninjured,NSW,-28.18333333,153.55,white shark,3.0,"['other:', 'uninjured']",male,29.0,,Carcharodon carcharias
+1990,unprovoked,boarding,10.0,4,uninjured,QLD,-28.15,153.5333333,tiger shark,4.0,['uninjured'],male,31.0,1900-01-01 06:00:00,Galeocerdo cuvier
+1990,unprovoked,boarding,6.0,4,uninjured,NSW,-28.18333333,153.55,white shark,3.0,['uninjured'],male,29.0,,Carcharodon carcharias
 1990,provoked,snorkelling,8.0,4,fatal,QLD,-19.16666667,148.3833333,tiger shark,3.166265060240964,['torso'],male,36.0,1900-01-01 14:00:00,Galeocerdo cuvier
 1990,provoked,snorkelling,10.0,5,injured,QLD,-16.21666667,145.8833333,hammerhead shark,3.0,['calf'],female,33.0,1900-01-01 12:00:00,Sphyrnidae
 1990,provoked,snorkelling,10.0,5,injured,QLD,-16.21666667,145.8833333,hammerhead shark,3.0,"['arm,', 'hand']",male,44.0,1900-01-01 12:00:00,Sphyrnidae
 1990,unprovoked,other: standing in water,24.0,9,injured,QLD,-25.9,153.0833333,wobbegong,0.6,['foot'],male,13.0,1900-01-01 08:30:00,Orectolobidae
-1990,unprovoked,swimming,27.0,10,injured,QLD,-28.03333333,153.4,bull shark,1.8,"['leg,', 'pelvic', 'region']",male,26.0,1900-01-01 20:00:00,Carcharhinus leucas
+1990,unprovoked,swimming,27.0,10,injured,QLD,-28.03333333,153.4,bull shark,1.8,"['leg,', 'pelvic region']",male,26.0,1900-01-01 20:00:00,Carcharhinus leucas
 1990,unprovoked,boarding,25.0,10,injured,SA,-35.51666667,138.7666667,white shark,1.1,['foot'],male,20.0,1900-01-01 10:30:00,Carcharodon carcharias
-1990,unprovoked,swimming,28.0,11,injured,QLD,-28,153.4166667,bull shark,1.5,"['arm,', 'torso,', 'pelvic', 'region']",male,26.0,1900-01-01 16:40:00,Carcharhinus leucas
+1990,unprovoked,swimming,28.0,11,injured,QLD,-28,153.4166667,bull shark,1.5,"['arm,', 'torso,', 'pelvic region']",male,26.0,1900-01-01 16:40:00,Carcharhinus leucas
 1991,unprovoked,boarding,11.0,1,injured,QLD,-23.83333333,151.25,unknown species,2.0,['leg'],male,22.0,1900-01-01 17:45:00,Unknown species
-1991,provoked,spearfishing,4.0,1,uninjured,VIC,-38.26666667,144.65,bronze whaler shark,3.0,"['other:', 'uninjured']",male,14.0,,Carcharhinus brachyurus
-1991,unprovoked,snorkelling,5.0,1,uninjured,NSW,-33.51666667,151.3666667,dusky shark,1.2,"['other:', 'uninjured']",male,45.0,1900-01-01 15:00:00,Carcharhinus obscurus
-1991,unprovoked,swimming,19.0,1,injured,QLD,-28.03333333,153.4,bull shark,1.5,"['leg,', 'pelvic', 'region']",male,29.0,1900-01-01 08:30:00,Carcharhinus leucas
+1991,provoked,spearfishing,4.0,1,uninjured,VIC,-38.26666667,144.65,bronze whaler shark,3.0,['uninjured'],male,14.0,,Carcharhinus brachyurus
+1991,unprovoked,snorkelling,5.0,1,uninjured,NSW,-33.51666667,151.3666667,dusky shark,1.2,['uninjured'],male,45.0,1900-01-01 15:00:00,Carcharhinus obscurus
+1991,unprovoked,swimming,19.0,1,injured,QLD,-28.03333333,153.4,bull shark,1.5,"['leg,', 'pelvic region']",male,29.0,1900-01-01 08:30:00,Carcharhinus leucas
 1991,provoked,diving,3.0,3,injured,NSW,-34.56666667,150.8666667,grey nurse shark,2.0,"['arm,', 'leg']",male,18.0,1900-01-01 16:00:00,Carcharius taurus
 1991,unprovoked,diving,8.0,9,fatal,SA,-35.28333333,138.4333333,white shark,4.0,['torso'],male,19.0,1900-01-01 14:35:00,Carcharodon carcharias
 1991,unprovoked,boarding,15.0,11,injured,WA,-32.51666667,115.7,white shark,1.0,['leg'],male,14.0,,Carcharodon carcharias
 1992,unprovoked,boarding,29.0,1,injured,QLD,-28.16666667,153.5333333,white shark,2.8,['leg'],male,19.0,1900-01-01 20:00:00,Carcharodon carcharias
-1992,unprovoked,boarding,10.0,2,uninjured,QLD,-24.86666667,152.35,tiger shark,3.0,"['other:', 'uninjured']",male,22.0,,Galeocerdo cuvier
-1992,provoked,unknown,7.0,3,uninjured,QLD,-27.98333333,153.3333333,bull shark,2.5,"['other:', 'uninjured']",male,24.0,,Carcharhinus leucas
-1992,unprovoked,boarding,10.0,3,injured,VIC,-38.28333333,144.6,white shark,2.7,"['leg,', 'pelvic', 'region']",male,17.0,1900-01-01 11:30:00,Carcharodon carcharias
+1992,unprovoked,boarding,10.0,2,uninjured,QLD,-24.86666667,152.35,tiger shark,3.0,['uninjured'],male,22.0,,Galeocerdo cuvier
+1992,provoked,unknown,7.0,3,uninjured,QLD,-27.98333333,153.3333333,bull shark,2.5,['uninjured'],male,24.0,,Carcharhinus leucas
+1992,unprovoked,boarding,10.0,3,injured,VIC,-38.28333333,144.6,white shark,2.7,"['leg,', 'pelvic region']",male,17.0,1900-01-01 11:30:00,Carcharodon carcharias
 1992,unprovoked,boarding,25.0,8,injured,SA,-34.25,135.1666667,white shark,3.5,['torso'],male,16.0,1900-01-01 17:50:00,Carcharodon carcharias
 1992,unprovoked,boarding,1.0,10,fatal,QLD,-27.08333333,153.4,white shark,4.2,['Unknown'],male,28.0,1900-01-01 14:30:00,Carcharodon carcharias
 1993,provoked,spearfishing,5.0,1,injured,QLD,-20.05,148.8833333,whitetip reef shark,1.5,['arm'],male,21.0,1900-01-01 09:00:00,Triaenodon obesus
-1993,provoked,spearfishing,1.0,4,uninjured,TAS,-40.93333333,146.9833333,white shark,3.0,"['other:', 'uninjured']",male,32.0,,Carcharodon carcharias
+1993,provoked,spearfishing,1.0,4,uninjured,TAS,-40.93333333,146.9833333,white shark,3.0,['uninjured'],male,32.0,,Carcharodon carcharias
 1993,provoked,spearfishing,27.0,4,injured,SA,-34.21666667,138.0166667,white shark,3.375,['calf'],male,60.0,1900-01-01 19:15:00,Carcharodon carcharias
-1993,unprovoked,diving,5.0,6,fatal,TAS,-40.93333333,146.9833333,white shark,4.0,"['other:', 'body', 'not', 'recovered']",female,35.0,1900-01-01 11:00:00,Carcharodon carcharias
+1993,unprovoked,diving,5.0,6,fatal,TAS,-40.93333333,146.9833333,white shark,4.0,['body not found'],female,35.0,1900-01-01 11:00:00,Carcharodon carcharias
 1993,unprovoked,diving,9.0,6,fatal,NSW,-28.63333333,153.6166667,white shark,6.0,['torso'],male,31.0,1900-01-01 09:30:00,Carcharodon carcharias
 1993,provoked,diving,21.0,11,fatal,WA,-17.96666667,122.2333333,tiger shark,4.0,['Unknown'],male,28.0,1900-01-01 16:00:00,Galeocerdo cuvier
-1993,unprovoked,boarding,10.0,12,uninjured,QLD,-23.36666667,150.5,whaler shark,2.0,"['other:', 'uninjured']",male,13.0,,Carcharhinidae
+1993,unprovoked,boarding,10.0,12,uninjured,QLD,-23.36666667,150.5,whaler shark,2.0,['uninjured'],male,13.0,,Carcharhinidae
 1994,unprovoked,swimming,9.0,1,injured,QLD,-27.53333333,153.8333333,bull shark,1.5,['thigh'],male,22.0,1900-01-01 13:30:00,Carcharhinus leucas
 1994,unprovoked,swimming,9.0,1,injured,QLD,-27.98333333,153.4166667,bull shark,2.4013698630136986,['foot'],male,,,Carcharhinus leucas
 1994,provoked,fishing,2.0,2,injured,SA,-37.31666667,139.8333333,wobbegong,1.6,['foot'],male,39.0,1900-01-01 20:00:00,Orectolobidae
@@ -685,9 +685,9 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1995,provoked,diving,1.0,2,uninjured,VIC,-38.51666667,145.0833333,sevengill shark,2.6,['Unknown'],male,34.0,1900-01-01 07:30:00,Notorynchus cepedianus
 1995,unprovoked,boarding,27.0,2,injured,SA,-35.53333333,138.6666667,wobbegong,1.3408602150537634,['foot'],male,14.0,,Orectolobidae
 1995,unprovoked,boarding,11.0,3,injured,SA,-32.08333333,132.9666667,white shark,2.0,['arm'],male,35.0,1900-01-01 07:30:00,Carcharodon carcharias
-1995,unprovoked,boarding,21.0,3,uninjured,NSW,-33.85,151.2333333,bull shark,2.5,"['other:', 'uninjured']",female,29.0,1900-01-01 07:00:00,Carcharhinus leucas
+1995,unprovoked,boarding,21.0,3,uninjured,NSW,-33.85,151.2333333,bull shark,2.5,['uninjured'],female,29.0,1900-01-01 07:00:00,Carcharhinus leucas
 1995,unprovoked,diving,9.0,4,injured,NSW,-37.05,149.9,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,,Orectolobidae
-1995,unprovoked,diving,18.0,5,uninjured,WA,-24.83333333,113.1333333,tiger shark,3.0,"['other:', 'uninjured']",male,49.0,1900-01-01 10:00:00,Galeocerdo cuvier
+1995,unprovoked,diving,18.0,5,uninjured,WA,-24.83333333,113.1333333,tiger shark,3.0,['uninjured'],male,49.0,1900-01-01 10:00:00,Galeocerdo cuvier
 1995,unprovoked,diving,11.0,9,fatal,WA,-33.88333333,120.6833333,white shark,3.0,['torso'],male,29.0,1900-01-01 15:00:00,Carcharodon carcharias
 1995,unprovoked,other: standing in water,11.0,10,injured,QLD,-25,152.8333333,tiger shark,3.166265060240964,['leg'],female,15.0,1900-01-01 15:00:00,Galeocerdo cuvier
 1995,provoked,unknown,10.0,11,injured,NSW,-29.53333333,153.3333333,bull shark,1.0,['thigh'],male,35.0,,Carcharhinus leucas
@@ -700,25 +700,25 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1996,unprovoked,swimming,5.0,3,injured,QLD,-23.43333333,151.9,whaler shark,2.2,"['arm,', 'leg']",female,47.0,1900-01-01 07:00:00,Carcharhinidae
 1996,unprovoked,swimming,26.0,4,injured,NSW,-33.66666667,151.3,wobbegong,1.3408602150537634,['leg'],female,16.0,,Orectolobidae
 1996,unprovoked,swimming,26.0,4,injured,NSW,-33.66666667,151.3,wobbegong,1.3408602150537634,['thigh'],male,11.0,,Orectolobidae
-1996,unprovoked,boarding,6.0,6,uninjured,VIC,-38.41666667,145.0666667,white shark,3.0,"['other:', 'uninjured']",male,47.0,1900-01-01 17:30:00,Carcharodon carcharias
+1996,unprovoked,boarding,6.0,6,uninjured,VIC,-38.41666667,145.0666667,white shark,3.0,['uninjured'],male,47.0,1900-01-01 17:30:00,Carcharodon carcharias
 1996,unprovoked,other: standing in water,19.0,9,injured,WA,-32,115.5166667,wobbegong,1.3408602150537634,['thigh'],male,,,Orectolobidae
 1996,unprovoked,boarding,22.0,12,injured,VIC,-38.41666667,144.1833333,wobbegong,1.3408602150537634,['leg'],female,12.0,,Orectolobidae
 1996,unprovoked,boarding,29.0,12,injured,QLD,-26.5,153,wobbegong,1.3408602150537634,['foot'],female,18.0,1900-01-01 18:00:00,Orectolobidae
 1997,unprovoked,snorkelling,20.0,1,injured,QLD,-20.25,148.9666667,tiger shark,2.0,['leg'],male,27.0,1900-01-01 11:00:00,Galeocerdo cuvier
 1997,unprovoked,boarding,20.0,1,injured,QLD,-28.15,153.5333333,bull shark,1.0,['leg'],male,8.0,1900-01-01 13:00:00,Carcharhinus leucas
-1997,unprovoked,unmotorised boating,1.0,1,uninjured,VIC,-38.51666667,145.0833333,white shark,3.0,"['other:', 'uninjured']",male,32.0,,Carcharodon carcharias
+1997,unprovoked,unmotorised boating,1.0,1,uninjured,VIC,-38.51666667,145.0833333,white shark,3.0,['uninjured'],male,32.0,,Carcharodon carcharias
 1997,unprovoked,diving,28.0,2,injured,QLD,-20.26666667,148.9,grey reef shark,1.95,"['arm,', 'shoulder']",male,30.0,1900-01-01 10:45:00,Carcharhinus amblyrhynchos
 1997,unprovoked,swimming,28.0,2,injured,QLD,-27.98333333,153.3333333,bull shark,2.4013698630136986,['leg'],female,20.0,1900-01-01 13:30:00,Carcharhinus leucas
-1997,unprovoked,unmotorised boating,3.0,2,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,"['other:', 'uninjured']",female,49.0,1900-01-01 06:15:00,Carcharhinus leucas
+1997,unprovoked,unmotorised boating,3.0,2,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,['uninjured'],female,49.0,1900-01-01 06:15:00,Carcharhinus leucas
 1997,unprovoked,boarding,26.0,7,injured,QLD,-26.65,153.1,tiger shark,1.5,['calf'],male,18.0,1900-01-01 14:00:00,Galeocerdo cuvier
 1997,unprovoked,boarding,28.0,10,injured,WA,-31.98333333,115.75,white shark,5.0,['head'],male,,1900-01-01 06:30:00,Carcharodon carcharias
-1997,unprovoked,boarding,10.0,11,uninjured,VIC,-38.28333333,144.45,white shark,2.0,"['other:', 'uninjured']",male,21.0,1900-01-01 15:15:00,Carcharodon carcharias
+1997,unprovoked,boarding,10.0,11,uninjured,VIC,-38.28333333,144.45,white shark,2.0,['uninjured'],male,21.0,1900-01-01 15:15:00,Carcharodon carcharias
 1997,unprovoked,diving,9.0,11,injured,WA,-35.13333333,117.95,white shark,5.0,"['arm,', 'shoulder']",male,42.0,,Carcharodon carcharias
 1997,unprovoked,other: standing in water,29.0,12,injured,WA,-33.98333333,114.9833333,wobbegong,1.3408602150537634,['leg'],male,4.0,1900-01-01 09:00:00,Orectolobidae
 1997,unprovoked,swimming,1.0,12,injured,NSW,-29.1,153.4333333,wobbegong,1.3408602150537634,['leg'],male,18.0,1900-01-01 15:30:00,Orectolobidae
 1997,unprovoked,swimming,14.0,12,injured,QLD,-20.11666667,148.9166667,bull shark,2.4013698630136986,['leg'],male,8.0,,Carcharhinus leucas
 1998,provoked,diving,28.0,1,injured,WA,-34.21666667,115.0166667,wobbegong,2.4,['calf'],male,34.0,1900-01-01 10:00:00,Orectolobidae
-1998,unprovoked,snorkelling,26.0,1,uninjured,QLD,-18.66666667,146.5,tiger shark,3.3,"['other:', 'uninjured']",male,45.0,1900-01-01 06:00:00,Galeocerdo cuvier
+1998,unprovoked,snorkelling,26.0,1,uninjured,QLD,-18.66666667,146.5,tiger shark,3.3,['uninjured'],male,45.0,1900-01-01 06:00:00,Galeocerdo cuvier
 1998,unprovoked,boarding,17.0,1,injured,SA,-35.5,138.7,wobbegong,1.3408602150537634,['foot'],male,31.0,,Orectolobidae
 1998,unprovoked,snorkelling,28.0,6,fatal,SA,-35.31666667,136.1,white shark,4.0,"['torso,', 'leg']",male,26.0,1900-01-01 14:00:00,Carcharodon carcharias
 1998,unprovoked,diving,1.0,9,injured,NSW,-35.03333333,150.7166667,wobbegong,1.3408602150537634,['thigh'],male,,,Orectolobidae
@@ -728,29 +728,29 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 1999,unprovoked,boarding,23.0,2,injured,NSW,-30.56666667,152.9833333,white shark,3.375,['arm'],male,35.0,1900-01-01 19:30:00,Carcharodon carcharias
 1999,unprovoked,boarding,29.0,5,fatal,SA,-34.88333333,137.45,white shark,3.375,['torso'],male,22.0,1900-01-01 16:00:00,Carcharodon carcharias
 1999,provoked,diving,25.0,10,injured,QLD,-27.38333333,153.4333333,wobbegong,1.3408602150537634,['thigh'],male,,,Orectolobidae
-1999,unprovoked,diving,27.0,12,uninjured,NSW,-32.21666667,152.6,bronze whaler shark,2.9,"['other:', 'uninjured']",male,34.0,1900-01-01 09:30:00,Carcharhinus brachyurus
-1999,provoked,diving,23.0,12,uninjured,WA,-31.88333333,115.75,white shark,6.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
-2000,unprovoked,boarding,7.0,2,uninjured,NSW,-34.03333333,151.15,white shark,3.375,"['other:', 'uninjured']",male,57.0,1900-01-01 12:10:00,Carcharodon carcharias
+1999,unprovoked,diving,27.0,12,uninjured,NSW,-32.21666667,152.6,bronze whaler shark,2.9,['uninjured'],male,34.0,1900-01-01 09:30:00,Carcharhinus brachyurus
+1999,provoked,diving,23.0,12,uninjured,WA,-31.88333333,115.75,white shark,6.0,['uninjured'],male,,,Carcharodon carcharias
+2000,unprovoked,boarding,7.0,2,uninjured,NSW,-34.03333333,151.15,white shark,3.375,['uninjured'],male,57.0,1900-01-01 12:10:00,Carcharodon carcharias
 2000,unprovoked,boarding,4.0,2,injured,SA,-32.08333333,132.9833333,white shark,3.0,"['arm,', 'torso']",male,26.0,1900-01-01 11:00:00,Carcharodon carcharias
 2000,unprovoked,swimming,3.0,2,injured,WA,-31.81666667,115.7333333,wobbegong,1.2,['foot'],male,51.0,1900-01-01 05:45:00,Orectolobidae
 2000,unprovoked,swimming,30.0,3,injured,QLD,-27.96666667,153.4166667,white shark,2.6,['calf'],male,26.0,1900-01-01 14:10:00,Carcharodon carcharias
 2000,unprovoked,boarding,8.0,3,injured,WA,-31.95,115.0666667,white shark,1.7,['thigh'],male,20.0,1900-01-01 18:30:00,Carcharodon carcharias
-2000,unprovoked,boarding,15.0,3,uninjured,NSW,-33.48333333,151.4166667,white shark,3.0,"['other:', 'uninjured']",male,38.0,1900-01-01 19:30:00,Carcharodon carcharias
+2000,unprovoked,boarding,15.0,3,uninjured,NSW,-33.48333333,151.4166667,white shark,3.0,['uninjured'],male,38.0,1900-01-01 19:30:00,Carcharodon carcharias
 2000,unprovoked,swimming,2.0,3,injured,NSW,-33.86666667,151.2,bull shark,0.8,['foot'],male,61.0,,Carcharhinus leucas
-2000,unprovoked,unmotorised boating,10.0,3,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,"['other:', 'uninjured']",male,,,Carcharhinus leucas
-2000,unprovoked,boarding,3.0,4,uninjured,NSW,-33.93333333,151.25,whaler shark,2.8,"['other:', 'uninjured']",male,,1900-01-01 15:00:00,Carcharhinidae
+2000,unprovoked,unmotorised boating,10.0,3,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,['uninjured'],male,,,Carcharhinus leucas
+2000,unprovoked,boarding,3.0,4,uninjured,NSW,-33.93333333,151.25,whaler shark,2.8,['uninjured'],male,,1900-01-01 15:00:00,Carcharhinidae
 2000,provoked,other: standing in water,13.0,4,injured,WA,-31.98333333,115.75,wobbegong,1.3408602150537634,['foot'],female,11.0,,Orectolobidae
 2000,unprovoked,boarding,25.0,9,fatal,SA,-33.61666667,134.8166667,white shark,3.375,['torso'],male,17.0,1900-01-01 12:30:00,Carcharodon carcharias
 2000,unprovoked,boarding,24.0,9,fatal,SA,-32.08333333,132.9666667,white shark,4.5,['torso'],male,25.0,1900-01-01 07:30:00,Carcharodon carcharias
-2000,provoked,diving,21.0,11,uninjured,QLD,-18.66666667,146.5,tiger shark,4.0,"['other:', 'uninjured']",male,28.0,1900-01-01 09:10:00,Galeocerdo cuvier
+2000,provoked,diving,21.0,11,uninjured,QLD,-18.66666667,146.5,tiger shark,4.0,['uninjured'],male,28.0,1900-01-01 09:10:00,Galeocerdo cuvier
 2000,unprovoked,swimming,6.0,11,injured,WA,-31.98333333,115.75,white shark,4.0,['foot'],male,52.0,1900-01-01 06:30:00,Carcharodon carcharias
-2000,unprovoked,swimming,6.0,11,uninjured,NSW,-34.63333333,150.3833333,white shark,2.9,"['other:', 'uninjured']",male,40.0,1900-01-01 15:00:00,Carcharodon carcharias
-2000,provoked,diving,3.0,11,uninjured,SA,-33.18333333,134.65,white shark,4.0,"['other:', 'uninjured']",male,27.0,1900-01-01 12:00:00,Carcharodon carcharias
+2000,unprovoked,swimming,6.0,11,uninjured,NSW,-34.63333333,150.3833333,white shark,2.9,['uninjured'],male,40.0,1900-01-01 15:00:00,Carcharodon carcharias
+2000,provoked,diving,3.0,11,uninjured,SA,-33.18333333,134.65,white shark,4.0,['uninjured'],male,27.0,1900-01-01 12:00:00,Carcharodon carcharias
 2000,unprovoked,swimming,6.0,11,fatal,WA,-31.98333333,115.75,white shark,4.0,"['torso,', 'leg']",male,49.0,1900-01-01 06:25:00,Carcharodon carcharias
 2000,provoked,spearfishing,3.0,12,injured,QLD,-23.43333333,151.9,whaler shark,2.5,['arm'],male,38.0,1900-01-01 09:00:00,Carcharhinidae
 2000,unprovoked,diving,24.0,12,injured,QLD,-19.25,146.8166667,wobbegong,1.3408602150537634,"['arm,', 'hand']",male,,1900-01-01 16:30:00,Orectolobidae
-2001,unprovoked,boarding,28.0,1,uninjured,QLD,-26.38333333,153.0833333,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,,1900-01-01 17:00:00,Galeocerdo cuvier
-2001,unprovoked,unmotorised boating,21.0,1,uninjured,NSW,-30.88333333,153.05,white shark,5.0,"['other:', 'uninjured']",male,35.0,,Carcharodon carcharias
+2001,unprovoked,boarding,28.0,1,uninjured,QLD,-26.38333333,153.0833333,tiger shark,3.166265060240964,['uninjured'],male,,1900-01-01 17:00:00,Galeocerdo cuvier
+2001,unprovoked,unmotorised boating,21.0,1,uninjured,NSW,-30.88333333,153.05,white shark,5.0,['uninjured'],male,35.0,,Carcharodon carcharias
 2001,unprovoked,boarding,4.0,2,injured,NSW,-29.6,153.3333333,tiger shark,2.5,['calf'],male,40.0,1900-01-01 16:15:00,Galeocerdo cuvier
 2001,unprovoked,snorkelling,28.0,3,injured,WA,-33.96666667,114.9833333,wobbegong,1.5,['calf'],male,19.0,1900-01-01 14:00:00,Orectolobidae
 2001,unprovoked,boarding,2.0,4,injured,NSW,-30.63333333,153.0166667,wobbegong,1.3408602150537634,['calf'],male,40.0,1900-01-01 10:00:00,Orectolobidae
@@ -760,82 +760,82 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2001,provoked,snorkelling,2.0,10,injured,QLD,-16.91666667,149.25,silvertip shark,1.5,['arm'],female,20.0,1900-01-01 13:30:00,Carcharhinus albimarginatus
 2001,unprovoked,boarding,23.0,11,injured,NSW,-28.81666667,153.5333333,white shark,2.0,['torso'],male,49.0,1900-01-01 09:15:00,Carcharodon carcharias
 2001,unprovoked,swimming,3.0,12,injured,NSW,-29.43333333,153.35,wobbegong,1.3408602150537634,['foot'],male,14.0,1900-01-01 18:15:00,Orectolobidae
-2001,unprovoked,boarding,21.0,12,uninjured,WA,-33.63333333,115,white shark,2.0,"['other:', 'uninjured']",male,36.0,,Carcharodon carcharias
-2001,provoked,spearfishing,6.0,12,uninjured,WA,-34.25,115.0166667,white shark,2.5,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2001,unprovoked,boarding,21.0,12,uninjured,WA,-33.63333333,115,white shark,2.0,['uninjured'],male,36.0,,Carcharodon carcharias
+2001,provoked,spearfishing,6.0,12,uninjured,WA,-34.25,115.0166667,white shark,2.5,['uninjured'],male,,,Carcharodon carcharias
 2002,unprovoked,swimming,30.0,1,injured,WA,-33.3,115.6833333,shortfin mako shark,2.0,['thigh'],male,32.0,1900-01-01 17:00:00,Isurus oxyrinchus
 2002,unprovoked,boarding,29.0,1,injured,NSW,-32.73333333,152.1833333,bull shark,2.9,['arm'],male,20.0,1900-01-01 19:00:00,Carcharhinus leucas
 2002,unprovoked,boarding,16.0,2,injured,QLD,-26.36666667,153.0833333,whaler shark,1.5,['foot'],male,36.0,1900-01-01 09:25:00,Carcharhinidae
-2002,unprovoked,unmotorised boating,7.0,2,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,"['other:', 'uninjured']",male,35.0,1900-01-01 20:30:00,Carcharhinus leucas
-2002,provoked,spearfishing,1.0,4,uninjured,NSW,-30.28333333,153.1333333,bull shark,1.8,"['other:', 'uninjured']",male,,,Carcharhinus leucas
+2002,unprovoked,unmotorised boating,7.0,2,uninjured,NSW,-33.86666667,151.2,bull shark,2.0,['uninjured'],male,35.0,1900-01-01 20:30:00,Carcharhinus leucas
+2002,provoked,spearfishing,1.0,4,uninjured,NSW,-30.28333333,153.1333333,bull shark,1.8,['uninjured'],male,,,Carcharhinus leucas
 2002,provoked,diving,30.0,4,fatal,SA,-32.38422037,133.9255802,white shark,6.0,['leg'],male,23.0,1900-01-01 12:30:00,Carcharodon carcharias
 2002,unprovoked,swimming,12.0,4,injured,NSW,-32.93333333,151.75,wobbegong,1.3408602150537634,['foot'],male,46.0,,Orectolobidae
-2002,unprovoked,boarding,13.0,8,uninjured,WA,-31.96666667,115.75,white shark,3.5,"['other:', 'uninjured']",male,34.0,1900-01-01 08:00:00,Carcharodon carcharias
+2002,unprovoked,boarding,13.0,8,uninjured,WA,-31.96666667,115.75,white shark,3.5,['uninjured'],male,34.0,1900-01-01 08:00:00,Carcharodon carcharias
 2002,provoked,snorkelling,29.0,12,injured,QLD,-16.66666667,145.9333333,hammerhead shark,3.3333333333333335,['arm'],female,18.0,1900-01-01 14:30:00,Sphyrnidae
 2002,unprovoked,diving,22.0,12,injured,NSW,-33.78333333,151.2833333,wobbegong,0.5,['thigh'],male,35.0,1900-01-01 09:30:00,Orectolobidae
 2002,unprovoked,swimming,16.0,12,fatal,QLD,-28.05,153.4166667,bull shark,2.0,"['torso,', 'leg']",male,23.0,1900-01-01 04:00:00,Carcharhinus leucas
 2003,unprovoked,swimming,11.0,1,injured,NSW,-33.91666667,151.25,wobbegong,1.3408602150537634,['leg'],male,24.0,,Orectolobidae
-2003,unprovoked,boarding,1.0,1,uninjured,SA,-33.86666667,135.1666667,white shark,2.5,"['other:', 'uninjured']",female,,1900-01-01 13:00:00,Carcharodon carcharias
+2003,unprovoked,boarding,1.0,1,uninjured,SA,-33.86666667,135.1666667,white shark,2.5,['uninjured'],female,,1900-01-01 13:00:00,Carcharodon carcharias
 2003,unprovoked,other: standing in water,16.0,2,injured,SA,-35.51666667,138.7666667,wobbegong,1.3408602150537634,['foot'],male,37.0,,Orectolobidae
 2003,unprovoked,swimming,8.0,2,fatal,QLD,-28.1,153.1,bull shark,2.2,['leg'],male,64.5,1900-01-01 07:00:00,Carcharhinus leucas
 2003,unprovoked,boarding,23.0,3,injured,NSW,-29.41666667,153.35,whaler shark,2.2,['foot'],male,,,Carcharhinidae
-2003,provoked,diving,5.0,3,injured,WA,-32.53333333,115.7166667,wobbegong,1.2,"['torso,', 'pelvic', 'region']",male,,,Orectolobidae
-2003,unprovoked,unmotorised boating,25.0,7,uninjured,NT,-12.18333333,136.7666667,tiger shark,3.166265060240964,"['other:', 'uninjured']",male,37.0,,Galeocerdo cuvier
+2003,provoked,diving,5.0,3,injured,WA,-32.53333333,115.7166667,wobbegong,1.2,"['torso,', 'pelvic region']",male,,,Orectolobidae
+2003,unprovoked,unmotorised boating,25.0,7,uninjured,NT,-12.18333333,136.7666667,tiger shark,3.166265060240964,['uninjured'],male,37.0,,Galeocerdo cuvier
 2003,unprovoked,boarding,1.0,10,injured,NSW,-30.28333333,153.1333333,wobbegong,1.2,['foot'],male,12.0,1900-01-01 18:15:00,Orectolobidae
 2003,unprovoked,boarding,31.0,10,injured,NSW,-32.43333333,152.5166667,wobbegong,1.5,['foot'],male,22.0,1900-01-01 17:30:00,Orectolobidae
 2003,provoked,swimming,30.0,11,injured,WA,-33.63333333,114.9833333,wobbegong,1.3,['thigh'],male,15.0,1900-01-01 11:30:00,Orectolobidae
 2003,provoked,swimming,30.0,11,injured,WA,-33.96666667,114.9833333,wobbegong,1.3,"['leg,', 'hand']",male,15.0,1900-01-01 11:30:00,Orectolobidae
 2003,provoked,spearfishing,8.0,12,injured,WA,-33.96666667,114.9833333,wobbegong,0.7,['leg'],male,34.0,1900-01-01 07:00:00,Orectolobidae
-2003,unprovoked,swimming,8.0,12,uninjured,VIC,-38.26666667,144.5333333,whaler shark,2.2,"['other:', 'uninjured']",male,,1900-01-01 05:45:00,Carcharhinidae
-2004,unprovoked,swimming,14.0,1,injured,WA,-33.98333333,114.9833333,wobbegong,1.0,"['torso,', 'pelvic', 'region']",male,,1900-01-01 20:00:00,Orectolobidae
-2004,unprovoked,diving,12.0,1,uninjured,NSW,-34.56666667,150.8666667,whaler shark,3.0,"['other:', 'uninjured']",male,,1900-01-01 10:30:00,Carcharhinidae
+2003,unprovoked,swimming,8.0,12,uninjured,VIC,-38.26666667,144.5333333,whaler shark,2.2,['uninjured'],male,,1900-01-01 05:45:00,Carcharhinidae
+2004,unprovoked,swimming,14.0,1,injured,WA,-33.98333333,114.9833333,wobbegong,1.0,"['torso,', 'pelvic region']",male,,1900-01-01 20:00:00,Orectolobidae
+2004,unprovoked,diving,12.0,1,uninjured,NSW,-34.56666667,150.8666667,whaler shark,3.0,['uninjured'],male,,1900-01-01 10:30:00,Carcharhinidae
 2004,unprovoked,swimming,3.0,1,injured,NSW,-30.56666667,152.9833333,wobbegong,1.3408602150537634,['calf'],male,8.0,,Orectolobidae
-2004,unprovoked,swimming,15.0,1,injured,NSW,-30.63333333,153.0166667,wobbegong,1.3408602150537634,"['torso,', 'pelvic', 'region']",female,,,Orectolobidae
+2004,unprovoked,swimming,15.0,1,injured,NSW,-30.63333333,153.0166667,wobbegong,1.3408602150537634,"['torso,', 'pelvic region']",female,,,Orectolobidae
 2004,provoked,spearfishing,25.0,1,injured,WA,-33.13333333,115.6833333,white shark,4.5,['leg'],male,46.0,1900-01-01 11:00:00,Carcharodon carcharias
-2004,provoked,diving,10.0,2,uninjured,VIC,-38.36666667,144.75,white shark,4.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2004,provoked,diving,10.0,2,uninjured,VIC,-38.36666667,144.75,white shark,4.0,['uninjured'],male,,,Carcharodon carcharias
 2004,provoked,spearfishing,10.0,2,injured,NSW,-33.1,151.65,blind shark,0.6,['foot'],male,22.0,,Brachaelurus waddi
 2004,unprovoked,snorkelling,22.0,2,injured,WA,-31.85,115.75,wobbegong,0.4,['calf'],female,7.0,1900-01-01 14:00:00,Orectolobidae
 2004,unprovoked,snorkelling,22.0,2,injured,WA,-31.85,115.75,wobbegong,0.4,['leg'],male,38.0,1900-01-01 14:00:00,Orectolobidae
 2004,provoked,spearfishing,6.0,3,injured,WA,-30.25,115.0166667,bronze whaler shark,1.5,['leg'],male,47.0,,Carcharhinus brachyurus
 2004,unprovoked,diving,26.0,4,injured,NSW,-32.2,152.55,wobbegong,1.2,"['arm,', 'hand']",male,,,Orectolobidae
 2004,unprovoked,snorkelling,20.0,4,injured,WA,-33.96666667,114.9833333,wobbegong,1.0,['thigh'],male,,,Orectolobidae
-2004,provoked,diving,26.0,6,uninjured,WA,-31.91666667,115.75,white shark,5.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2004,provoked,diving,26.0,6,uninjured,WA,-31.91666667,115.75,white shark,5.0,['uninjured'],male,,,Carcharodon carcharias
 2004,unprovoked,boarding,10.0,6,injured,WA,-33.33333333,115.6333333,white shark,3.0,['foot'],male,17.0,1900-01-01 16:30:00,Carcharodon carcharias
 2004,unprovoked,diving,11.0,7,injured,WA,-31.98333333,115.5333333,wobbegong,1.0,['calf'],male,33.0,1900-01-01 14:08:00,Orectolobidae
-2004,unprovoked,boarding,10.0,7,fatal,WA,-33.85,114.9833333,white shark,5.0,"['leg,', 'pelvic', 'region']",male,29.0,1900-01-01 14:00:00,Carcharodon carcharias
+2004,unprovoked,boarding,10.0,7,fatal,WA,-33.85,114.9833333,white shark,5.0,"['leg,', 'pelvic region']",male,29.0,1900-01-01 14:00:00,Carcharodon carcharias
 2004,provoked,spearfishing,4.0,8,injured,NSW,-28.63333333,153.6166667,grey nurse shark,2.4,['foot'],male,42.0,1900-01-01 13:30:00,Carcharius taurus
-2004,unprovoked,boarding,28.0,8,uninjured,VIC,-38.46666667,145.0166667,white shark,2.0,"['other:', 'uninjured']",male,33.0,1900-01-01 17:10:00,Carcharodon carcharias
-2004,provoked,snorkelling,25.0,9,uninjured,QLD,-16.4,145.7666667,tiger shark,3.0,"['other:', 'uninjured']",male,,1900-01-01 12:00:00,Galeocerdo cuvier
+2004,unprovoked,boarding,28.0,8,uninjured,VIC,-38.46666667,145.0166667,white shark,2.0,['uninjured'],male,33.0,1900-01-01 17:10:00,Carcharodon carcharias
+2004,provoked,snorkelling,25.0,9,uninjured,QLD,-16.4,145.7666667,tiger shark,3.0,['uninjured'],male,,1900-01-01 12:00:00,Galeocerdo cuvier
 2004,unprovoked,boarding,21.0,10,injured,NSW,-32.85,151.8333333,white shark,2.5,['foot'],male,59.0,1900-01-01 16:00:00,Carcharodon carcharias
 2004,unprovoked,boarding,6.0,11,injured,NSW,-32.01666667,152.5333333,wobbegong,1.2,"['arm,', 'hand']",male,14.0,1900-01-01 08:00:00,Orectolobidae
 2004,provoked,spearfishing,11.0,12,fatal,QLD,-16.21666667,145.8833333,tiger shark,3.166265060240964,['thigh'],male,38.0,1900-01-01 12:15:00,Galeocerdo cuvier
 2004,unprovoked,boarding,16.0,12,fatal,SA,-34.9,137,white shark,5.0,['torso'],male,18.0,1900-01-01 15:15:00,Carcharodon carcharias
-2005,provoked,spearfishing,19.0,1,uninjured,VIC,-37.98333333,145.0166667,white shark,3.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2005,provoked,spearfishing,19.0,1,uninjured,VIC,-37.98333333,145.0166667,white shark,3.0,['uninjured'],male,,,Carcharodon carcharias
 2005,unprovoked,swimming,26.0,2,injured,QLD,-27.55,152.8166667,bull shark,1.5,"['arm,', 'hand']",male,18.0,,Carcharhinus leucas
-2005,unprovoked,boarding,25.0,3,uninjured,NSW,-33.38333333,151.4833333,white shark,4.0,"['other:', 'uninjured']",male,31.0,1900-01-01 14:00:00,Carcharodon carcharias
+2005,unprovoked,boarding,25.0,3,uninjured,NSW,-33.38333333,151.4833333,white shark,4.0,['uninjured'],male,31.0,1900-01-01 14:00:00,Carcharodon carcharias
 2005,unprovoked,snorkelling,19.0,3,fatal,WA,-28.71666667,113.7833333,white shark,6.0,['torso'],male,26.0,,Carcharodon carcharias
 2005,provoked,spearfishing,16.0,4,injured,NT,-12.11666667,136.8,whaler shark,2.0,['head'],male,20.0,,Carcharhinidae
-2005,unprovoked,boarding,16.0,4,uninjured,NSW,-33.9,151.2666667,white shark,1.5,"['other:', 'uninjured']",male,40.0,1900-01-01 06:15:00,Carcharodon carcharias
+2005,unprovoked,boarding,16.0,4,uninjured,NSW,-33.9,151.2666667,white shark,1.5,['uninjured'],male,40.0,1900-01-01 06:15:00,Carcharodon carcharias
 2005,provoked,spearfishing,16.0,5,injured,QLD,-19.35,147.3666667,blacktip reef shark,2.0,"['arm,', 'hand']",male,,,Carcharhinus melanopterus
 2005,unprovoked,diving,24.0,8,fatal,SA,-34.96666667,138.5,white shark,5.0,['torso'],male,23.0,1900-01-01 16:10:00,Carcharodon carcharias
-2005,unprovoked,boarding,24.0,9,uninjured,NSW,-30.88333333,153.0833333,tiger shark,3.0,"['other:', 'uninjured']",male,28.0,,Galeocerdo cuvier
+2005,unprovoked,boarding,24.0,9,uninjured,NSW,-30.88333333,153.0833333,tiger shark,3.0,['uninjured'],male,28.0,,Galeocerdo cuvier
 2005,unprovoked,boarding,7.0,9,injured,NSW,-30.3,153.1333333,wobbegong,1.3408602150537634,['foot'],male,15.0,,Orectolobidae
-2005,unprovoked,boarding,23.0,9,uninjured,WA,-31.88333333,115.75,white shark,3.375,"['other:', 'uninjured']",male,44.0,,Carcharodon carcharias
+2005,unprovoked,boarding,23.0,9,uninjured,WA,-31.88333333,115.75,white shark,3.375,['uninjured'],male,44.0,,Carcharodon carcharias
 2005,unprovoked,boarding,25.0,9,injured,SA,-35.08333333,137.5333333,white shark,5.0,"['arm,', 'leg']",male,26.0,,Carcharodon carcharias
 2005,unprovoked,boarding,4.0,9,injured,SA,-34.83333333,135.6833333,white shark,3.375,"['arm,', 'leg']",male,40.0,1900-01-01 15:00:00,Carcharodon carcharias
 2005,unprovoked,boarding,25.0,11,injured,VIC,-38.46666667,145.0166667,white shark,1.8,['calf'],male,18.0,1900-01-01 18:15:00,Carcharodon carcharias
-2005,unprovoked,diving,12.0,11,uninjured,QLD,-27.18333333,153.4,bronze whaler shark,2.5,"['other:', 'uninjured']",male,57.0,1900-01-01 11:00:00,Carcharhinus brachyurus
+2005,unprovoked,diving,12.0,11,uninjured,QLD,-27.18333333,153.4,bronze whaler shark,2.5,['uninjured'],male,57.0,1900-01-01 11:00:00,Carcharhinus brachyurus
 2005,provoked,spearfishing,11.0,12,injured,QLD,-16.48333333,145.45,whitetip reef shark,1.5,['arm'],male,44.0,1900-01-01 10:00:00,Triaenodon obesus
 2006,unprovoked,swimming,7.0,1,fatal,QLD,-27.4,153.4333333,bull shark,2.0,"['leg,', 'hand']",female,21.0,1900-01-01 17:10:00,Carcharhinus leucas
 2006,provoked,spearfishing,15.0,1,injured,WA,-31.93333333,115.75,white shark,3.3,['arm'],male,52.0,1900-01-01 11:20:00,Carcharodon carcharias
 2006,unprovoked,other: standing in water,13.0,2,injured,QLD,-26.8,153.1333333,wobbegong,1.3408602150537634,['foot'],male,18.0,1900-01-01 11:00:00,Orectolobidae
-2006,unprovoked,boarding,15.0,3,uninjured,NSW,-33.88333333,151.2666667,whaler shark,2.5,"['other:', 'uninjured']",male,,1900-01-01 16:20:00,Carcharhinidae
+2006,unprovoked,boarding,15.0,3,uninjured,NSW,-33.88333333,151.2666667,whaler shark,2.5,['uninjured'],male,,1900-01-01 16:20:00,Carcharhinidae
 2006,unprovoked,boarding,11.0,4,injured,NSW,-32.91666667,151.7833333,wobbegong,1.3408602150537634,['foot'],male,15.0,1900-01-01 13:30:00,Orectolobidae
 2006,provoked,diving,2.0,5,injured,QLD,-26.68333333,153.1333333,wobbegong,2.0,['torso'],male,46.0,1900-01-01 16:30:00,Orectolobidae
-2006,provoked,spearfishing,11.0,8,uninjured,NSW,-33.9,151.2666667,white shark,3.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2006,provoked,spearfishing,11.0,8,uninjured,NSW,-33.9,151.2666667,white shark,3.0,['uninjured'],male,,,Carcharodon carcharias
 2006,unprovoked,boarding,2.0,12,injured,WA,-33.91666667,122.5833333,white shark,5.0,['leg'],male,15.0,,Carcharodon carcharias
-2006,provoked,spearfishing,2.0,12,uninjured,WA,-20.36666667,116.8666667,grey reef shark,1.95,"['other:', 'uninjured']",male,,,Carcharhinus amblyrhynchos
+2006,provoked,spearfishing,2.0,12,uninjured,WA,-20.36666667,116.8666667,grey reef shark,1.95,['uninjured'],male,,,Carcharhinus amblyrhynchos
 2006,unprovoked,boarding,18.0,12,injured,VIC,-38.36666667,144.2666667,white shark,3.0,['leg'],male,25.0,1900-01-01 08:00:00,Carcharodon carcharias
-2007,unprovoked,boarding,9.0,1,uninjured,NSW,-32.38333333,152.5166667,white shark,2.8,"['other:', 'uninjured']",male,44.0,1900-01-01 06:30:00,Carcharodon carcharias
+2007,unprovoked,boarding,9.0,1,uninjured,NSW,-32.38333333,152.5166667,white shark,2.8,['uninjured'],male,44.0,1900-01-01 06:30:00,Carcharodon carcharias
 2007,provoked,diving,23.0,1,injured,NSW,-37.5,149.9666667,white shark,3.0,"['head,', 'torso']",male,41.0,1900-01-01 10:30:00,Carcharodon carcharias
 2007,unprovoked,boarding,3.0,2,injured,NSW,-28.83333333,153.6,white shark,2.0,['foot'],male,26.0,,Carcharodon carcharias
 2007,unprovoked,boarding,20.0,3,injured,NSW,-28.53333333,153.55,white shark,1.6,"['arm,', 'hand']",female,42.0,,Carcharodon carcharias
@@ -844,61 +844,61 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2007,provoked,swimming,16.0,5,injured,WA,-23.13333333,113.7666667,whitetip reef shark,2.5,['foot'],female,38.0,1900-01-01 14:30:00,Triaenodon obesus
 2007,unprovoked,boarding,5.0,6,injured,NSW,-31.18333333,152.9666667,bull shark,2.4013698630136986,"['leg,', 'foot']",male,,1900-01-01 16:30:00,Carcharhinus leucas
 2007,unprovoked,diving,14.0,7,injured,NSW,-33.78333333,151.2833333,wobbegong,1.0,['thigh'],male,30.0,,Orectolobidae
-2007,unprovoked,boarding,5.0,7,uninjured,WA,-21.95,114.1166667,white shark,2.8,"['other:', 'uninjured']",male,48.0,1900-01-01 07:45:00,Carcharodon carcharias
+2007,unprovoked,boarding,5.0,7,uninjured,WA,-21.95,114.1166667,white shark,2.8,['uninjured'],male,48.0,1900-01-01 07:45:00,Carcharodon carcharias
 2007,provoked,swimming,20.0,7,injured,WA,-12.15,96.81666667,wobbegong,1.5,['calf'],male,15.0,,Orectolobidae
 2007,provoked,spearfishing,13.0,10,injured,QLD,-16.91666667,145.7666667,whaler shark,1.8,['calf'],male,31.0,1900-01-01 12:00:00,Carcharhinidae
 2007,unprovoked,boarding,15.0,10,injured,NSW,-28.63333333,153.6166667,white shark,2.5,"['arm,', 'hand']",female,52.0,1900-01-01 11:30:00,Carcharodon carcharias
-2007,unprovoked,boarding,8.0,11,uninjured,NSW,-28.63333333,153.6,white shark,1.8,"['other:', 'uninjured']",male,,1900-01-01 14:20:00,Carcharodon carcharias
+2007,unprovoked,boarding,8.0,11,uninjured,NSW,-28.63333333,153.6,white shark,1.8,['uninjured'],male,,1900-01-01 14:20:00,Carcharodon carcharias
 2007,unprovoked,boarding,11.0,12,injured,NSW,-33.9495,151.2437,wobbegong,1.3408602150537634,"['leg,', 'foot']",male,14.0,1900-01-01 19:30:00,Orectolobidae
 2007,unprovoked,swimming,15.0,12,injured,QLD,-27.93333333,153.4166667,whaler shark,0.6,"['arm,', 'hand']",male,13.0,1900-01-01 12:30:00,Carcharhinidae
-2007,unprovoked,boarding,18.0,12,injured,NSW,-32.68333333,152.1833333,white shark,3.375,"['torso,', 'pelvic', 'region']",male,31.0,1900-01-01 11:00:00,Carcharodon carcharias
-2008,unprovoked,unmotorised boating,1.0,1,uninjured,TAS,-41,147.1333333,white shark,3.0,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2007,unprovoked,boarding,18.0,12,injured,NSW,-32.68333333,152.1833333,white shark,3.375,"['torso,', 'pelvic region']",male,31.0,1900-01-01 11:00:00,Carcharodon carcharias
+2008,unprovoked,unmotorised boating,1.0,1,uninjured,TAS,-41,147.1333333,white shark,3.0,['uninjured'],male,,,Carcharodon carcharias
 2008,unprovoked,diving,28.0,1,injured,NSW,-28.18333333,153.5666667,wobbegong,1.3,['thigh'],male,,1900-01-01 10:30:00,Orectolobidae
 2008,unprovoked,swimming,29.0,1,injured,WA,-31.98333333,115.5333333,wobbegong,1.0,['calf'],male,42.0,1900-01-01 11:30:00,Orectolobidae
 2008,unprovoked,swimming,18.0,2,injured,VIC,-38.83333333,146.1666667,wobbegong,0.6,['foot'],female,64.5,1900-01-01 13:30:00,Orectolobidae
 2008,unprovoked,other: standing in water,17.0,4,injured,QLD,-28.15,153.5333333,wobbegong,1.3408602150537634,['thigh'],male,,1900-01-01 11:00:00,Orectolobidae
 2008,unprovoked,boarding,8.0,4,fatal,NSW,-28.86666667,153.5666667,bull shark,2.8,"['thigh,', 'calf']",male,16.0,1900-01-01 08:10:00,Carcharhinus leucas
-2008,provoked,swimming,16.0,4,injured,WA,-33.63333333,115,wobbegong,0.8,"['calf,', 'thigh,', 'pelvic', 'region']",female,,,Orectolobidae
+2008,provoked,swimming,16.0,4,injured,WA,-33.63333333,115,wobbegong,0.8,"['calf,', 'thigh,', 'pelvic region']",female,,,Orectolobidae
 2008,unprovoked,swimming,10.0,5,injured,WA,-35.01666667,117.9166667,white shark,4.0,['calf'],male,37.0,1900-01-01 07:30:00,Carcharodon carcharias
-2008,unprovoked,boarding,30.0,7,uninjured,VIC,-38.38333333,142.4833333,white shark,3.375,"['other:', 'uninjured']",male,31.0,1900-01-01 10:30:00,Carcharodon carcharias
-2008,unprovoked,boarding,30.0,8,uninjured,NSW,-28.63333333,153.6166667,white shark,4.0,"['other:', 'uninjured']",male,30.0,1900-01-01 11:30:00,Carcharodon carcharias
-2008,unprovoked,boarding,7.0,9,uninjured,NSW,-28.63333333,153.6166667,white shark,2.8,"['other:', 'uninjured']",male,51.0,,Carcharodon carcharias
-2008,unprovoked,boarding,28.0,12,uninjured,NSW,-32.43333333,152.5166667,whaler shark,2.0,"['other:', 'uninjured']",male,10.0,,Carcharhinidae
-2008,provoked,snorkelling,27.0,12,fatal,WA,-32.35,115.7166667,white shark,5.5,"['other:', 'body', 'not', 'recovered']",male,52.0,1900-01-01 07:00:00,Carcharodon carcharias
-2008,provoked,unmotorised boating,27.0,12,uninjured,NSW,-33.73333333,151.3166667,white shark,5.0,"['other:', 'uninjured']",male,29.0,,Carcharodon carcharias
+2008,unprovoked,boarding,30.0,7,uninjured,VIC,-38.38333333,142.4833333,white shark,3.375,['uninjured'],male,31.0,1900-01-01 10:30:00,Carcharodon carcharias
+2008,unprovoked,boarding,30.0,8,uninjured,NSW,-28.63333333,153.6166667,white shark,4.0,['uninjured'],male,30.0,1900-01-01 11:30:00,Carcharodon carcharias
+2008,unprovoked,boarding,7.0,9,uninjured,NSW,-28.63333333,153.6166667,white shark,2.8,['uninjured'],male,51.0,,Carcharodon carcharias
+2008,unprovoked,boarding,28.0,12,uninjured,NSW,-32.43333333,152.5166667,whaler shark,2.0,['uninjured'],male,10.0,,Carcharhinidae
+2008,provoked,snorkelling,27.0,12,fatal,WA,-32.35,115.7166667,white shark,5.5,['body not found'],male,52.0,1900-01-01 07:00:00,Carcharodon carcharias
+2008,provoked,unmotorised boating,27.0,12,uninjured,NSW,-33.73333333,151.3166667,white shark,5.0,['uninjured'],male,29.0,,Carcharodon carcharias
 2009,provoked,spearfishing,12.0,1,injured,NSW,-34.53333333,150.8666667,dusky shark,1.9500000000000002,['leg'],male,25.0,1900-01-01 10:45:00,Carcharhinus obscurus
 2009,provoked,diving,1.0,1,injured,QLD,-13.91666667,146.6166667,grey reef shark,2.0,['calf'],male,,,Carcharhinus amblyrhynchos
 2009,unprovoked,boarding,11.0,1,injured,NSW,-28.18333333,153.55,white shark,2.0,['leg'],male,31.0,1900-01-01 09:30:00,Carcharodon carcharias
 2009,unprovoked,boarding,11.0,1,injured,TAS,-41.23333333,148.3,white shark,5.0,['leg'],female,13.0,1900-01-01 14:00:00,Carcharodon carcharias
 2009,unprovoked,swimming,24.0,1,injured,NSW,-35.76,150.2053,unknown,,"['arm,', 'hand']",male,19.0,1900-01-01 16:30:00,unknown
-2009,unprovoked,boarding,18.0,2,uninjured,NSW,-31.45,152.9166667,white shark,3.0,"['other:', 'uninjured']",male,24.0,1900-01-01 17:00:00,Carcharodon carcharias
+2009,unprovoked,boarding,18.0,2,uninjured,NSW,-31.45,152.9166667,white shark,3.0,['uninjured'],male,24.0,1900-01-01 17:00:00,Carcharodon carcharias
 2009,unprovoked,diving,11.0,2,injured,NSW,-33.85,151.2166667,bull shark,2.7,"['leg,', 'hand']",male,31.0,1900-01-01 07:00:00,Carcharhinus leucas
-2009,unprovoked,boarding,7.0,2,uninjured,NSW,-29.76666667,153.2833333,white shark,3.375,"['other:', 'uninjured']",male,,1900-01-01 07:30:00,Carcharodon carcharias
+2009,unprovoked,boarding,7.0,2,uninjured,NSW,-29.76666667,153.2833333,white shark,3.375,['uninjured'],male,,1900-01-01 07:30:00,Carcharodon carcharias
 2009,unprovoked,boarding,12.0,2,injured,NSW,-33.88333333,151.2666667,white shark,2.5,"['arm,', 'hand']",male,33.0,1900-01-01 19:30:00,Carcharodon carcharias
-2009,unprovoked,boarding,7.0,2,uninjured,NSW,-32.38333333,152.5166667,white shark,4.0,"['other:', 'uninjured']",male,41.0,1900-01-01 11:00:00,Carcharodon carcharias
+2009,unprovoked,boarding,7.0,2,uninjured,NSW,-32.38333333,152.5166667,white shark,4.0,['uninjured'],male,41.0,1900-01-01 11:00:00,Carcharodon carcharias
 2009,unprovoked,boarding,1.0,3,injured,NSW,-33.63333333,151.3166667,white shark,3.0,['leg'],male,15.0,1900-01-01 06:30:00,Carcharodon carcharias
-2009,unprovoked,boarding,19.0,3,uninjured,NSW,-35.85,150.1666667,whaler shark,1.9,"['other:', 'uninjured']",female,47.0,1900-01-01 07:45:00,Carcharhinidae
+2009,unprovoked,boarding,19.0,3,uninjured,NSW,-35.85,150.1666667,whaler shark,1.9,['uninjured'],female,47.0,1900-01-01 07:45:00,Carcharhinidae
 2009,unprovoked,diving,23.0,3,injured,NSW,-33.93333333,151.25,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
 2009,unprovoked,boarding,20.0,3,injured,WA,-32.5,115.7,white shark,2.0,"['calf,', 'foot']",male,17.0,1900-01-01 18:45:00,Carcharodon carcharias
 2009,provoked,swimming,15.0,3,injured,WA,-31.98333333,115.5333333,wobbegong,0.6,['leg'],male,21.0,1900-01-01 11:30:00,Orectolobidae
-2009,unprovoked,boarding,12.0,4,uninjured,NSW,-32.73333333,152.1833333,bull shark,3.0,"['other:', 'uninjured']",male,40.0,1900-01-01 08:00:00,Carcharhinus leucas
+2009,unprovoked,boarding,12.0,4,uninjured,NSW,-32.73333333,152.1833333,bull shark,3.0,['uninjured'],male,40.0,1900-01-01 08:00:00,Carcharhinus leucas
 2009,unprovoked,boarding,27.0,6,injured,NSW,-34.66666667,150.85,wobbegong,2.0,['foot'],male,52.0,1900-01-01 08:30:00,Orectolobidae
 2009,unprovoked,boarding,30.0,7,injured,NSW,-28.63333333,153.6166667,whaler shark,1.5,"['arm,', 'hand']",male,14.0,1900-01-01 06:15:00,Carcharhinidae
-2009,provoked,spearfishing,25.0,8,uninjured,WA,-32,115.45,white shark,6.0,"['other:', 'uninjured']",male,42.0,1900-01-01 13:00:00,Carcharodon carcharias
+2009,provoked,spearfishing,25.0,8,uninjured,WA,-32,115.45,white shark,6.0,['uninjured'],male,42.0,1900-01-01 13:00:00,Carcharodon carcharias
 2009,unprovoked,boarding,6.0,9,injured,WA,-12.15,96.81666667,whaler shark,1.8,['thigh'],male,35.0,1900-01-01 13:00:00,Carcharhinidae
-2009,unprovoked,unmotorised boating,30.0,10,uninjured,VIC,-38.33333333,141.6,white shark,4.0,"['other:', 'uninjured']",male,27.0,,Carcharodon carcharias
-2009,unprovoked,boarding,28.0,10,uninjured,NSW,-28.78333333,153.5833333,white shark,3.375,"['other:', 'uninjured']",female,17.0,1900-01-01 07:00:00,Carcharodon carcharias
+2009,unprovoked,unmotorised boating,30.0,10,uninjured,VIC,-38.33333333,141.6,white shark,4.0,['uninjured'],male,27.0,,Carcharodon carcharias
+2009,unprovoked,boarding,28.0,10,uninjured,NSW,-28.78333333,153.5833333,white shark,3.375,['uninjured'],female,17.0,1900-01-01 07:00:00,Carcharodon carcharias
 2009,provoked,spearfishing,7.0,11,injured,SA,-35.5,138.2333333,white shark,3.0,"['leg,', 'hand']",male,25.0,1900-01-01 09:50:00,Carcharodon carcharias
 2009,provoked,spearfishing,19.0,12,injured,QLD,-23.43333333,151.9,whaler shark,3.0,['arm'],male,18.0,,Carcharhinidae
 2009,provoked,other: standing in water,26.0,12,injured,NSW,-33.45,151.4333333,wobbegong,1.3408602150537634,['foot'],male,55.0,1900-01-01 11:00:00,Orectolobidae
 2009,unprovoked,unmotorised boating,12.0,12,injured,NSW,-26.067,113.567,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 2009,unprovoked,boarding,13.0,12,injured,NSW,-29.1,153.4333333,white shark,3.375,['foot'],male,39.0,,Carcharodon carcharias
-2009,unprovoked,boarding,27.0,12,uninjured,NSW,-32.16666667,152.5,white shark,3.375,"['other:', 'uninjured']",male,,1900-01-01 06:30:00,Carcharodon carcharias
-2010,unprovoked,boarding,27.0,1,uninjured,QLD,-24.8,152.45,white shark,1.9,"['other:', 'uninjured']",male,37.0,1900-01-01 16:30:00,Carcharodon carcharias
+2009,unprovoked,boarding,27.0,12,uninjured,NSW,-32.16666667,152.5,white shark,3.375,['uninjured'],male,,1900-01-01 06:30:00,Carcharodon carcharias
+2010,unprovoked,boarding,27.0,1,uninjured,QLD,-24.8,152.45,white shark,1.9,['uninjured'],male,37.0,1900-01-01 16:30:00,Carcharodon carcharias
 2010,unprovoked,boarding,22.0,1,injured,VIC,-38.28333333,144.4333333,white shark,1.5,"['arm,', 'hand']",male,,1900-01-01 07:30:00,Carcharodon carcharias
 2010,unprovoked,snorkelling,9.0,1,injured,QLD,-10.56666667,142.2166667,whitetip reef shark,1.0,['leg'],female,9.0,,Triaenodon obesus
-2010,unprovoked,boarding,6.0,2,uninjured,NSW,-29.41666667,153.3666667,white shark,2.4,"['other:', 'uninjured']",male,18.0,,Carcharodon carcharias
-2010,unprovoked,snorkelling,13.0,2,injured,QLD,-20.35,148.9333333,bull shark,1.8,"['torso,', 'pelvic', 'region']",female,55.0,1900-01-01 12:45:00,Carcharhinus leucas
+2010,unprovoked,boarding,6.0,2,uninjured,NSW,-29.41666667,153.3666667,white shark,2.4,['uninjured'],male,18.0,,Carcharodon carcharias
+2010,unprovoked,snorkelling,13.0,2,injured,QLD,-20.35,148.9333333,bull shark,1.8,"['torso,', 'pelvic region']",female,55.0,1900-01-01 12:45:00,Carcharhinus leucas
 2010,unprovoked,other: standing in water,11.0,2,injured,NSW,-33.66666667,151.3,wobbegong,1.6,['calf'],male,46.0,1900-01-01 08:00:00,Orectolobidae
 2010,unprovoked,boarding,18.0,5,injured,NSW,-31.3,152.9666667,bull shark,1.8,['calf'],male,,1900-01-01 16:30:00,Carcharhinus leucas
 2010,unprovoked,boarding,6.0,6,injured,WA,-35.03333333,116.8333333,white shark,4.0,['leg'],male,,,Carcharodon carcharias
@@ -908,7 +908,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2010,unprovoked,boarding,23.0,10,injured,WA,-30.83333333,115.2666667,white shark,1.7,['calf'],male,,,Carcharodon carcharias
 2010,unprovoked,boarding,16.0,10,injured,NSW,-30.06666667,153.2,wobbegong,1.4,['foot'],male,22.0,,Orectolobidae
 2010,unprovoked,snorkelling,30.0,10,injured,WA,-32.18333333,115.6833333,white shark,3.0,['thigh'],female,19.0,1900-01-01 12:30:00,Carcharodon carcharias
-2011,provoked,diving,17.0,2,fatal,SA,-34.71666667,135.15,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,50.0,1900-01-01 18:00:00,Carcharodon carcharias
+2011,provoked,diving,17.0,2,fatal,SA,-34.71666667,135.15,white shark,3.375,['body not found'],male,50.0,1900-01-01 18:00:00,Carcharodon carcharias
 2011,unprovoked,snorkelling,12.0,2,injured,WA,-21.95,114.1166667,whaler shark,1.8,['arm'],male,58.0,1900-01-01 16:45:00,Carcharhinidae
 2011,unprovoked,boarding,16.0,3,injured,NSW,-32.73333333,152.1833333,white shark,3.0,"['head,', 'shoulder']",female,,1900-01-01 13:00:00,Carcharodon carcharias
 2011,unprovoked,boarding,23.0,3,injured,NSW,-31.83333333,152.7333333,white shark,3.0,['arm'],male,48.0,1900-01-01 18:45:00,Carcharodon carcharias
@@ -917,42 +917,42 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2011,unprovoked,swimming,28.0,8,fatal,QLD,-18.71666667,146.5666667,tiger shark,3.166265060240964,['torso'],male,50.0,1900-01-01 19:30:00,Galeocerdo cuvier
 2011,unprovoked,boarding,4.0,9,fatal,WA,-33.53333333,115.0333333,white shark,4.5,['leg'],male,21.0,,Carcharodon carcharias
 2011,unprovoked,diving,22.0,10,fatal,WA,-32,115.45,white shark,3.0,['Unknown'],male,32.0,1900-01-01 13:30:00,Carcharodon carcharias
-2011,provoked,diving,19.0,10,uninjured,VIC,-37.88333333,144.9833333,port jackson shark,1.0,"['other:', 'uninjured']",male,49.0,1900-01-01 16:00:00,Heterodontus portusjacksoni
+2011,provoked,diving,19.0,10,uninjured,VIC,-37.88333333,144.9833333,port jackson shark,1.0,['uninjured'],male,49.0,1900-01-01 16:00:00,Heterodontus portusjacksoni
 2011,unprovoked,swimming,10.0,10,fatal,WA,-31.98333333,115.75,white shark,3.0,['Unknown'],male,,1900-01-01 08:00:00,Carcharodon carcharias
 2011,provoked,swimming,28.0,11,injured,QLD,-26.46666667,153.0833333,wobbegong,1.0,['foot'],male,10.0,1900-01-01 17:00:00,Orectolobidae
 2011,unprovoked,boarding,2.0,12,injured,NSW,-28.7,153.6,white shark,3.375,"['torso,', 'shoulder']",male,63.0,1900-01-01 06:00:00,Carcharodon carcharias
 2011,provoked,boarding,7.0,12,injured,NSW,-33.93333333,151.25,wobbegong,1.3408602150537634,['foot'],male,14.0,1900-01-01 19:30:00,Orectolobidae
 2011,unprovoked,boarding,11.0,12,injured,NSW,-29.48333333,153.35,white shark,2.5,['thigh'],male,50.0,1900-01-01 06:00:00,Carcharodon carcharias
 2012,unprovoked,boarding,3.0,1,injured,NSW,-33.45,151.4333333,white shark,2.2,['arm'],male,28.0,1900-01-01 19:45:00,Carcharodon carcharias
-2012,provoked,spearfishing,2.0,1,uninjured,NSW,-28.16666667,153.55,tiger shark,3.5,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+2012,provoked,spearfishing,2.0,1,uninjured,NSW,-28.16666667,153.55,tiger shark,3.5,['uninjured'],male,,,Galeocerdo cuvier
 2012,unprovoked,boarding,18.0,1,injured,NSW,-33,151.7166667,white shark,2.6,['thigh'],male,44.0,1900-01-01 16:40:00,Carcharodon carcharias
 2012,unprovoked,snorkelling,19.0,1,injured,WA,-23.13333333,113.7666667,tiger shark,3.0,['arm'],male,26.0,,Galeocerdo cuvier
-2012,unprovoked,boarding,3.0,2,uninjured,NSW,-31.98333333,152.5666667,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2012,unprovoked,boarding,3.0,2,uninjured,NSW,-31.98333333,152.5666667,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 2012,provoked,fishing,25.0,2,injured,NSW,-32.6,152.3166667,wobbegong,1.3408602150537634,['foot'],male,,1900-01-01 16:00:00,Orectolobidae
-2012,unprovoked,boarding,6.0,2,uninjured,QLD,-26.75,153.1333333,whaler shark,2.2,"['other:', 'uninjured']",male,29.0,,Carcharhinidae
+2012,unprovoked,boarding,6.0,2,uninjured,QLD,-26.75,153.1333333,whaler shark,2.2,['uninjured'],male,29.0,,Carcharhinidae
 2012,provoked,boarding,20.0,3,injured,QLD,-28.05,153.4333333,bull shark,2.4013698630136986,['foot'],male,20.0,1900-01-01 17:10:00,Carcharhinus leucas
-2012,unprovoked,unmotorised boating,15.0,3,uninjured,NSW,-33.55,151.3166667,unknown species,1.9428571428571428,"['other:', 'uninjured']",male,52.0,,Unknown species
+2012,unprovoked,unmotorised boating,15.0,3,uninjured,NSW,-33.55,151.3166667,unknown species,1.9428571428571428,['uninjured'],male,52.0,,Unknown species
 2012,unprovoked,diving,31.0,3,fatal,WA,-33.46666667,115.5166667,white shark,4.0,['torso'],male,32.0,1900-01-01 09:30:00,Carcharodon carcharias
 2012,unprovoked,unmotorised boating,11.0,4,injured,SA,-35.18333333,136.85,white shark,6.0,['thigh'],male,27.0,,Carcharodon carcharias
 2012,provoked,diving,17.0,5,injured,NSW,-32.21666667,152.6,wobbegong,1.8,"['arm,', 'hand']",male,57.0,1900-01-01 10:30:00,Orectolobidae
-2012,unprovoked,unmotorised boating,27.0,5,uninjured,NSW,-33,151.7,white shark,2.0,"['other:', 'uninjured']",male,30.0,1900-01-01 14:30:00,Carcharodon carcharias
+2012,unprovoked,unmotorised boating,27.0,5,uninjured,NSW,-33,151.7,white shark,2.0,['uninjured'],male,30.0,1900-01-01 14:30:00,Carcharodon carcharias
 2012,unprovoked,boarding,12.0,6,injured,VIC,-38.61666667,142.9833333,white shark,1.5,['leg'],male,42.0,,Carcharodon carcharias
 2012,unprovoked,boarding,22.0,6,injured,TAS,-43.51666667,146.2333333,white shark,5.3,['leg'],male,,1900-01-01 09:15:00,Carcharodon carcharias
-2012,unprovoked,unmotorised boating,20.0,6,uninjured,WA,-31.78333333,115.7166667,white shark,3.5,"['other:', 'uninjured']",male,61.0,1900-01-01 07:05:00,Carcharodon carcharias
+2012,unprovoked,unmotorised boating,20.0,6,uninjured,WA,-31.78333333,115.7166667,white shark,3.5,['uninjured'],male,61.0,1900-01-01 07:05:00,Carcharodon carcharias
 2012,unprovoked,boarding,31.0,7,injured,SA,-32.76666667,134.2,white shark,3.375,"['arm,', 'shoulder']",male,47.0,,Carcharodon carcharias
-2012,unprovoked,boarding,14.0,7,fatal,WA,-30.83333333,115.2666667,white shark,3.6,"['other:', 'body', 'not', 'recovered']",male,24.0,1900-01-01 09:00:00,Carcharodon carcharias
+2012,unprovoked,boarding,14.0,7,fatal,WA,-30.83333333,115.2666667,white shark,3.6,['body not found'],male,24.0,1900-01-01 09:00:00,Carcharodon carcharias
 2012,unprovoked,boarding,28.0,8,injured,WA,-24.38333333,113.3833333,tiger shark,3.5,['torso'],male,34.0,1900-01-01 15:25:00,Galeocerdo cuvier
-2012,unprovoked,boarding,3.0,10,uninjured,WA,-31.76666667,115.7166667,white shark,1.3,"['other:', 'uninjured']",male,11.0,1900-01-01 12:30:00,Carcharodon carcharias
+2012,unprovoked,boarding,3.0,10,uninjured,WA,-31.76666667,115.7166667,white shark,1.3,['uninjured'],male,11.0,1900-01-01 12:30:00,Carcharodon carcharias
 2012,unprovoked,boarding,28.0,12,injured,NSW,-31.73333333,152.7833333,bull shark,3.0,['thigh'],male,29.0,1900-01-01 10:45:00,Carcharhinus leucas
 2012,provoked,spearfishing,2.0,12,injured,NSW,-30.86666667,153.0333333,grey nurse shark,1.8666666666666665,['leg'],male,31.0,1900-01-01 16:30:00,Carcharius taurus
-2012,unprovoked,boarding,30.0,12,uninjured,NSW,-33.75,151.3,white shark,2.5,"['other:', 'uninjured']",male,,1900-01-01 12:45:00,Carcharodon carcharias
+2012,unprovoked,boarding,30.0,12,uninjured,NSW,-33.75,151.3,white shark,2.5,['uninjured'],male,,1900-01-01 12:45:00,Carcharodon carcharias
 2013,provoked,spearfishing,5.0,1,injured,WA,-20.35,116.8166667,whaler shark,2.2,['leg'],male,,1900-01-01 10:00:00,Carcharhinidae
 2013,unprovoked,boarding,25.0,1,injured,QLD,-26.36666667,153.0833333,tiger shark,3.166265060240964,"['torso,', 'shoulder']",male,,,Galeocerdo cuvier
 2013,provoked,spearfishing,10.0,3,injured,WA,-28.8,114.6,bronze whaler shark,2.5,"['arm,', 'hand']",male,28.0,1900-01-01 09:00:00,Carcharhinus brachyurus
 2013,provoked,swimming,22.0,4,injured,NSW,-29.46666667,153.35,wobbegong,1.3408602150537634,['leg'],female,,,Orectolobidae
-2013,unprovoked,boarding,24.0,5,uninjured,WA,-32.4,115.7333333,white shark,3.375,"['other:', 'uninjured']",male,,1900-01-01 17:00:00,Carcharodon carcharias
+2013,unprovoked,boarding,24.0,5,uninjured,WA,-32.4,115.7333333,white shark,3.375,['uninjured'],male,,1900-01-01 17:00:00,Carcharodon carcharias
 2013,provoked,swimming,29.0,5,injured,NSW,-28.63333333,153.6,wobbegong,1.0,['foot'],male,64.5,1900-01-01 06:10:00,Orectolobidae
-2013,unprovoked,boarding,6.0,6,uninjured,NSW,-35.06666667,150.7833333,white shark,1.8,"['other:', 'uninjured']",male,,1900-01-01 16:00:00,Carcharodon carcharias
+2013,unprovoked,boarding,6.0,6,uninjured,NSW,-35.06666667,150.7833333,white shark,1.8,['uninjured'],male,,1900-01-01 16:00:00,Carcharodon carcharias
 2013,unprovoked,swimming,1.0,7,injured,VIC,-38.46666667,145.0166667,white shark,1.7,"['arm,', 'hand']",male,29.0,1900-01-01 05:30:00,Carcharodon carcharias
 2013,provoked,boarding,24.0,10,injured,NSW,-33.71666667,151.3,wobbegong,1.3408602150537634,['foot'],male,,1900-01-01 18:15:00,Orectolobidae
 2013,unprovoked,snorkelling,28.0,10,injured,WA,-21.95,114.1166667,grey reef shark,1.95,['arm'],female,,,Carcharhinus amblyrhynchos
@@ -961,13 +961,13 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2013,unprovoked,boarding,23.0,11,fatal,WA,-33.85,114.9666667,white shark,3.0,"['arm,', 'torso,', 'leg']",male,35.0,1900-01-01 09:00:00,Carcharodon carcharias
 2013,unprovoked,diving,14.0,12,injured,QLD,-28.1,153.4666667,wobbegong,1.5,['leg'],female,33.0,1900-01-01 12:30:00,Orectolobidae
 2013,unprovoked,boarding,5.0,12,injured,NSW,-31.45,152.9166667,wobbegong,1.7,['leg'],male,26.0,1900-01-01 18:15:00,Orectolobidae
-2014,provoked,spearfishing,8.0,2,fatal,SA,-35.13333333,137.7,white shark,3.375,"['other:', 'body', 'not', 'recovered']",male,28.0,1900-01-01 12:00:00,Carcharodon carcharias
-2014,provoked,spearfishing,18.0,2,uninjured,WA,-32,115.55,white shark,4.0,"['other:', 'uninjured']",male,64.5,1900-01-01 13:45:00,Carcharodon carcharias
-2014,unprovoked,boarding,18.0,3,uninjured,VIC,-38.36666667,144.2666667,white shark,1.4,"['other:', 'uninjured']",male,42.0,,Carcharodon carcharias
+2014,provoked,spearfishing,8.0,2,fatal,SA,-35.13333333,137.7,white shark,3.375,['body not found'],male,28.0,1900-01-01 12:00:00,Carcharodon carcharias
+2014,provoked,spearfishing,18.0,2,uninjured,WA,-32,115.55,white shark,4.0,['uninjured'],male,64.5,1900-01-01 13:45:00,Carcharodon carcharias
+2014,unprovoked,boarding,18.0,3,uninjured,VIC,-38.36666667,144.2666667,white shark,1.4,['uninjured'],male,42.0,,Carcharodon carcharias
 2014,provoked,swimming,12.0,3,injured,NSW,-31.46666667,152.9166667,wobbegong,1.8,['foot'],male,40.0,1900-01-01 18:00:00,Orectolobidae
-2014,unprovoked,swimming,3.0,4,fatal,NSW,-36.71666667,149.9833333,white shark,3.5,"['other:', 'body', 'not', 'recovered']",female,63.0,1900-01-01 08:20:00,Carcharodon carcharias
+2014,unprovoked,swimming,3.0,4,fatal,NSW,-36.71666667,149.9833333,white shark,3.5,['body not found'],female,63.0,1900-01-01 08:20:00,Carcharodon carcharias
 2014,provoked,spearfishing,24.0,4,injured,WA,-23.13333333,113.75,whaler shark,2.2,"['arm,', 'hand']",male,,1900-01-01 15:00:00,Carcharhinidae
-2014,unprovoked,boarding,14.0,5,uninjured,SA,-33.63333333,134.8666667,white shark,4.6,"['other:', 'uninjured']",male,35.0,1900-01-01 09:30:00,Carcharodon carcharias
+2014,unprovoked,boarding,14.0,5,uninjured,SA,-33.63333333,134.8666667,white shark,4.6,['uninjured'],male,35.0,1900-01-01 09:30:00,Carcharodon carcharias
 2014,unprovoked,swimming,25.0,5,injured,QLD,-27.98333333,153.4166667,bull shark,1.3,['thigh'],female,29.0,1900-01-01 21:30:00,Carcharhinus leucas
 2014,unprovoked,boarding,9.0,6,injured,SA,-35.63087083,138.4666667,white shark,1.5,['torso'],male,39.0,1900-01-01 09:45:00,Carcharodon carcharias
 2014,provoked,boarding,1.0,6,injured,NSW,-34.83333333,150.75,wobbegong,1.3408602150537634,['foot'],male,,1900-01-01 07:00:00,Orectolobidae
@@ -986,12 +986,12 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2014,unprovoked,boarding,29.0,12,injured,NSW,-35.1338,150.686,unknown,,"['leg,', 'ankle']",male,,1900-01-01 07:15:00,unknown
 2014,provoked,spearfishing,29.0,12,fatal,WA,-34.88003124,118.404958,white shark,5.0,['leg'],male,17.0,1900-01-01 12:20:00,Carcharodon carcharias
 2014,provoked,spearfishing,15.0,12,fatal,QLD,-16.2,145.75,tiger shark,3.3,"['arm,', 'leg']",male,18.0,1900-01-01 11:00:00,Galeocerdo cuvier
-2015,unprovoked,boarding,19.0,1,uninjured,NSW,-28.63333333,153.6166667,white shark,3.375,"['other:', 'uninjured']",female,,,Carcharodon carcharias
+2015,unprovoked,boarding,19.0,1,uninjured,NSW,-28.63333333,153.6166667,white shark,3.375,['uninjured'],female,,,Carcharodon carcharias
 2015,provoked,other: standing in water,5.0,1,injured,NSW,-32.68333333,152.0333333,wobbegong,1.3408602150537634,['foot'],male,,1900-01-01 17:00:00,Orectolobidae
-2015,unprovoked,unmotorised boating,30.0,1,uninjured,QLD,-27.63333333,153.45,bull shark,1.3,"['other:', 'uninjured']",male,57.0,1900-01-01 05:00:00,Carcharhinus leucas
-2015,unprovoked,boarding,24.0,1,uninjured,NSW,-28.83333333,153.6,white shark,3.375,"['other:', 'uninjured']",male,36.0,1900-01-01 11:00:00,Carcharodon carcharias
+2015,unprovoked,unmotorised boating,30.0,1,uninjured,QLD,-27.63333333,153.45,bull shark,1.3,['uninjured'],male,57.0,1900-01-01 05:00:00,Carcharhinus leucas
+2015,unprovoked,boarding,24.0,1,uninjured,NSW,-28.83333333,153.6,white shark,3.375,['uninjured'],male,36.0,1900-01-01 11:00:00,Carcharodon carcharias
 2015,provoked,spearfishing,16.0,1,injured,NSW,-35.33333333,150.4666667,bronze whaler shark,2.5,['hand'],male,17.0,,Carcharhinus brachyurus
-2015,unprovoked,boarding,8.0,2,injured,NSW,-28.88333333,153.5666667,white shark,3.375,"['torso,', 'pelvic', 'region']",male,35.0,1900-01-01 06:00:00,Carcharodon carcharias
+2015,unprovoked,boarding,8.0,2,injured,NSW,-28.88333333,153.5666667,white shark,3.375,"['torso,', 'pelvic region']",male,35.0,1900-01-01 06:00:00,Carcharodon carcharias
 2015,unprovoked,boarding,9.0,2,fatal,NSW,-28.85,153.5833333,white shark,3.5,['leg'],male,41.0,,Carcharodon carcharias
 2015,unprovoked,swimming,6.0,2,injured,NSW,-32.95,151.75,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
 2015,provoked,swimming,24.0,3,injured,NSW,-31.51666667,159.05,galapagos shark,1.3,['leg'],female,43.0,1900-01-01 12:00:00,Carcharhinus galapagensis
@@ -1001,18 +1001,18 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2015,unprovoked,boarding,3.0,5,injured,NSW,-32.01666667,152.5333333,white shark,3.375,"['arm,', 'hand']",male,46.0,1900-01-01 14:30:00,Carcharodon carcharias
 2015,unprovoked,boarding,24.0,6,injured,WA,-35.01666667,117.3333333,white shark,3.375,"['head,', 'hand']",female,37.0,1900-01-01 09:30:00,Carcharodon carcharias
 2015,provoked,swimming,26.0,6,injured,WA,-31.98333333,115.5333333,wobbegong,1.0,['arm'],male,19.0,,Orectolobidae
-2015,unprovoked,boarding,24.0,6,uninjured,NSW,-28.63333333,153.6,white shark,3.0,"['other:', 'uninjured']",male,64.5,1900-01-01 11:15:00,Carcharodon carcharias
+2015,unprovoked,boarding,24.0,6,uninjured,NSW,-28.63333333,153.6,white shark,3.0,['uninjured'],male,64.5,1900-01-01 11:15:00,Carcharodon carcharias
 2015,provoked,spearfishing,1.0,6,injured,NSW,-35.65,150.2833333,tiger shark,3.0,['foot'],male,21.0,1900-01-01 17:00:00,Galeocerdo cuvier
-2015,unprovoked,boarding,21.0,7,uninjured,QLD,-28.1,153.465,white shark,2.0,"['other:', 'uninjured']",male,,1900-01-01 10:00:00,Carcharodon carcharias
-2015,provoked,diving,25.0,7,fatal,TAS,-42.63333333,147.9833333,white shark,4.3,"['torso,', 'pelvic', 'region']",male,47.0,1900-01-01 08:00:00,Carcharodon carcharias
-2015,provoked,diving,24.0,7,uninjured,TAS,-42.63333333,147.9833333,white shark,4.3,"['other:', 'uninjured']",male,,1900-01-01 08:00:00,Carcharodon carcharias
+2015,unprovoked,boarding,21.0,7,uninjured,QLD,-28.1,153.465,white shark,2.0,['uninjured'],male,,1900-01-01 10:00:00,Carcharodon carcharias
+2015,provoked,diving,25.0,7,fatal,TAS,-42.63333333,147.9833333,white shark,4.3,"['torso,', 'pelvic region']",male,47.0,1900-01-01 08:00:00,Carcharodon carcharias
+2015,provoked,diving,24.0,7,uninjured,TAS,-42.63333333,147.9833333,white shark,4.3,['uninjured'],male,,1900-01-01 08:00:00,Carcharodon carcharias
 2015,unprovoked,boarding,31.0,7,injured,NSW,-29.1,153.4333333,white shark,3.0,"['leg,', 'hand']",male,51.0,1900-01-01 06:00:00,Carcharodon carcharias
-2015,unprovoked,boarding,3.0,7,uninjured,NSW,-28.78333333,153.5833333,white shark,3.375,"['other:', 'uninjured']",male,51.0,1900-01-01 09:00:00,Carcharodon carcharias
+2015,unprovoked,boarding,3.0,7,uninjured,NSW,-28.78333333,153.5833333,white shark,3.375,['uninjured'],male,51.0,1900-01-01 09:00:00,Carcharodon carcharias
 2015,unprovoked,boarding,1.0,7,injured,NSW,-29.43333333,153.3666667,white shark,3.375,"['arm,', 'hand']",male,,,Carcharodon carcharias
 2015,unprovoked,boarding,23.0,7,injured,VIC,-38.25,141.7833333,white shark,1.8,"['arm,', 'hand']",male,40.0,,Carcharodon carcharias
 2015,unprovoked,boarding,2.0,7,injured,NSW,-28.86666667,153.5833333,white shark,3.5,['leg'],male,32.0,1900-01-01 10:15:00,Carcharodon carcharias
 2015,unprovoked,boarding,22.0,8,injured,NSW,-31.46666667,152.9166667,white shark,2.7,['thigh'],male,38.0,1900-01-01 17:00:00,Carcharodon carcharias
-2015,unprovoked,boarding,16.0,8,uninjured,QLD,-18.83333333,147.6333333,tiger shark,3.166265060240964,"['other:', 'uninjured']",female,,,Galeocerdo cuvier
+2015,unprovoked,boarding,16.0,8,uninjured,QLD,-18.83333333,147.6333333,tiger shark,3.166265060240964,['uninjured'],female,,,Galeocerdo cuvier
 2015,provoked,boarding,8.0,9,injured,NSW,-33.05,152.5333333,unknown species,2.0,"['arm,', 'hand']",male,42.0,1900-01-01 06:15:00,Unknown species
 2015,unprovoked,boarding,4.0,9,injured,NSW,-32.06666667,152.5333333,white shark,2.5,['foot'],male,64.5,1900-01-01 12:00:00,Carcharodon carcharias
 2015,unprovoked,snorkelling,26.0,9,injured,QLD,-17.21666667,146.0833333,unknown species,0.9,['leg'],female,7.0,,Unknown species
@@ -1022,48 +1022,48 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2016,provoked,boarding,9.0,1,injured,QLD,-26.8,153.1333333,wobbegong,1.2,['foot'],male,,,Orectolobidae
 2016,unprovoked,swimming,5.0,1,injured,QLD,-23.43333333,151.9,blacktip reef shark,1.5999999999999999,['calf'],male,11.0,,Carcharhinus melanopterus
 2016,provoked,spearfishing,2.0,1,injured,QLD,-23.15,150.9,tiger shark,3.0,"['arm,', 'leg']",male,31.0,1900-01-01 12:00:00,Galeocerdo cuvier
-2016,unprovoked,boarding,4.0,2,uninjured,NSW,-34,151.65,white shark,2.6,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2016,unprovoked,boarding,4.0,2,uninjured,NSW,-34,151.65,white shark,2.6,['uninjured'],male,,,Carcharodon carcharias
 2016,provoked,spearfishing,21.0,2,injured,NSW,-23.56666667,151.3166667,wobbegong,1.3408602150537634,['arm'],male,,,Orectolobidae
-2016,unprovoked,boarding,11.0,2,uninjured,TAS,-40.91666667,144.6166667,white shark,3.375,"['other:', 'uninjured']",male,,1900-01-01 12:30:00,Carcharodon carcharias
+2016,unprovoked,boarding,11.0,2,uninjured,TAS,-40.91666667,144.6166667,white shark,3.375,['uninjured'],male,,1900-01-01 12:30:00,Carcharodon carcharias
 2016,unprovoked,boarding,11.0,3,uninjured,NSW,-31.18333333,152.9666667,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 2016,provoked,fishing,2.0,3,injured,SA,-37.03333333,139.7333333,bronze whaler shark,2.5208333333333335,['Unknown'],male,,1900-01-01 23:30:00,Carcharhinus brachyurus
-2016,unprovoked,boarding,28.0,3,uninjured,NSW,-34.03333333,151.15,white shark,3.375,"['other:', 'uninjured']",male,,1900-01-01 11:00:00,Carcharodon carcharias
+2016,unprovoked,boarding,28.0,3,uninjured,NSW,-34.03333333,151.15,white shark,3.375,['uninjured'],male,,1900-01-01 11:00:00,Carcharodon carcharias
 2016,unprovoked,boarding,30.0,3,injured,NSW,-34.65,150.85,white shark,3.375,['leg'],male,22.0,1900-01-01 19:00:00,Carcharodon carcharias
 2016,provoked,swimming,20.0,4,injured,NSW,-28.63333333,153.6,wobbegong,0.8,['foot'],male,12.0,1900-01-01 10:30:00,Orectolobidae
 2016,unprovoked,boarding,31.0,5,fatal,WA,-32.58333333,115.6333333,white shark,3.375,['leg'],male,29.0,,Carcharodon carcharias
-2016,provoked,spearfishing,31.0,5,uninjured,NSW,-28.25276667,153.5921833,bronze whaler shark,2.5,"['other:', 'uninjured']",male,,1900-01-01 17:30:00,Carcharhinus brachyurus
+2016,provoked,spearfishing,31.0,5,uninjured,NSW,-28.25276667,153.5921833,bronze whaler shark,2.5,['uninjured'],male,,1900-01-01 17:30:00,Carcharhinus brachyurus
 2016,unprovoked,diving,5.0,6,fatal,WA,-31.66666667,115.6666667,white shark,5.0,['Unknown'],female,60.0,,Carcharodon carcharias
-2016,provoked,spearfishing,15.0,6,injured,WA,-23.02411667,113.1294,grey reef shark,1.8,"['other:', 'uninjured']",male,19.0,,Carcharhinus amblyrhynchos
-2016,unprovoked,boarding,26.0,6,uninjured,NSW,-34.6215,150.8568,unknown,1.9428571428571428,"['other:', 'uninjured']",male,,1900-01-01 16:43:00,Unknown species
-2016,provoked,spearfishing,31.0,6,uninjured,NSW,-28.2646,153.5777,bronze whaler shark,2.5208333333333335,"['other:', 'uninjured']",male,23.0,1900-01-01 16:30:00,Carcharhinus brachyurus
-2016,provoked,spearfishing,19.0,7,uninjured,NSW,-32.717,152.1049,unknown,1.9428571428571428,"['other:', 'uninjured']",male,,,Unknown species
-2016,unprovoked,boarding,26.0,7,uninjured,NSW,-28.8377,153.6044,white shark,3.0,"['other:', 'uninjured']",male,18.0,1900-01-01 12:00:00,Carcharodon carcharias
-2016,unprovoked,boarding,29.0,7,uninjured,NSW,-28.3037,153.5742,white shark,3.0,"['other:', 'uninjured']",male,,1900-01-01 07:40:00,Carcharodon carcharias
+2016,provoked,spearfishing,15.0,6,injured,WA,-23.02411667,113.1294,grey reef shark,1.8,['uninjured'],male,19.0,,Carcharhinus amblyrhynchos
+2016,unprovoked,boarding,26.0,6,uninjured,NSW,-34.6215,150.8568,unknown,1.9428571428571428,['uninjured'],male,,1900-01-01 16:43:00,Unknown species
+2016,provoked,spearfishing,31.0,6,uninjured,NSW,-28.2646,153.5777,bronze whaler shark,2.5208333333333335,['uninjured'],male,23.0,1900-01-01 16:30:00,Carcharhinus brachyurus
+2016,provoked,spearfishing,19.0,7,uninjured,NSW,-32.717,152.1049,unknown,1.9428571428571428,['uninjured'],male,,,Unknown species
+2016,unprovoked,boarding,26.0,7,uninjured,NSW,-28.8377,153.6044,white shark,3.0,['uninjured'],male,18.0,1900-01-01 12:00:00,Carcharodon carcharias
+2016,unprovoked,boarding,29.0,7,uninjured,NSW,-28.3037,153.5742,white shark,3.0,['uninjured'],male,,1900-01-01 07:40:00,Carcharodon carcharias
 2016,unprovoked,boarding,16.0,9,uninjured,VIC,-38.06115,144.04745,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
 2016,unprovoked,boarding,26.0,9,injured,NSW,-28.86666667,153.5833333,white shark,3.5,['leg'],male,,,Carcharodon carcharias
-2016,unprovoked,boarding,5.0,9,uninjured,WA,-33.11656667,114.1649,white shark,3.375,"['other:', 'uninjured']",male,,,Carcharodon carcharias
+2016,unprovoked,boarding,5.0,9,uninjured,WA,-33.11656667,114.1649,white shark,3.375,['uninjured'],male,,,Carcharodon carcharias
 2016,unprovoked,boarding,15.0,10,injured,QLD,-27.335,153.235,white shark,4.0,"['leg,', 'torso']",male,,1900-01-01 18:00:00,Carcharodon carcharias
 2016,unprovoked,boarding,12.0,10,injured,NSW,-28.83333333,153.6,white shark,3.5,['leg'],male,20.0,1900-01-01 10:30:00,Carcharodon carcharias
 2016,unprovoked,boarding,24.0,10,injured,NSW,-33.08945,151.0587667,white shark,2.9,['leg'],male,36.0,,Carcharodon carcharias
 2016,provoked,swimming,4.0,10,injured,QLD,-20.23333333,148.95,lemon shark,1.0,['arm'],male,10.0,,Negaprion brevirostris
 2016,unprovoked,boarding,1.0,12,injured,NSW,-32.30595,152.52275,white shark,4.0,"['arm,', 'foot']",male,64.5,1900-01-01 09:00:00,Carcharodon carcharias
-2016,provoked,spearfishing,10.0,12,uninjured,QLD,-12.45183333,143.3444167,bull shark,2.4013698630136986,"['other:', 'uninjured']",male,35.0,,Carcharhinus leucas
-2016,unprovoked,snorkelling,24.0,12,injured,WA,-21.15741667,114.0218833,whaler shark,2.2,"['torso,', 'pelvic', 'region']",female,,,Carcharhinidae
+2016,provoked,spearfishing,10.0,12,uninjured,QLD,-12.45183333,143.3444167,bull shark,2.4013698630136986,['uninjured'],male,35.0,,Carcharhinus leucas
+2016,unprovoked,snorkelling,24.0,12,injured,WA,-21.15741667,114.0218833,whaler shark,2.2,"['torso,', 'pelvic region']",female,,,Carcharhinidae
 2016,unprovoked,snorkelling,15.0,12,injured,WA,-31.14531667,115.1265,unknown species,1.9428571428571428,['foot'],male,61.0,,Unknown species
 2017,unprovoked,snorkelling,21.0,1,injured,QLD,-9.863916667,144.7908167,whaler shark,4.0,"['hand,', 'arm,', 'torso']",male,55.0,,Carcharhinidae
 2017,provoked,swimming,3.0,1,injured,NSW,-36.88666667,149.9131833,wobbegong,1.3408602150537634,['foot'],male,19.0,,Orectolobidae
 2017,unprovoked,swimming,13.0,1,injured,QLD,-21.96676667,149.4843833,unknown species,1.9428571428571428,['hand'],male,57.0,1900-01-01 13:30:00,Unknown species
-2017,provoked,spearfishing,8.0,1,uninjured,QLD,-10.65406667,142.5072333,whaler shark,2.8,"['other:', 'uninjured']",male,,,Carcharhinidae
+2017,provoked,spearfishing,8.0,1,uninjured,QLD,-10.65406667,142.5072333,whaler shark,2.8,['uninjured'],male,,,Carcharhinidae
 2017,unprovoked,boarding,24.0,2,uninjured,WA,-32.567,115.65,unknown species,1.9428571428571428,['Unknown'],male,,1900-01-01 07:30:00,Unknown species
 2017,unprovoked,snorkelling,18.0,2,injured,QLD,-18.24948333,146.1839333,tiger shark,3.166265060240964,['leg'],male,25.0,,Galeocerdo cuvier
 2017,unprovoked,snorkelling,25.0,2,injured,WA,-23.2411667,113.1294,bull shark,2.4013698630136986,['hand'],female,,,Carcharhinus leucas
-2017,unprovoked,boarding,19.0,3,injured,NSW,-34.60465,150.8677833,unknown species,1.9428571428571428,"['torso,', 'pelvic', 'region']",male,30.0,1900-01-01 18:30:00,Unknown species
-2017,unprovoked,unmotorised boating,2.0,4,uninjured,QLD,-27.05206667,153.05745,unknown species,1.9428571428571428,"['other:', 'uninjured']",male,,1900-01-01 15:00:00,Unknown species
+2017,unprovoked,boarding,19.0,3,injured,NSW,-34.60465,150.8677833,unknown species,1.9428571428571428,"['torso,', 'pelvic region']",male,30.0,1900-01-01 18:30:00,Unknown species
+2017,unprovoked,unmotorised boating,2.0,4,uninjured,QLD,-27.05206667,153.05745,unknown species,1.9428571428571428,['uninjured'],male,,1900-01-01 15:00:00,Unknown species
 2017,provoked,boarding,2.0,4,injured,NSW,-32.7667,152.1127,grey nurse shark,1.8666666666666665,"['left', 'foot']",male,46.0,1900-01-01 17:00:00,Carcharius taurus
 2017,unprovoked,boarding,17.0,4,fatal,WA,-33.83250092,121.9968696,white shark,3.375,['leg'],female,17.0,1900-01-01 16:00:00,Carcharodon carcharias
-2017,unprovoked,boarding,4.0,6,uninjured,NSW,-33.0775,151.0725,white shark,2.5,"['other:', 'uninjured']",male,,1900-01-01 17:00:00,Carcharodon carcharias
+2017,unprovoked,boarding,4.0,6,uninjured,NSW,-33.0775,151.0725,white shark,2.5,['uninjured'],male,,1900-01-01 17:00:00,Carcharodon carcharias
 2017,unprovoked,boarding,11.0,6,uninjured,WA,-33.3146,115.635,white shark,4.0,['Unknown'],unknown,,,Carcharodon carcharias
-2017,unprovoked,boarding,29.0,8,injured,VIC,-38.5367,143.9715,white shark,3.0,"['pelvic', 'region']",male,,,Carcharodon carcharias
+2017,unprovoked,boarding,29.0,8,injured,VIC,-38.5367,143.9715,white shark,3.0,['pelvic region'],male,,,Carcharodon carcharias
 2017,unprovoked,boarding,10.0,9,injured,NSW,-29.59387,153.3322,white shark,3.375,['Unknown'],unknown,,,Carcharodon carcharias
 2017,unprovoked,boarding,25.0,9,uninjured,WA,-33.8585,114.9843,white shark,3.5,['Unknown'],female,,,Carcharodon carcharias
 2017,unprovoked,swimming,10.0,9,injured,WA,-20.61367,117.1863,whaler shark,1.0,['leg'],male,,1900-01-01 15:00:00,Carcharhinidae
@@ -1080,14 +1080,14 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2018,unprovoked,swimming,5.0,2,injured,WA,-31.7789,115.7326,wobbegong,0.4,['calf'],female,17.0,,Orectolobidae
 2018,provoked,snorkelling,15.0,2,injured,WA,-33.5638,115.0629,wobbegong,1.3408602150537634,['leg'],male,,,Orectolobidae
 2018,unprovoked,swimming,23.0,2,injured,NSW,-33.993,151.1753,white shark,3.0,['leg'],female,55.0,1900-01-01 19:00:00,Carcharodon carcharias
-2018,provoked,snorkelling,4.0,3,uninjured,WA,-34.2256,115.0609,tiger shark,2.0,"['other:', 'uninjured']",male,,,Galeocerdo cuvier
+2018,provoked,snorkelling,4.0,3,uninjured,WA,-34.2256,115.0609,tiger shark,2.0,['uninjured'],male,,,Galeocerdo cuvier
 2018,unprovoked,boarding,9.0,3,injured,VIC,-38.37,144.28,bronze whaler shark,2.0,['foot'],male,18.0,,Carcharhinus brachyurus
 2018,unprovoked,boarding,16.0,4,injured,WA,-33.8416,115.0221,white shark,3.0,['thigh'],male,41.0,1900-01-01 14:40:00,Carcharodon carcharias
 2018,unprovoked,boarding,16.0,4,injured,WA,-33.8416,115.0221,white shark,4.0,['calf'],male,37.0,,Carcharodon carcharias
-2018,unprovoked,boarding,25.0,4,uninjured,WA,-33.9825,114.9922,white shark,3.0,"['other:', 'uninjured']",male,60.0,1900-01-01 09:30:00,Carcharodon carcharias
-2018,unprovoked,boarding,11.0,5,uninjured,WA,-33.8416,115.0221,white shark,4.0,"['other:', 'uninjured']",female,,1900-01-01 11:30:00,Carcharodon carcharias
+2018,unprovoked,boarding,25.0,4,uninjured,WA,-33.9825,114.9922,white shark,3.0,['uninjured'],male,60.0,1900-01-01 09:30:00,Carcharodon carcharias
+2018,unprovoked,boarding,11.0,5,uninjured,WA,-33.8416,115.0221,white shark,4.0,['uninjured'],female,,1900-01-01 11:30:00,Carcharodon carcharias
 2018,unprovoked,boarding,8.0,6,injured,NSW,-30.296,153.11,wobbegong,1.3408602150537634,"['calf,', 'foot']",male,19.0,,Orectolobidae
-2018,unprovoked,boarding,3.0,6,uninjured,NSW,-28.84,153.601,white shark,3.375,"['other:', 'uninjured']",male,37.0,,Carcharodon carcharias
+2018,unprovoked,boarding,3.0,6,uninjured,NSW,-28.84,153.601,white shark,3.375,['uninjured'],male,37.0,,Carcharodon carcharias
 2018,unprovoked,swimming,19.0,9,injured,QLD,-20.25,148.9333,tiger shark,3.166265060240964,['Unknown'],female,,,Galeocerdo cuvier
 2018,unprovoked,swimming,20.0,9,injured,QLD,-20.25,148.9333,tiger shark,3.166265060240964,['Unknown'],female,,,Galeocerdo cuvier
 2018,unprovoked,unknown,28.0,9,injured,NT,-13.97,136.5933,bull shark,2.4013698630136986,['Unknown'],male,17.0,,Carcharhinus leucas
@@ -1106,7 +1106,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2019,unprovoked,boarding,4.0,2,uninjured,NSW,-30.452,152.8979,unknown species,1.9428571428571428,['Unknown'],male,50.0,1900-01-01 06:15:00,Unknown species
 2019,provoked,unknown,11.0,2,injured,NT,-13.8611,136.8116,whitetip reef shark,1.7,['Unknown'],unknown,,,Triaenodon obesus
 2019,unprovoked,boarding,17.0,2,injured,NSW,-28.6337,153.6003,white shark,3.375,['leg'],male,41.0,1900-01-01 06:40:00,Carcharodon carcharias
-2019,unprovoked,snorkelling,25.0,3,injured,QLD,-18.156,147.48,grey reef shark,1.95,"['thigh,', 'pelvic', 'region']",male,25.0,1900-01-01 12:30:00,Carcharhinus amblyrhynchos
+2019,unprovoked,snorkelling,25.0,3,injured,QLD,-18.156,147.48,grey reef shark,1.95,"['thigh,', 'pelvic region']",male,25.0,1900-01-01 12:30:00,Carcharhinus amblyrhynchos
 2019,provoked,spearfishing,20.0,4,injured,NSW,-32.7501,152.1459,grey nurse shark,1.8666666666666665,['arm'],male,18.0,1900-01-01 14:00:00,Carcharius taurus
 2019,unprovoked,swimming,14.0,5,injured,QLD,-24.7293,152.101,unknown species,1.9428571428571428,"['calf,', 'foot']",male,53.0,1900-01-01 16:20:00,Unknown species
 2019,provoked,diving,7.0,6,uninjured,TAS,-43.6523,146.277,white shark,3.375,['Unknown'],male,,,Carcharodon carcharias
@@ -1168,7 +1168,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2021,unprovoked,boarding,14.0,2,injured,WA,-31.034,115.3356,wobbegong,1.3408602150537634,['Unknown'],unknown,,,Orectolobidae
 2021,unprovoked,boarding,7.0,3,uninjured,NSW,-34.0557,151.1551,wobbegong,1.3408602150537634,['Unknown'],male,28.0,1900-01-01 08:00:00,Orectolobidae
 2021,provoked,spearfishing,27.0,3,uninjured,WA,-34.2763,115.052,wobbegong,1.0,['Unknown'],male,,,Orectolobidae
-2021,unprovoked,swimming,13.0,3,injured,NSW,-36.8875,149.9059,unknown species,1.9428571428571428,"['torso,', 'pelvic', 'region']",female,63.0,1900-01-01 07:00:00,Unknown species
+2021,unprovoked,swimming,13.0,3,injured,NSW,-36.8875,149.9059,unknown species,1.9428571428571428,"['torso,', 'pelvic region']",female,63.0,1900-01-01 07:00:00,Unknown species
 2021,provoked,spearfishing,27.0,3,injured,WA,-23.325,113.791,bull shark,2.4013698630136986,['calf'],male,,1900-01-01 12:20:00,Carcharhinus leucas
 2021,unprovoked,boarding,20.0,3,uninjured,WA,-33.6397,115.0263,blacktip reef shark,2.0,['Unknown'],male,,1900-01-01 15:00:00,Carcharhinus melanopterus
 2021,unprovoked,swimming,19.0,4,injured,WA,-20.6564,116.7081,blacktip reef shark,0.8,['foot'],male,33.0,1900-01-01 15:40:00,Carcharhinus melanopterus
@@ -1177,7 +1177,7 @@ Year,Provocation,Activity,Day,Month,Injury,State,Latitude,Longitude,SharkName,Sh
 2021,unprovoked,snorkelling,11.0,6,injured,WA,-23.1423,113.7723,tiger shark,2.0,['foot'],male,10.0,,Galeocerdo cuvier
 2021,provoked,spearfishing,23.0,6,injured,WA,-29.9453,114.9824,white shark,4.0,"['calf,', 'foot']",male,25.0,1900-01-01 14:20:00,Carcharodon carcharias
 2021,unprovoked,boarding,5.0,7,injured,NSW,-31.1295,153.0011,white shark,3.375,['arm'],male,25.0,,Carcharodon carcharias
-2021,provoked,motorised boating,27.0,7,injured,WA,-20.6517,115.5785,lemon shark,1.0,"['leg,', 'pelvic', 'region']",male,32.0,,Negaprion brevirostris
+2021,provoked,motorised boating,27.0,7,injured,WA,-20.6517,115.5785,lemon shark,1.0,"['leg,', 'pelvic region']",male,32.0,,Negaprion brevirostris
 2021,unprovoked,boarding,5.0,9,fatal,NSW,-30.1575,153.1502,white shark,3.375,['arm'],male,31.0,1900-01-01 11:00:00,Carcharodon carcharias
 2021,unprovoked,boarding,18.0,9,injured,NSW,-30.2860,153.1364,wobbegong,1.3408602150537634,['foot'],male,47.0,,Orectolobidae
 2021,unprovoked,swimming,17.0,10,injured,QLD,-20.2665,148.8819,unknown species,1.9428571428571428,['leg'],male,,,Unknown species
