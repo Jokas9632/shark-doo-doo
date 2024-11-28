@@ -14,3 +14,4 @@ def read_activity_data():
 
 
 df = read_activity_data()
+print(df['Activity'].value_counts())
