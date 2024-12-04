@@ -10,7 +10,7 @@
 - [ ] **Igor**: Introduction and general report format  
 - [ ] **Jokubas**: Data analysis and help with prototype if needed  
 - [ ] **Josh**: Task analysis  
-- [ ] **Martynas** (if he is alive): Prototype  
+- [ ] **Martynas** (I am finally alive): Prototype  
 
 ---
 
