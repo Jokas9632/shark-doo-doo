@@ -3,7 +3,10 @@ from dash import dcc, html
 import plotly.graph_objects as go
 from dash.dependencies import Input, Output, State
 import pandas as pd
+import warnings
 
+
+warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 # Color dictionary based on scientific shark names
@@ -125,8 +128,14 @@ app.layout = html.Div(
         # New pie chart for gender distribution
         html.Div(
             dcc.Graph(id='gender-pie-chart'),
-            style={'position': 'absolute', 'top': '80%', 'left': '10%', 'width': '20%', 'height': '10%'}
-        )
+            style={'position': 'absolute', 'top': '10%', 'left': '10%', 'width': '20%', 'height': '10%'}
+        ),
+
+        html.Div(
+            dcc.Graph(id='age-histogram'),
+            style={'position': 'absolute', 'top': '55%', 'left': '8%', 'width': '20%', 'height': '10%'}
+        ),
+
     ],
     style={'height': '100vh', 'width': '100vw', 'margin': '0', 'padding': '0'}
 )
@@ -187,22 +196,48 @@ def update_map(selected_range):
     [Output('popup', 'children'),
      Output('popup', 'style')],
     [Input('map', 'clickData'),
-     Input('close-popup', 'n_clicks')],  # Now the close button is correctly referenced
-    [State('popup', 'style')]  # State to access the current style
+     Input('close-popup', 'n_clicks')],
+    [State('popup', 'style')]
 )
 def display_popup(clickData, n_clicks, current_style):
     if n_clicks or clickData is None:
         return '', {'display': 'none'}
 
     custom_data = clickData['points'][0]['customdata']
-    info = html.Div([html.Div(f"{key}: {value}") for key, value in custom_data.items()])
 
-    # Return the popup content with the close button
-    return (html.Div([html.Button('X', id='close-popup', style={'position': 'absolute', 'top': '5px',
-                                                                'right': '5px', 'font-size': '20px'}), info]),
-            {'display': 'block', 'position': 'absolute', 'top': '10%', 'right': '10%', 'width': '250px',
-             'background-color': 'white', 'padding': '10px', 'border-radius': '5px',
-             'box-shadow': '2px 2px 10px rgba(0,0,0,0.3)'})
+    # Combine Year, Month, and Day into a single Date field
+    date = f"{custom_data['Year']}-{str(custom_data['Month']).zfill(2)}-{str(custom_data['Day']).zfill(2)}"
+
+    # Prepare the desired fields in the specified order
+    popup_content = [
+        html.Div(f"Date: {date}"),
+        html.Div(f"Provocation: {custom_data['Provocation'].title()}"),
+        html.Div(f"Activity: {custom_data['Activity'].title()}"),
+        html.Div(f"Injury: {custom_data['Injury'].title()}"),
+        html.Div(f"State: {custom_data['State']}"),
+        html.Div(f"InjuryLocation: {custom_data['InjuryLocation']}"),
+        html.Div(f"Gender: {custom_data['Gender'].title()}"),
+        html.Div(f"Age: {custom_data['Age']}"),
+        html.Div(f"SharkName: {custom_data['SharkName'].title()}"),
+        html.Div(f"SharkLength: {custom_data['SharkLength']:.2f}".rstrip('0').rstrip('.') + 'm'),
+        html.Div(f"SharkScientific: {custom_data['SharkScientific'].title()}")
+    ]
+
+    return (html.Div([
+        html.Button('X', id='close-popup',
+                    style={'position': 'absolute', 'top': '5px', 'right': '5px', 'font-size': '20px'}),
+        *popup_content
+    ]), {
+                'display': 'block',
+                'position': 'absolute',
+                'top': '10%',
+                'right': '10%',
+                'width': '250px',
+                'background-color': 'white',
+                'padding': '10px',
+                'border-radius': '5px',
+                'box-shadow': '2px 2px 10px rgba(0,0,0,0.3)'
+            })
 
 
 # Callback to update the pie chart based on the selected date range
@@ -222,6 +257,47 @@ def update_gender_pie(selected_range):
     )
 
     return pie_fig
+
+
+@app.callback(
+    Output('age-histogram', 'figure'),
+    [Input('date-range-slider', 'value')]  # Trigger on date range change
+)
+def update_age_histogram(selected_range):
+    start_date, end_date = selected_range
+    filtered_df = df[(df['Year'] >= start_date) & (df['Year'] <= end_date)]  # Filter data by selected range
+
+    # Convert age to numeric, handle non-numeric or missing values
+    filtered_df['Age'] = pd.to_numeric(filtered_df['Age'], errors='coerce')
+    filtered_df = filtered_df.dropna(subset=['Age'])  # Remove rows with missing ages
+
+    # Create histogram
+    hist_fig = go.Figure(
+        data=[go.Histogram(
+            x=filtered_df['Age'],
+            xbins=dict(start=0, end=100, size=10),  # Bin size of 10 years
+            marker=dict(color='#1f77b4'),  # Customize bar color
+            name='Age Distribution'
+        )]
+    )
+
+    hist_fig.update_layout(
+        autosize=False,
+        width=400,
+        height=300,
+        xaxis=dict(
+            title='Age Group (Years)',
+            titlefont=dict(size=12)
+        ),
+        yaxis=dict(
+            title='Number of Attacks',
+            titlefont=dict(size=12)
+        ),
+        showlegend=False,
+        margin=dict(l=0, r=0, t=0, b=0)
+    )
+
+    return hist_fig
 
 
 if __name__ == '__main__':
