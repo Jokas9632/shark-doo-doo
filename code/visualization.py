@@ -1,10 +1,10 @@
 import dash
 from dash import dcc, html
 import plotly.graph_objects as go
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 import pandas as pd
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
 # Color dictionary based on scientific shark names
 scientific_name_to_color = {
@@ -106,6 +106,10 @@ app.layout = html.Div(
         ),
         html.Div(
             id='popup',
+            children=[
+                html.Button('X', id='close-popup',
+                            style={'position': 'absolute', 'top': '5px', 'right': '5px', 'font-size': '20px'})
+            ],
             style={
                 'position': 'absolute',
                 'top': '10%',
@@ -117,6 +121,11 @@ app.layout = html.Div(
                 'display': 'none',
                 'box-shadow': '2px 2px 10px rgba(0,0,0,0.3)',
             }
+        ),
+        # New pie chart for gender distribution
+        html.Div(
+            dcc.Graph(id='gender-pie-chart'),
+            style={'position': 'absolute', 'top': '80%', 'left': '10%', 'width': '20%', 'height': '10%'}
         )
     ],
     style={'height': '100vh', 'width': '100vw', 'margin': '0', 'padding': '0'}
@@ -170,7 +179,6 @@ def update_map(selected_range):
         showlegend=False
     )
 
-    # Return updated map figure and display the selected date range
     return fig, f'Selected Date Range: {start_date} - {end_date}'
 
 
@@ -178,21 +186,42 @@ def update_map(selected_range):
 @app.callback(
     [Output('popup', 'children'),
      Output('popup', 'style')],
-    [Input('map', 'clickData')]
+    [Input('map', 'clickData'),
+     Input('close-popup', 'n_clicks')],  # Now the close button is correctly referenced
+    [State('popup', 'style')]  # State to access the current style
 )
-def display_popup(clickData):
-    if clickData is None:
+def display_popup(clickData, n_clicks, current_style):
+    if n_clicks or clickData is None:
         return '', {'display': 'none'}
 
     custom_data = clickData['points'][0]['customdata']
+    info = html.Div([html.Div(f"{key}: {value}") for key, value in custom_data.items()])
 
-    info = html.Div([
-        html.Div(f"{key}: {value}") for key, value in custom_data.items()
-    ])
+    # Return the popup content with the close button
+    return (html.Div([html.Button('X', id='close-popup', style={'position': 'absolute', 'top': '5px',
+                                                                'right': '5px', 'font-size': '20px'}), info]),
+            {'display': 'block', 'position': 'absolute', 'top': '10%', 'right': '10%', 'width': '250px',
+             'background-color': 'white', 'padding': '10px', 'border-radius': '5px',
+             'box-shadow': '2px 2px 10px rgba(0,0,0,0.3)'})
 
-    return info, {'display': 'block', 'position': 'absolute', 'top': '10%', 'left': '10%', 'width': '250px',
-                  'background-color': 'white', 'padding': '10px', 'border-radius': '5px',
-                  'box-shadow': '2px 2px 10px rgba(0,0,0,0.3)'}
+
+# Callback to update the pie chart based on the selected date range
+@app.callback(
+    Output('gender-pie-chart', 'figure'),
+    [Input('date-range-slider', 'value')]  # Trigger when the date range slider is changed
+)
+def update_gender_pie(selected_range):
+    start_date, end_date = selected_range
+    filtered_df = df[(df['Year'] >= start_date) & (df['Year'] <= end_date)]  # Filter data by selected range
+
+    gender_counts = filtered_df['Gender'].value_counts()  # Count gender distribution
+    pie_fig = go.Figure(data=[go.Pie(labels=gender_counts.index, values=gender_counts.values)])
+
+    pie_fig.update_layout(
+        showlegend=True
+    )
+
+    return pie_fig
 
 
 if __name__ == '__main__':
