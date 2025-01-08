@@ -7,10 +7,10 @@
 ---
 
 ## Tasks (as of 2024-11-27):
-- [ ] **Igor**: Introduction and general report format  
-- [ ] **Jokubas**: Data analysis and help with prototype if needed  
-- [ ] **Josh**: Task analysis  
-- [ ] **Martynas** (I am finally alive): Prototype  
+- [X] **Igor**: Introduction and general report format  
+- [X] **Jokubas**: Data analysis and help with prototype if needed  
+- [X] **Josh**: Task analysis  
+- [X] **Martynas** (I am finally alive): Prototype  
 
 ---
 
