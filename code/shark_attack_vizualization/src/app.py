@@ -24,152 +24,178 @@ app.layout = html.Div([
     # Left side panel for statistics
     html.Div([
         html.Div([
-            html.H3('Australian Shark Attacks', 
-                   style={'color': '#688ae8', 'marginBottom': '20px'}),
-            
-            # Filter Controls
+            # Header with title and filter button
             html.Div([
-                # Year Range Slider
-                html.Div([
-                    html.Div([
-                        html.Label('Filter by Year:', 
-                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                        html.Span(id='year-range-display', 
-                                style={'color': 'white', 'float': 'right'})
-                    ]),
-                    dcc.RangeSlider(
-                        id='year-slider',
-                        min=1900,
-                        max=2024,
-                        step=5,
-                        value=[1900, 2024],
-                        marks={
-                            1900: {'label': '1900', 'style': {'color': 'white'}},
-                            1940: {'label': '1940', 'style': {'color': 'white'}},
-                            1980: {'label': '1980', 'style': {'color': 'white'}},
-                            2024: {'label': '2024', 'style': {'color': 'white'}}
-                        },
-                        allowCross=False,
-                        tooltip={'always_visible': False, 'placement': 'bottom'}
-                    ),
-                ], style={
-                    'backgroundColor': '#1e1e1e',
-                    'padding': '15px',
-                    'marginBottom': '20px',
-                    'borderRadius': '5px',
-                }),
+                html.H3('Australian Shark Attacks', 
+                       style={'color': '#688ae8', 'marginBottom': '20px', 'display': 'inline-block'}),
+                html.Button('Filters', 
+                          id='filter-button',
+                          style={
+                              'marginLeft': '20px',
+                              'backgroundColor': '#688ae8',
+                              'color': 'white',
+                              'border': 'none',
+                              'padding': '5px 15px',
+                              'borderRadius': '5px',
+                              'cursor': 'pointer'
+                          }),
+            ], style={'display': 'flex', 'alignItems': 'center', 'marginBottom': '20px'}),
 
-                # Month Range Slider
+            # Filter panel - collapsible div
+            html.Div([
+                # Filter Controls
                 html.Div([
+                    # Year Range Slider
                     html.Div([
-                        html.Label('Filter by Month:', 
-                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                        html.Span(id='month-range-display', 
-                                style={'color': 'white', 'float': 'right'})
-                    ]),
-                    dcc.RangeSlider(
-                        id='month-slider',
-                        min=1,
-                        max=12,
-                        step=1,
-                        value=[1, 12],
-                        marks={
-                            1: {'label': 'Jan', 'style': {'color': 'white'}},
-                            3: {'label': 'Mar', 'style': {'color': 'white'}},
-                            6: {'label': 'Jun', 'style': {'color': 'white'}},
-                            9: {'label': 'Sep', 'style': {'color': 'white'}},
-                            12: {'label': 'Dec', 'style': {'color': 'white'}}
-                        },
-                        allowCross=False,
-                        tooltip={'always_visible': False, 'placement': 'bottom'}
-                    ),
-                ], style={
-                    'backgroundColor': '#1e1e1e',
-                    'padding': '15px',
-                    'marginBottom': '20px',
-                    'borderRadius': '5px',
-                }),
+                        html.Div([
+                            html.Label('Filter by Year:', 
+                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                            html.Span(id='year-range-display', 
+                                    style={'color': 'white', 'float': 'right'})
+                        ]),
+                        dcc.RangeSlider(
+                            id='year-slider',
+                            min=1900,
+                            max=2024,
+                            step=5,
+                            value=[1900, 2024],
+                            marks={
+                                1900: {'label': '1900', 'style': {'color': 'white'}},
+                                1940: {'label': '1940', 'style': {'color': 'white'}},
+                                1980: {'label': '1980', 'style': {'color': 'white'}},
+                                2024: {'label': '2024', 'style': {'color': 'white'}}
+                            },
+                            allowCross=False,
+                            tooltip={'always_visible': False, 'placement': 'bottom'}
+                        ),
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
 
-                # Day Range Slider
-                html.Div([
+                    # Month Range Slider
                     html.Div([
-                        html.Label('Filter by Day:', 
-                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                        html.Span(id='day-range-display', 
-                                style={'color': 'white', 'float': 'right'})
-                    ]),
-                    dcc.RangeSlider(
-                        id='day-slider',
-                        min=1,
-                        max=31,
-                        step=1,
-                        value=[1, 31],
-                        marks={
-                            1: {'label': '1', 'style': {'color': 'white'}},
-                            10: {'label': '10', 'style': {'color': 'white'}},
-                            20: {'label': '20', 'style': {'color': 'white'}},
-                            31: {'label': '31', 'style': {'color': 'white'}}
-                        },
-                        allowCross=False,
-                        tooltip={'always_visible': False, 'placement': 'bottom'}
-                    ),
-                ], style={
-                    'backgroundColor': '#1e1e1e',
-                    'padding': '15px',
-                    'marginBottom': '20px',
-                    'borderRadius': '5px',
-                }),
+                        html.Div([
+                            html.Label('Filter by Month:', 
+                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                            html.Span(id='month-range-display', 
+                                    style={'color': 'white', 'float': 'right'})
+                        ]),
+                        dcc.RangeSlider(
+                            id='month-slider',
+                            min=1,
+                            max=12,
+                            step=1,
+                            value=[1, 12],
+                            marks={
+                                1: {'label': 'Jan', 'style': {'color': 'white'}},
+                                3: {'label': 'Mar', 'style': {'color': 'white'}},
+                                6: {'label': 'Jun', 'style': {'color': 'white'}},
+                                9: {'label': 'Sep', 'style': {'color': 'white'}},
+                                12: {'label': 'Dec', 'style': {'color': 'white'}}
+                            },
+                            allowCross=False,
+                            tooltip={'always_visible': False, 'placement': 'bottom'}
+                        ),
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
 
-                # Age Range Slider
-                html.Div([
+                    # Day Range Slider
                     html.Div([
-                        html.Label('Filter by Age:', 
-                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                        html.Span(id='age-range-display', 
-                                style={'color': 'white', 'float': 'right'})
-                    ]),
-                    dcc.RangeSlider(
-                        id='age-slider',
-                        min=0,
-                        max=90,
-                        step=5,
-                        value=[0, 90],
-                        marks={
-                            0: {'label': '0', 'style': {'color': 'white'}},
-                            30: {'label': '30', 'style': {'color': 'white'}},
-                            60: {'label': '60', 'style': {'color': 'white'}},
-                            90: {'label': '90+', 'style': {'color': 'white'}}
-                        },
-                        allowCross=False,
-                        tooltip={'always_visible': False, 'placement': 'bottom'}
-                    ),
-                ], style={
-                    'backgroundColor': '#1e1e1e',
-                    'padding': '15px',
-                    'marginBottom': '20px',
-                    'borderRadius': '5px',
-                }),
-            ], style={
-                'marginBottom': '20px'
+                        html.Div([
+                            html.Label('Filter by Day:', 
+                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                            html.Span(id='day-range-display', 
+                                    style={'color': 'white', 'float': 'right'})
+                        ]),
+                        dcc.RangeSlider(
+                            id='day-slider',
+                            min=1,
+                            max=31,
+                            step=1,
+                            value=[1, 31],
+                            marks={
+                                1: {'label': '1', 'style': {'color': 'white'}},
+                                10: {'label': '10', 'style': {'color': 'white'}},
+                                20: {'label': '20', 'style': {'color': 'white'}},
+                                31: {'label': '31', 'style': {'color': 'white'}}
+                            },
+                            allowCross=False,
+                            tooltip={'always_visible': False, 'placement': 'bottom'}
+                        ),
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
+                    # Age Range Slider
+                    html.Div([
+                        html.Div([
+                            html.Label('Filter by Age:', 
+                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                            html.Span(id='age-range-display', 
+                                    style={'color': 'white', 'float': 'right'})
+                        ]),
+                        dcc.RangeSlider(
+                            id='age-slider',
+                            min=0,
+                            max=90,
+                            step=5,
+                            value=[0, 90],
+                            marks={
+                                0: {'label': '0', 'style': {'color': 'white'}},
+                                30: {'label': '30', 'style': {'color': 'white'}},
+                                60: {'label': '60', 'style': {'color': 'white'}},
+                                90: {'label': '90+', 'style': {'color': 'white'}}
+                            },
+                            allowCross=False,
+                            tooltip={'always_visible': False, 'placement': 'bottom'}
+                        ),
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+                ], style={'marginBottom': '20px'})
+            ], id='filter-panel', style={
+                'display': 'none',
+                'backgroundColor': 'rgba(18, 18, 18, 0.95)',
+                'padding': '20px',
+                'marginBottom': '20px',
+                'borderRadius': '5px',
+                'maxHeight': '80vh',
+                'overflowY': 'auto'
             }),
             
-            dcc.Graph(
-                id='attacks-by-state',
-                config={'displayModeBar': False}
-            ),
-            dcc.Graph(
-                id='yearly-trend',
-                config={'displayModeBar': False}
-            ),
-            dcc.Graph(
-                id='activity-distribution',
-                config={'displayModeBar': False}
-            ),
-            dcc.Graph(
-                id='shark-species',
-                config={'displayModeBar': False}
-            ),
-            html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
+            # Graphs section in a container
+            html.Div([
+                dcc.Graph(
+                    id='attacks-by-state',
+                    config={'displayModeBar': False}
+                ),
+                dcc.Graph(
+                    id='yearly-trend',
+                    config={'displayModeBar': False}
+                ),
+                dcc.Graph(
+                    id='activity-distribution',
+                    config={'displayModeBar': False}
+                ),
+                dcc.Graph(
+                    id='shark-species',
+                    config={'displayModeBar': False}
+                ),
+                html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
+            ], id='graphs-container'),
         ], style={
             'padding': '20px',
             'backgroundColor': '#121212'
@@ -199,7 +225,39 @@ app.layout = html.Div([
     })
 ])
 
-# Callbacks for range displays
+# Callback for filter panel toggle
+@app.callback(
+    [Output('filter-panel', 'style'),
+     Output('graphs-container', 'style')],
+    [Input('filter-button', 'n_clicks')],
+    [State('filter-panel', 'style'),
+     State('graphs-container', 'style')]
+)
+def toggle_filter_panel(n_clicks, filter_style, graphs_style):
+    if n_clicks is None:
+        return [
+            {
+                'display': 'none',
+                'backgroundColor': 'rgba(18, 18, 18, 0.95)',
+                'padding': '20px',
+                'marginBottom': '20px',
+                'borderRadius': '5px',
+                'maxHeight': '80vh',
+                'overflowY': 'auto'
+            },
+            {}
+        ]
+    
+    if filter_style.get('display') == 'none':
+        filter_style['display'] = 'block'
+        graphs_style = {'marginTop': '20px'}  # Add space between filters and graphs
+    else:
+        filter_style['display'] = 'none'
+        graphs_style = {}
+    
+    return filter_style, graphs_style
+
+# Rest of the callbacks remain the same
 @app.callback(
     Output('year-range-display', 'children'),
     [Input('year-slider', 'value')]
@@ -250,14 +308,12 @@ def update_selected_states(click_data, relayout_data, age_range, year_range, mon
     if not selected_states:
         selected_states = []
     
-    # Update camera position if the map was moved/zoomed
     if triggered_id == 'relayoutData' and relayout_data:
         if 'mapbox.center' in relayout_data:
             camera_position['center'] = relayout_data['mapbox.center']
         if 'mapbox.zoom' in relayout_data:
             camera_position['zoom'] = relayout_data['mapbox.zoom']
     
-    # Handle state selection
     if triggered_id == 'clickData' and click_data:
         clicked_point = click_data['points'][0]
         if 'location' in clicked_point:
@@ -283,10 +339,8 @@ def update_selected_states(click_data, relayout_data, age_range, year_range, mon
      Input('day-slider', 'value')]
 )
 def update_graphs(selected_states, age_range, year_range, month_range, day_range):
-    # Get quick facts
     facts = data_manager.get_quick_facts(selected_states, age_range, month_range, day_range, year_range)
     
-    # Create quick facts HTML
     quick_facts_html = [
         html.H3('Quick Facts', style={'color': '#688ae8', 'marginTop': '20px'}),
         html.P(f"Total recorded attacks: {facts['total_attacks']}"),
@@ -295,11 +349,10 @@ def update_graphs(selected_states, age_range, year_range, month_range, day_range
         html.P(f"Most common shark: {facts['most_common_shark']}")
     ]
     
-    # Return updated figures
     return (
         visualizer.create_attacks_by_state(selected_states, age_range, month_range, day_range, year_range),
         visualizer.create_yearly_trend(selected_states, age_range, month_range, day_range, year_range),
-        visualizer.create_activity_distribution(selected_states, age_range, month_range, day_range, year_range),
+    visualizer.create_activity_distribution(selected_states, age_range, month_range, day_range, year_range),
         visualizer.create_shark_species(selected_states, age_range, month_range, day_range, year_range),
         quick_facts_html
     )
