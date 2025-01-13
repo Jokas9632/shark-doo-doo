@@ -2,8 +2,6 @@
 
 An interactive dashboard for visualizing and analyzing historical shark attack data in Australia. This application provides dynamic visualizations of shark attack patterns, geographical distributions, and various analytical insights across different Australian states.
 
-![Dashboard Preview](![image](https://github.com/user-attachments/assets/362190c8-3b0f-4078-bd95-d840d15ce835))
-
 ## Project Structure
 
 ```
