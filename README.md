@@ -5,15 +5,27 @@ An interactive dashboard for visualizing and analyzing historical shark attack d
 ## Project Structure
 
 ```
-project/
-├── app.py                 # Main application file
-├── data/
-│   ├── cleaned_data.csv   # Processed shark attack data
-│   └── states.geojson     # Australian states boundaries
-├── config.py              # Configuration settings
-├── data.py               # Data management and processing
-├── visualizations.py     # Visualization components
-└── requirements.txt      # Project dependencies
+SHARK-DOO-DOO/
+├── assignment_documents/     # Project documentation
+├── code/
+│   ├── data/               # Raw data files
+│   │   ├── activityDat.csv
+│   │   ├── injurydat.csv
+│   │   └── timedb2.csv
+│   └── shark_attack_vizualization/
+│       ├── data/          # Processed data
+│       │   ├── cleaned_data.csv
+│       │   └── states.geojson
+│       └── src/           # Source code
+│           ├── app.py     # Main application
+│           ├── config.py  # Configuration
+│           ├── data.py    # Data processing
+│           └── visualizations.py
+├── data_cleaning.ipynb    # Data preprocessing notebooks
+├── data_cleaning_v2.ipynb
+├── EDA.ipynb             # Exploratory Data Analysis
+├── LICENSE
+└── README.md
 ```
 
 ## Setup and Installation
