@@ -5,6 +5,8 @@ from data import DataManager
 from visualizations import DashboardVisualizer
 from config import LAYOUT_SETTINGS, STYLE_SETTINGS
 
+# Note: Run the app in terminal from directory code/shark_attack_vizualization
+
 # Initialize the data manager and visualizer
 data_manager = DataManager()
 visualizer = DashboardVisualizer(data_manager)
