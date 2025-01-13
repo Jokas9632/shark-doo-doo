@@ -1,23 +1,49 @@
-# Shark-Doo-Doo
+# Australian Shark Attack Dashboard 🦈
 
-**Visualization Assignment 2024/2025**
+An interactive dashboard for visualizing and analyzing historical shark attack data in Australia. This application provides dynamic visualizations of shark attack patterns, geographical distributions, and various analytical insights across different Australian states.
 
-**Data Science, Year 2 - TU/e**
+![Dashboard Preview](![image](https://github.com/user-attachments/assets/362190c8-3b0f-4078-bd95-d840d15ce835))
 
----
+## Project Structure
 
-## Tasks (as of 2024-11-27):
-- [X] **Igor**: Introduction and general report format  
-- [X] **Jokubas**: Data analysis and help with prototype if needed  
-- [X] **Josh**: Task analysis  
-- [X] **Martynas** (I am finally alive): Prototype  
+```
+project/
+├── app.py                 # Main application file
+├── data/
+│   ├── cleaned_data.csv   # Processed shark attack data
+│   └── states.geojson     # Australian states boundaries
+├── config.py              # Configuration settings
+├── data.py               # Data management and processing
+├── visualizations.py     # Visualization components
+└── requirements.txt      # Project dependencies
+```
 
----
+## Setup and Installation
 
-**Deadline**: Sunday, 2024-12-01
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/australian-shark-attacks.git
+cd australian-shark-attacks
+```
 
----
+2. Create and activate a virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
-## Tools:
-- **Google Docs**: For text dump
-- **Overleaf**: For final report
+3. Install required packages
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the application
+```bash
+python app.py
+```
+
+5. Open your browser and navigate to `http://localhost:8050`
+
+## Data Sources
+
+The dashboard uses a comprehensive dataset of shark attacks in Australian waters, including historical attack records, geographic coordinates, shark species information, activity types, injury details, and demographic information.
