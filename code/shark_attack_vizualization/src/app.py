@@ -23,24 +23,30 @@ app.layout = html.Div([
     
     # Left side panel for statistics
     html.Div([
+        # Fixed header with filter button only
         html.Div([
-            # Header with title and filter button
-            html.Div([
-                html.H3('Australian Shark Attacks', 
-                       style={'color': '#688ae8', 'marginBottom': '20px', 'display': 'inline-block'}),
-                html.Button('Filters', 
-                          id='filter-button',
-                          style={
-                              'marginLeft': '20px',
-                              'backgroundColor': '#688ae8',
-                              'color': 'white',
-                              'border': 'none',
-                              'padding': '5px 15px',
-                              'borderRadius': '5px',
-                              'cursor': 'pointer'
-                          }),
-            ], style={'display': 'flex', 'alignItems': 'center', 'marginBottom': '20px'}),
-
+            html.Button('Filters', 
+                      id='filter-button',
+                      style={
+                          'backgroundColor': '#688ae8',
+                          'color': 'white',
+                          'border': 'none',
+                          'padding': '5px 15px',
+                          'borderRadius': '5px',
+                          'cursor': 'pointer'
+                      }),
+        ], style={
+            'display': 'flex',
+            'justifyContent': 'flex-end',
+            'padding': '20px',
+            'backgroundColor': '#121212',
+            'position': 'sticky',
+            'top': 0,
+            'zIndex': 1001,
+            'borderBottom': '1px solid #333'
+        }),
+        
+        html.Div([
             # Filter panel - collapsible div
             html.Div([
                 # Filter Controls
@@ -168,12 +174,17 @@ app.layout = html.Div([
                 ], style={'marginBottom': '20px'})
             ], id='filter-panel', style={
                 'display': 'none',
-                'backgroundColor': 'rgba(18, 18, 18, 0.95)',
-                'padding': '20px',
-                'marginBottom': '20px',
+                'backgroundColor': 'rgba(18, 18, 18, 0.9)',
+                'padding': '15px',
                 'borderRadius': '5px',
+                'position': 'fixed',
+                'top': '70px',
+                'left': '10px',
+                'width': '460px',  # Slightly less than sidebar width to account for margins
                 'maxHeight': '80vh',
-                'overflowY': 'auto'
+                'overflowY': 'auto',
+                'zIndex': 1002,
+                'boxShadow': '0 4px 6px rgba(0, 0, 0, 0.3)'
             }),
             
             # Graphs section in a container
@@ -195,10 +206,10 @@ app.layout = html.Div([
                     config={'displayModeBar': False}
                 ),
                 html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
-            ], id='graphs-container'),
+            ], id='graphs-container', style={'padding': '20px'}),
         ], style={
-            'padding': '20px',
-            'backgroundColor': '#121212'
+            'backgroundColor': '#121212',
+            'minHeight': 'calc(100vh - 80px)'  # Subtract header height
         })
     ], style={
         'position': 'fixed',
@@ -227,35 +238,33 @@ app.layout = html.Div([
 
 # Callback for filter panel toggle
 @app.callback(
-    [Output('filter-panel', 'style'),
-     Output('graphs-container', 'style')],
+    [Output('filter-panel', 'style')],
     [Input('filter-button', 'n_clicks')],
-    [State('filter-panel', 'style'),
-     State('graphs-container', 'style')]
+    [State('filter-panel', 'style')]
 )
-def toggle_filter_panel(n_clicks, filter_style, graphs_style):
+def toggle_filter_panel(n_clicks, filter_style):
     if n_clicks is None:
-        return [
-            {
-                'display': 'none',
-                'backgroundColor': 'rgba(18, 18, 18, 0.95)',
-                'padding': '20px',
-                'marginBottom': '20px',
-                'borderRadius': '5px',
-                'maxHeight': '80vh',
-                'overflowY': 'auto'
-            },
-            {}
-        ]
+        return [{
+            'display': 'none',
+            'backgroundColor': 'rgba(18, 18, 18, 0.9)',
+            'padding': '15px',
+            'borderRadius': '5px',
+            'position': 'fixed',
+            'top': '70px',
+            'left': '10px',
+            'width': '460px',
+            'maxHeight': '80vh',
+            'overflowY': 'auto',
+            'zIndex': 1002,
+            'boxShadow': '0 4px 6px rgba(0, 0, 0, 0.3)'
+        }]
     
     if filter_style.get('display') == 'none':
         filter_style['display'] = 'block'
-        graphs_style = {'marginTop': '20px'}  # Add space between filters and graphs
     else:
         filter_style['display'] = 'none'
-        graphs_style = {}
     
-    return filter_style, graphs_style
+    return [filter_style]
 
 # Rest of the callbacks remain the same
 @app.callback(
@@ -287,21 +296,21 @@ def update_day_range_text(value):
 def update_age_range_text(value):
     return f"Age: {value[0]} - {value[1]}+ years"
 
-# Map callback
 @app.callback(
-    Output('selected-states', 'data'),
-    Output('australia-map', 'figure'),
-    Output('camera-position', 'data'),
-    Input('australia-map', 'clickData'),
-    Input('australia-map', 'relayoutData'),
-    Input('age-slider', 'value'),
-    Input('year-slider', 'value'),
-    Input('month-slider', 'value'),
-    Input('day-slider', 'value'),
-    State('selected-states', 'data'),
-    State('camera-position', 'data')
+    [Output('selected-states', 'data'),
+     Output('australia-map', 'figure'),
+     Output('camera-position', 'data')],
+    [Input('australia-map', 'clickData'),
+     Input('australia-map', 'relayoutData'),
+     Input('age-slider', 'value'),
+     Input('year-slider', 'value'),
+     Input('month-slider', 'value'),
+     Input('day-slider', 'value')],
+    [State('selected-states', 'data'),
+     State('camera-position', 'data')]
 )
-def update_selected_states(click_data, relayout_data, age_range, year_range, month_range, day_range, selected_states, camera_position):
+def update_selected_states(click_data, relayout_data, age_range, year_range, 
+                         month_range, day_range, selected_states, camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
     
@@ -323,9 +332,10 @@ def update_selected_states(click_data, relayout_data, age_range, year_range, mon
             else:
                 selected_states.append(clicked_state)
     
-    return selected_states, visualizer.create_map(selected_states, camera_position, age_range, month_range, day_range, year_range), camera_position
+    return selected_states, visualizer.create_map(selected_states, camera_position, 
+                                                age_range, month_range, day_range, 
+                                                year_range), camera_position
 
-# Graphs callback
 @app.callback(
     [Output('attacks-by-state', 'figure'),
      Output('yearly-trend', 'figure'),
@@ -352,7 +362,7 @@ def update_graphs(selected_states, age_range, year_range, month_range, day_range
     return (
         visualizer.create_attacks_by_state(selected_states, age_range, month_range, day_range, year_range),
         visualizer.create_yearly_trend(selected_states, age_range, month_range, day_range, year_range),
-    visualizer.create_activity_distribution(selected_states, age_range, month_range, day_range, year_range),
+        visualizer.create_activity_distribution(selected_states, age_range, month_range, day_range, year_range),
         visualizer.create_shark_species(selected_states, age_range, month_range, day_range, year_range),
         quick_facts_html
     )
