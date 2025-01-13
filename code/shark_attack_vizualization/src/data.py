@@ -14,6 +14,7 @@ class DataManager:
         self.df = pd.read_csv(DATA_PATHS['csv_file'])
         self.geojson_data = self._load_geojson()
         self.state_centroids = self._calculate_state_centroids()
+        self._add_day_of_week()
         self._create_hover_text()
 
     def _load_geojson(self) -> Dict:
@@ -34,6 +35,15 @@ class DataManager:
             }
         return centroids
 
+    def _add_day_of_week(self):
+        """Add day of week column based on Year, Month, and Day."""
+        self.df['Date'] = pd.to_datetime(
+            self.df[['Year', 'Month', 'Day']].assign(Day=self.df['Day'].fillna(1)),
+            format='%Y%m%d',
+            errors='coerce'
+        )
+        self.df['DayOfWeek'] = self.df['Date'].dt.day_name()
+
     def _create_hover_text(self) -> None:
         """Create hover text for map points."""
         self.df['hover_text'] = self.df.apply(
@@ -48,47 +58,46 @@ class DataManager:
             axis=1
         )
 
-    def filter_data(self, selected_states: Optional[List[str]] = None, 
-                age_range: Optional[List[float]] = None,
-                month_range: Optional[List[int]] = None,
-                day_range: Optional[List[int]] = None,
-                year_range: Optional[List[int]] = None) -> pd.DataFrame:
-        """Filter data based on selected states and ranges."""
+    def filter_data(self, selected_states: Optional[List[str]] = None,
+                   age_range: Optional[List[float]] = None,
+                   month_range: Optional[List[int]] = None,
+                   day_range: Optional[List[int]] = None,
+                   year_range: Optional[List[int]] = None,
+                   selected_days: Optional[List[str]] = None) -> pd.DataFrame:
+        """Filter data based on selected criteria."""
         df_filtered = self.df.copy()
         
-        # Filter by states if specified
         if selected_states:
             selected_short_states = [REVERSE_STATE_MAPPING[state] 
                                for state in selected_states]
             df_filtered = df_filtered[df_filtered['State'].isin(selected_short_states)]
         
-        # Filter by age range if specified
         if age_range:
             df_filtered = df_filtered[
                 (df_filtered['Age'] >= age_range[0]) & 
                 (df_filtered['Age'] <= age_range[1])
             ]
         
-        # Filter by month range if specified
         if month_range:
             df_filtered = df_filtered[
                 (df_filtered['Month'] >= month_range[0]) & 
                 (df_filtered['Month'] <= month_range[1])
             ]
         
-        # Filter by day range if specified
         if day_range:
             df_filtered = df_filtered[
                 (df_filtered['Day'] >= day_range[0]) & 
                 (df_filtered['Day'] <= day_range[1])
             ]
         
-        # Filter by year range if specified
         if year_range:
             df_filtered = df_filtered[
                 (df_filtered['Year'] >= year_range[0]) & 
                 (df_filtered['Year'] <= year_range[1])
             ]
+
+        if selected_days and len(selected_days) > 0:
+            df_filtered = df_filtered[df_filtered['DayOfWeek'].isin(selected_days)]
         
         return df_filtered
 
@@ -96,9 +105,17 @@ class DataManager:
                        age_range: Optional[List[float]] = None,
                        month_range: Optional[List[int]] = None,
                        day_range: Optional[List[int]] = None,
-                       year_range: Optional[List[int]] = None) -> Dict:
+                       year_range: Optional[List[int]] = None,
+                       selected_days: Optional[List[str]] = None) -> Dict:
         """Get quick facts about the data."""
-        df_filtered = self.filter_data(selected_states, age_range, month_range, day_range, year_range)
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days
+        )
         
         return {
             'total_attacks': len(df_filtered),
@@ -111,34 +128,66 @@ class DataManager:
                            age_range: Optional[List[float]] = None,
                            month_range: Optional[List[int]] = None,
                            day_range: Optional[List[int]] = None,
-                           year_range: Optional[List[int]] = None) -> pd.Series:
+                           year_range: Optional[List[int]] = None,
+                           selected_days: Optional[List[str]] = None) -> pd.Series:
         """Get attack counts by state."""
-        df_filtered = self.filter_data(selected_states, age_range, month_range, day_range, year_range)
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days
+        )
         return df_filtered['State'].value_counts()
 
     def get_yearly_trend(self, selected_states: Optional[List[str]] = None,
                         age_range: Optional[List[float]] = None,
                         month_range: Optional[List[int]] = None,
                         day_range: Optional[List[int]] = None,
-                        year_range: Optional[List[int]] = None) -> pd.Series:
+                        year_range: Optional[List[int]] = None,
+                        selected_days: Optional[List[str]] = None) -> pd.Series:
         """Get yearly trend of attacks."""
-        df_filtered = self.filter_data(selected_states, age_range, month_range, day_range, year_range)
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days
+        )
         return df_filtered['Year'].value_counts().sort_index()
 
     def get_activity_distribution(self, selected_states: Optional[List[str]] = None,
                                 age_range: Optional[List[float]] = None,
                                 month_range: Optional[List[int]] = None,
                                 day_range: Optional[List[int]] = None,
-                                year_range: Optional[List[int]] = None) -> pd.Series:
+                                year_range: Optional[List[int]] = None,
+                                selected_days: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of activities."""
-        df_filtered = self.filter_data(selected_states, age_range, month_range, day_range, year_range)
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days
+        )
         return df_filtered['Activity'].value_counts().head(DATA_SETTINGS['top_n_activities'])
 
     def get_shark_species_distribution(self, selected_states: Optional[List[str]] = None,
                                      age_range: Optional[List[float]] = None,
                                      month_range: Optional[List[int]] = None,
                                      day_range: Optional[List[int]] = None,
-                                     year_range: Optional[List[int]] = None) -> pd.Series:
+                                     year_range: Optional[List[int]] = None,
+                                     selected_days: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of shark species."""
-        df_filtered = self.filter_data(selected_states, age_range, month_range, day_range, year_range)
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days
+        )
         return df_filtered['SharkName'].value_counts().head(DATA_SETTINGS['top_n_species'])

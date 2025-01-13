@@ -3,9 +3,7 @@ from dash import html, dcc
 from dash.dependencies import Input, Output, State
 from data import DataManager
 from visualizations import DashboardVisualizer
-from config import LAYOUT_SETTINGS, STYLE_SETTINGS
-
-# Note: Run the app in terminal from directory code/shark_attack_vizualization
+from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING
 
 # Initialize the data manager and visualizer
 data_manager = DataManager()
@@ -53,6 +51,34 @@ app.layout = html.Div([
             html.Div([
                 # Filter Controls
                 html.Div([
+                    # Day of Week Filter
+                    html.Div([
+                        html.Label('Filter by Day of Week:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='day-checklist',
+                                options=[
+                                    {'label': 'Monday', 'value': 'Monday'},
+                                    {'label': 'Tuesday', 'value': 'Tuesday'},
+                                    {'label': 'Wednesday', 'value': 'Wednesday'},
+                                    {'label': 'Thursday', 'value': 'Thursday'},
+                                    {'label': 'Friday', 'value': 'Friday'},
+                                    {'label': 'Saturday', 'value': 'Saturday'},
+                                    {'label': 'Sunday', 'value': 'Sunday'}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
                     # Year Range Slider
                     html.Div([
                         html.Div([
@@ -182,7 +208,7 @@ app.layout = html.Div([
                 'position': 'fixed',
                 'top': '70px',
                 'left': '10px',
-                'width': '460px',  # Slightly less than sidebar width to account for margins
+                'width': '460px',
                 'maxHeight': '80vh',
                 'overflowY': 'auto',
                 'zIndex': 1002,
@@ -211,7 +237,7 @@ app.layout = html.Div([
             ], id='graphs-container', style={'padding': '20px'}),
         ], style={
             'backgroundColor': '#121212',
-            'minHeight': 'calc(100vh - 80px)'  # Subtract header height
+            'minHeight': 'calc(100vh - 80px)'
         })
     ], style={
         'position': 'fixed',
@@ -268,7 +294,7 @@ def toggle_filter_panel(n_clicks, filter_style):
     
     return [filter_style]
 
-# Rest of the callbacks remain the same
+# Callbacks for range displays
 @app.callback(
     Output('year-range-display', 'children'),
     [Input('year-slider', 'value')]
@@ -298,6 +324,7 @@ def update_day_range_text(value):
 def update_age_range_text(value):
     return f"Age: {value[0]} - {value[1]}+ years"
 
+# Callback for map updates
 @app.callback(
     [Output('selected-states', 'data'),
      Output('australia-map', 'figure'),
@@ -307,12 +334,14 @@ def update_age_range_text(value):
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('month-slider', 'value'),
-     Input('day-slider', 'value')],
+     Input('day-slider', 'value'),
+     Input('day-checklist', 'value')],
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
 def update_selected_states(click_data, relayout_data, age_range, year_range, 
-                         month_range, day_range, selected_states, camera_position):
+                         month_range, day_range, selected_days, selected_states, 
+                         camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
     
@@ -334,10 +363,12 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
             else:
                 selected_states.append(clicked_state)
     
-    return selected_states, visualizer.create_map(selected_states, camera_position, 
-                                                age_range, month_range, day_range, 
-                                                year_range), camera_position
+    return selected_states, visualizer.create_map(
+        selected_states, camera_position, age_range, month_range, 
+        day_range, year_range, selected_days
+    ), camera_position
 
+# Callback for graph updates
 @app.callback(
     [Output('attacks-by-state', 'figure'),
      Output('yearly-trend', 'figure'),
@@ -348,10 +379,15 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('month-slider', 'value'),
-     Input('day-slider', 'value')]
+     Input('day-slider', 'value'),
+     Input('day-checklist', 'value')]
 )
-def update_graphs(selected_states, age_range, year_range, month_range, day_range):
-    facts = data_manager.get_quick_facts(selected_states, age_range, month_range, day_range, year_range)
+def update_graphs(selected_states, age_range, year_range, month_range, 
+                 day_range, selected_days):
+    facts = data_manager.get_quick_facts(
+        selected_states, age_range, month_range, day_range, 
+        year_range, selected_days
+    )
     
     quick_facts_html = [
         html.H3('Quick Facts', style={'color': '#688ae8', 'marginTop': '20px'}),
@@ -362,10 +398,22 @@ def update_graphs(selected_states, age_range, year_range, month_range, day_range
     ]
     
     return (
-        visualizer.create_attacks_by_state(selected_states, age_range, month_range, day_range, year_range),
-        visualizer.create_yearly_trend(selected_states, age_range, month_range, day_range, year_range),
-        visualizer.create_activity_distribution(selected_states, age_range, month_range, day_range, year_range),
-        visualizer.create_shark_species(selected_states, age_range, month_range, day_range, year_range),
+        visualizer.create_attacks_by_state(
+            selected_states, age_range, month_range, day_range, 
+            year_range, selected_days
+        ),
+        visualizer.create_yearly_trend(
+            selected_states, age_range, month_range, day_range, 
+            year_range, selected_days
+        ),
+        visualizer.create_activity_distribution(
+            selected_states, age_range, month_range, day_range, 
+            year_range, selected_days
+        ),
+        visualizer.create_shark_species(
+            selected_states, age_range, month_range, day_range, 
+            year_range, selected_days
+        ),
         quick_facts_html
     )
 
@@ -429,6 +477,27 @@ app.index_string = '''
             }
             .rc-slider-mark-text {
                 color: white;
+            }
+            /* Checkbox styling */
+            input[type="checkbox"] {
+                accent-color: #688ae8;
+                width: 16px;
+                height: 16px;
+                margin-right: 8px;
+            }
+            .grid-cols-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            /* Focus styles for accessibility */
+            input[type="checkbox"]:focus {
+                outline: 2px solid #36def7;
+                outline-offset: 2px;
+            }
+            button:focus {
+                outline: 2px solid #36def7;
+                outline-offset: 2px;
             }
         </style>
     </head>
