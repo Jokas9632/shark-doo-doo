@@ -52,6 +52,31 @@ app.layout = html.Div([
             html.Div([
                 # Filter Controls
                 html.Div([
+                    # Time Period Filter
+                    html.Div([
+                        html.Label('Filter by Time of Day:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='time-period-checklist',
+                                options=[
+                                    {'label': 'Morning (06:00-12:00)', 'value': 'morning'},
+                                    {'label': 'Afternoon (12:00-18:00)', 'value': 'afternoon'},
+                                    {'label': 'Evening (18:00-21:00)', 'value': 'evening'},
+                                    {'label': 'Night (21:00-06:00)', 'value': 'night'}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
                     # Gender Filter
                     html.Div([
                         html.Label('Filter by Gender:', 
@@ -331,7 +356,7 @@ app.layout = html.Div([
         'zIndex': '1000'
     }),
 
-    # Main map
+    # Main map cont.
     html.Div([
         dcc.Graph(
             id='australia-map',
@@ -419,14 +444,15 @@ def update_age_range_text(value):
      Input('day-checklist', 'value'),
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
-     Input('activity-checklist', 'value')],
+     Input('activity-checklist', 'value'),
+     Input('time-period-checklist', 'value')],
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
 def update_selected_states(click_data, relayout_data, age_range, year_range, 
                          month_range, day_range, selected_days, selected_genders,
-                         selected_months, selected_activities, selected_states, 
-                         camera_position):
+                         selected_months, selected_activities, selected_time_periods,
+                         selected_states, camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
     
@@ -458,7 +484,8 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
         selected_days=selected_days,
         selected_genders=selected_genders,
         selected_months=selected_months,
-        selected_activities=selected_activities
+        selected_activities=selected_activities,
+        selected_time_periods=selected_time_periods
     ), camera_position
 
 # Callback for graph updates
@@ -476,11 +503,12 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
      Input('day-checklist', 'value'),
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
-     Input('activity-checklist', 'value')]
+     Input('activity-checklist', 'value'),
+     Input('time-period-checklist', 'value')]
 )
 def update_graphs(selected_states, age_range, year_range, month_range, 
                  day_range, selected_days, selected_genders,
-                 selected_months, selected_activities):
+                 selected_months, selected_activities, selected_time_periods):
     facts = data_manager.get_quick_facts(
         selected_states=selected_states,
         age_range=age_range,
@@ -490,7 +518,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         selected_days=selected_days,
         selected_genders=selected_genders,
         selected_months=selected_months,
-        selected_activities=selected_activities
+        selected_activities=selected_activities,
+        selected_time_periods=selected_time_periods
     )
     
     quick_facts_html = [
@@ -498,7 +527,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         html.P(f"Total recorded attacks: {facts['total_attacks']}"),
         html.P(f"Year range: {facts['year_range']}"),
         html.P(f"Most dangerous state: {facts['most_dangerous_state']}"),
-        html.P(f"Most common shark: {facts['most_common_shark']}")
+        html.P(f"Most common shark: {facts['most_common_shark']}"),
+        html.P(f"Most common time period: {facts['most_common_time']}")
     ]
     
     return (
@@ -511,7 +541,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods
         ),
         visualizer.create_yearly_trend(
             selected_states=selected_states,
@@ -522,7 +553,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods
         ),
         visualizer.create_activity_distribution(
             selected_states=selected_states,
@@ -533,7 +565,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods
         ),
         visualizer.create_shark_species(
             selected_states=selected_states,
@@ -544,7 +577,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods
         ),
         quick_facts_html
     )
