@@ -19,7 +19,10 @@ class DashboardVisualizer:
                   month_range: Optional[List[int]] = None,
                   day_range: Optional[List[int]] = None,
                   year_range: Optional[List[int]] = None,
-                  selected_days: Optional[List[str]] = None) -> go.Figure:
+                  selected_days: Optional[List[str]] = None,
+                  selected_genders: Optional[List[str]] = None,
+                  selected_months: Optional[List[int]] = None,
+                  selected_activities: Optional[List[str]] = None) -> go.Figure:
         """Create the main map visualization."""
         if selected_states is None:
             selected_states = []
@@ -74,7 +77,10 @@ class DashboardVisualizer:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         for state in filtered_df['State'].unique():
@@ -133,11 +139,21 @@ class DashboardVisualizer:
                               month_range: Optional[List[int]] = None,
                               day_range: Optional[List[int]] = None,
                               year_range: Optional[List[int]] = None,
-                              selected_days: Optional[List[str]] = None) -> go.Figure:
+                              selected_days: Optional[List[str]] = None,
+                              selected_genders: Optional[List[str]] = None,
+                              selected_months: Optional[List[int]] = None,
+                              selected_activities: Optional[List[str]] = None) -> go.Figure:
         """Create attacks by state bar chart."""
         attacks_by_state = self.data_manager.get_attacks_by_state(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         fig = go.Figure()
@@ -166,11 +182,21 @@ class DashboardVisualizer:
                           month_range: Optional[List[int]] = None,
                           day_range: Optional[List[int]] = None,
                           year_range: Optional[List[int]] = None,
-                          selected_days: Optional[List[str]] = None) -> go.Figure:
+                          selected_days: Optional[List[str]] = None,
+                          selected_genders: Optional[List[str]] = None,
+                          selected_months: Optional[List[int]] = None,
+                          selected_activities: Optional[List[str]] = None) -> go.Figure:
         """Create yearly trend line chart."""
         yearly_attacks = self.data_manager.get_yearly_trend(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         fig = go.Figure()
@@ -199,11 +225,21 @@ class DashboardVisualizer:
                                    month_range: Optional[List[int]] = None,
                                    day_range: Optional[List[int]] = None,
                                    year_range: Optional[List[int]] = None,
-                                   selected_days: Optional[List[str]] = None) -> go.Figure:
+                                   selected_days: Optional[List[str]] = None,
+                                   selected_genders: Optional[List[str]] = None,
+                                   selected_months: Optional[List[int]] = None,
+                                   selected_activities: Optional[List[str]] = None) -> go.Figure:
         """Create activity distribution bar chart."""
         top_activities = self.data_manager.get_activity_distribution(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         fig = go.Figure()
@@ -233,11 +269,21 @@ class DashboardVisualizer:
                            month_range: Optional[List[int]] = None,
                            day_range: Optional[List[int]] = None,
                            year_range: Optional[List[int]] = None,
-                           selected_days: Optional[List[str]] = None) -> go.Figure:
+                           selected_days: Optional[List[str]] = None,
+                           selected_genders: Optional[List[str]] = None,
+                           selected_months: Optional[List[int]] = None,
+                           selected_activities: Optional[List[str]] = None) -> go.Figure:
         """Create shark species distribution pie chart."""
         top_sharks = self.data_manager.get_shark_species_distribution(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         fig = go.Figure()

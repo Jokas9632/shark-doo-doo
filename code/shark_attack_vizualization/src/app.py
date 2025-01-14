@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output, State
 from data import DataManager
 from visualizations import DashboardVisualizer
 from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING
+import pandas as pd
 
 # Initialize the data manager and visualizer
 data_manager = DataManager()
@@ -51,6 +52,86 @@ app.layout = html.Div([
             html.Div([
                 # Filter Controls
                 html.Div([
+                    # Gender Filter
+                    html.Div([
+                        html.Label('Filter by Gender:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='gender-checklist',
+                                options=[
+                                    {'label': 'Female', 'value': 'female'},
+                                    {'label': 'Male', 'value': 'male'}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
+                    # Month Filter
+                    html.Div([
+                        html.Label('Filter by Month:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='month-checklist',
+                                options=[
+                                    {'label': 'January', 'value': 1},
+                                    {'label': 'February', 'value': 2},
+                                    {'label': 'March', 'value': 3},
+                                    {'label': 'April', 'value': 4},
+                                    {'label': 'May', 'value': 5},
+                                    {'label': 'June', 'value': 6},
+                                    {'label': 'July', 'value': 7},
+                                    {'label': 'August', 'value': 8},
+                                    {'label': 'September', 'value': 9},
+                                    {'label': 'October', 'value': 10},
+                                    {'label': 'November', 'value': 11},
+                                    {'label': 'December', 'value': 12}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-3 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
+                    # Activity Filter
+                    html.Div([
+                        html.Label('Filter by Activity:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='activity-checklist',
+                                options=[
+                                    {'label': activity, 'value': activity} 
+                                    for activity in sorted(data_manager.df['Activity'].unique())
+                                    if pd.notna(activity)
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
                     # Day of Week Filter
                     html.Div([
                         html.Label('Filter by Day of Week:', 
@@ -112,7 +193,7 @@ app.layout = html.Div([
                     # Month Range Slider
                     html.Div([
                         html.Div([
-                            html.Label('Filter by Month:', 
+                            html.Label('Filter by Month Range:', 
                                      style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
                             html.Span(id='month-range-display', 
                                     style={'color': 'white', 'float': 'right'})
@@ -143,7 +224,7 @@ app.layout = html.Div([
                     # Day Range Slider
                     html.Div([
                         html.Div([
-                            html.Label('Filter by Day:', 
+                            html.Label('Filter by Day of Month:', 
                                      style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
                             html.Span(id='day-range-display', 
                                     style={'color': 'white', 'float': 'right'})
@@ -335,12 +416,16 @@ def update_age_range_text(value):
      Input('year-slider', 'value'),
      Input('month-slider', 'value'),
      Input('day-slider', 'value'),
-     Input('day-checklist', 'value')],
+     Input('day-checklist', 'value'),
+     Input('gender-checklist', 'value'),
+     Input('month-checklist', 'value'),
+     Input('activity-checklist', 'value')],
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
 def update_selected_states(click_data, relayout_data, age_range, year_range, 
-                         month_range, day_range, selected_days, selected_states, 
+                         month_range, day_range, selected_days, selected_genders,
+                         selected_months, selected_activities, selected_states, 
                          camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
@@ -364,8 +449,16 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
                 selected_states.append(clicked_state)
     
     return selected_states, visualizer.create_map(
-        selected_states, camera_position, age_range, month_range, 
-        day_range, year_range, selected_days
+        selected_states=selected_states,
+        camera_position=camera_position,
+        age_range=age_range,
+        month_range=month_range,
+        day_range=day_range,
+        year_range=year_range,
+        selected_days=selected_days,
+        selected_genders=selected_genders,
+        selected_months=selected_months,
+        selected_activities=selected_activities
     ), camera_position
 
 # Callback for graph updates
@@ -380,13 +473,24 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
      Input('year-slider', 'value'),
      Input('month-slider', 'value'),
      Input('day-slider', 'value'),
-     Input('day-checklist', 'value')]
+     Input('day-checklist', 'value'),
+     Input('gender-checklist', 'value'),
+     Input('month-checklist', 'value'),
+     Input('activity-checklist', 'value')]
 )
 def update_graphs(selected_states, age_range, year_range, month_range, 
-                 day_range, selected_days):
+                 day_range, selected_days, selected_genders,
+                 selected_months, selected_activities):
     facts = data_manager.get_quick_facts(
-        selected_states, age_range, month_range, day_range, 
-        year_range, selected_days
+        selected_states=selected_states,
+        age_range=age_range,
+        month_range=month_range,
+        day_range=day_range,
+        year_range=year_range,
+        selected_days=selected_days,
+        selected_genders=selected_genders,
+        selected_months=selected_months,
+        selected_activities=selected_activities
     )
     
     quick_facts_html = [
@@ -399,20 +503,48 @@ def update_graphs(selected_states, age_range, year_range, month_range,
     
     return (
         visualizer.create_attacks_by_state(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         ),
         visualizer.create_yearly_trend(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         ),
         visualizer.create_activity_distribution(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         ),
         visualizer.create_shark_species(
-            selected_states, age_range, month_range, day_range, 
-            year_range, selected_days
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         ),
         quick_facts_html
     )
@@ -488,6 +620,11 @@ app.index_string = '''
             .grid-cols-2 {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .grid-cols-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
                 gap: 0.5rem;
             }
             /* Focus styles for accessibility */

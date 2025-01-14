@@ -63,7 +63,10 @@ class DataManager:
                    month_range: Optional[List[int]] = None,
                    day_range: Optional[List[int]] = None,
                    year_range: Optional[List[int]] = None,
-                   selected_days: Optional[List[str]] = None) -> pd.DataFrame:
+                   selected_days: Optional[List[str]] = None,
+                   selected_genders: Optional[List[str]] = None,
+                   selected_months: Optional[List[int]] = None,
+                   selected_activities: Optional[List[str]] = None) -> pd.DataFrame:
         """Filter data based on selected criteria."""
         df_filtered = self.df.copy()
         
@@ -98,6 +101,15 @@ class DataManager:
 
         if selected_days and len(selected_days) > 0:
             df_filtered = df_filtered[df_filtered['DayOfWeek'].isin(selected_days)]
+            
+        if selected_genders and len(selected_genders) > 0:
+            df_filtered = df_filtered[df_filtered['Gender'].isin(selected_genders)]
+            
+        if selected_months and len(selected_months) > 0:
+            df_filtered = df_filtered[df_filtered['Month'].isin(selected_months)]
+            
+        if selected_activities and len(selected_activities) > 0:
+            df_filtered = df_filtered[df_filtered['Activity'].isin(selected_activities)]
         
         return df_filtered
 
@@ -106,7 +118,10 @@ class DataManager:
                        month_range: Optional[List[int]] = None,
                        day_range: Optional[List[int]] = None,
                        year_range: Optional[List[int]] = None,
-                       selected_days: Optional[List[str]] = None) -> Dict:
+                       selected_days: Optional[List[str]] = None,
+                       selected_genders: Optional[List[str]] = None,
+                       selected_months: Optional[List[int]] = None,
+                       selected_activities: Optional[List[str]] = None) -> Dict:
         """Get quick facts about the data."""
         df_filtered = self.filter_data(
             selected_states=selected_states,
@@ -114,7 +129,10 @@ class DataManager:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         
         return {
@@ -129,7 +147,10 @@ class DataManager:
                            month_range: Optional[List[int]] = None,
                            day_range: Optional[List[int]] = None,
                            year_range: Optional[List[int]] = None,
-                           selected_days: Optional[List[str]] = None) -> pd.Series:
+                           selected_days: Optional[List[str]] = None,
+                           selected_genders: Optional[List[str]] = None,
+                           selected_months: Optional[List[int]] = None,
+                           selected_activities: Optional[List[str]] = None) -> pd.Series:
         """Get attack counts by state."""
         df_filtered = self.filter_data(
             selected_states=selected_states,
@@ -137,7 +158,10 @@ class DataManager:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         return df_filtered['State'].value_counts()
 
@@ -146,7 +170,10 @@ class DataManager:
                         month_range: Optional[List[int]] = None,
                         day_range: Optional[List[int]] = None,
                         year_range: Optional[List[int]] = None,
-                        selected_days: Optional[List[str]] = None) -> pd.Series:
+                        selected_days: Optional[List[str]] = None,
+                        selected_genders: Optional[List[str]] = None,
+                        selected_months: Optional[List[int]] = None,
+                        selected_activities: Optional[List[str]] = None) -> pd.Series:
         """Get yearly trend of attacks."""
         df_filtered = self.filter_data(
             selected_states=selected_states,
@@ -154,7 +181,10 @@ class DataManager:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         return df_filtered['Year'].value_counts().sort_index()
 
@@ -163,7 +193,10 @@ class DataManager:
                                 month_range: Optional[List[int]] = None,
                                 day_range: Optional[List[int]] = None,
                                 year_range: Optional[List[int]] = None,
-                                selected_days: Optional[List[str]] = None) -> pd.Series:
+                                selected_days: Optional[List[str]] = None,
+                                selected_genders: Optional[List[str]] = None,
+                                selected_months: Optional[List[int]] = None,
+                                selected_activities: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of activities."""
         df_filtered = self.filter_data(
             selected_states=selected_states,
@@ -171,7 +204,10 @@ class DataManager:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         return df_filtered['Activity'].value_counts().head(DATA_SETTINGS['top_n_activities'])
 
@@ -180,7 +216,10 @@ class DataManager:
                                      month_range: Optional[List[int]] = None,
                                      day_range: Optional[List[int]] = None,
                                      year_range: Optional[List[int]] = None,
-                                     selected_days: Optional[List[str]] = None) -> pd.Series:
+                                     selected_days: Optional[List[str]] = None,
+                                     selected_genders: Optional[List[str]] = None,
+                                     selected_months: Optional[List[int]] = None,
+                                     selected_activities: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of shark species."""
         df_filtered = self.filter_data(
             selected_states=selected_states,
@@ -188,6 +227,9 @@ class DataManager:
             month_range=month_range,
             day_range=day_range,
             year_range=year_range,
-            selected_days=selected_days
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities
         )
         return df_filtered['SharkName'].value_counts().head(DATA_SETTINGS['top_n_species'])
