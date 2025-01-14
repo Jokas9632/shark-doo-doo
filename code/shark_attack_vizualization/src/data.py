@@ -138,8 +138,8 @@ class DataManager:
         return {
             'total_attacks': len(df_filtered),
             'year_range': f"{df_filtered['Year'].min()} - {df_filtered['Year'].max()}",
-            'most_dangerous_state': df_filtered['State'].mode().iloc[0] if not df_filtered.empty else 'N/A',
-            'most_common_shark': df_filtered['SharkName'].mode().iloc[0] if not df_filtered.empty else 'N/A'
+            'most_dangerous_state': 'N/A' if df_filtered.empty else df_filtered['State'].mode().iloc[0],
+            'most_common_shark': 'N/A' if df_filtered.empty else df_filtered['SharkName'].mode().iloc[0]
         }
 
     def get_attacks_by_state(self, selected_states: Optional[List[str]] = None,
