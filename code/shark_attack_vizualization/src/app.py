@@ -100,6 +100,33 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
+                    # Shark Species Filter
+                    html.Div([
+                        html.Label('Filter by Shark Species:', 
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='shark-checklist',
+                                options=[
+                                    {'label': 'White Shark', 'value': 'white shark'},
+                                    {'label': 'Tiger Shark', 'value': 'tiger shark'},
+                                    {'label': 'Wobbegong', 'value': 'wobbegong'},
+                                    {'label': 'Bull Shark', 'value': 'bull shark'},
+                                    {'label': 'Whaler Shark', 'value': 'whaler shark'},
+                                    {'label': 'Unknown Species', 'value': 'unknown species'}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
                     # Month Filter
                     html.Div([
                         html.Label('Filter by Month:', 
@@ -356,7 +383,7 @@ app.layout = html.Div([
         'zIndex': '1000'
     }),
 
-    # Main map cont.
+    # Main map container
     html.Div([
         dcc.Graph(
             id='australia-map',
@@ -445,14 +472,15 @@ def update_age_range_text(value):
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
      Input('activity-checklist', 'value'),
-     Input('time-period-checklist', 'value')],
+     Input('time-period-checklist', 'value'),
+     Input('shark-checklist', 'value')],
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
 def update_selected_states(click_data, relayout_data, age_range, year_range, 
                          month_range, day_range, selected_days, selected_genders,
                          selected_months, selected_activities, selected_time_periods,
-                         selected_states, camera_position):
+                         selected_sharks, selected_states, camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
     
@@ -485,7 +513,8 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
         selected_genders=selected_genders,
         selected_months=selected_months,
         selected_activities=selected_activities,
-        selected_time_periods=selected_time_periods
+        selected_time_periods=selected_time_periods,
+        selected_sharks=selected_sharks
     ), camera_position
 
 # Callback for graph updates
@@ -504,11 +533,14 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
      Input('activity-checklist', 'value'),
-     Input('time-period-checklist', 'value')]
+     Input('time-period-checklist', 'value'),
+     Input('shark-checklist', 'value')]
 )
 def update_graphs(selected_states, age_range, year_range, month_range, 
                  day_range, selected_days, selected_genders,
-                 selected_months, selected_activities, selected_time_periods):
+                 selected_months, selected_activities, selected_time_periods,
+                 selected_sharks):
+    
     facts = data_manager.get_quick_facts(
         selected_states=selected_states,
         age_range=age_range,
@@ -519,7 +551,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         selected_genders=selected_genders,
         selected_months=selected_months,
         selected_activities=selected_activities,
-        selected_time_periods=selected_time_periods
+        selected_time_periods=selected_time_periods,
+        selected_sharks=selected_sharks
     )
     
     quick_facts_html = [
@@ -542,7 +575,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_genders=selected_genders,
             selected_months=selected_months,
             selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
         ),
         visualizer.create_yearly_trend(
             selected_states=selected_states,
@@ -554,7 +588,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_genders=selected_genders,
             selected_months=selected_months,
             selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
         ),
         visualizer.create_activity_distribution(
             selected_states=selected_states,
@@ -566,7 +601,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_genders=selected_genders,
             selected_months=selected_months,
             selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
         ),
         visualizer.create_shark_species(
             selected_states=selected_states,
@@ -578,7 +614,8 @@ def update_graphs(selected_states, age_range, year_range, month_range,
             selected_genders=selected_genders,
             selected_months=selected_months,
             selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
         ),
         quick_facts_html
     )
