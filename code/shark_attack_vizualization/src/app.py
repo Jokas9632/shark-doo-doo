@@ -224,74 +224,15 @@ app.layout = html.Div([
                             id='year-slider',
                             min=1900,
                             max=2024,
-                            step=5,
+                            step=1,
                             value=[1900, 2024],
                             marks={
                                 1900: {'label': '1900', 'style': {'color': 'white'}},
-                                1940: {'label': '1940', 'style': {'color': 'white'}},
-                                1980: {'label': '1980', 'style': {'color': 'white'}},
+                                1925: {'label': '1925', 'style': {'color': 'white'}},
+                                1950: {'label': '1950', 'style': {'color': 'white'}},
+                                1975: {'label': '1975', 'style': {'color': 'white'}},
+                                2000: {'label': '2000', 'style': {'color': 'white'}},
                                 2024: {'label': '2024', 'style': {'color': 'white'}}
-                            },
-                            allowCross=False,
-                            tooltip={'always_visible': False, 'placement': 'bottom'}
-                        ),
-                    ], style={
-                        'backgroundColor': '#1e1e1e',
-                        'padding': '15px',
-                        'marginBottom': '20px',
-                        'borderRadius': '5px',
-                    }),
-
-                    # Month Range Slider
-                    html.Div([
-                        html.Div([
-                            html.Label('Filter by Month Range:', 
-                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                            html.Span(id='month-range-display', 
-                                    style={'color': 'white', 'float': 'right'})
-                        ]),
-                        dcc.RangeSlider(
-                            id='month-slider',
-                            min=1,
-                            max=12,
-                            step=1,
-                            value=[1, 12],
-                            marks={
-                                1: {'label': 'Jan', 'style': {'color': 'white'}},
-                                3: {'label': 'Mar', 'style': {'color': 'white'}},
-                                6: {'label': 'Jun', 'style': {'color': 'white'}},
-                                9: {'label': 'Sep', 'style': {'color': 'white'}},
-                                12: {'label': 'Dec', 'style': {'color': 'white'}}
-                            },
-                            allowCross=False,
-                            tooltip={'always_visible': False, 'placement': 'bottom'}
-                        ),
-                    ], style={
-                        'backgroundColor': '#1e1e1e',
-                        'padding': '15px',
-                        'marginBottom': '20px',
-                        'borderRadius': '5px',
-                    }),
-
-                    # Day Range Slider
-                    html.Div([
-                        html.Div([
-                            html.Label('Filter by Day of Month:', 
-                                     style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
-                            html.Span(id='day-range-display', 
-                                    style={'color': 'white', 'float': 'right'})
-                        ]),
-                        dcc.RangeSlider(
-                            id='day-slider',
-                            min=1,
-                            max=31,
-                            step=1,
-                            value=[1, 31],
-                            marks={
-                                1: {'label': '1', 'style': {'color': 'white'}},
-                                10: {'label': '10', 'style': {'color': 'white'}},
-                                20: {'label': '20', 'style': {'color': 'white'}},
-                                31: {'label': '31', 'style': {'color': 'white'}}
                             },
                             allowCross=False,
                             tooltip={'always_visible': False, 'placement': 'bottom'}
@@ -315,12 +256,14 @@ app.layout = html.Div([
                             id='age-slider',
                             min=0,
                             max=90,
-                            step=5,
+                            step=1,
                             value=[0, 90],
                             marks={
                                 0: {'label': '0', 'style': {'color': 'white'}},
-                                30: {'label': '30', 'style': {'color': 'white'}},
+                                20: {'label': '20', 'style': {'color': 'white'}},
+                                40: {'label': '40', 'style': {'color': 'white'}},
                                 60: {'label': '60', 'style': {'color': 'white'}},
+                                80: {'label': '80', 'style': {'color': 'white'}},
                                 90: {'label': '90+', 'style': {'color': 'white'}}
                             },
                             allowCross=False,
@@ -413,7 +356,7 @@ def toggle_filter_panel(n_clicks, filter_style):
             'position': 'fixed',
             'top': '70px',
             'left': '10px',
-            'width': '460px',
+            'width':'460px',
             'maxHeight': '80vh',
             'overflowY': 'auto',
             'zIndex': 1002,
@@ -436,21 +379,6 @@ def update_year_range_text(value):
     return f"Year: {value[0]} - {value[1]}"
 
 @app.callback(
-    Output('month-range-display', 'children'),
-    [Input('month-slider', 'value')]
-)
-def update_month_range_text(value):
-    months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    return f"Month: {months[value[0]-1]} - {months[value[1]-1]}"
-
-@app.callback(
-    Output('day-range-display', 'children'),
-    [Input('day-slider', 'value')]
-)
-def update_day_range_text(value):
-    return f"Day: {value[0]} - {value[1]}"
-
-@app.callback(
     Output('age-range-display', 'children'),
     [Input('age-slider', 'value')]
 )
@@ -466,8 +394,6 @@ def update_age_range_text(value):
      Input('australia-map', 'relayoutData'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
-     Input('month-slider', 'value'),
-     Input('day-slider', 'value'),
      Input('day-checklist', 'value'),
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
@@ -478,8 +404,8 @@ def update_age_range_text(value):
      State('camera-position', 'data')]
 )
 def update_selected_states(click_data, relayout_data, age_range, year_range, 
-                         month_range, day_range, selected_days, selected_genders,
-                         selected_months, selected_activities, selected_time_periods,
+                         selected_days, selected_genders, selected_months, 
+                         selected_activities, selected_time_periods,
                          selected_sharks, selected_states, camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
@@ -506,8 +432,6 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
         selected_states=selected_states,
         camera_position=camera_position,
         age_range=age_range,
-        month_range=month_range,
-        day_range=day_range,
         year_range=year_range,
         selected_days=selected_days,
         selected_genders=selected_genders,
@@ -527,8 +451,6 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
     [Input('selected-states', 'data'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
-     Input('month-slider', 'value'),
-     Input('day-slider', 'value'),
      Input('day-checklist', 'value'),
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
@@ -536,16 +458,13 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
      Input('time-period-checklist', 'value'),
      Input('shark-checklist', 'value')]
 )
-def update_graphs(selected_states, age_range, year_range, month_range, 
-                 day_range, selected_days, selected_genders,
-                 selected_months, selected_activities, selected_time_periods,
-                 selected_sharks):
+def update_graphs(selected_states, age_range, year_range, selected_days, 
+                 selected_genders, selected_months, selected_activities, 
+                 selected_time_periods, selected_sharks):
     
     facts = data_manager.get_quick_facts(
         selected_states=selected_states,
         age_range=age_range,
-        month_range=month_range,
-        day_range=day_range,
         year_range=year_range,
         selected_days=selected_days,
         selected_genders=selected_genders,
@@ -568,8 +487,6 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         visualizer.create_attacks_by_state(
             selected_states=selected_states,
             age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
@@ -581,8 +498,6 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         visualizer.create_yearly_trend(
             selected_states=selected_states,
             age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
@@ -594,8 +509,6 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         visualizer.create_activity_distribution(
             selected_states=selected_states,
             age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
@@ -607,8 +520,6 @@ def update_graphs(selected_states, age_range, year_range, month_range,
         visualizer.create_shark_species(
             selected_states=selected_states,
             age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
