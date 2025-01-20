@@ -14,63 +14,80 @@ class DashboardVisualizer:
         self.data_manager = data_manager
 
     def create_map(self, selected_states: Optional[List[str]] = None,
-                  camera_position: Optional[Dict] = None,
-                  age_range: Optional[List[float]] = None,
-                  month_range: Optional[List[int]] = None,
-                  day_range: Optional[List[int]] = None,
-                  year_range: Optional[List[int]] = None,
-                  selected_days: Optional[List[str]] = None,
-                  selected_genders: Optional[List[str]] = None,
-                  selected_months: Optional[List[int]] = None,
-                  selected_activities: Optional[List[str]] = None,
-                  selected_time_periods: Optional[List[str]] = None,
-                  selected_sharks: Optional[List[str]] = None) -> go.Figure:
-        """Create the main map visualization."""
+                   camera_position: Optional[Dict] = None,
+                   age_range: Optional[List[float]] = None,
+                   month_range: Optional[List[int]] = None,
+                   day_range: Optional[List[int]] = None,
+                   year_range: Optional[List[int]] = None,
+                   selected_days: Optional[List[str]] = None,
+                   selected_genders: Optional[List[str]] = None,
+                   selected_months: Optional[List[int]] = None,
+                   selected_activities: Optional[List[str]] = None,
+                   selected_time_periods: Optional[List[str]] = None,
+                   selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create the main map visualization with improved state selection."""
         if selected_states is None:
             selected_states = []
-        
+
         if camera_position is None:
             camera_position = {
                 'center': MAP_SETTINGS['default_center'],
                 'zoom': MAP_SETTINGS['default_zoom']
             }
-        
+
         # Create base figure
         fig = go.Figure()
 
-        # Add choropleth layer for unselected states
+        # Add choropleth layer for all states with improved interaction
         fig.add_trace(go.Choroplethmapbox(
             geojson=self.data_manager.geojson_data,
-            locations=[feat['properties']['STATE_NAME'] 
-                      for feat in self.data_manager.geojson_data['features']],
-            z=[1] * len(self.data_manager.geojson_data['features']),
+            locations=[feat['properties']['STATE_NAME']
+                       for feat in self.data_manager.geojson_data['features']],
+            z=[1 if feat['properties']['STATE_NAME'] in selected_states else 0
+               for feat in self.data_manager.geojson_data['features']] if selected_states else [0] * len(
+                self.data_manager.geojson_data['features']),
             featureidkey="properties.STATE_NAME",
-            colorscale=[[0, 'rgba(255,255,255,0)'], [1, 'rgba(255,255,255,0)']],
+            colorscale=[[0, 'rgba(255,255,255,0)'], [1, 'rgba(101,194,255,0.4)']],
             showscale=False,
-            hovertemplate=None,
             hoverinfo='none',
-            marker_line_width=1,
-            marker_line_color='white'
+            marker=dict(
+                line=dict(
+                    width=2,  # Increased line width
+                    color='white'
+                ),
+                opacity=0.8  # Increased opacity
+            ),
+            selected=dict(
+                marker=dict(
+                    opacity=1
+                )
+            ),
+            unselected=dict(
+                marker=dict(
+                    opacity=0.3
+                )
+            )
         ))
 
-        # Add choropleth layer for selected states
-        if selected_states:
-            z_selected = [1 if feat['properties']['STATE_NAME'] in selected_states else 0 
-                         for feat in self.data_manager.geojson_data['features']]
-            
-            fig.add_trace(go.Choroplethmapbox(
-                geojson=self.data_manager.geojson_data,
-                locations=[feat['properties']['STATE_NAME'] 
-                          for feat in self.data_manager.geojson_data['features']],
-                z=z_selected,
-                featureidkey="properties.STATE_NAME",
-                colorscale=[[0, 'rgba(101,194,255,0)'], [1, 'rgba(101,194,255,0.2)']],
-                showscale=False,
-                hovertemplate=None,
-                hoverinfo='none',
-                marker_line_width=1,
-                marker_line_color='white'
-            ))
+        # Add invisible larger clickable areas for small states
+        for feature in self.data_manager.geojson_data['features']:
+            state_name = feature['properties']['STATE_NAME']
+            # Add a slightly larger transparent area for better clickability
+            if state_name in ['Tasmania', 'Victoria', 'Australian Capital Territory']:
+                centroid = self.data_manager.state_centroids[state_name]
+                fig.add_trace(go.Scattermapbox(
+                    lat=[centroid['lat']],
+                    lon=[centroid['lon']],
+                    mode='markers',
+                    marker=dict(
+                        size=20,  # Larger clickable area
+                        opacity=0,  # Invisible
+                    ),
+                    name=state_name,
+                    hovertemplate=f"Click to select {state_name}<extra></extra>",
+                    showlegend=False,
+                    customdata=[state_name]
+                ))
 
         # Add shark attack points with filtering
         filtered_df = self.data_manager.filter_data(
@@ -86,7 +103,8 @@ class DashboardVisualizer:
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
-        
+
+        # Add shark attack points with reduced size and opacity
         for state in filtered_df['State'].unique():
             if state in STATE_COLORS:
                 state_data = filtered_df[filtered_df['State'] == state]
@@ -95,10 +113,10 @@ class DashboardVisualizer:
                     lon=state_data['Longitude'],
                     mode='markers',
                     marker=dict(
-                        size=8,
+                        size=6,  # Reduced size
                         color=STATE_COLORS[state],
                         symbol='circle',
-                        opacity=0.8
+                        opacity=0.8  # Reduced opacity
                     ),
                     name=state,
                     text=state_data['hover_text'],
@@ -111,19 +129,23 @@ class DashboardVisualizer:
                     showlegend=False
                 )
 
-        # Add state labels
+        # Add state labels with improved visibility
         for state, centroid in self.data_manager.state_centroids.items():
             fig.add_scattermapbox(
                 lat=[centroid['lat']],
                 lon=[centroid['lon']],
                 mode='text',
                 text=[state],
-                textfont=dict(size=12, color=CHART_SETTINGS['font_color']),
+                textfont=dict(
+                    size=14,  # Increased font size
+                    color=CHART_SETTINGS['font_color'],
+                    weight='bold'  # Added bold weight
+                ),
                 hoverinfo='none',
                 showlegend=False
             )
 
-        # Update layout
+        # Update layout with improved interaction settings
         fig.update_layout(
             margin={"r": 0, "t": 0, "l": 0, "b": 0},
             paper_bgcolor=CHART_SETTINGS['background_color'],
@@ -131,11 +153,17 @@ class DashboardVisualizer:
             mapbox=dict(
                 style=MAP_SETTINGS['style'],
                 center=camera_position['center'],
-                zoom=camera_position['zoom']
+                zoom=camera_position['zoom'],
+                bearing=0,
+                pitch=0
             ),
-            showlegend=False
+            showlegend=False,
+            clickmode='event+select',  # Enable both click events and selection
+            dragmode='zoom',  # Set default drag mode to zoom
+            hoverdistance=5,  # Reduce hover distance for more precise selection
+            spikedistance=5  # Reduce spike distance for more precise selection
         )
-        
+
         return fig
 
     def create_attacks_by_state(self, selected_states: Optional[List[str]] = None,

@@ -447,25 +447,37 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks,
                           selected_sharks, selected_states, camera_position):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[0] if ctx.triggered else None
+    triggered_prop = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
 
     if not selected_states:
         selected_states = []
 
+    # Handle recenter button click
     if triggered_id == 'recenter-button':
         camera_position = {
             'center': MAP_SETTINGS['default_center'],
             'zoom': MAP_SETTINGS['default_zoom']
         }
-    elif triggered_id == 'australia-map' and relayout_data:
+    # Handle map movement
+    elif triggered_prop == 'relayoutData' and relayout_data:
         if 'mapbox.center' in relayout_data:
             camera_position['center'] = relayout_data['mapbox.center']
         if 'mapbox.zoom' in relayout_data:
             camera_position['zoom'] = relayout_data['mapbox.zoom']
 
-    if triggered_id == 'australia-map' and click_data:
+    # Handle state selection
+    elif triggered_prop == 'clickData' and click_data:
         clicked_point = click_data['points'][0]
+        clicked_state = None
+
+        # Handle clicks on choropleth
         if 'location' in clicked_point:
             clicked_state = clicked_point['location']
+        # Handle clicks on invisible clickable areas for small states
+        elif 'customdata' in clicked_point:
+            clicked_state = clicked_point['customdata'][0]
+
+        if clicked_state:
             if clicked_state in selected_states:
                 selected_states.remove(clicked_state)
             else:
