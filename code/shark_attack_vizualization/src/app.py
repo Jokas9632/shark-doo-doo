@@ -4,7 +4,7 @@ from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
 from data import DataManager
 from visualizations import DashboardVisualizer
-from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING
+from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING, MAP_SETTINGS
 import pandas as pd
 
 # Initialize the data manager and visualizer
@@ -42,6 +42,16 @@ app.layout = html.Div([
                             id='reset-button',
                             style={
                                 'backgroundColor': '#dc3545',
+                                'color': 'white',
+                                'border': 'none',
+                                'padding': '5px 15px',
+                                'borderRadius': '5px',
+                                'cursor': 'pointer'
+                            }),
+                html.Button('Recenter Map',
+                            id='recenter-button',
+                            style={
+                                'backgroundColor': '#688ae8',
                                 'color': 'white',
                                 'border': 'none',
                                 'padding': '5px 15px',
@@ -410,13 +420,15 @@ def update_year_range_text(value):
 def update_age_range_text(value):
     return f"Age: {value[0]} - {value[1]}+ years"
 
-# Callback for map updates
+
+# Callback for map updates and recentering
 @app.callback(
     [Output('selected-states', 'data'),
      Output('australia-map', 'figure'),
      Output('camera-position', 'data')],
     [Input('australia-map', 'clickData'),
      Input('australia-map', 'relayoutData'),
+     Input('recenter-button', 'n_clicks'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('day-checklist', 'value'),
@@ -428,23 +440,29 @@ def update_age_range_text(value):
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
-def update_selected_states(click_data, relayout_data, age_range, year_range, 
-                         selected_days, selected_genders, selected_months, 
-                         selected_activities, selected_time_periods,
-                         selected_sharks, selected_states, camera_position):
+def update_map_and_camera(click_data, relayout_data, recenter_clicks,
+                          age_range, year_range, selected_days,
+                          selected_genders, selected_months,
+                          selected_activities, selected_time_periods,
+                          selected_sharks, selected_states, camera_position):
     ctx = dash.callback_context
-    triggered_id = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
-    
+    triggered_id = ctx.triggered[0]['prop_id'].split('.')[0] if ctx.triggered else None
+
     if not selected_states:
         selected_states = []
-    
-    if triggered_id == 'relayoutData' and relayout_data:
+
+    if triggered_id == 'recenter-button':
+        camera_position = {
+            'center': MAP_SETTINGS['default_center'],
+            'zoom': MAP_SETTINGS['default_zoom']
+        }
+    elif triggered_id == 'australia-map' and relayout_data:
         if 'mapbox.center' in relayout_data:
             camera_position['center'] = relayout_data['mapbox.center']
         if 'mapbox.zoom' in relayout_data:
             camera_position['zoom'] = relayout_data['mapbox.zoom']
-    
-    if triggered_id == 'clickData' and click_data:
+
+    if triggered_id == 'australia-map' and click_data:
         clicked_point = click_data['points'][0]
         if 'location' in clicked_point:
             clicked_state = clicked_point['location']
@@ -452,7 +470,7 @@ def update_selected_states(click_data, relayout_data, age_range, year_range,
                 selected_states.remove(clicked_state)
             else:
                 selected_states.append(clicked_state)
-    
+
     return selected_states, visualizer.create_map(
         selected_states=selected_states,
         camera_position=camera_position,
