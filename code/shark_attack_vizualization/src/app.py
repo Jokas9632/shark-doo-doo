@@ -293,22 +293,30 @@ app.layout = html.Div([
             
             # Graphs section in a container
             html.Div([
-                dcc.Graph(
-                    id='attacks-by-state',
-                    config={'displayModeBar': False}
-                ),
-                dcc.Graph(
-                    id='yearly-trend',
-                    config={'displayModeBar': False}
-                ),
-                dcc.Graph(
-                    id='activity-distribution',
-                    config={'displayModeBar': False}
-                ),
-                dcc.Graph(
-                    id='shark-species',
-                    config={'displayModeBar': False}
-                ),
+                html.Div([
+                    dcc.Graph(
+                        id='attacks-by-state',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
+                        id='yearly-trend',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
+                        id='activity-distribution',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
+                        id='shark-species',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
                 html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
             ], id='graphs-container', style={'padding': '20px'}),
         ], style={
