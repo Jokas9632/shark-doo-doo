@@ -1,6 +1,7 @@
 import dash
 from dash import html, dcc
 from dash.dependencies import Input, Output, State
+from dash.exceptions import PreventUpdate
 from data import DataManager
 from visualizations import DashboardVisualizer
 from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING
@@ -24,18 +25,34 @@ app.layout = html.Div([
     
     # Left side panel for statistics
     html.Div([
-        # Fixed header with filter button only
+        # Fixed header with filter buttons
         html.Div([
-            html.Button('Filters', 
-                      id='filter-button',
-                      style={
-                          'backgroundColor': '#688ae8',
-                          'color': 'white',
-                          'border': 'none',
-                          'padding': '5px 15px',
-                          'borderRadius': '5px',
-                          'cursor': 'pointer'
-                      }),
+            html.Div([
+                html.Button('Filters',
+                            id='filter-button',
+                            style={
+                                'backgroundColor': '#688ae8',
+                                'color': 'white',
+                                'border': 'none',
+                                'padding': '5px 15px',
+                                'borderRadius': '5px',
+                                'cursor': 'pointer'
+                            }),
+                html.Button('Reset Filters',
+                            id='reset-button',
+                            style={
+                                'backgroundColor': '#dc3545',
+                                'color': 'white',
+                                'border': 'none',
+                                'padding': '5px 15px',
+                                'borderRadius': '5px',
+                                'cursor': 'pointer'
+                            }),
+            ], style={
+                'display': 'flex',
+                'gap': '10px',
+                'justifyContent': 'flex-end'
+            }),
         ], style={
             'display': 'flex',
             'justifyContent': 'flex-end',
@@ -538,6 +555,38 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
         ),
         quick_facts_html
     )
+
+
+# Reset filters
+@app.callback(
+    [Output('time-period-checklist', 'value'),
+     Output('gender-checklist', 'value'),
+     Output('shark-checklist', 'value'),
+     Output('month-checklist', 'value'),
+     Output('activity-checklist', 'value'),
+     Output('day-checklist', 'value'),
+     Output('year-slider', 'value'),
+     Output('age-slider', 'value'),
+     Output('selected-states', 'data', allow_duplicate=True)],
+    [Input('reset-button', 'n_clicks')],
+    prevent_initial_call=True  # Added prevent_initial_call
+)
+def reset_filters(n_clicks):
+    if n_clicks is None:
+        raise dash.exceptions.PreventUpdate
+
+    return (
+        [],  # time-period-checklist
+        [],  # gender-checklist
+        [],  # shark-checklist
+        [],  # month-checklist
+        [],  # activity-checklist
+        [],  # day-checklist
+        [1900, 2024],  # year-slider
+        [0, 90],  # age-slider
+        []  # selected-states - empty list to clear all selections
+    )
+
 
 # Add CSS
 app.index_string = '''
