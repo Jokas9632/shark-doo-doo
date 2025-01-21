@@ -49,6 +49,7 @@ LAYOUT_SETTINGS = {
         'yearly_trend': 200,
         'activity_chart': 300,
         'species_chart': 250,
+        'hourly_chart': 200,
         'monthly_dist': 300
     }
 }

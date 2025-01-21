@@ -346,6 +346,12 @@ app.layout = html.Div([
                 ], style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
+                        id='hourly-distribution',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
                         id='monthly-distribution',
                         config={'displayModeBar': False}
                     )
@@ -509,6 +515,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks,
      Output('activity-distribution', 'figure'),
      Output('shark-species', 'figure'),
      Output('monthly-distribution', 'figure'),
+     Output('hourly-distribution', 'figure'),
      Output('quick-facts', 'children')],
     [Input('selected-states', 'data'),
      Input('age-slider', 'value'),
@@ -590,7 +597,18 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
-        visualizer.create_monthly_distribution(  # Add this line
+        visualizer.create_hourly_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        ),
+        visualizer.create_monthly_distribution(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
