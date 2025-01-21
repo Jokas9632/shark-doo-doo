@@ -354,3 +354,57 @@ class DashboardVisualizer:
             showlegend=False
         )
         return fig
+
+    def create_monthly_distribution(self, selected_states: Optional[List[str]] = None,
+                                    age_range: Optional[List[float]] = None,
+                                    month_range: Optional[List[int]] = None,
+                                    day_range: Optional[List[int]] = None,
+                                    year_range: Optional[List[int]] = None,
+                                    selected_days: Optional[List[str]] = None,
+                                    selected_genders: Optional[List[str]] = None,
+                                    selected_months: Optional[List[int]] = None,
+                                    selected_activities: Optional[List[str]] = None,
+                                    selected_time_periods: Optional[List[str]] = None,
+                                    selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create monthly distribution bar chart."""
+        monthly_dist = self.data_manager.get_monthly_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=monthly_dist.index,
+            y=monthly_dist.values,
+            marker_color=CHART_SETTINGS['accent_color'],
+            text=[f'{val:.1f}%' for val in monthly_dist.values],
+            textposition='auto',
+        ))
+
+        fig.update_layout(
+            title='Monthly Distribution of Attacks',
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            margin=dict(l=10, r=10, t=40, b=10),
+            height=LAYOUT_SETTINGS['chart_heights']['monthly_dist'],
+            xaxis=dict(
+                showgrid=False,
+                tickangle=45
+            ),
+            yaxis=dict(
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                title='Percentage of Attacks'
+            )
+        )
+        return fig
