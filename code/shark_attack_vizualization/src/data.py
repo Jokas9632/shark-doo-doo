@@ -339,3 +339,53 @@ class DataManager:
         monthly_percentages.index = monthly_percentages.index.map(month_names)
 
         return monthly_percentages
+
+    def get_age_distribution(self, selected_states: Optional[List[str]] = None,
+                             age_range: Optional[List[float]] = None,
+                             month_range: Optional[List[int]] = None,
+                             day_range: Optional[List[int]] = None,
+                             year_range: Optional[List[int]] = None,
+                             selected_days: Optional[List[str]] = None,
+                             selected_genders: Optional[List[str]] = None,
+                             selected_months: Optional[List[int]] = None,
+                             selected_activities: Optional[List[str]] = None,
+                             selected_time_periods: Optional[List[str]] = None,
+                             selected_sharks: Optional[List[str]] = None) -> pd.Series:
+        """Get distribution of attacks by age groups."""
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        def categorize_age(age):
+            if pd.isna(age):
+                return 'Unknown'
+            elif age <= 12:
+                return '0-12'
+            elif age <= 17:
+                return '13-17'
+            elif age <= 24:
+                return '18-24'
+            elif age <= 34:
+                return '25-34'
+            elif age <= 44:
+                return '35-44'
+            elif age <= 54:
+                return '45-54'
+            else:
+                return '55+'
+
+        df_filtered['AgeGroup'] = df_filtered['Age'].apply(categorize_age)
+        age_distribution = df_filtered['AgeGroup'].value_counts()
+        # Sort by age group order
+        age_group_order = ['0-12', '13-17', '18-24', '25-34', '35-44', '45-54', '55+', 'Unknown']
+        return age_distribution.reindex(age_group_order).fillna(0)
