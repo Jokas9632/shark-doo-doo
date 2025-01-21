@@ -191,18 +191,22 @@ class DashboardVisualizer:
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
-        
+
+        # Calculate percentages
+        total_attacks = attacks_by_state.sum()
+        percentages = (attacks_by_state / total_attacks * 100).round(1)
+
         fig = go.Figure()
         fig.add_trace(go.Bar(
-            x=attacks_by_state.index,
-            y=attacks_by_state.values,
-            marker_color=[STATE_COLORS.get(state, '#808080') for state in attacks_by_state.index],
-            text=attacks_by_state.values,
+            x=percentages.index,
+            y=percentages.values,
+            marker_color=[STATE_COLORS.get(state, '#808080') for state in percentages.index],
+            text=[f'{val}%' for val in percentages.values],
             textposition='auto',
         ))
         
         fig.update_layout(
-            title='Attacks by State',
+            title='Percentage of Attacks by State',
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
             font=dict(color=CHART_SETTINGS['font_color']),
