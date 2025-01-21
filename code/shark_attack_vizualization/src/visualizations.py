@@ -289,25 +289,31 @@ class DashboardVisualizer:
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
-        
+
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=top_activities.values,
             y=top_activities.index,
             orientation='h',
             marker_color=CHART_SETTINGS['accent_color'],
-            text=top_activities.values,
+            text=[f"{val:.1f}%" for val in top_activities.values],
             textposition='auto',
+            hovertemplate='%{y}: %{x:.1f}%<extra></extra>'
         ))
-        
+
         fig.update_layout(
-            title='Most Common Activities',
+            title='Activity Distribution (%)',
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
             font=dict(color=CHART_SETTINGS['font_color']),
             margin=dict(l=10, r=10, t=40, b=10),
             height=LAYOUT_SETTINGS['chart_heights']['activity_chart'],
-            xaxis=dict(showgrid=False),
+            xaxis=dict(
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                title='Percentage of Total Activities',
+                range=[0, max(top_activities.values) * 1.1]  # Add 10% padding
+            ),
             yaxis=dict(showgrid=False)
         )
         return fig

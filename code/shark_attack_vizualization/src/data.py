@@ -267,7 +267,12 @@ class DataManager:
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
-        return df_filtered['Activity'].value_counts().head(DATA_SETTINGS['top_n_activities'])
+        # Calculate percentages
+        activity_counts = df_filtered['Activity'].value_counts()
+        total_activities = activity_counts.sum()
+        activity_percentages = (activity_counts / total_activities * 100).round(1)
+
+        return activity_percentages.head(DATA_SETTINGS['top_n_activities'])
 
     def get_shark_species_distribution(self, selected_states: Optional[List[str]] = None,
                                      age_range: Optional[List[float]] = None,
