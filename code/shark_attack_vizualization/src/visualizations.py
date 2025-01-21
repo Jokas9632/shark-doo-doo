@@ -543,3 +543,107 @@ class DashboardVisualizer:
             )
         )
         return fig
+
+    def create_shark_streamgraph(self, selected_states: Optional[List[str]] = None,
+                                 age_range: Optional[List[float]] = None,
+                                 year_range: Optional[List[int]] = None,
+                                 selected_days: Optional[List[str]] = None,
+                                 selected_genders: Optional[List[str]] = None,
+                                 selected_months: Optional[List[int]] = None,
+                                 selected_activities: Optional[List[str]] = None,
+                                 selected_time_periods: Optional[List[str]] = None,
+                                 selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create streamgraph of shark attacks over time by species."""
+        # Get filtered data
+        df_filtered = self.data_manager.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        # Group by year and shark species
+        yearly_species = df_filtered.groupby(['Year', 'SharkName']).size().reset_index(name='Attacks')
+
+        # Get top shark species for better visualization
+        top_sharks = df_filtered['SharkName'].value_counts().nlargest(6).index
+
+        # Filter for top sharks
+        yearly_species = yearly_species[yearly_species['SharkName'].isin(top_sharks)]
+
+        # Pivot the data for the streamgraph
+        pivot_data = yearly_species.pivot(index='Year', columns='SharkName', values='Attacks').fillna(0)
+
+        # Calculate the baseline for streamgraph (center layers symmetrically)
+        pivot_data['sum'] = pivot_data.sum(axis=1)
+        pivot_data['baseline'] = -pivot_data['sum'] / 2
+        y_offsets = pivot_data['baseline'].cumsum()
+
+        # Create the streamgraph
+        fig = go.Figure()
+
+        # Add traces for each shark species
+        y_cumulative = pivot_data['baseline']
+        for shark in pivot_data.columns[:-2]:  # Exclude 'sum' and 'baseline'
+            # Define vibrant colors for each shark species
+            shark_colors = {
+                'white shark': '#00FF00',  # Green
+                'tiger shark': '#0000FF',  # Blue
+                'bull shark': '#FFFF00',  # Yellow
+                'whaler shark': '#FF00FF',  # Magenta
+                'wobbegong': '#FF0000',  # Red
+                'bronze whaler shark': '#00FFFF'  # Cyan
+            }
+
+            fig.add_trace(go.Scatter(
+                x=pivot_data.index,
+                y=y_cumulative + pivot_data[shark],
+                name=shark,
+                mode='lines',
+                fill='tonexty',  # Fill between traces
+                fillcolor=shark_colors.get(shark, '#808080'),  # Default to gray if shark not in color map
+                line=dict(width=0.5, color=shark_colors.get(shark, '#808080')),
+                hovertemplate="Attacks: %{customdata}<extra>%{fullData.name}</extra>",
+                customdata=[abs(value) for value in pivot_data[shark]],  # Absolute values for hover
+            ))
+            y_cumulative += pivot_data[shark]
+
+        fig.update_layout(
+            title='Shark Attacks by Species Over Time (Streamgraph)',
+            showlegend=True,
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            hovermode='x unified',
+            margin=dict(l=10, r=10, t=40, b=10),
+            height=400,  # Increased height for better visibility
+            yaxis=dict(
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                title='Number of Attacks',
+                zeroline=False,  # Remove the zero line for cleaner look
+                showticklabels=False  # Hide y-axis numbers
+            ),
+            xaxis=dict(
+                showgrid=False,
+                title='Year'
+            ),
+            legend=dict(
+                bgcolor='rgba(0,0,0,0.7)',
+                font=dict(color=CHART_SETTINGS['font_color']),
+                x=0.02,
+                y=0.98,
+                xanchor='left',
+                yanchor='top',
+                bordercolor='rgba(255,255,255,0.2)',
+                borderwidth=1
+            )
+        )
+
+        return fig
+
