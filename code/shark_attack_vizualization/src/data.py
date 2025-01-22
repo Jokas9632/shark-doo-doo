@@ -290,6 +290,41 @@ class DataManager:
         )
         return df_filtered['SharkName'].value_counts().head(DATA_SETTINGS['top_n_species'])
 
+    def get_day_distribution(self, selected_states: Optional[List[str]] = None,
+                             age_range: Optional[List[float]] = None,
+                             month_range: Optional[List[int]] = None,
+                             day_range: Optional[List[int]] = None,
+                             year_range: Optional[List[int]] = None,
+                             selected_days: Optional[List[str]] = None,
+                             selected_genders: Optional[List[str]] = None,
+                             selected_months: Optional[List[int]] = None,
+                             selected_activities: Optional[List[str]] = None,
+                             selected_time_periods: Optional[List[str]] = None,
+                             selected_sharks: Optional[List[str]] = None) -> pd.Series:
+        """Get distribution of attacks by day of week with percentages."""
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        # Get day counts and calculate percentages
+        day_counts = df_filtered['DayOfWeek'].value_counts()
+        total_attacks = day_counts.sum()
+        day_percentages = (day_counts / total_attacks * 100).round(1)
+
+        # Define correct day order
+        days_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        return day_percentages.reindex(days_order).fillna(0)
+
     def get_monthly_distribution(self, selected_states: Optional[List[str]] = None,
                                  age_range: Optional[List[float]] = None,
                                  month_range: Optional[List[int]] = None,
@@ -379,7 +414,10 @@ class DataManager:
                 return '55+'
 
         df_filtered['AgeGroup'] = df_filtered['Age'].apply(categorize_age)
-        age_distribution = df_filtered['AgeGroup'].value_counts()
+        age_counts = df_filtered['AgeGroup'].value_counts()
+        total_attacks = age_counts.sum()
+        age_percentages = (age_counts / total_attacks * 100).round(1)
+
         # Sort by age group order
         age_group_order = ['0-12', '13-17', '18-24', '25-34', '35-44', '45-54', '55+', 'Unknown']
-        return age_distribution.reindex(age_group_order).fillna(0)
+        return age_percentages.reindex(age_group_order).fillna(0)

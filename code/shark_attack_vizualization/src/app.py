@@ -362,13 +362,19 @@ app.layout = html.Div([
                 ], style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
-                        id='hourly-distribution',
+                        id='monthly-distribution',
                         config={'displayModeBar': False}
                     )
                 ], style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
-                        id='monthly-distribution',
+                        id='day-distribution',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
+                        id='hourly-distribution',
                         config={'displayModeBar': False}
                     )
                 ], style={'marginBottom': '40px'}),
@@ -419,7 +425,7 @@ def toggle_filter_panel(n_clicks, filter_style):
             'position': 'fixed',
             'top': '70px',
             'left': '10px',
-            'width':'460px',
+            'width': '460px',
             'maxHeight': '80vh',
             'overflowY': 'auto',
             'zIndex': 1002,
@@ -528,6 +534,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
         selected_sharks=selected_sharks
     ), camera_position
 
+
 # Callback for graph updates
 @app.callback(
     [Output('attacks-by-state', 'figure'),
@@ -536,6 +543,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
      Output('shark-streamgraph', 'figure'),
      Output('age-distribution', 'figure'),
      Output('monthly-distribution', 'figure'),
+     Output('day-distribution', 'figure'),
      Output('hourly-distribution', 'figure'),
      Output('quick-facts', 'children')],
     [Input('selected-states', 'data'),
@@ -629,7 +637,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
-        visualizer.create_hourly_distribution(
+        visualizer.create_monthly_distribution(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -640,7 +648,18 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
-        visualizer.create_monthly_distribution(
+        visualizer.create_day_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        ),
+        visualizer.create_hourly_distribution(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,

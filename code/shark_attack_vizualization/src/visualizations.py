@@ -382,7 +382,7 @@ class DashboardVisualizer:
                                    selected_activities: Optional[List[str]] = None,
                                    selected_time_periods: Optional[List[str]] = None,
                                    selected_sharks: Optional[List[str]] = None) -> go.Figure:
-        """Create hourly distribution bar chart."""
+        """Create hourly distribution bar chart with percentages."""
         df_filtered = self.data_manager.filter_data(
             selected_states=selected_states,
             age_range=age_range,
@@ -409,20 +409,24 @@ class DashboardVisualizer:
             except (ValueError, IndexError):
                 continue
 
+        # Calculate percentages
+        total_attacks = sum(hourly_counts)
+        hourly_percentages = [(count / total_attacks * 100) if total_attacks > 0 else 0 for count in hourly_counts]
+
         # Create x-axis labels
         hours = [f"{str(i).zfill(2)}:00" for i in range(24)]
 
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=hours,
-            y=hourly_counts,
+            y=hourly_percentages,
             marker_color=CHART_SETTINGS['accent_color'],
-            text=hourly_counts,
+            text=[f'{val:.1f}%' for val in hourly_percentages],
             textposition='auto',
         ))
 
         fig.update_layout(
-            title='Attacks by Hour of Day',
+            title='Hourly Distribution of Attacks',
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
             font=dict(color=CHART_SETTINGS['font_color']),
@@ -436,10 +440,63 @@ class DashboardVisualizer:
             yaxis=dict(
                 showgrid=True,
                 gridcolor=CHART_SETTINGS['grid_color'],
-                title='Number of Attacks'
+                title='Percentage of Attacks'
             )
         )
+        return fig
 
+    def create_day_distribution(self, selected_states: Optional[List[str]] = None,
+                                age_range: Optional[List[float]] = None,
+                                month_range: Optional[List[int]] = None,
+                                day_range: Optional[List[int]] = None,
+                                year_range: Optional[List[int]] = None,
+                                selected_days: Optional[List[str]] = None,
+                                selected_genders: Optional[List[str]] = None,
+                                selected_months: Optional[List[int]] = None,
+                                selected_activities: Optional[List[str]] = None,
+                                selected_time_periods: Optional[List[str]] = None,
+                                selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create day of week distribution bar chart."""
+        daily_dist = self.data_manager.get_day_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        fig = go.Figure()
+        fig.add_trace(go.Bar(
+            x=daily_dist.index,
+            y=daily_dist.values,
+            marker_color=CHART_SETTINGS['accent_color'],
+            text=[f'{val:.1f}%' for val in daily_dist.values],
+            textposition='auto',
+        ))
+
+        fig.update_layout(
+            title='Daily Distribution of Attacks',
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            margin=dict(l=10, r=10, t=40, b=10),
+            height=LAYOUT_SETTINGS['chart_heights']['monthly_dist'],
+            xaxis=dict(
+                showgrid=False,
+                tickangle=0
+            ),
+            yaxis=dict(
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                title='Percentage of Attacks'
+            )
+        )
         return fig
 
     def create_monthly_distribution(self, selected_states: Optional[List[str]] = None,
@@ -507,7 +564,7 @@ class DashboardVisualizer:
                                 selected_activities: Optional[List[str]] = None,
                                 selected_time_periods: Optional[List[str]] = None,
                                 selected_sharks: Optional[List[str]] = None) -> go.Figure:
-        """Create age distribution bar chart."""
+        """Create age distribution bar chart with percentages."""
         age_dist = self.data_manager.get_age_distribution(
             selected_states=selected_states,
             age_range=age_range,
@@ -527,7 +584,7 @@ class DashboardVisualizer:
             x=age_dist.index,
             y=age_dist.values,
             marker_color=CHART_SETTINGS['accent_color'],
-            text=age_dist.values,
+            text=[f'{val:.1f}%' for val in age_dist.values],
             textposition='auto',
         ))
 
@@ -545,7 +602,7 @@ class DashboardVisualizer:
             yaxis=dict(
                 showgrid=True,
                 gridcolor=CHART_SETTINGS['grid_color'],
-                title='Number of Attacks'
+                title='Percentage of Attacks'
             )
         )
         return fig
@@ -598,12 +655,12 @@ class DashboardVisualizer:
         for shark in pivot_data.columns[:-2]:  # Exclude 'sum' and 'baseline'
             # Define vibrant colors for each shark species
             shark_colors = {
-                'white shark': '#00FF00',  # Green
-                'tiger shark': '#0000FF',  # Blue
-                'bull shark': '#FFFF00',  # Yellow
-                'whaler shark': '#FF00FF',  # Magenta
-                'wobbegong': '#FF0000',  # Red
-                'bronze whaler shark': '#00FFFF'  # Cyan
+                'white shark': '#004D40',  # Green-ish
+                'tiger shark': '#1E88E5',  # Blue-ish
+                'bull shark': '#6C6509',  # Mud
+                'whaler shark': '#826252',  # Brown
+                'wobbegong': '#D81B60',  # Red-ish
+                'bronze whaler shark': '#FFC107'  # Yellow-ish
             }
 
             fig.add_trace(go.Scatter(
