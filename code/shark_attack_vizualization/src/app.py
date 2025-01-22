@@ -430,8 +430,7 @@ app.layout = html.Div([
                         id='hourly-distribution',
                         config={'displayModeBar': False}
                     )
-                ], id={'type': 'graph-container', 'index': 'hourly-distribution'}, style={'marginBottom': '40px'}),
-                html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
+                ], id={'type': 'graph-container', 'index': 'hourly-distribution'}, style={'marginBottom': '40px'})
             ], id='graphs-container', style={'padding': '20px'}),
         ], style={
             'backgroundColor': '#121212',
@@ -599,8 +598,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
      Output('scatter-matrix', 'figure'),
      Output('monthly-distribution', 'figure'),
      Output('day-distribution', 'figure'),
-     Output('hourly-distribution', 'figure'),
-     Output('quick-facts', 'children')],
+     Output('hourly-distribution', 'figure')],
     [Input('selected-states', 'data'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
@@ -614,27 +612,6 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
 def update_graphs(selected_states, age_range, year_range, selected_days, 
                  selected_genders, selected_months, selected_activities, 
                  selected_time_periods, selected_sharks):
-    
-    facts = data_manager.get_quick_facts(
-        selected_states=selected_states,
-        age_range=age_range,
-        year_range=year_range,
-        selected_days=selected_days,
-        selected_genders=selected_genders,
-        selected_months=selected_months,
-        selected_activities=selected_activities,
-        selected_time_periods=selected_time_periods,
-        selected_sharks=selected_sharks
-    )
-    
-    quick_facts_html = [
-        html.H3('Quick Facts', style={'color': '#688ae8', 'marginTop': '20px'}),
-        html.P(f"Total recorded attacks: {facts['total_attacks']}"),
-        html.P(f"Year range: {facts['year_range']}"),
-        html.P(f"Most dangerous state: {facts['most_dangerous_state']}"),
-        html.P(f"Most common shark: {facts['most_common_shark']}"),
-        html.P(f"Most common time period: {facts['most_common_time']}")
-    ]
     
     return (
         visualizer.create_attacks_by_state(
@@ -746,8 +723,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
-        ),
-        quick_facts_html
+        )
     )
 
 

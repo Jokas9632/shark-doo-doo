@@ -163,47 +163,6 @@ class DataManager:
         
         return df_filtered
 
-    def get_quick_facts(self, selected_states: Optional[List[str]] = None,
-                       age_range: Optional[List[float]] = None,
-                       month_range: Optional[List[int]] = None,
-                       day_range: Optional[List[int]] = None,
-                       year_range: Optional[List[int]] = None,
-                       selected_days: Optional[List[str]] = None,
-                       selected_genders: Optional[List[str]] = None,
-                       selected_months: Optional[List[int]] = None,
-                       selected_activities: Optional[List[str]] = None,
-                       selected_time_periods: Optional[List[str]] = None,
-                       selected_sharks: Optional[List[str]] = None) -> Dict:
-        """Get quick facts about the data."""
-        df_filtered = self.filter_data(
-            selected_states=selected_states,
-            age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
-            year_range=year_range,
-            selected_days=selected_days,
-            selected_genders=selected_genders,
-            selected_months=selected_months,
-            selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods,
-            selected_sharks=selected_sharks
-        )
-        
-        most_common_time = (df_filtered['TimePeriod']
-                          .value_counts()
-                          .index[0].title() if not df_filtered.empty and 
-                          df_filtered['TimePeriod'].notna().any() else 'N/A')
-        
-        return {
-            'total_attacks': len(df_filtered),
-            'year_range': f"{df_filtered['Year'].min()} - {df_filtered['Year'].max()}",
-            'most_dangerous_state': ('N/A' if df_filtered.empty 
-                                   else df_filtered['State'].mode().iloc[0]),
-            'most_common_shark': ('N/A' if df_filtered.empty 
-                                else df_filtered['SharkName'].mode().iloc[0]),
-            'most_common_time': most_common_time
-        }
-
     def get_attacks_by_state(self, selected_states: Optional[List[str]] = None,
                            age_range: Optional[List[float]] = None,
                            month_range: Optional[List[int]] = None,
