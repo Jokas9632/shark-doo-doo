@@ -710,3 +710,83 @@ class DashboardVisualizer:
 
         return fig
 
+    def create_provocation_distribution(self, selected_states: Optional[List[str]] = None,
+                                        age_range: Optional[List[float]] = None,
+                                        month_range: Optional[List[int]] = None,
+                                        day_range: Optional[List[int]] = None,
+                                        year_range: Optional[List[int]] = None,
+                                        selected_days: Optional[List[str]] = None,
+                                        selected_genders: Optional[List[str]] = None,
+                                        selected_months: Optional[List[int]] = None,
+                                        selected_activities: Optional[List[str]] = None,
+                                        selected_time_periods: Optional[List[str]] = None,
+                                        selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create grouped bar chart for activities and provocation."""
+        df_filtered = self.data_manager.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        # Group by Activity and count provoked/unprovoked
+        activity_provocation = df_filtered.groupby(['Activity', 'Provocation']).size().unstack(fill_value=0)
+
+        # Get top 10 activities by total incidents
+        activity_provocation['total'] = activity_provocation.sum(axis=1)
+        top_10_activities = activity_provocation.nlargest(10, 'total')
+
+        # Create the figure
+        fig = go.Figure()
+
+        # Add bars for provoked and unprovoked
+        fig.add_trace(go.Bar(
+            name='Provoked',
+            x=top_10_activities.index,
+            y=top_10_activities['provoked'],
+            marker_color='#ef4444'
+        ))
+
+        fig.add_trace(go.Bar(
+            name='Unprovoked',
+            x=top_10_activities.index,
+            y=top_10_activities['unprovoked'],
+            marker_color='#3b82f6'
+        ))
+
+        # Update layout
+        fig.update_layout(
+            title='Activity Distribution by Provocation',
+            barmode='group',
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            margin=dict(l=10, r=10, t=40, b=10),
+            height=LAYOUT_SETTINGS['chart_heights']['activity_chart'],
+            xaxis=dict(
+                showgrid=False,
+                tickangle=-45,
+                title='Activity'
+            ),
+            yaxis=dict(
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                title='Number of Incidents'
+            ),
+            legend=dict(
+                yanchor="top",
+                y=0.99,
+                xanchor="right",
+                x=0.99,
+                bgcolor='rgba(0,0,0,0.5)'
+            )
+        )
+
+        return fig

@@ -50,7 +50,8 @@ LAYOUT_SETTINGS = {
         'activity_chart': 300,
         'species_chart': 250,
         'hourly_chart': 200,
-        'monthly_dist': 300
+        'monthly_dist': 300,
+        'provocation_chart': 400
     }
 }
 

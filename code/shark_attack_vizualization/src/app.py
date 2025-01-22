@@ -344,6 +344,12 @@ app.layout = html.Div([
                 ], style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
+                        id='provocation-distribution',
+                        config={'displayModeBar': False}
+                    )
+                ], style={'marginBottom': '40px'}),
+                html.Div([
+                    dcc.Graph(
                         id='shark-species',
                         config={'displayModeBar': False}
                     )
@@ -539,6 +545,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
 @app.callback(
     [Output('attacks-by-state', 'figure'),
      Output('activity-distribution', 'figure'),
+     Output('provocation-distribution', 'figure'),
      Output('shark-species', 'figure'),
      Output('shark-streamgraph', 'figure'),
      Output('age-distribution', 'figure'),
@@ -594,6 +601,17 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_activity_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        ),
+        visualizer.create_provocation_distribution(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
