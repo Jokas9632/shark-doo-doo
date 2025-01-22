@@ -142,7 +142,7 @@ class DashboardVisualizer:
                             lon=state_data['Longitude'],
                             mode='markers',
                             marker=dict(
-                                size=6,
+                                size=max(6 * (1.1 ** (camera_position['zoom'] - MAP_SETTINGS['default_zoom'])), 4),
                                 color=STATE_COLORS[state],
                                 symbol='circle',
                                 opacity=0.8
@@ -167,10 +167,10 @@ class DashboardVisualizer:
                     lon=state_data['Longitude'],
                     mode='markers',
                     marker=dict(
-                        size=6,  # Reduced size
+                        size=max(6 * (1.1 ** (camera_position['zoom'] - MAP_SETTINGS['default_zoom'])), 4),
                         color=STATE_COLORS[state],
                         symbol='circle',
-                        opacity=0.8  # Reduced opacity
+                        opacity=0.8
                     ),
                     name=state,
                     text=state_data['hover_text'],
