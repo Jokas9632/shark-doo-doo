@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import plotly.express as px
+import pandas as pd
 from typing import Dict, List, Optional
 from config import (
     STATE_COLORS,
@@ -787,6 +788,93 @@ class DashboardVisualizer:
                 x=0.99,
                 bgcolor='rgba(0,0,0,0.5)'
             )
+        )
+
+        return fig
+
+    def create_scatter_matrix(self, selected_states: Optional[List[str]] = None,
+                              age_range: Optional[List[float]] = None,
+                              month_range: Optional[List[int]] = None,
+                              day_range: Optional[List[int]] = None,
+                              year_range: Optional[List[int]] = None,
+                              selected_days: Optional[List[str]] = None,
+                              selected_genders: Optional[List[str]] = None,
+                              selected_months: Optional[List[int]] = None,
+                              selected_activities: Optional[List[str]] = None,
+                              selected_time_periods: Optional[List[str]] = None,
+                              selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create scatter plot matrix for demographic analysis."""
+        df_filtered = self.data_manager.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        # Create numeric columns for categorical variables
+        df_filtered['MonthNum'] = df_filtered['Month']
+
+        # Extract hour from IncidentTime safely
+        def extract_hour(time_str):
+            try:
+                if pd.isna(time_str):
+                    return None
+                return int(time_str.split(':')[0])
+            except (ValueError, AttributeError, IndexError):
+                return None
+
+        df_filtered['HourNum'] = df_filtered['IncidentTime'].apply(extract_hour)
+
+        # Map days to numbers (0=Monday, 6=Sunday)
+        day_mapping = {
+            'Monday': 0, 'Tuesday': 1, 'Wednesday': 2, 'Thursday': 3,
+            'Friday': 4, 'Saturday': 5, 'Sunday': 6
+        }
+        df_filtered['DayNum'] = df_filtered['DayOfWeek'].map(day_mapping)
+
+        # Select variables for the matrix
+        variables = ['Year', 'MonthNum', 'HourNum', 'Age']
+        labels = ['Year', 'Month', 'Hour', 'Age']
+
+        # Create the scatter plot matrix
+        fig = go.Figure(data=go.Splom(
+            dimensions=[
+                dict(label=label, values=df_filtered[var])
+                for var, label in zip(variables, labels)
+            ],
+            diagonal=dict(visible=False),
+            showupperhalf=True,
+            marker=dict(
+                size=5,
+                color=CHART_SETTINGS['accent_color'],
+                showscale=False,
+                line=dict(
+                    color='white',
+                    width=0.5
+                )
+            ),
+            text=df_filtered['hover_text'],
+            hoverinfo='text'
+        ))
+
+        # Update layout
+        fig.update_layout(
+            title='Demographic Patterns Scatter Matrix',
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            height=470,
+            width=470,
+            showlegend=False,
+            dragmode='select',
+            hovermode='closest'
         )
 
         return fig
