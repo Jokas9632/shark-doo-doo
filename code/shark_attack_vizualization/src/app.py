@@ -1,11 +1,27 @@
 import dash
 from dash import html, dcc
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output, State, ALL
 from dash.exceptions import PreventUpdate
 from data import DataManager
 from visualizations import DashboardVisualizer
 from config import LAYOUT_SETTINGS, STYLE_SETTINGS, STATE_NAME_MAPPING, MAP_SETTINGS
 import pandas as pd
+import json
+
+GRAPH_CATEGORIES = {
+    'all': 'All Graphs',
+    'geography': 'Geographical',
+    'species': 'Shark Species',
+    'temporal': 'Temporal',
+    'demographics': 'Demographics'
+}
+
+CATEGORY_GRAPHS = {
+    'geography': ['attacks-by-state'],
+    'species': ['shark-species', 'shark-streamgraph'],
+    'temporal': ['monthly-distribution', 'day-distribution', 'hourly-distribution'],
+    'demographics': ['activity-distribution', 'age-distribution', 'provocation-distribution', 'scatter-matrix']
+}
 
 # Initialize the data manager and visualizer
 data_manager = DataManager()
@@ -27,6 +43,7 @@ app.layout = html.Div([
     html.Div([
         # Fixed header with filter buttons
         html.Div([
+            # Top row: Heatmap and control buttons
             html.Div([
                 # Heatmap toggle
                 html.Div([
@@ -37,6 +54,8 @@ app.layout = html.Div([
                         style={'color': 'white', 'marginRight': '20px'}
                     ),
                 ], style={'display': 'flex', 'alignItems': 'center'}),
+
+                # Control buttons
                 html.Button('Filters',
                             id='filter-button',
                             style={
@@ -45,7 +64,8 @@ app.layout = html.Div([
                                 'border': 'none',
                                 'padding': '5px 15px',
                                 'borderRadius': '5px',
-                                'cursor': 'pointer'
+                                'cursor': 'pointer',
+                                'marginRight': '10px'
                             }),
                 html.Button('Reset Filters',
                             id='reset-button',
@@ -55,7 +75,8 @@ app.layout = html.Div([
                                 'border': 'none',
                                 'padding': '5px 15px',
                                 'borderRadius': '5px',
-                                'cursor': 'pointer'
+                                'cursor': 'pointer',
+                                'marginRight': '10px'
                             }),
                 html.Button('Recenter Map',
                             id='recenter-button',
@@ -69,13 +90,33 @@ app.layout = html.Div([
                             }),
             ], style={
                 'display': 'flex',
-                'gap': '10px',
                 'alignItems': 'center',
-                'justifyContent': 'flex-end'
+                'marginBottom': '20px'
+            }),
+
+            # Bottom row: Category buttons
+            html.Div([
+                html.Button(
+                    value,
+                    id={'type': 'category-button', 'index': key},
+                    style={
+                        'backgroundColor': '#27821D',
+                        'color': 'white',
+                        'border': 'none',
+                        'padding': '5px 15px',
+                        'borderRadius': '5px',
+                        'cursor': 'pointer',
+                        'marginRight': '10px'
+                    }
+                ) for key, value in GRAPH_CATEGORIES.items()
+            ], style={
+                'display': 'flex',
+                'flexWrap': 'wrap',
+                'gap': '10px',
+                'justifyContent': 'center',
+                'width': '100%'
             }),
         ], style={
-            'display': 'flex',
-            'justifyContent': 'flex-end',
             'padding': '20px',
             'backgroundColor': '#121212',
             'position': 'sticky',
@@ -335,61 +376,61 @@ app.layout = html.Div([
                         id='attacks-by-state',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'attacks-by-state'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='activity-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'activity-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='provocation-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'provocation-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='shark-species',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'shark-species'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='shark-streamgraph',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'shark-streamgraph'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='age-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'age-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='scatter-matrix',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'scatter-matrix'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='monthly-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'monthly-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='day-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'day-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
                         id='hourly-distribution',
                         config={'displayModeBar': False}
                     )
-                ], style={'marginBottom': '40px'}),
+                ], id={'type': 'graph-container', 'index': 'hourly-distribution'}, style={'marginBottom': '40px'}),
                 html.Div(id='quick-facts', style={'padding': '10px', 'color': 'white'})
             ], id='graphs-container', style={'padding': '20px'}),
         ], style={
@@ -739,6 +780,85 @@ def reset_filters(n_clicks):
         [0, 90],  # age-slider
         []  # selected-states - empty list to clear all selections
     )
+
+
+# Handle graph visibility
+@app.callback(
+    [Output({'type': 'graph-container', 'index': graph_id}, 'style')
+     for graph_id in ['attacks-by-state', 'activity-distribution', 'provocation-distribution',
+                      'shark-species', 'shark-streamgraph', 'age-distribution',
+                      'scatter-matrix', 'monthly-distribution', 'day-distribution',
+                      'hourly-distribution']],
+    [Input({'type': 'category-button', 'index': ALL}, 'n_clicks')],
+    [State({'type': 'category-button', 'index': ALL}, 'id')]
+)
+def update_graph_visibility(n_clicks, button_ids):
+    ctx = dash.callback_context
+    if not ctx.triggered or not any(n_clicks):
+        # Default state - show all graphs
+        return [{'marginBottom': '40px'} for _ in range(10)]
+
+    triggered_id = ctx.triggered[0]['prop_id']
+    if not triggered_id:
+        return [{'marginBottom': '40px'} for _ in range(10)]
+
+    clicked_category = json.loads(triggered_id.split('.')[0])['index']
+
+    if clicked_category == 'all':
+        return [{'marginBottom': '40px'} for _ in range(10)]
+
+    visible_graphs = CATEGORY_GRAPHS[clicked_category]
+
+    return [
+        {'marginBottom': '40px'} if graph_id in visible_graphs else {'display': 'none'}
+        for graph_id in ['attacks-by-state', 'activity-distribution', 'provocation-distribution',
+                         'shark-species', 'shark-streamgraph', 'age-distribution',
+                         'scatter-matrix', 'monthly-distribution', 'day-distribution',
+                         'hourly-distribution']
+    ]
+
+@app.callback(
+    [Output({'type': 'category-button', 'index': ALL}, 'style')],
+    [Input({'type': 'category-button', 'index': ALL}, 'n_clicks')],
+    [State({'type': 'category-button', 'index': ALL}, 'id')]
+)
+def update_button_colors(n_clicks, button_ids):
+    ctx = dash.callback_context
+    if not ctx.triggered:
+        # Default styles
+        return [[{
+            'backgroundColor': '#27821D',
+            'color': 'white',
+            'border': 'none',
+            'padding': '5px 15px',
+            'borderRadius': '5px',
+            'cursor': 'pointer',
+            'marginRight': '10px'
+        } for _ in button_ids]]
+
+    triggered_id = ctx.triggered[0]['prop_id']
+    if not triggered_id:
+        return [[{
+            'backgroundColor': '#27821D',
+            'color': 'white',
+            'border': 'none',
+            'padding': '5px 15px',
+            'borderRadius': '5px',
+            'cursor': 'pointer',
+            'marginRight': '10px'
+        } for _ in button_ids]]
+
+    clicked_category = json.loads(triggered_id.split('.')[0])['index']
+
+    return [[{
+        'backgroundColor': '#1b5913' if (button['index'] == clicked_category and button['index'] != 'all') else '#27821D',
+        'color': 'white',
+        'border': 'none',
+        'padding': '5px 15px',
+        'borderRadius': '5px',
+        'cursor': 'pointer',
+        'marginRight': '10px'
+    } for button in button_ids]]
 
 
 # Add CSS
