@@ -309,7 +309,7 @@ class DashboardVisualizer:
         ))
 
         fig.update_layout(
-            title='Activity Distribution (%)',
+            title='Activity Distribution',
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
             font=dict(color=CHART_SETTINGS['font_color']),
@@ -436,7 +436,6 @@ class DashboardVisualizer:
             xaxis=dict(
                 showgrid=False,
                 tickangle=-45,
-                title='Hour of Day'
             ),
             yaxis=dict(
                 showgrid=True,
@@ -678,7 +677,7 @@ class DashboardVisualizer:
             y_cumulative += pivot_data[shark]
 
         fig.update_layout(
-            title='Shark Attacks by Species Over Time (Streamgraph)',
+            title='Shark Attacks by Species Over Time',
             showlegend=True,
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
@@ -866,7 +865,7 @@ class DashboardVisualizer:
 
         # Update layout
         fig.update_layout(
-            title='Demographic Patterns Scatter Matrix',
+            title='Demographic Patterns',
             paper_bgcolor=CHART_SETTINGS['background_color'],
             plot_bgcolor=CHART_SETTINGS['background_color'],
             font=dict(color=CHART_SETTINGS['font_color']),
