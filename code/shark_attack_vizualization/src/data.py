@@ -215,33 +215,6 @@ class DataManager:
         )
         return df_filtered['State'].value_counts()
 
-    def get_yearly_trend(self, selected_states: Optional[List[str]] = None,
-                        age_range: Optional[List[float]] = None,
-                        month_range: Optional[List[int]] = None,
-                        day_range: Optional[List[int]] = None,
-                        year_range: Optional[List[int]] = None,
-                        selected_days: Optional[List[str]] = None,
-                        selected_genders: Optional[List[str]] = None,
-                        selected_months: Optional[List[int]] = None,
-                        selected_activities: Optional[List[str]] = None,
-                        selected_time_periods: Optional[List[str]] = None,
-                        selected_sharks: Optional[List[str]] = None) -> pd.Series:
-        """Get yearly trend of attacks."""
-        df_filtered = self.filter_data(
-            selected_states=selected_states,
-            age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
-            year_range=year_range,
-            selected_days=selected_days,
-            selected_genders=selected_genders,
-            selected_months=selected_months,
-            selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods,
-            selected_sharks=selected_sharks
-        )
-        return df_filtered['Year'].value_counts().sort_index()
-
     def get_activity_distribution(self, selected_states: Optional[List[str]] = None,
                                 age_range: Optional[List[float]] = None,
                                 month_range: Optional[List[int]] = None,

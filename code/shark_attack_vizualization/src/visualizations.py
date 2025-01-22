@@ -217,53 +217,6 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_yearly_trend(self, selected_states: Optional[List[str]] = None,
-                          age_range: Optional[List[float]] = None,
-                          month_range: Optional[List[int]] = None,
-                          day_range: Optional[List[int]] = None,
-                          year_range: Optional[List[int]] = None,
-                          selected_days: Optional[List[str]] = None,
-                          selected_genders: Optional[List[str]] = None,
-                          selected_months: Optional[List[int]] = None,
-                          selected_activities: Optional[List[str]] = None,
-                          selected_time_periods: Optional[List[str]] = None,
-                          selected_sharks: Optional[List[str]] = None) -> go.Figure:
-        """Create yearly trend line chart."""
-        yearly_attacks = self.data_manager.get_yearly_trend(
-            selected_states=selected_states,
-            age_range=age_range,
-            month_range=month_range,
-            day_range=day_range,
-            year_range=year_range,
-            selected_days=selected_days,
-            selected_genders=selected_genders,
-            selected_months=selected_months,
-            selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods,
-            selected_sharks=selected_sharks
-        )
-        
-        fig = go.Figure()
-        fig.add_trace(go.Scatter(
-            x=yearly_attacks.index,
-            y=yearly_attacks.values,
-            mode='lines+markers',
-            line=dict(color=CHART_SETTINGS['accent_color']),
-            hovertemplate='Year: %{x}<br>Attacks: %{y}<extra></extra>'
-        ))
-        
-        fig.update_layout(
-            title='Yearly Trend of Attacks',
-            paper_bgcolor=CHART_SETTINGS['background_color'],
-            plot_bgcolor=CHART_SETTINGS['background_color'],
-            font=dict(color=CHART_SETTINGS['font_color']),
-            margin=dict(l=10, r=10, t=40, b=10),
-            height=LAYOUT_SETTINGS['chart_heights']['yearly_trend'],
-            xaxis=dict(showgrid=False),
-            yaxis=dict(showgrid=True, gridcolor=CHART_SETTINGS['grid_color'])
-        )
-        return fig
-
     def create_activity_distribution(self, selected_states: Optional[List[str]] = None,
                                    age_range: Optional[List[float]] = None,
                                    month_range: Optional[List[int]] = None,

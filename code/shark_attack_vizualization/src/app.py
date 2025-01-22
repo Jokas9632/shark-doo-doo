@@ -328,12 +328,6 @@ app.layout = html.Div([
                 ], style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
-                        id='yearly-trend',
-                        config={'displayModeBar': False}
-                    )
-                ], style={'marginBottom': '40px'}),
-                html.Div([
-                    dcc.Graph(
                         id='activity-distribution',
                         config={'displayModeBar': False}
                     )
@@ -523,7 +517,6 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks,
 # Callback for graph updates
 @app.callback(
     [Output('attacks-by-state', 'figure'),
-     Output('yearly-trend', 'figure'),
      Output('activity-distribution', 'figure'),
      Output('shark-species', 'figure'),
      Output('shark-streamgraph', 'figure'),
@@ -568,17 +561,6 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
     
     return (
         visualizer.create_attacks_by_state(
-            selected_states=selected_states,
-            age_range=age_range,
-            year_range=year_range,
-            selected_days=selected_days,
-            selected_genders=selected_genders,
-            selected_months=selected_months,
-            selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods,
-            selected_sharks=selected_sharks
-        ),
-        visualizer.create_yearly_trend(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
