@@ -12,11 +12,27 @@ class DataManager:
     def __init__(self):
         """Initialize DataManager with empty data structures."""
         self.df = pd.read_csv(DATA_PATHS['csv_file'])
+        self.df['Latitude'] = self.df['Latitude'].apply(self._clean_coordinate)
+        self.df['Longitude'] = self.df['Longitude'].apply(self._clean_coordinate)
         self.geojson_data = self._load_geojson()
         self.state_centroids = self._calculate_state_centroids()
         self._add_day_of_week()
         self._add_time_period()
         self._create_hover_text()
+
+    def _clean_coordinate(self, coord):
+        """Clean coordinate values by removing special characters and converting to float."""
+        if pd.isna(coord):
+            return None
+        try:
+            # Convert to string first
+            coord_str = str(coord)
+            # Remove special characters and keep only numbers, decimal points, and minus signs
+            cleaned = ''.join(c for c in coord_str if c.isdigit() or c in '.-')
+            # Convert to float
+            return float(cleaned)
+        except (ValueError, TypeError):
+            return None
 
     def _load_geojson(self) -> Dict:
         """Load GeoJSON data for Australian states."""

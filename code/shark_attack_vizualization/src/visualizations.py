@@ -15,6 +15,7 @@ class DashboardVisualizer:
 
     def create_map(self, selected_states: Optional[List[str]] = None,
                    camera_position: Optional[Dict] = None,
+                   show_heatmap: bool = False,
                    age_range: Optional[List[float]] = None,
                    month_range: Optional[List[int]] = None,
                    day_range: Optional[List[int]] = None,
@@ -103,6 +104,58 @@ class DashboardVisualizer:
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
+
+        if show_heatmap:
+            # Filter out rows with invalid coordinates
+            valid_coords = filtered_df.dropna(subset=['Latitude', 'Longitude'])
+            # Add heatmap layer using densitymapbox
+            fig.add_densitymapbox(
+                lat=valid_coords['Latitude'],
+                lon=valid_coords['Longitude'],
+                z=valid_coords['Latitude'] * 0 + 1,  # Uniform weight for each point
+                radius=20,
+                colorscale=[
+                    [0, 'rgba(0,0,255,0)'],  # Start with transparent
+                    [0.1, 'rgba(0,0,255,0.2)'],  # Light blue
+                    [0.3, 'rgba(0,255,255,0.4)'],  # Cyan
+                    [0.5, 'rgba(0,255,0,0.6)'],  # Green
+                    [0.7, 'rgba(255,255,0,0.8)'],  # Yellow
+                    [1, 'rgba(255,0,0,1)']  # Red
+                ],
+                opacity=0.8,
+                hoverinfo='none',
+                showscale=False
+            )
+        else:
+            # Add individual points with proper coordinate filtering
+            for state in filtered_df['State'].unique():
+                if state in STATE_COLORS:
+                    state_data = filtered_df[
+                        (filtered_df['State'] == state) &
+                        filtered_df['Latitude'].notna() &
+                        filtered_df['Longitude'].notna()
+                        ]
+                    if not state_data.empty:
+                        fig.add_scattermapbox(
+                            lat=state_data['Latitude'],
+                            lon=state_data['Longitude'],
+                            mode='markers',
+                            marker=dict(
+                                size=6,
+                                color=STATE_COLORS[state],
+                                symbol='circle',
+                                opacity=0.8
+                            ),
+                            name=state,
+                            text=state_data['hover_text'],
+                            hoverinfo='text',
+                            hoverlabel=dict(
+                                bgcolor=CHART_SETTINGS['hover_bgcolor'],
+                                bordercolor=CHART_SETTINGS['hover_bordercolor'],
+                                font=dict(color=CHART_SETTINGS['font_color'], size=12)
+                            ),
+                            showlegend=False
+                        )
 
         # Add shark attack points with reduced size and opacity
         for state in filtered_df['State'].unique():

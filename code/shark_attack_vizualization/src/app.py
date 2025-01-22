@@ -28,6 +28,15 @@ app.layout = html.Div([
         # Fixed header with filter buttons
         html.Div([
             html.Div([
+                # Heatmap toggle
+                html.Div([
+                    dcc.Checklist(
+                        id='heatmap-toggle',
+                        options=[{'label': 'Show as Heatmap', 'value': 'heatmap'}],
+                        value=[],
+                        style={'color': 'white', 'marginRight': '20px'}
+                    ),
+                ], style={'display': 'flex', 'alignItems': 'center'}),
                 html.Button('Filters',
                             id='filter-button',
                             style={
@@ -61,6 +70,7 @@ app.layout = html.Div([
             ], style={
                 'display': 'flex',
                 'gap': '10px',
+                'alignItems': 'center',
                 'justifyContent': 'flex-end'
             }),
         ], style={
@@ -447,6 +457,7 @@ def update_age_range_text(value):
     [Input('australia-map', 'clickData'),
      Input('australia-map', 'relayoutData'),
      Input('recenter-button', 'n_clicks'),
+     Input('heatmap-toggle', 'value'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('day-checklist', 'value'),
@@ -458,7 +469,7 @@ def update_age_range_text(value):
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
-def update_map_and_camera(click_data, relayout_data, recenter_clicks,
+def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_toggle,
                           age_range, year_range, selected_days,
                           selected_genders, selected_months,
                           selected_activities, selected_time_periods,
@@ -501,9 +512,12 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks,
             else:
                 selected_states.append(clicked_state)
 
+    show_heatmap = 'heatmap' in (heatmap_toggle or [])
+
     return selected_states, visualizer.create_map(
         selected_states=selected_states,
         camera_position=camera_position,
+        show_heatmap=show_heatmap,
         age_range=age_range,
         year_range=year_range,
         selected_days=selected_days,
