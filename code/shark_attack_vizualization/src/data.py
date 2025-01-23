@@ -380,3 +380,64 @@ class DataManager:
         # Sort by age group order
         age_group_order = ['0-12', '13-17', '18-24', '25-34', '35-44', '45-54', '55+', 'Unknown']
         return age_percentages.reindex(age_group_order).fillna(0)
+
+    def get_gender_age_provocation_distribution(self, selected_states=None, age_range=None,
+                                                month_range=None, day_range=None, year_range=None,
+                                                selected_days=None, selected_genders=None,
+                                                selected_months=None, selected_activities=None,
+                                                selected_time_periods=None, selected_sharks=None):
+        """Get distribution of attacks by age groups, gender, and provocation."""
+        df_filtered = self.filter_data(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        def categorize_age(age):
+            if pd.isna(age):
+                return 'Unknown'
+            elif age <= 12:
+                return '0-12'
+            elif age <= 17:
+                return '13-17'
+            elif age <= 24:
+                return '18-24'
+            elif age <= 34:
+                return '25-34'
+            elif age <= 44:
+                return '35-44'
+            elif age <= 54:
+                return '45-54'
+            else:
+                return '55+'
+
+        df_filtered['AgeGroup'] = df_filtered['Age'].apply(categorize_age)
+
+        # Create MultiIndex DataFrame for all combinations
+        male_provoked = df_filtered[(df_filtered['Gender'] == 'male') &
+                                    (df_filtered['Provocation'] == 'provoked')]['AgeGroup'].value_counts()
+        male_unprovoked = df_filtered[(df_filtered['Gender'] == 'male') &
+                                      (df_filtered['Provocation'] == 'unprovoked')]['AgeGroup'].value_counts()
+        female_provoked = df_filtered[(df_filtered['Gender'] == 'female') &
+                                      (df_filtered['Provocation'] == 'provoked')]['AgeGroup'].value_counts()
+        female_unprovoked = df_filtered[(df_filtered['Gender'] == 'female') &
+                                        (df_filtered['Provocation'] == 'unprovoked')]['AgeGroup'].value_counts()
+
+        # Create DataFrame with all categories
+        age_groups = ['0-12', '13-17', '18-24', '25-34', '35-44', '45-54', '55+', 'Unknown']
+        df_counts = pd.DataFrame({
+            'Male_Provoked': male_provoked.reindex(age_groups).fillna(0),
+            'Male_Unprovoked': male_unprovoked.reindex(age_groups).fillna(0),
+            'Female_Provoked': female_provoked.reindex(age_groups).fillna(0),
+            'Female_Unprovoked': female_unprovoked.reindex(age_groups).fillna(0)
+        }, index=age_groups)
+
+        return df_counts

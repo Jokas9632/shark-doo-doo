@@ -877,3 +877,109 @@ class DashboardVisualizer:
         )
 
         return fig
+
+    def create_population_pyramid(self, selected_states=None, age_range=None,
+                                  month_range=None, day_range=None, year_range=None,
+                                  selected_days=None, selected_genders=None,
+                                  selected_months=None, selected_activities=None,
+                                  selected_time_periods=None, selected_sharks=None):
+        """Create population pyramid showing gender and provocation distribution by age."""
+        df_counts = self.data_manager.get_gender_age_provocation_distribution(
+            selected_states=selected_states,
+            age_range=age_range,
+            month_range=month_range,
+            day_range=day_range,
+            year_range=year_range,
+            selected_days=selected_days,
+            selected_genders=selected_genders,
+            selected_months=selected_months,
+            selected_activities=selected_activities,
+            selected_time_periods=selected_time_periods,
+            selected_sharks=selected_sharks
+        )
+
+        fig = go.Figure()
+
+        # Add male bars
+        fig.add_trace(go.Bar(
+            x=-df_counts['Male_Provoked'],
+            y=df_counts.index,
+            name='Male (Provoked)',
+            orientation='h',
+            marker_color='#1d4ed8',
+            hovertemplate='%{customdata} provoked incidents<br>Age group: %{y}<extra></extra>',
+            customdata=df_counts['Male_Provoked'].abs().values
+        ))
+
+        fig.add_trace(go.Bar(
+            x=-df_counts['Male_Unprovoked'],
+            y=df_counts.index,
+            name='Male (Unprovoked)',
+            orientation='h',
+            marker_color='#60a5fa',
+            hovertemplate='%{customdata} unprovoked incidents<br>Age group: %{y}<extra></extra>',
+            customdata=df_counts['Male_Unprovoked'].abs().values
+        ))
+
+        # Add female bars
+        fig.add_trace(go.Bar(
+            x=df_counts['Female_Provoked'],
+            y=df_counts.index,
+            name='Female (Provoked)',
+            orientation='h',
+            marker_color='#be185d',
+            hovertemplate='%{customdata} provoked incidents<br>Age group: %{y}<extra></extra>',
+            customdata=df_counts['Female_Provoked'].values
+        ))
+
+        fig.add_trace(go.Bar(
+            x=df_counts['Female_Unprovoked'],
+            y=df_counts.index,
+            name='Female (Unprovoked)',
+            orientation='h',
+            marker_color='#f472b6',
+            hovertemplate='%{customdata} unprovoked incidents<br>Age group: %{y}<extra></extra>',
+            customdata=df_counts['Female_Unprovoked'].values
+        ))
+
+        max_value = max(
+            abs(df_counts['Male_Provoked'] + df_counts['Male_Unprovoked']).max(),
+            (df_counts['Female_Provoked'] + df_counts['Female_Unprovoked']).max()
+        )
+
+        fig.update_layout(
+            title='Gender and Provocation Distribution by Age',
+            barmode='relative',
+            bargap=0.1,
+            paper_bgcolor=CHART_SETTINGS['background_color'],
+            plot_bgcolor=CHART_SETTINGS['background_color'],
+            font=dict(color=CHART_SETTINGS['font_color']),
+            margin=dict(l=10, r=10, t=40, b=10),
+            height=400,
+            xaxis=dict(
+                title='Number of Incidents',
+                showgrid=True,
+                gridcolor=CHART_SETTINGS['grid_color'],
+                range=[-max_value * 1.1, max_value * 1.1],
+                zeroline=True,
+                zerolinecolor=CHART_SETTINGS['grid_color'],
+                tickformat=',.0f',
+                ticktext=[str(abs(int(x))) for x in range(-int(max_value), int(max_value) + 1, 50)],
+                tickvals=list(range(-int(max_value), int(max_value) + 1, 50))
+            ),
+            yaxis=dict(
+                title='Age Group',
+                showgrid=False
+            ),
+            showlegend=True,
+            legend=dict(
+                yanchor="top",
+                y=0.99,
+                xanchor="right",
+                x=0.99,
+                bgcolor='rgba(0,0,0,0.5)',
+                font=dict(size=10)
+            )
+        )
+
+        return fig
