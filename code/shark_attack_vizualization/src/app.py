@@ -20,8 +20,7 @@ CATEGORY_GRAPHS = {
     'geography': ['attacks-by-state'],
     'species': ['shark-species', 'shark-streamgraph'],
     'temporal': ['monthly-distribution', 'day-distribution', 'hourly-distribution'],
-    'demographics': ['activity-distribution', 'age-distribution', 'provocation-distribution', 'scatter-matrix',
-                     'population-pyramid']
+    'demographics': ['activity-distribution', 'age-distribution', 'provocation-distribution', 'population-pyramid']
 }
 
 # Initialize the data manager and visualizer
@@ -410,12 +409,6 @@ app.layout = html.Div([
                 ], id={'type': 'graph-container', 'index': 'age-distribution'}, style={'marginBottom': '40px'}),
                 html.Div([
                     dcc.Graph(
-                        id='scatter-matrix',
-                        config={'displayModeBar': False}
-                    )
-                ], id={'type': 'graph-container', 'index': 'scatter-matrix'}, style={'marginBottom': '40px'}),
-                html.Div([
-                    dcc.Graph(
                         id='population-pyramid',
                         config={'displayModeBar': False}
                     )
@@ -602,7 +595,6 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
      Output('shark-species', 'figure'),
      Output('shark-streamgraph', 'figure'),
      Output('age-distribution', 'figure'),
-     Output('scatter-matrix', 'figure'),
      Output('population-pyramid', 'figure'),
      Output('monthly-distribution', 'figure'),
      Output('day-distribution', 'figure'),
@@ -678,17 +670,6 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_age_distribution(
-            selected_states=selected_states,
-            age_range=age_range,
-            year_range=year_range,
-            selected_days=selected_days,
-            selected_genders=selected_genders,
-            selected_months=selected_months,
-            selected_activities=selected_activities,
-            selected_time_periods=selected_time_periods,
-            selected_sharks=selected_sharks
-        ),
-        visualizer.create_scatter_matrix(
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -781,9 +762,8 @@ def reset_filters(n_clicks):
 @app.callback(
     [Output({'type': 'graph-container', 'index': graph_id}, 'style')
      for graph_id in ['attacks-by-state', 'activity-distribution', 'provocation-distribution',
-                      'shark-species', 'shark-streamgraph', 'age-distribution',
-                      'scatter-matrix', 'monthly-distribution', 'day-distribution',
-                      'hourly-distribution']],
+                      'shark-species', 'shark-streamgraph', 'age-distribution', 'population-pyramid',
+                      'monthly-distribution', 'day-distribution', 'hourly-distribution']],
     [Input({'type': 'category-button', 'index': ALL}, 'n_clicks')],
     [State({'type': 'category-button', 'index': ALL}, 'id')]
 )
@@ -791,25 +771,24 @@ def update_graph_visibility(n_clicks, button_ids):
     ctx = dash.callback_context
     if not ctx.triggered or not any(n_clicks):
         # Default state - show all graphs
-        return [{'marginBottom': '40px'} for _ in range(10)]
+        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10 for the additional graph
 
     triggered_id = ctx.triggered[0]['prop_id']
     if not triggered_id:
-        return [{'marginBottom': '40px'} for _ in range(10)]
+        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10
 
     clicked_category = json.loads(triggered_id.split('.')[0])['index']
 
     if clicked_category == 'all':
-        return [{'marginBottom': '40px'} for _ in range(10)]
+        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10
 
     visible_graphs = CATEGORY_GRAPHS[clicked_category]
 
     return [
         {'marginBottom': '40px'} if graph_id in visible_graphs else {'display': 'none'}
         for graph_id in ['attacks-by-state', 'activity-distribution', 'provocation-distribution',
-                         'shark-species', 'shark-streamgraph', 'age-distribution',
-                         'scatter-matrix', 'monthly-distribution', 'day-distribution',
-                         'hourly-distribution']
+                         'shark-species', 'shark-streamgraph', 'age-distribution', 'population-pyramid',
+                         'monthly-distribution', 'day-distribution', 'hourly-distribution']
     ]
 
 @app.callback(
