@@ -8,12 +8,14 @@ from config import (
     REVERSE_STATE_MAPPING,
 )
 
+
 class DataManager:
     def __init__(self):
         """Initialize DataManager with empty data structures."""
         self.df = pd.read_csv(DATA_PATHS['csv_file'])
         self.df['Latitude'] = self.df['Latitude'].apply(self._clean_coordinate)
         self.df['Longitude'] = self.df['Longitude'].apply(self._clean_coordinate)
+        self.df['Injury'] = self.df['Injury'].str.lower()
         self.geojson_data = self._load_geojson()
         self.state_centroids = self._calculate_state_centroids()
         self._add_day_of_week()
@@ -65,10 +67,10 @@ class DataManager:
         """Categorize time into periods of the day."""
         if not time_str or pd.isna(time_str):
             return None
-            
+
         try:
             hours = int(time_str.split(':')[0])
-            
+
             if 6 <= hours < 12:
                 return 'morning'
             elif 12 <= hours < 18:
@@ -101,81 +103,87 @@ class DataManager:
         )
 
     def filter_data(self, selected_states: Optional[List[str]] = None,
-                   age_range: Optional[List[float]] = None,
-                   month_range: Optional[List[int]] = None,
-                   day_range: Optional[List[int]] = None,
-                   year_range: Optional[List[int]] = None,
-                   selected_days: Optional[List[str]] = None,
-                   selected_genders: Optional[List[str]] = None,
-                   selected_months: Optional[List[int]] = None,
-                   selected_activities: Optional[List[str]] = None,
-                   selected_time_periods: Optional[List[str]] = None,
-                   selected_sharks: Optional[List[str]] = None) -> pd.DataFrame:
+                    age_range: Optional[List[float]] = None,
+                    month_range: Optional[List[int]] = None,
+                    day_range: Optional[List[int]] = None,
+                    year_range: Optional[List[int]] = None,
+                    selected_days: Optional[List[str]] = None,
+                    selected_genders: Optional[List[str]] = None,
+                    selected_months: Optional[List[int]] = None,
+                    selected_activities: Optional[List[str]] = None,
+                    selected_time_periods: Optional[List[str]] = None,
+                    selected_sharks: Optional[List[str]] = None,
+                    selected_injuries: Optional[List[str]] = None) -> pd.DataFrame:
         """Filter data based on selected criteria."""
         df_filtered = self.df.copy()
-        
+
         if selected_states:
-            selected_short_states = [REVERSE_STATE_MAPPING[state] 
-                               for state in selected_states]
+            selected_short_states = [REVERSE_STATE_MAPPING[state]
+                                     for state in selected_states]
             df_filtered = df_filtered[df_filtered['State'].isin(selected_short_states)]
-        
+
         if age_range:
             df_filtered = df_filtered[
-                (df_filtered['Age'] >= age_range[0]) & 
+                (df_filtered['Age'] >= age_range[0]) &
                 (df_filtered['Age'] <= age_range[1])
-            ]
-        
+                ]
+
         if month_range:
             df_filtered = df_filtered[
-                (df_filtered['Month'] >= month_range[0]) & 
+                (df_filtered['Month'] >= month_range[0]) &
                 (df_filtered['Month'] <= month_range[1])
-            ]
-        
+                ]
+
         if day_range:
             df_filtered = df_filtered[
-                (df_filtered['Day'] >= day_range[0]) & 
+                (df_filtered['Day'] >= day_range[0]) &
                 (df_filtered['Day'] <= day_range[1])
-            ]
-        
+                ]
+
         if year_range:
             df_filtered = df_filtered[
-                (df_filtered['Year'] >= year_range[0]) & 
+                (df_filtered['Year'] >= year_range[0]) &
                 (df_filtered['Year'] <= year_range[1])
-            ]
+                ]
 
         if selected_days and len(selected_days) > 0:
             df_filtered = df_filtered[df_filtered['DayOfWeek'].isin(selected_days)]
-            
+
         if selected_genders and len(selected_genders) > 0:
             df_filtered = df_filtered[df_filtered['Gender'].isin(selected_genders)]
-            
+
         if selected_months and len(selected_months) > 0:
             df_filtered = df_filtered[df_filtered['Month'].isin(selected_months)]
-            
+
         if selected_activities and len(selected_activities) > 0:
             df_filtered = df_filtered[df_filtered['Activity'].isin(selected_activities)]
 
         if selected_time_periods and len(selected_time_periods) > 0:
             df_filtered = df_filtered[df_filtered['TimePeriod'].isin(selected_time_periods)]
-            
+
         if selected_sharks and len(selected_sharks) > 0:
             df_filtered = df_filtered[df_filtered['SharkName'].isin(selected_sharks)]
-        
+
+        if selected_injuries and len(selected_injuries) > 0:
+            df_filtered = df_filtered[df_filtered['Injury'].str.lower().isin(selected_injuries)]
+
         return df_filtered
 
-    def get_attacks_by_state(self, selected_states: Optional[List[str]] = None,
-                           age_range: Optional[List[float]] = None,
-                           month_range: Optional[List[int]] = None,
-                           day_range: Optional[List[int]] = None,
-                           year_range: Optional[List[int]] = None,
-                           selected_days: Optional[List[str]] = None,
-                           selected_genders: Optional[List[str]] = None,
-                           selected_months: Optional[List[int]] = None,
-                           selected_activities: Optional[List[str]] = None,
-                           selected_time_periods: Optional[List[str]] = None,
-                           selected_sharks: Optional[List[str]] = None) -> pd.Series:
+    def get_attacks_by_state(self, selected_injuries: Optional[List[str]] = None,
+                             selected_states: Optional[List[str]] = None,
+                             age_range: Optional[List[float]] = None,
+                             month_range: Optional[List[int]] = None,
+                             day_range: Optional[List[int]] = None,
+                             year_range: Optional[List[int]] = None,
+                             selected_days: Optional[List[str]] = None,
+                             selected_genders: Optional[List[str]] = None,
+                             selected_months: Optional[List[int]] = None,
+                             selected_activities: Optional[List[str]] = None,
+                             selected_time_periods: Optional[List[str]] = None,
+                             selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get attack counts by state."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -190,19 +198,21 @@ class DataManager:
         )
         return df_filtered['State'].value_counts()
 
-    def get_activity_distribution(self, selected_states: Optional[List[str]] = None,
-                                age_range: Optional[List[float]] = None,
-                                month_range: Optional[List[int]] = None,
-                                day_range: Optional[List[int]] = None,
-                                year_range: Optional[List[int]] = None,
-                                selected_days: Optional[List[str]] = None,
-                                selected_genders: Optional[List[str]] = None,
-                                selected_months: Optional[List[int]] = None,
-                                selected_activities: Optional[List[str]] = None,
-                                selected_time_periods: Optional[List[str]] = None,
-                                selected_sharks: Optional[List[str]] = None) -> pd.Series:
+    def get_activity_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                  selected_states: Optional[List[str]] = None,
+                                  age_range: Optional[List[float]] = None,
+                                  month_range: Optional[List[int]] = None,
+                                  day_range: Optional[List[int]] = None,
+                                  year_range: Optional[List[int]] = None,
+                                  selected_days: Optional[List[str]] = None,
+                                  selected_genders: Optional[List[str]] = None,
+                                  selected_months: Optional[List[int]] = None,
+                                  selected_activities: Optional[List[str]] = None,
+                                  selected_time_periods: Optional[List[str]] = None,
+                                  selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of activities."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -222,19 +232,21 @@ class DataManager:
 
         return activity_percentages.head(DATA_SETTINGS['top_n_activities'])
 
-    def get_shark_species_distribution(self, selected_states: Optional[List[str]] = None,
-                                     age_range: Optional[List[float]] = None,
-                                     month_range: Optional[List[int]] = None,
-                                     day_range: Optional[List[int]] = None,
-                                     year_range: Optional[List[int]] = None,
-                                     selected_days: Optional[List[str]] = None,
-                                     selected_genders: Optional[List[str]] = None,
-                                     selected_months: Optional[List[int]] = None,
-                                     selected_activities: Optional[List[str]] = None,
-                                     selected_time_periods: Optional[List[str]] = None,
-                                     selected_sharks: Optional[List[str]] = None) -> pd.Series:
+    def get_shark_species_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                       selected_states: Optional[List[str]] = None,
+                                       age_range: Optional[List[float]] = None,
+                                       month_range: Optional[List[int]] = None,
+                                       day_range: Optional[List[int]] = None,
+                                       year_range: Optional[List[int]] = None,
+                                       selected_days: Optional[List[str]] = None,
+                                       selected_genders: Optional[List[str]] = None,
+                                       selected_months: Optional[List[int]] = None,
+                                       selected_activities: Optional[List[str]] = None,
+                                       selected_time_periods: Optional[List[str]] = None,
+                                       selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of shark species."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -249,7 +261,8 @@ class DataManager:
         )
         return df_filtered['SharkName'].value_counts().head(DATA_SETTINGS['top_n_species'])
 
-    def get_day_distribution(self, selected_states: Optional[List[str]] = None,
+    def get_day_distribution(self, selected_injuries: Optional[List[str]] = None,
+                             selected_states: Optional[List[str]] = None,
                              age_range: Optional[List[float]] = None,
                              month_range: Optional[List[int]] = None,
                              day_range: Optional[List[int]] = None,
@@ -262,6 +275,7 @@ class DataManager:
                              selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of attacks by day of week with percentages."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -284,7 +298,8 @@ class DataManager:
         days_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         return day_percentages.reindex(days_order).fillna(0)
 
-    def get_monthly_distribution(self, selected_states: Optional[List[str]] = None,
+    def get_monthly_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                 selected_states: Optional[List[str]] = None,
                                  age_range: Optional[List[float]] = None,
                                  month_range: Optional[List[int]] = None,
                                  day_range: Optional[List[int]] = None,
@@ -297,6 +312,7 @@ class DataManager:
                                  selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get monthly distribution of attacks with percentages."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -328,7 +344,8 @@ class DataManager:
 
         return monthly_percentages
 
-    def get_age_distribution(self, selected_states: Optional[List[str]] = None,
+    def get_age_distribution(self, selected_injuries: Optional[List[str]] = None,
+                             selected_states: Optional[List[str]] = None,
                              age_range: Optional[List[float]] = None,
                              month_range: Optional[List[int]] = None,
                              day_range: Optional[List[int]] = None,
@@ -341,6 +358,7 @@ class DataManager:
                              selected_sharks: Optional[List[str]] = None) -> pd.Series:
         """Get distribution of attacks by age groups."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -381,13 +399,15 @@ class DataManager:
         age_group_order = ['0-12', '13-17', '18-24', '25-34', '35-44', '45-54', '55+', 'Unknown']
         return age_percentages.reindex(age_group_order).fillna(0)
 
-    def get_gender_age_provocation_distribution(self, selected_states=None, age_range=None,
+    def get_gender_age_provocation_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                                selected_states=None, age_range=None,
                                                 month_range=None, day_range=None, year_range=None,
                                                 selected_days=None, selected_genders=None,
                                                 selected_months=None, selected_activities=None,
                                                 selected_time_periods=None, selected_sharks=None):
         """Get distribution of attacks by age groups, gender, and provocation."""
         df_filtered = self.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,

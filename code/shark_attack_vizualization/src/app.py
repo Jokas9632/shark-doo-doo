@@ -155,6 +155,30 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
+                    # Injury Filter
+                    html.Div([
+                        html.Label('Filter by Injury:',
+                                 style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
+                        html.Div([
+                            dcc.Checklist(
+                                id='injury-checklist',
+                                options=[
+                                    {'label': 'Fatal', 'value': 'fatal'},
+                                    {'label': 'Injured', 'value': 'injured'},
+                                    {'label': 'Uninjured', 'value': 'uninjured'}
+                                ],
+                                value=[],
+                                style={'color': 'white'},
+                                className='grid grid-cols-2 gap-2'
+                            )
+                        ])
+                    ], style={
+                        'backgroundColor': '#1e1e1e',
+                        'padding': '15px',
+                        'marginBottom': '20px',
+                        'borderRadius': '5px',
+                    }),
+
                     # Gender Filter
                     html.Div([
                         html.Label('Filter by Gender:', 
@@ -512,7 +536,8 @@ def update_age_range_text(value):
     [Output('selected-states', 'data'),
      Output('australia-map', 'figure'),
      Output('camera-position', 'data')],
-    [Input('australia-map', 'clickData'),
+    [Input('injury-checklist', 'value'),
+     Input('australia-map', 'clickData'),
      Input('australia-map', 'relayoutData'),
      Input('recenter-button', 'n_clicks'),
      Input('heatmap-toggle', 'value'),
@@ -527,7 +552,7 @@ def update_age_range_text(value):
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
-def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_toggle,
+def update_map_and_camera(selected_injuries, click_data, relayout_data, recenter_clicks, heatmap_toggle,
                           age_range, year_range, selected_days,
                           selected_genders, selected_months,
                           selected_activities, selected_time_periods,
@@ -573,6 +598,7 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
     show_heatmap = 'heatmap' in (heatmap_toggle or [])
 
     return selected_states, visualizer.create_map(
+        selected_injuries=selected_injuries,
         selected_states=selected_states,
         camera_position=camera_position,
         show_heatmap=show_heatmap,
@@ -599,7 +625,8 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
      Output('monthly-distribution', 'figure'),
      Output('day-distribution', 'figure'),
      Output('hourly-distribution', 'figure')],
-    [Input('selected-states', 'data'),
+    [Input('injury-checklist', 'value'),
+     Input('selected-states', 'data'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('day-checklist', 'value'),
@@ -609,12 +636,13 @@ def update_map_and_camera(click_data, relayout_data, recenter_clicks, heatmap_to
      Input('time-period-checklist', 'value'),
      Input('shark-checklist', 'value')]
 )
-def update_graphs(selected_states, age_range, year_range, selected_days, 
+def update_graphs(selected_injuries, selected_states, age_range, year_range, selected_days,
                  selected_genders, selected_months, selected_activities, 
                  selected_time_periods, selected_sharks):
     
     return (
         visualizer.create_attacks_by_state(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -626,6 +654,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_activity_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -637,6 +666,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_provocation_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -648,6 +678,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_shark_species(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -659,6 +690,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_shark_streamgraph(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -670,6 +702,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_age_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -681,6 +714,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_population_pyramid(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -692,6 +726,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_monthly_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -703,6 +738,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_day_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -714,6 +750,7 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
             selected_sharks=selected_sharks
         ),
         visualizer.create_hourly_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -729,7 +766,8 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
 
 # Reset filters
 @app.callback(
-    [Output('time-period-checklist', 'value'),
+    [Output('injury-checklist', 'value'),
+     Output('time-period-checklist', 'value'),
      Output('gender-checklist', 'value'),
      Output('shark-checklist', 'value'),
      Output('month-checklist', 'value'),
@@ -737,7 +775,8 @@ def update_graphs(selected_states, age_range, year_range, selected_days,
      Output('day-checklist', 'value'),
      Output('year-slider', 'value'),
      Output('age-slider', 'value'),
-     Output('selected-states', 'data', allow_duplicate=True)],
+     Output('selected-states', 'data',
+     allow_duplicate=True)],
     [Input('reset-button', 'n_clicks')],
     prevent_initial_call=True  # Added prevent_initial_call
 )
@@ -746,6 +785,7 @@ def reset_filters(n_clicks):
         raise dash.exceptions.PreventUpdate
 
     return (
+        [],  # injury-checklist
         [],  # time-period-checklist
         [],  # gender-checklist
         [],  # shark-checklist

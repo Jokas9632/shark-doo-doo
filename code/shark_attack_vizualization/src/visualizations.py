@@ -14,7 +14,8 @@ class DashboardVisualizer:
         """Initialize visualizer with data manager."""
         self.data_manager = data_manager
 
-    def create_map(self, selected_states: Optional[List[str]] = None,
+    def create_map(self, selected_injuries: Optional[List[str]] = None,
+                   selected_states: Optional[List[str]] = None,
                    camera_position: Optional[Dict] = None,
                    show_heatmap: bool = False,
                    age_range: Optional[List[float]] = None,
@@ -93,6 +94,7 @@ class DashboardVisualizer:
 
         # Add shark attack points with filtering
         filtered_df = self.data_manager.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -220,7 +222,8 @@ class DashboardVisualizer:
 
         return fig
 
-    def create_attacks_by_state(self, selected_states: Optional[List[str]] = None,
+    def create_attacks_by_state(self, selected_injuries: Optional[List[str]] = None,
+                              selected_states: Optional[List[str]] = None,
                               age_range: Optional[List[float]] = None,
                               month_range: Optional[List[int]] = None,
                               day_range: Optional[List[int]] = None,
@@ -233,6 +236,7 @@ class DashboardVisualizer:
                               selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create attacks by state bar chart."""
         attacks_by_state = self.data_manager.get_attacks_by_state(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -271,7 +275,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_activity_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_activity_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                   selected_states: Optional[List[str]] = None,
                                    age_range: Optional[List[float]] = None,
                                    month_range: Optional[List[int]] = None,
                                    day_range: Optional[List[int]] = None,
@@ -284,6 +289,7 @@ class DashboardVisualizer:
                                    selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create activity distribution bar chart."""
         top_activities = self.data_manager.get_activity_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -298,15 +304,24 @@ class DashboardVisualizer:
         )
 
         fig = go.Figure()
-        fig.add_trace(go.Bar(
-            x=top_activities.values,
-            y=top_activities.index,
-            orientation='h',
-            marker_color=CHART_SETTINGS['accent_color'],
-            text=[f"{val:.1f}%" for val in top_activities.values],
-            textposition='auto',
-            hovertemplate='%{y}: %{x:.1f}%<extra></extra>'
-        ))
+        if top_activities.empty:
+            fig.add_annotation(
+                text="No data available for selected filters",
+                xref="paper", yref="paper",
+                x=0.5, y=0.5,
+                showarrow=False,
+                font=dict(color=CHART_SETTINGS['font_color'])
+            )
+        else:
+            fig.add_trace(go.Bar(
+                x=top_activities.values,
+                y=top_activities.index,
+                orientation='h',
+                marker_color=CHART_SETTINGS['accent_color'],
+                text=[f"{val:.1f}%" for val in top_activities.values],
+                textposition='auto',
+                hovertemplate='%{y}: %{x:.1f}%<extra></extra>'
+            ))
 
         fig.update_layout(
             title='Activity Distribution',
@@ -325,7 +340,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_shark_species(self, selected_states: Optional[List[str]] = None,
+    def create_shark_species(self, selected_injuries: Optional[List[str]] = None,
+                           selected_states: Optional[List[str]] = None,
                            age_range: Optional[List[float]] = None,
                            month_range: Optional[List[int]] = None,
                            day_range: Optional[List[int]] = None,
@@ -338,6 +354,7 @@ class DashboardVisualizer:
                            selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create shark species distribution pie chart."""
         top_sharks = self.data_manager.get_shark_species_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -372,7 +389,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_hourly_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_hourly_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                   selected_states: Optional[List[str]] = None,
                                    age_range: Optional[List[float]] = None,
                                    month_range: Optional[List[int]] = None,
                                    day_range: Optional[List[int]] = None,
@@ -385,6 +403,7 @@ class DashboardVisualizer:
                                    selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create hourly distribution bar chart with percentages."""
         df_filtered = self.data_manager.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -445,7 +464,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_day_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_day_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                selected_states: Optional[List[str]] = None,
                                 age_range: Optional[List[float]] = None,
                                 month_range: Optional[List[int]] = None,
                                 day_range: Optional[List[int]] = None,
@@ -458,6 +478,7 @@ class DashboardVisualizer:
                                 selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create day of week distribution bar chart."""
         daily_dist = self.data_manager.get_day_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -499,7 +520,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_monthly_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_monthly_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                    selected_states: Optional[List[str]] = None,
                                     age_range: Optional[List[float]] = None,
                                     month_range: Optional[List[int]] = None,
                                     day_range: Optional[List[int]] = None,
@@ -512,6 +534,7 @@ class DashboardVisualizer:
                                     selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create monthly distribution bar chart."""
         monthly_dist = self.data_manager.get_monthly_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -553,7 +576,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_age_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_age_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                selected_states: Optional[List[str]] = None,
                                 age_range: Optional[List[float]] = None,
                                 month_range: Optional[List[int]] = None,
                                 day_range: Optional[List[int]] = None,
@@ -566,6 +590,7 @@ class DashboardVisualizer:
                                 selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create age distribution bar chart with percentages."""
         age_dist = self.data_manager.get_age_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -607,7 +632,8 @@ class DashboardVisualizer:
         )
         return fig
 
-    def create_shark_streamgraph(self, selected_states: Optional[List[str]] = None,
+    def create_shark_streamgraph(self, selected_injuries: Optional[List[str]] = None,
+                                 selected_states: Optional[List[str]] = None,
                                  age_range: Optional[List[float]] = None,
                                  year_range: Optional[List[int]] = None,
                                  selected_days: Optional[List[str]] = None,
@@ -619,6 +645,7 @@ class DashboardVisualizer:
         """Create streamgraph of shark attacks over time by species."""
         # Get filtered data
         df_filtered = self.data_manager.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             year_range=year_range,
@@ -710,7 +737,8 @@ class DashboardVisualizer:
 
         return fig
 
-    def create_provocation_distribution(self, selected_states: Optional[List[str]] = None,
+    def create_provocation_distribution(self, selected_injuries: Optional[List[str]] = None,
+                                        selected_states: Optional[List[str]] = None,
                                         age_range: Optional[List[float]] = None,
                                         month_range: Optional[List[int]] = None,
                                         day_range: Optional[List[int]] = None,
@@ -723,6 +751,7 @@ class DashboardVisualizer:
                                         selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create grouped bar chart for activities and provocation."""
         df_filtered = self.data_manager.filter_data(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
@@ -791,13 +820,15 @@ class DashboardVisualizer:
 
         return fig
 
-    def create_population_pyramid(self, selected_states=None, age_range=None,
+    def create_population_pyramid(self, selected_injuries: Optional[List[str]] = None,
+                                  selected_states=None, age_range=None,
                                   month_range=None, day_range=None, year_range=None,
                                   selected_days=None, selected_genders=None,
                                   selected_months=None, selected_activities=None,
                                   selected_time_periods=None, selected_sharks=None):
         """Create population pyramid showing gender and provocation distribution by age."""
         df_counts = self.data_manager.get_gender_age_provocation_distribution(
+            selected_injuries=selected_injuries,
             selected_states=selected_states,
             age_range=age_range,
             month_range=month_range,
