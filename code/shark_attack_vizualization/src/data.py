@@ -6,6 +6,7 @@ from config import (
     DATA_PATHS,
     DATA_SETTINGS,
     REVERSE_STATE_MAPPING,
+    STATE_NAME_MAPPING
 )
 
 
@@ -118,33 +119,40 @@ class DataManager:
         df_filtered = self.df.copy()
 
         if selected_states:
-            selected_short_states = [REVERSE_STATE_MAPPING[state]
-                                     for state in selected_states]
+            # Handle both state codes and full names
+            selected_short_states = []
+            for state in selected_states:
+                if state in REVERSE_STATE_MAPPING:  # If it's a full name
+                    selected_short_states.append(REVERSE_STATE_MAPPING[state])
+                elif state in STATE_NAME_MAPPING:   # If it's already a state code
+                    selected_short_states.append(state)
+            
             df_filtered = df_filtered[df_filtered['State'].isin(selected_short_states)]
 
+        # Rest of the filtering logic remains the same
         if age_range:
             df_filtered = df_filtered[
                 (df_filtered['Age'] >= age_range[0]) &
                 (df_filtered['Age'] <= age_range[1])
-                ]
+            ]
 
         if month_range:
             df_filtered = df_filtered[
                 (df_filtered['Month'] >= month_range[0]) &
                 (df_filtered['Month'] <= month_range[1])
-                ]
+            ]
 
         if day_range:
             df_filtered = df_filtered[
                 (df_filtered['Day'] >= day_range[0]) &
                 (df_filtered['Day'] <= day_range[1])
-                ]
+            ]
 
         if year_range:
             df_filtered = df_filtered[
                 (df_filtered['Year'] >= year_range[0]) &
                 (df_filtered['Year'] <= year_range[1])
-                ]
+            ]
 
         if selected_days and len(selected_days) > 0:
             df_filtered = df_filtered[df_filtered['DayOfWeek'].isin(selected_days)]
@@ -168,7 +176,6 @@ class DataManager:
             df_filtered = df_filtered[df_filtered['Injury'].str.lower().isin(selected_injuries)]
 
         return df_filtered
-
     def get_attacks_by_state(self, selected_injuries: Optional[List[str]] = None,
                              selected_states: Optional[List[str]] = None,
                              age_range: Optional[List[float]] = None,

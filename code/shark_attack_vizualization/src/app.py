@@ -551,6 +551,7 @@ def update_age_range_text(value):
      Output('camera-position', 'data')],
     [Input('injury-checklist', 'value'),
      Input('australia-map', 'clickData'),
+     Input('attacks-by-state', 'clickData'),  # Add this input
      Input('australia-map', 'relayoutData'),
      Input('recenter-button', 'n_clicks'),
      Input('heatmap-toggle', 'value'),
@@ -565,11 +566,13 @@ def update_age_range_text(value):
     [State('selected-states', 'data'),
      State('camera-position', 'data')]
 )
-def update_map_and_camera(selected_injuries, click_data, relayout_data, recenter_clicks, heatmap_toggle,
-                          age_range, year_range, selected_days,
-                          selected_genders, selected_months,
-                          selected_activities, selected_time_periods,
-                          selected_sharks, selected_states, camera_position):
+def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_data, 
+                         relayout_data, recenter_clicks, heatmap_toggle,
+                         age_range, year_range, selected_days,
+                         selected_genders, selected_months,
+                         selected_activities, selected_time_periods,
+                         selected_sharks, selected_states, camera_position):
+    
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[0] if ctx.triggered else None
     triggered_prop = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
@@ -590,9 +593,17 @@ def update_map_and_camera(selected_injuries, click_data, relayout_data, recenter
         if 'mapbox.zoom' in relayout_data:
             camera_position['zoom'] = relayout_data['mapbox.zoom']
 
-    # Handle state selection
-    elif triggered_prop == 'clickData' and click_data:
-        clicked_point = click_data['points'][0]
+    # Handle state bar click
+    elif triggered_id == 'attacks-by-state' and state_bar_click_data:
+        clicked_state = state_bar_click_data['points'][0]['customdata']
+        if clicked_state in selected_states:
+            selected_states.remove(clicked_state)
+        else:
+            selected_states.append(clicked_state)
+
+    # Handle map click
+    elif triggered_prop == 'clickData' and map_click_data:
+        clicked_point = map_click_data['points'][0]
         clicked_state = None
 
         # Handle clicks on choropleth
@@ -624,7 +635,6 @@ def update_map_and_camera(selected_injuries, click_data, relayout_data, recenter
         selected_time_periods=selected_time_periods,
         selected_sharks=selected_sharks
     ), camera_position
-
 
 # Callback for graph updates
 @app.callback(

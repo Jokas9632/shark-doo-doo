@@ -43,7 +43,7 @@ CHART_SETTINGS = {
 
 # Layout settings
 LAYOUT_SETTINGS = {
-    'sidebar_width': '500px',
+    'sidebar_width': '700px',
     'chart_heights': {
         'state_chart': 200,
         'yearly_trend': 200,

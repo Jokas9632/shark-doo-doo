@@ -223,18 +223,18 @@ class DashboardVisualizer:
         return fig
 
     def create_attacks_by_state(self, selected_injuries: Optional[List[str]] = None,
-                              selected_states: Optional[List[str]] = None,
-                              age_range: Optional[List[float]] = None,
-                              month_range: Optional[List[int]] = None,
-                              day_range: Optional[List[int]] = None,
-                              year_range: Optional[List[int]] = None,
-                              selected_days: Optional[List[str]] = None,
-                              selected_genders: Optional[List[str]] = None,
-                              selected_months: Optional[List[int]] = None,
-                              selected_activities: Optional[List[str]] = None,
-                              selected_time_periods: Optional[List[str]] = None,
-                              selected_sharks: Optional[List[str]] = None) -> go.Figure:
-        """Create attacks by state bar chart."""
+                            selected_states: Optional[List[str]] = None,
+                            age_range: Optional[List[float]] = None,
+                            month_range: Optional[List[int]] = None,
+                            day_range: Optional[List[int]] = None,
+                            year_range: Optional[List[int]] = None,
+                            selected_days: Optional[List[str]] = None,
+                            selected_genders: Optional[List[str]] = None,
+                            selected_months: Optional[List[int]] = None,
+                            selected_activities: Optional[List[str]] = None,
+                            selected_time_periods: Optional[List[str]] = None,
+                            selected_sharks: Optional[List[str]] = None) -> go.Figure:
+        """Create attacks by state bar chart with clickable bars."""
         attacks_by_state = self.data_manager.get_attacks_by_state(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
@@ -254,13 +254,22 @@ class DashboardVisualizer:
         total_attacks = attacks_by_state.sum()
         percentages = (attacks_by_state / total_attacks * 100).round(1)
 
+        # Create color array that highlights selected states
+        colors = [
+            STATE_COLORS.get(state, '#808080') if selected_states is None or state not in selected_states
+            else '#36def7'  # Highlight color for selected states
+            for state in percentages.index
+        ]
+
         fig = go.Figure()
         fig.add_trace(go.Bar(
             x=percentages.index,
             y=percentages.values,
-            marker_color=[STATE_COLORS.get(state, '#808080') for state in percentages.index],
+            marker_color=colors,
             text=[f'{val}%' for val in percentages.values],
             textposition='auto',
+            customdata=percentages.index,  # Add state codes as custom data
+            hovertemplate='%{x}<br>%{y}% of attacks<extra></extra>',
         ))
         
         fig.update_layout(
@@ -271,10 +280,10 @@ class DashboardVisualizer:
             margin=dict(l=10, r=10, t=40, b=10),
             height=LAYOUT_SETTINGS['chart_heights']['state_chart'],
             xaxis=dict(showgrid=False),
-            yaxis=dict(showgrid=True, gridcolor=CHART_SETTINGS['grid_color'])
+            yaxis=dict(showgrid=True, gridcolor=CHART_SETTINGS['grid_color']),
+            clickmode='event+select'  # Enable clicking on bars
         )
         return fig
-
     def create_activity_distribution(self, selected_injuries: Optional[List[str]] = None,
                                    selected_states: Optional[List[str]] = None,
                                    age_range: Optional[List[float]] = None,
