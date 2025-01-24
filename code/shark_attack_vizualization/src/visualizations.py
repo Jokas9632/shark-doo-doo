@@ -285,17 +285,17 @@ class DashboardVisualizer:
         )
         return fig
     def create_activity_distribution(self, selected_injuries: Optional[List[str]] = None,
-                                   selected_states: Optional[List[str]] = None,
-                                   age_range: Optional[List[float]] = None,
-                                   month_range: Optional[List[int]] = None,
-                                   day_range: Optional[List[int]] = None,
-                                   year_range: Optional[List[int]] = None,
-                                   selected_days: Optional[List[str]] = None,
-                                   selected_genders: Optional[List[str]] = None,
-                                   selected_months: Optional[List[int]] = None,
-                                   selected_activities: Optional[List[str]] = None,
-                                   selected_time_periods: Optional[List[str]] = None,
-                                   selected_sharks: Optional[List[str]] = None) -> go.Figure:
+                                selected_states: Optional[List[str]] = None,
+                                age_range: Optional[List[float]] = None,
+                                month_range: Optional[List[int]] = None,
+                                day_range: Optional[List[int]] = None,
+                                year_range: Optional[List[int]] = None,
+                                selected_days: Optional[List[str]] = None,
+                                selected_genders: Optional[List[str]] = None,
+                                selected_months: Optional[List[int]] = None,
+                                selected_activities: Optional[List[str]] = None,
+                                selected_time_periods: Optional[List[str]] = None,
+                                selected_sharks: Optional[List[str]] = None) -> go.Figure:
         """Create activity distribution bar chart."""
         top_activities = self.data_manager.get_activity_distribution(
             selected_injuries=selected_injuries,
@@ -312,25 +312,23 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
+        # Create color array based on selection
+        colors = [
+            '#36def7' if activity in (selected_activities or [])
+            else CHART_SETTINGS['accent_color']
+            for activity in top_activities.index
+        ]
+
         fig = go.Figure()
-        if top_activities.empty:
-            fig.add_annotation(
-                text="No data available for selected filters",
-                xref="paper", yref="paper",
-                x=0.5, y=0.5,
-                showarrow=False,
-                font=dict(color=CHART_SETTINGS['font_color'])
-            )
-        else:
-            fig.add_trace(go.Bar(
-                x=top_activities.values,
-                y=top_activities.index,
-                orientation='h',
-                marker_color=CHART_SETTINGS['accent_color'],
-                text=[f"{val:.1f}%" for val in top_activities.values],
-                textposition='auto',
-                hovertemplate='%{y}: %{x:.1f}%<extra></extra>'
-            ))
+        fig.add_trace(go.Bar(
+            x=top_activities.values,
+            y=top_activities.index,
+            orientation='h',
+            marker_color=colors,
+            text=[f"{val:.1f}%" for val in top_activities.values],
+            textposition='auto',
+            hovertemplate='%{y}: %{x:.1f}%<extra></extra>'
+        ))
 
         fig.update_layout(
             title='Activity Distribution',
@@ -343,12 +341,12 @@ class DashboardVisualizer:
                 showgrid=True,
                 gridcolor=CHART_SETTINGS['grid_color'],
                 title='Percentage of Total Activities',
-                range=[0, max(top_activities.values) * 1.1]  # Add 10% padding
+                range=[0, max(top_activities.values) * 1.1]
             ),
-            yaxis=dict(showgrid=False)
+            yaxis=dict(showgrid=False),
+            clickmode='event+select'  # Enable clicking
         )
         return fig
-
     def create_shark_species(self, selected_injuries: Optional[List[str]] = None,
                            selected_states: Optional[List[str]] = None,
                            age_range: Optional[List[float]] = None,

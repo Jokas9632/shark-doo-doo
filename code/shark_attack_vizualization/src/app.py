@@ -38,6 +38,7 @@ app.layout = html.Div([
         'center': {"lat": -28.2744, "lon": 128.7751},
         'zoom': 3.3
     }),
+    dcc.Store(id='selected-activities', data=[], storage_type='memory'),
     
     # Left side panel for statistics
     html.Div([
@@ -548,10 +549,13 @@ def update_age_range_text(value):
 @app.callback(
     [Output('selected-states', 'data'),
      Output('australia-map', 'figure'),
-     Output('camera-position', 'data')],
+     Output('camera-position', 'data'),
+     Output('selected-activities', 'data'),
+     Output('activity-checklist', 'value')],  # Add this output
     [Input('injury-checklist', 'value'),
      Input('australia-map', 'clickData'),
-     Input('attacks-by-state', 'clickData'),  # Add this input
+     Input('attacks-by-state', 'clickData'),
+     Input('activity-distribution', 'clickData'),
      Input('australia-map', 'relayoutData'),
      Input('recenter-button', 'n_clicks'),
      Input('heatmap-toggle', 'value'),
@@ -564,15 +568,15 @@ def update_age_range_text(value):
      Input('time-period-checklist', 'value'),
      Input('shark-checklist', 'value')],
     [State('selected-states', 'data'),
-     State('camera-position', 'data')]
+     State('camera-position', 'data'),
+     State('selected-activities', 'data')]
 )
-def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_data, 
-                         relayout_data, recenter_clicks, heatmap_toggle,
-                         age_range, year_range, selected_days,
-                         selected_genders, selected_months,
-                         selected_activities, selected_time_periods,
-                         selected_sharks, selected_states, camera_position):
-    
+def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_data,
+                         activity_bar_click_data, relayout_data, recenter_clicks,
+                         heatmap_toggle, age_range, year_range, selected_days,
+                         selected_genders, selected_months, activity_checklist,
+                         selected_time_periods, selected_sharks, selected_states,
+                         camera_position, selected_activities):
     ctx = dash.callback_context
     triggered_id = ctx.triggered[0]['prop_id'].split('.')[0] if ctx.triggered else None
     triggered_prop = ctx.triggered[0]['prop_id'].split('.')[1] if ctx.triggered else None
@@ -600,7 +604,23 @@ def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_dat
             selected_states.remove(clicked_state)
         else:
             selected_states.append(clicked_state)
+    
+    if selected_activities is None:
+        selected_activities = []
 
+    # Handle activity bar click
+    if triggered_id == 'activity-distribution' and activity_bar_click_data:
+        clicked_activity = activity_bar_click_data['points'][0]['y']
+        if clicked_activity in selected_activities:
+            selected_activities.remove(clicked_activity)
+        else:
+            selected_activities.append(clicked_activity)
+        # Return the selected_activities as the checklist value too
+        activity_checklist = selected_activities
+    elif triggered_id == 'activity-checklist':
+        # If the checklist was changed, use its value
+        selected_activities = activity_checklist if activity_checklist else []
+    
     # Handle map click
     elif triggered_prop == 'clickData' and map_click_data:
         clicked_point = map_click_data['points'][0]
@@ -634,7 +654,7 @@ def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_dat
         selected_activities=selected_activities,
         selected_time_periods=selected_time_periods,
         selected_sharks=selected_sharks
-    ), camera_position
+    ), camera_position, selected_activities, activity_checklist
 
 # Callback for graph updates
 @app.callback(
@@ -650,142 +670,142 @@ def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_dat
      Output('hourly-distribution', 'figure')],
     [Input('injury-checklist', 'value'),
      Input('selected-states', 'data'),
+     Input('selected-activities', 'data'),
      Input('age-slider', 'value'),
      Input('year-slider', 'value'),
      Input('day-checklist', 'value'),
      Input('gender-checklist', 'value'),
      Input('month-checklist', 'value'),
-     Input('activity-checklist', 'value'),
      Input('time-period-checklist', 'value'),
      Input('shark-checklist', 'value')]
 )
-def update_graphs(selected_injuries, selected_states, age_range, year_range, selected_days,
-                 selected_genders, selected_months, selected_activities, 
+def update_graphs(selected_injuries, selected_states, selected_activities,
+                 age_range, year_range, selected_days,
+                 selected_genders, selected_months,
                  selected_time_periods, selected_sharks):
     
     return (
         visualizer.create_attacks_by_state(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_activity_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_provocation_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_shark_species(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_shark_streamgraph(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_age_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_population_pyramid(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_monthly_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_day_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         ),
         visualizer.create_hourly_distribution(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
+            selected_activities=selected_activities,
             age_range=age_range,
             year_range=year_range,
             selected_days=selected_days,
             selected_genders=selected_genders,
             selected_months=selected_months,
-            selected_activities=selected_activities,
             selected_time_periods=selected_time_periods,
             selected_sharks=selected_sharks
         )
     )
-
 
 # Reset filters
 @app.callback(
@@ -794,32 +814,20 @@ def update_graphs(selected_injuries, selected_states, age_range, year_range, sel
      Output('gender-checklist', 'value'),
      Output('shark-checklist', 'value'),
      Output('month-checklist', 'value'),
-     Output('activity-checklist', 'value'),
+     Output('activity-checklist', 'value', allow_duplicate=True),
      Output('day-checklist', 'value'),
      Output('year-slider', 'value'),
      Output('age-slider', 'value'),
-     Output('selected-states', 'data',
-     allow_duplicate=True)],
+     Output('selected-states', 'data', allow_duplicate=True),
+     Output('selected-activities', 'data', allow_duplicate = True)],
     [Input('reset-button', 'n_clicks')],
-    prevent_initial_call=True  # Added prevent_initial_call
+    prevent_initial_call=True
 )
 def reset_filters(n_clicks):
     if n_clicks is None:
-        raise dash.exceptions.PreventUpdate
+        raise PreventUpdate
 
-    return (
-        [],  # injury-checklist
-        [],  # time-period-checklist
-        [],  # gender-checklist
-        [],  # shark-checklist
-        [],  # month-checklist
-        [],  # activity-checklist
-        [],  # day-checklist
-        [1900, 2024],  # year-slider
-        [0, 90],  # age-slider
-        []  # selected-states - empty list to clear all selections
-    )
-
+    return ([], [], [], [], [], [], [], [1900, 2024], [0, 90], [], [])
 
 # Handle graph visibility
 @app.callback(
