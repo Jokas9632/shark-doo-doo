@@ -492,7 +492,7 @@ def toggle_filter_panel(n_clicks, filter_style):
             'position': 'fixed',
             'top': '70px',
             'left': '10px',
-            'width': '460px',
+            'width': '650px',
             'maxHeight': '80vh',
             'overflowY': 'auto',
             'zIndex': 1002,
