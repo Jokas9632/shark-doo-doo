@@ -45,16 +45,6 @@ app.layout = html.Div([
         html.Div([
             # Top row: Heatmap and control buttons
             html.Div([
-                # Heatmap toggle
-                html.Div([
-                    dcc.Checklist(
-                        id='heatmap-toggle',
-                        options=[{'label': 'Show as Heatmap', 'value': 'heatmap'}],
-                        value=[],
-                        style={'color': 'white', 'marginRight': '20px'}
-                    ),
-                ], style={'display': 'flex', 'alignItems': 'center'}),
-
                 # Control buttons
                 html.Button('Filters',
                             id='filter-button',
@@ -65,7 +55,7 @@ app.layout = html.Div([
                                 'padding': '5px 15px',
                                 'borderRadius': '5px',
                                 'cursor': 'pointer',
-                                'marginRight': '10px'
+                                'marginRight': '20px',
                             }),
                 html.Button('Reset Filters',
                             id='reset-button',
@@ -75,23 +65,13 @@ app.layout = html.Div([
                                 'border': 'none',
                                 'padding': '5px 15px',
                                 'borderRadius': '5px',
-                                'cursor': 'pointer',
-                                'marginRight': '10px'
-                            }),
-                html.Button('Recenter Map',
-                            id='recenter-button',
-                            style={
-                                'backgroundColor': '#688ae8',
-                                'color': 'white',
-                                'border': 'none',
-                                'padding': '5px 15px',
-                                'borderRadius': '5px',
-                                'cursor': 'pointer'
+                                'marginRight': '20px'
                             }),
             ], style={
                 'display': 'flex',
                 'alignItems': 'center',
-                'marginBottom': '20px'
+                'marginBottom': '20px',
+                'justifyContent': 'center',
             }),
 
             # Bottom row: Category buttons
@@ -473,6 +453,38 @@ app.layout = html.Div([
 
     # Main map container
     html.Div([
+        # Add this new div for absolute positioning of controls
+        html.Div([
+            html.Div([
+                dcc.Checklist(
+                    id='heatmap-toggle',
+                    options=[{'label': 'Show as Heatmap', 'value': 'heatmap'}],
+                    value=[],
+                    style={'color': 'white', 'display': 'flex', 'alignItems': 'center', 'marginRight': '10px'}
+                ),
+                html.Button('Recenter Map',
+                            id='recenter-button',
+                            style={
+                                'backgroundColor': '#688ae8',
+                                'color': 'white',
+                                'border': 'none',
+                                'padding': '5px 15px',
+                                'borderRadius': '5px',
+                                'cursor': 'pointer'
+                            }),
+            ], style={
+                'display': 'flex', 
+                'alignItems': 'center', 
+                'position': 'absolute', 
+                'top': '10px', 
+                'right': '10px', 
+                'zIndex': 1001,
+                'backgroundColor': 'rgba(18, 18, 18, 0.7)',
+                'padding': '10px',
+                'borderRadius': '5px'
+            })
+        ], style={'position': 'relative'}),
+        
         dcc.Graph(
             id='australia-map',
             figure=visualizer.create_map(),
@@ -481,7 +493,8 @@ app.layout = html.Div([
         )
     ], style={
         'marginLeft': LAYOUT_SETTINGS['sidebar_width'],
-        'height': '100vh'
+        'height': '100vh',
+        'position': 'relative'  # Important for absolute positioning of child elements
     })
 ])
 
