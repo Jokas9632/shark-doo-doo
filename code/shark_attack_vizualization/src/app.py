@@ -23,16 +23,12 @@ CATEGORY_GRAPHS = {
     'demographics': ['activity-distribution', 'age-distribution', 'provocation-distribution', 'population-pyramid']
 }
 
-# Initialize the data manager and visualizer
 data_manager = DataManager()
 visualizer = DashboardVisualizer(data_manager)
 
-# Initialize the Dash app
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
-# Define the app layout
 app.layout = html.Div([
-    # Store components for state
     dcc.Store(id='selected-states', data=[]),
     dcc.Store(id='camera-position', data={
         'center': {"lat": -28.2744, "lon": 128.7751},
@@ -40,13 +36,9 @@ app.layout = html.Div([
     }),
     dcc.Store(id='selected-activities', data=[], storage_type='memory'),
     
-    # Left side panel for statistics
     html.Div([
-        # Fixed header with filter buttons
         html.Div([
-            # Top row: Heatmap and control buttons
             html.Div([
-                # Control buttons
                 html.Button('Filters',
                             id='filter-button',
                             style={
@@ -75,7 +67,6 @@ app.layout = html.Div([
                 'justifyContent': 'center',
             }),
 
-            # Bottom row: Category buttons
             html.Div([
                 html.Button(
                     value,
@@ -107,11 +98,8 @@ app.layout = html.Div([
         }),
         
         html.Div([
-            # Filter panel - collapsible div
             html.Div([
-                # Filter Controls
                 html.Div([
-                    # Time Period Filter
                     html.Div([
                         html.Label('Filter by Time of Day:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -136,7 +124,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Injury Filter
                     html.Div([
                         html.Label('Filter by Injury:',
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -160,7 +147,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Gender Filter
                     html.Div([
                         html.Label('Filter by Gender:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -183,7 +169,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Shark Species Filter
                     html.Div([
                         html.Label('Filter by Shark Species:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -210,7 +195,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Month Filter
                     html.Div([
                         html.Label('Filter by Month:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -243,7 +227,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Activity Filter
                     html.Div([
                         html.Label('Filter by Activity:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -267,7 +250,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Day of Week Filter
                     html.Div([
                         html.Label('Filter by Day of Week:', 
                                  style={'color': '#688ae8', 'fontSize': 16, 'marginBottom': '10px'}),
@@ -295,7 +277,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Year Range Slider
                     html.Div([
                         html.Div([
                             html.Label('Filter by Year:', 
@@ -327,7 +308,6 @@ app.layout = html.Div([
                         'borderRadius': '5px',
                     }),
 
-                    # Age Range Slider
                     html.Div([
                         html.Div([
                             html.Label('Filter by Age:', 
@@ -374,7 +354,6 @@ app.layout = html.Div([
                 'boxShadow': '0 4px 6px rgba(0, 0, 0, 0.3)'
             }),
             
-            # Graphs section in a container
             html.Div([
                 html.Div([
                     dcc.Graph(
@@ -452,9 +431,7 @@ app.layout = html.Div([
         'zIndex': '1000'
     }),
 
-    # Main map container
     html.Div([
-        # Add this new div for absolute positioning of controls
         html.Div([
             html.Div([
                 dcc.Checklist(
@@ -495,7 +472,7 @@ app.layout = html.Div([
     ], style={
         'marginLeft': LAYOUT_SETTINGS['sidebar_width'],
         'height': '100vh',
-        'position': 'relative'  # Important for absolute positioning of child elements
+        'position': 'relative'
     })
 ])
 
@@ -551,7 +528,7 @@ def update_age_range_text(value):
      Output('australia-map', 'figure'),
      Output('camera-position', 'data'),
      Output('selected-activities', 'data'),
-     Output('activity-checklist', 'value')],  # Add this output
+     Output('activity-checklist', 'value')],
     [Input('injury-checklist', 'value'),
      Input('australia-map', 'clickData'),
      Input('attacks-by-state', 'clickData'),
@@ -615,10 +592,8 @@ def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_dat
             selected_activities.remove(clicked_activity)
         else:
             selected_activities.append(clicked_activity)
-        # Return the selected_activities as the checklist value too
         activity_checklist = selected_activities
     elif triggered_id == 'activity-checklist':
-        # If the checklist was changed, use its value
         selected_activities = activity_checklist if activity_checklist else []
     
     # Handle map click
@@ -629,7 +604,6 @@ def update_map_and_camera(selected_injuries, map_click_data, state_bar_click_dat
         # Handle clicks on choropleth
         if 'location' in clicked_point:
             clicked_state = clicked_point['location']
-        # Handle clicks on invisible clickable areas for small states
         elif 'customdata' in clicked_point:
             clicked_state = clicked_point['customdata'][0]
 
@@ -841,17 +815,16 @@ def reset_filters(n_clicks):
 def update_graph_visibility(n_clicks, button_ids):
     ctx = dash.callback_context
     if not ctx.triggered or not any(n_clicks):
-        # Default state - show all graphs
-        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10 for the additional graph
+        return [{'marginBottom': '40px'} for _ in range(10)]
 
     triggered_id = ctx.triggered[0]['prop_id']
     if not triggered_id:
-        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10
+        return [{'marginBottom': '40px'} for _ in range(10)]
 
     clicked_category = json.loads(triggered_id.split('.')[0])['index']
 
     if clicked_category == 'all':
-        return [{'marginBottom': '40px'} for _ in range(10)]  # Updated to 10
+        return [{'marginBottom': '40px'} for _ in range(10)]
 
     visible_graphs = CATEGORY_GRAPHS[clicked_category]
 
@@ -870,7 +843,6 @@ def update_graph_visibility(n_clicks, button_ids):
 def update_button_colors(n_clicks, button_ids):
     ctx = dash.callback_context
     if not ctx.triggered:
-        # Default styles
         return [[{
             'backgroundColor': '#27821D',
             'color': 'white',
@@ -906,7 +878,6 @@ def update_button_colors(n_clicks, button_ids):
     } for button in button_ids]]
 
 
-# Add CSS
 app.index_string = '''
 <!DOCTYPE html>
 <html>

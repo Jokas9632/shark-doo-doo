@@ -38,10 +38,8 @@ class DashboardVisualizer:
                 'zoom': MAP_SETTINGS['default_zoom']
             }
 
-        # Create base figure
         fig = go.Figure()
 
-        # Add choropleth layer for all states with improved interaction
         fig.add_trace(go.Choroplethmapbox(
             geojson=self.data_manager.geojson_data,
             locations=[feat['properties']['STATE_NAME']
@@ -55,10 +53,10 @@ class DashboardVisualizer:
             hoverinfo='none',
             marker=dict(
                 line=dict(
-                    width=2,  # Increased line width
+                    width=2, 
                     color='white'
                 ),
-                opacity=0.8  # Increased opacity
+                opacity=0.8 
             ),
             selected=dict(
                 marker=dict(
@@ -72,10 +70,8 @@ class DashboardVisualizer:
             )
         ))
 
-        # Add invisible larger clickable areas for small states
         for feature in self.data_manager.geojson_data['features']:
             state_name = feature['properties']['STATE_NAME']
-            # Add a slightly larger transparent area for better clickability
             if state_name in ['Tasmania', 'Victoria', 'Australian Capital Territory']:
                 centroid = self.data_manager.state_centroids[state_name]
                 fig.add_trace(go.Scattermapbox(
@@ -83,8 +79,8 @@ class DashboardVisualizer:
                     lon=[centroid['lon']],
                     mode='markers',
                     marker=dict(
-                        size=20,  # Larger clickable area
-                        opacity=0,  # Invisible
+                        size=20,  
+                        opacity=0, 
                     ),
                     name=state_name,
                     hovertemplate=f"Click to select {state_name}<extra></extra>",
@@ -92,7 +88,6 @@ class DashboardVisualizer:
                     customdata=[state_name]
                 ))
 
-        # Add shark attack points with filtering
         filtered_df = self.data_manager.filter_data(
             selected_injuries=selected_injuries,
             selected_states=selected_states,
@@ -109,28 +104,25 @@ class DashboardVisualizer:
         )
 
         if show_heatmap:
-            # Filter out rows with invalid coordinates
             valid_coords = filtered_df.dropna(subset=['Latitude', 'Longitude'])
-            # Add heatmap layer using densitymapbox
             fig.add_densitymapbox(
                 lat=valid_coords['Latitude'],
                 lon=valid_coords['Longitude'],
-                z=valid_coords['Latitude'] * 0 + 1,  # Uniform weight for each point
+                z=valid_coords['Latitude'] * 0 + 1,  
                 radius=20,
                 colorscale=[
-                    [0, 'rgba(0,0,255,0)'],  # Start with transparent
-                    [0.1, 'rgba(0,0,255,0.2)'],  # Light blue
-                    [0.3, 'rgba(0,255,255,0.4)'],  # Cyan
-                    [0.5, 'rgba(0,255,0,0.6)'],  # Green
-                    [0.7, 'rgba(255,255,0,0.8)'],  # Yellow
-                    [1, 'rgba(255,0,0,1)']  # Red
+                    [0, 'rgba(0,0,255,0)'], 
+                    [0.1, 'rgba(0,0,255,0.2)'], 
+                    [0.3, 'rgba(0,255,255,0.4)'],
+                    [0.5, 'rgba(0,255,0,0.6)'],
+                    [0.7, 'rgba(255,255,0,0.8)'],
+                    [1, 'rgba(255,0,0,1)']
                 ],
                 opacity=0.8,
                 hoverinfo='none',
                 showscale=False
             )
         else:
-            # Add individual points with proper coordinate filtering
             for state in filtered_df['State'].unique():
                 if state in STATE_COLORS:
                     state_data = filtered_df[
@@ -160,7 +152,6 @@ class DashboardVisualizer:
                             showlegend=False
                         )
 
-        # Add shark attack points with reduced size and opacity
         for state in filtered_df['State'].unique():
             if state in STATE_COLORS:
                 state_data = filtered_df[filtered_df['State'] == state]
@@ -185,7 +176,6 @@ class DashboardVisualizer:
                     showlegend=False
                 )
 
-        # Add state labels with improved visibility
         for state, centroid in self.data_manager.state_centroids.items():
             fig.add_scattermapbox(
                 lat=[centroid['lat']],
@@ -193,15 +183,14 @@ class DashboardVisualizer:
                 mode='text',
                 text=[state],
                 textfont=dict(
-                    size=14,  # Increased font size
+                    size=14,  
                     color=CHART_SETTINGS['font_color'],
-                    weight='bold'  # Added bold weight
+                    weight='bold'  
                 ),
                 hoverinfo='none',
                 showlegend=False
             )
 
-        # Update layout with improved interaction settings
         fig.update_layout(
             margin={"r": 0, "t": 0, "l": 0, "b": 0},
             paper_bgcolor=CHART_SETTINGS['background_color'],
@@ -214,10 +203,10 @@ class DashboardVisualizer:
                 pitch=0
             ),
             showlegend=False,
-            clickmode='event+select',  # Enable both click events and selection
-            dragmode='zoom',  # Set default drag mode to zoom
-            hoverdistance=5,  # Reduce hover distance for more precise selection
-            spikedistance=5  # Reduce spike distance for more precise selection
+            clickmode='event+select', 
+            dragmode='zoom', 
+            hoverdistance=5, 
+            spikedistance=5
         )
 
         return fig
@@ -250,14 +239,12 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
-        # Calculate percentages
         total_attacks = attacks_by_state.sum()
         percentages = (attacks_by_state / total_attacks * 100).round(1)
 
-        # Create color array that highlights selected states
         colors = [
             STATE_COLORS.get(state, '#808080') if selected_states is None or state not in selected_states
-            else '#36def7'  # Highlight color for selected states
+            else '#36def7'
             for state in percentages.index
         ]
 
@@ -268,7 +255,7 @@ class DashboardVisualizer:
             marker_color=colors,
             text=[f'{val}%' for val in percentages.values],
             textposition='auto',
-            customdata=percentages.index,  # Add state codes as custom data
+            customdata=percentages.index,
             hovertemplate='%{x}<br>%{y}% of attacks<extra></extra>',
         ))
         
@@ -281,7 +268,7 @@ class DashboardVisualizer:
             height=LAYOUT_SETTINGS['chart_heights']['state_chart'],
             xaxis=dict(showgrid=False),
             yaxis=dict(showgrid=True, gridcolor=CHART_SETTINGS['grid_color']),
-            clickmode='event+select'  # Enable clicking on bars
+            clickmode='event+select'
         )
         return fig
     def create_activity_distribution(self, selected_injuries: Optional[List[str]] = None,
@@ -312,7 +299,6 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
-        # Create color array based on selection
         colors = [
             '#36def7' if activity in (selected_activities or [])
             else CHART_SETTINGS['accent_color']
@@ -344,7 +330,7 @@ class DashboardVisualizer:
                 range=[0, max(top_activities.values) * 1.1]
             ),
             yaxis=dict(showgrid=False),
-            clickmode='event+select'  # Enable clicking
+            clickmode='event+select'
         )
         return fig
     def create_shark_species(self, selected_injuries: Optional[List[str]] = None,
@@ -424,10 +410,8 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
-        # Create hourly bins
         hourly_counts = [0] * 24
 
-        # Count incidents per hour
         for time_str in df_filtered['IncidentTime'].dropna():
             try:
                 hour = int(time_str.split(':')[0])
@@ -436,11 +420,9 @@ class DashboardVisualizer:
             except (ValueError, IndexError):
                 continue
 
-        # Calculate percentages
         total_attacks = sum(hourly_counts)
         hourly_percentages = [(count / total_attacks * 100) if total_attacks > 0 else 0 for count in hourly_counts]
 
-        # Create x-axis labels
         hours = [f"{str(i).zfill(2)}:00" for i in range(24)]
 
         fig = go.Figure()
@@ -664,37 +646,29 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
-        # Group by year and shark species
         yearly_species = df_filtered.groupby(['Year', 'SharkName']).size().reset_index(name='Attacks')
 
-        # Get top shark species for better visualization
         top_sharks = df_filtered['SharkName'].value_counts().nlargest(6).index
 
-        # Filter for top sharks
         yearly_species = yearly_species[yearly_species['SharkName'].isin(top_sharks)]
 
-        # Pivot the data for the streamgraph
         pivot_data = yearly_species.pivot(index='Year', columns='SharkName', values='Attacks').fillna(0)
 
-        # Calculate the baseline for streamgraph (center layers symmetrically)
         pivot_data['sum'] = pivot_data.sum(axis=1)
         pivot_data['baseline'] = -pivot_data['sum'] / 2
         y_offsets = pivot_data['baseline'].cumsum()
 
-        # Create the streamgraph
         fig = go.Figure()
 
-        # Add traces for each shark species
         y_cumulative = pivot_data['baseline']
-        for shark in pivot_data.columns[:-2]:  # Exclude 'sum' and 'baseline'
-            # Define vibrant colors for each shark species
+        for shark in pivot_data.columns[:-2]: 
             shark_colors = {
-                'white shark': '#004D40',  # Green-ish
-                'tiger shark': '#1E88E5',  # Blue-ish
-                'bull shark': '#6C6509',  # Mud
-                'whaler shark': '#826252',  # Brown
-                'wobbegong': '#D81B60',  # Red-ish
-                'bronze whaler shark': '#FFC107'  # Yellow-ish
+                'white shark': '#004D40',
+                'tiger shark': '#1E88E5',
+                'bull shark': '#6C6509',
+                'whaler shark': '#826252',
+                'wobbegong': '#D81B60',
+                'bronze whaler shark': '#FFC107'
             }
 
             fig.add_trace(go.Scatter(
@@ -702,11 +676,11 @@ class DashboardVisualizer:
                 y=y_cumulative + pivot_data[shark],
                 name=shark,
                 mode='lines',
-                fill='tonexty',  # Fill between traces
-                fillcolor=shark_colors.get(shark, '#808080'),  # Default to gray if shark not in color map
+                fill='tonexty',
+                fillcolor=shark_colors.get(shark, '#808080'),
                 line=dict(width=0.5, color=shark_colors.get(shark, '#808080')),
                 hovertemplate="Attacks: %{customdata}<extra>%{fullData.name}</extra>",
-                customdata=[abs(value) for value in pivot_data[shark]],  # Absolute values for hover
+                customdata=[abs(value) for value in pivot_data[shark]],
             ))
             y_cumulative += pivot_data[shark]
 
@@ -718,13 +692,13 @@ class DashboardVisualizer:
             font=dict(color=CHART_SETTINGS['font_color']),
             hovermode='x unified',
             margin=dict(l=10, r=10, t=40, b=10),
-            height=400,  # Increased height for better visibility
+            height=400, 
             yaxis=dict(
                 showgrid=True,
                 gridcolor=CHART_SETTINGS['grid_color'],
                 title='Number of Attacks',
-                zeroline=False,  # Remove the zero line for cleaner look
-                showticklabels=False  # Hide y-axis numbers
+                zeroline=False,
+                showticklabels=False
             ),
             xaxis=dict(
                 showgrid=False,
@@ -772,17 +746,13 @@ class DashboardVisualizer:
             selected_sharks=selected_sharks
         )
 
-        # Group by Activity and count provoked/unprovoked
         activity_provocation = df_filtered.groupby(['Activity', 'Provocation']).size().unstack(fill_value=0)
 
-        # Get top 10 activities by total incidents
         activity_provocation['total'] = activity_provocation.sum(axis=1)
         top_10_activities = activity_provocation.nlargest(10, 'total')
 
-        # Create the figure
         fig = go.Figure()
 
-        # Add bars for provoked and unprovoked
         fig.add_trace(go.Bar(
             name='Provoked',
             x=top_10_activities.index,
@@ -797,7 +767,6 @@ class DashboardVisualizer:
             marker_color='#3b82f6'
         ))
 
-        # Update layout
         fig.update_layout(
             title='Activity Distribution by Provocation',
             barmode='group',
@@ -851,7 +820,6 @@ class DashboardVisualizer:
 
         fig = go.Figure()
 
-        # Add male bars
         fig.add_trace(go.Bar(
             x=-df_counts['Male_Provoked'],
             y=df_counts.index,
@@ -872,7 +840,6 @@ class DashboardVisualizer:
             customdata=df_counts['Male_Unprovoked'].abs().values
         ))
 
-        # Add female bars
         fig.add_trace(go.Bar(
             x=df_counts['Female_Provoked'],
             y=df_counts.index,

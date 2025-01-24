@@ -9,7 +9,6 @@ STATE_COLORS = {
     'NT': '#18FFFF',   # Bright cyan
 }
 
-# Mapping between short and long state names
 STATE_NAME_MAPPING = {
     'NSW': 'New South Wales',
     'VIC': 'Victoria',
@@ -21,17 +20,14 @@ STATE_NAME_MAPPING = {
     'ACT': 'Australian Capital Territory'
 }
 
-# Reverse mapping for convenience
 REVERSE_STATE_MAPPING = {v: k for k, v in STATE_NAME_MAPPING.items()}
 
-# Map settings
 MAP_SETTINGS = {
     'default_center': {"lat": -28.2744, "lon": 128.7751},
     'default_zoom': 3.3,
     'style': 'carto-darkmatter'
 }
 
-# Chart settings
 CHART_SETTINGS = {
     'background_color': '#121212',
     'font_color': 'white',
@@ -41,7 +37,6 @@ CHART_SETTINGS = {
     'hover_bordercolor': '#36def7'
 }
 
-# Layout settings
 LAYOUT_SETTINGS = {
     'sidebar_width': '700px',
     'chart_heights': {
@@ -55,7 +50,6 @@ LAYOUT_SETTINGS = {
     }
 }
 
-# Data settings
 DATA_SETTINGS = {
     'required_columns': [
         'Year', 'State', 'Latitude', 'Longitude', 'SharkName',
@@ -65,14 +59,12 @@ DATA_SETTINGS = {
     'top_n_species': 5
 }
 
-# Style settings for the app
 STYLE_SETTINGS = {
     'scrollbar_width': '8px',
     'scrollbar_color': '#36def7',
     'scrollbar_hover_color': '#2ba7b9'
 }
 
-# Hover text template
 HOVER_TEXT_TEMPLATE = """
 <b>Year:</b> {year}<br>
 <b>Shark Species:</b> {shark}<br>
@@ -82,7 +74,6 @@ HOVER_TEXT_TEMPLATE = """
 <b>Age:</b> {age}
 """
 
-# File paths
 DATA_PATHS = {
     'csv_file': 'data/cleaned_data.csv',
     'geojson_file': 'data/states.geojson'
